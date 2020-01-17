@@ -1,8 +1,4 @@
-package com.agilesparks.rubikscube.cube;
-
-import com.agilesparks.rubikscube.Position;
-import com.agilesparks.rubikscube.Rotation;
-import com.agilesparks.rubikscube.utils.Face;
+package com.agilesparks.rubikscube;
 
 public class CubeCubicle {
 

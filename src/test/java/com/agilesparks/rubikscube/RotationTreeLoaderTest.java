@@ -9,7 +9,6 @@ import org.junit.Test;
 import com.agilesparks.rubikscube.RotationLinkedList;
 import com.agilesparks.rubikscube.RotationTree;
 import com.agilesparks.rubikscube.RotationTreeLoader;
-import com.agilesparks.rubikscube.utils.Face;
 
 public class RotationTreeLoaderTest {
 

@@ -1,4 +1,4 @@
-package com.agilesparks.rubikscube.cube;
+package com.agilesparks.rubikscube;
 //package com.javarubiksolver.www;
 //
 //public class CubiclePlace {

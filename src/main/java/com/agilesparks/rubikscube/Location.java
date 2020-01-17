@@ -1,6 +1,4 @@
-package com.agilesparks.rubikscube.cube;
-
-import com.agilesparks.rubikscube.utils.Face;
+package com.agilesparks.rubikscube;
 
 public class Location {
     boolean c_isEdge;

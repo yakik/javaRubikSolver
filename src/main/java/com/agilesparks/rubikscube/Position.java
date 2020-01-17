@@ -1,7 +1,5 @@
 package com.agilesparks.rubikscube;
 
-import com.agilesparks.rubikscube.utils.Face;
-
 public class Position {
 
     private Face g_faceOrder[][] = {

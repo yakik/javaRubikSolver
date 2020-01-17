@@ -11,15 +11,15 @@ public enum Direction {
         this.intValue = intValue;
     }
 
-    String getString() {              // Getter
+    public String getString() {              // Getter
         return stringValue;
     }
 
-    int getInt() {              // Getter
+    public int getInt() {              // Getter
         return intValue;
     }
 
-    Direction getOpposite() {
+    public Direction getOpposite() {
         if (this == Direction.CW)
             return Direction.CCW;
         else

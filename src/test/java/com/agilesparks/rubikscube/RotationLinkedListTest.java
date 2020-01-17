@@ -8,7 +8,6 @@ import org.junit.Test;
 
 import com.agilesparks.rubikscube.RotationLinkedList;
 import com.agilesparks.rubikscube.RubikFileWriter;
-import com.agilesparks.rubikscube.utils.Face;
 
 public class RotationLinkedListTest {
 

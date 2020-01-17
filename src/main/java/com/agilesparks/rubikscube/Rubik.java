@@ -1,9 +1,5 @@
 package com.agilesparks.rubikscube;
 
-import com.agilesparks.rubikscube.cube.CubeCubicle;
-import com.agilesparks.rubikscube.cube.Location;
-import com.agilesparks.rubikscube.utils.Face;
-
 public class Rubik {
 
 

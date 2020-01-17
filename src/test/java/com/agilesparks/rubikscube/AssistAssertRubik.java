@@ -2,9 +2,6 @@ package com.agilesparks.rubikscube;
 
 import static org.junit.Assert.*;
 
-import com.agilesparks.rubikscube.cube.Location;
-import com.agilesparks.rubikscube.utils.Face;
-
 public class AssistAssertRubik {
     static void myAssertEdge(Face p_firstFace, Face p_secondFace, Rubik p_rubik){
        

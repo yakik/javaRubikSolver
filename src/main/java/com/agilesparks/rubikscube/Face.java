@@ -1,4 +1,4 @@
-package com.agilesparks.rubikscube.utils;
+package com.agilesparks.rubikscube;
 
 public enum Face {
     U('U', 0), D('D', 1), R('R', 2), L('L', 3), F('F', 4), B('B', 5)/*, NOTDEFINED('Z', 9)*/; //don't change this sequence, for Rubik's sake!

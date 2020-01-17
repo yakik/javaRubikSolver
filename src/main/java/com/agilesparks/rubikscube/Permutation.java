@@ -3,10 +3,6 @@ package com.agilesparks.rubikscube;
 import java.io.FileReader;
 import java.io.IOException;
 
-import com.agilesparks.rubikscube.cube.CubeCubicle;
-import com.agilesparks.rubikscube.cube.Location;
-import com.agilesparks.rubikscube.utils.Face;
-
 public class Permutation {
     CubeCubicle c_Cube_cubicle[] = new CubeCubicle[20];
     short c_cubicles;

@@ -6,8 +6,6 @@ import java.util.List;
 import java.util.ListIterator;
 //import java.io.IOException;
 
-import com.agilesparks.rubikscube.utils.Face;
-
 public class RotationLinkedList {
 
     private ArrayList<Rotation> c_array = new ArrayList<Rotation>();

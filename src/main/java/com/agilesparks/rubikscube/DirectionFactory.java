@@ -1,7 +1,7 @@
 package com.agilesparks.rubikscube;
 
 public class DirectionFactory {
-    static Direction getDirectionByInt(int intValue) {
+    public static Direction getDirectionByInt(int intValue) {
         switch (intValue) {
             case 0:
                 return Direction.CW;
