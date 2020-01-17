@@ -248,39 +248,7 @@ public boolean isDifferentItemsOnlyInSecondFloorLessThanThree(Permutation p_comp
 
     }
 
-    public Permutation getPermutation() {
-        Location l_rubikLocation[] = {
-                new Location(Face.F, Face.U),
-                new Location(Face.F, Face.R),
-                new Location(Face.F, Face.L),
-                new Location(Face.F, Face.D),
-                new Location(Face.B, Face.U),
-                new Location(Face.B, Face.R),
-                new Location(Face.B, Face.L),
-                new Location(Face.B, Face.D),
-                new Location(Face.U, Face.R),
-                new Location(Face.U, Face.L),
-                new Location(Face.D, Face.R),
-                new Location(Face.D, Face.L),
-                new Location(Face.F, Face.U, Face.R),
-                new Location(Face.F, Face.U, Face.L),
-                new Location(Face.F, Face.D, Face.R),
-                new Location(Face.F, Face.D, Face.L),
-                new Location(Face.B, Face.U, Face.R),
-                new Location(Face.B, Face.U, Face.L),
-                new Location(Face.B, Face.D, Face.R),
-                new Location(Face.B, Face.D, Face.L)
-        };
-        int i;
-        Permutation l_permutation = new Permutation();
-        for (i = 0; i < 20; i++)
-            l_permutation.addCubicleData(new CubeCubicle(l_rubikLocation[i].getCopy(),
-                    getOriginalLocationOfCurrentCubicleInLocation(l_rubikLocation[i]).getCopy(),
-                    getPositionOfCubicleOfCubiclePlace(l_rubikLocation[i].getCopy())));
-        return l_permutation;
-    }
-
-void updateCubeCubicle(Location p_location,Location p_currentLocation, Position p_currentPosition){
+    void updateCubeCubicle(Location p_location,Location p_currentLocation, Position p_currentPosition){
         getCubeCubicle(p_location).c_currentPosition = p_currentPosition.getCopy();
         getCubeCubicle(p_location).c_currentCubieOriginalLocation = p_currentLocation.getCopy();
 }

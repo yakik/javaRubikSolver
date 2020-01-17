@@ -14,6 +14,7 @@ import com.agilesparks.rubikscube.solver.Solution;
 import com.agilesparks.rubikscube.solver.Solver;
 import com.agilesparks.rubikscube.utils.Direction;
 import com.agilesparks.rubikscube.utils.Face;
+import com.agilesparks.rubikscube.utils.Permutation;
 import com.agilesparks.rubikscube.utils.Rotation;
 
 public class SolverTest {
@@ -83,7 +84,7 @@ public class SolverTest {
         Solution mySolution = mySolver.solve(myRubik,myTree,myTree,myTree);
         mySolution.applyToRubik(myRubik);
         mySolution.print();
-        myRubik.getPermutation().print();
+        Permutation.getPermutationFromCube(myRubik).print();
         AssistAssertRubik.checkEntireCube(myRubik);
 
     }
@@ -158,7 +159,7 @@ public class SolverTest {
         long endTime = System.nanoTime();
         System.out.format("Elapsed Time=%d seconds", ((endTime - beginningTime) / 1000000000));
 //27-12-2017: started 11:39 PM, Failed
-        myRubik.getPermutation().print();
+        Permutation.getPermutationFromCube(myRubik).print();
         AssistAssertRubik.checkEntireCube(myRubik);
 
     }

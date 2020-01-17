@@ -20,7 +20,7 @@ public class PermutationTest {
     public void getValue() {
         Rubik myRubik = new Rubik();
         myRubik.rotateFace(new Rotation(Face.F, Direction.CW));
-        Permutation myPermutation = myRubik.getPermutation();
+        Permutation myPermutation = Permutation.getPermutationFromCube(myRubik);
         assertEquals("first floor",10, myPermutation.getValue(1) );
         assertEquals("second floor", 14, myPermutation.getValue(2) );
         assertEquals("third floor",24, myPermutation.getValue(3) );

@@ -13,6 +13,39 @@ public class Permutation {
     public Permutation() {
         c_cubicles = -1;
     }
+    
+	public static Permutation getPermutationFromCube(Rubik cube) {
+		Location l_rubikLocation[] = {
+		        new Location(Face.F, Face.U),
+		        new Location(Face.F, Face.R),
+		        new Location(Face.F, Face.L),
+		        new Location(Face.F, Face.D),
+		        new Location(Face.B, Face.U),
+		        new Location(Face.B, Face.R),
+		        new Location(Face.B, Face.L),
+		        new Location(Face.B, Face.D),
+		        new Location(Face.U, Face.R),
+		        new Location(Face.U, Face.L),
+		        new Location(Face.D, Face.R),
+		        new Location(Face.D, Face.L),
+		        new Location(Face.F, Face.U, Face.R),
+		        new Location(Face.F, Face.U, Face.L),
+		        new Location(Face.F, Face.D, Face.R),
+		        new Location(Face.F, Face.D, Face.L),
+		        new Location(Face.B, Face.U, Face.R),
+		        new Location(Face.B, Face.U, Face.L),
+		        new Location(Face.B, Face.D, Face.R),
+		        new Location(Face.B, Face.D, Face.L)
+		};
+		int i;
+		Permutation l_permutation = new Permutation();
+		for (i = 0; i < 20; i++)
+		    l_permutation.addCubicleData(new CubeCubicle(l_rubikLocation[i].getCopy(),
+		            cube.getOriginalLocationOfCurrentCubicleInLocation(l_rubikLocation[i]).getCopy(),
+		            cube.getPositionOfCubicleOfCubiclePlace(l_rubikLocation[i].getCopy())));
+		return l_permutation;
+	}
+    
 
     CubeCubicle getCubeCubicale(Location p_location){
              for (int i=0;i<12;i++)
@@ -140,4 +173,6 @@ public class Permutation {
                         l_answer = true;
         return l_answer;
     }
+
+
 }

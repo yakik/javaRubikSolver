@@ -12,7 +12,7 @@ public class Solver {
     public Solution solve(Rubik p_rubik, RotationTree p_firstTree, RotationTree p_secondTree, RotationTree p_thirdTree) {
 
         int l_numberOfCubicleInPlace;
-        Permutation l_permutation = p_rubik.getPermutation();
+        Permutation l_permutation = Permutation.getPermutationFromCube(p_rubik);
         SolutionManager l_solutionManager = new SolutionManager();
         Solution l_solutionToDev;
 
@@ -96,7 +96,7 @@ public class Solver {
                            Rubik p_rubik,SolutionManager p_solutionManager,
                            Solution p_prevSolution, int p_floor, int depth) {
         if (p_minimumValue<2) p_minimumValue = 2;
-        Permutation l_permutation = p_rubik.getPermutation().getCopy();
+        Permutation l_permutation = Permutation.getPermutationFromCube(p_rubik).getCopy();
         Rubik l_rubik = new Rubik();
         for (int i=0;i<p_tree.getSize();i++){
             RotationLinkedList l_rotationLinkedList = p_tree.getRotationLinkedList(i);
@@ -104,7 +104,7 @@ public class Solver {
                 l_rubik.setPermutation(l_permutation);
                 for (int j=0;j<l_rotationLinkedList.size();j++)
                     l_rubik.rotateFace(l_rotationLinkedList.get(j));
-                Permutation l_resultPermutation = l_rubik.getPermutation().getCopy();
+                Permutation l_resultPermutation = Permutation.getPermutationFromCube(l_rubik).getCopy();
 
                 if (l_resultPermutation.getValue(p_floor) >= p_minimumValue) {
                     p_solutionManager.addSolution(l_rotationLinkedList, l_resultPermutation, p_prevSolution, l_resultPermutation.getValue(p_floor), p_floor);
