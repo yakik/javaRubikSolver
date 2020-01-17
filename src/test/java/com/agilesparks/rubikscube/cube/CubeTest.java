@@ -46,15 +46,15 @@ public class CubeTest {
 
 
 
-myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
-        myRubik.rotateFace(new Rotation(Face.B, Direction.CW));
-        myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
-        myRubik.rotateFace(new Rotation(Face.B, Direction.CW));
-        myRubik.rotateFace(new Rotation(Face.L, Direction.CW));
-        myRubik.rotateFace(new Rotation(Face.F, Direction.CW));
-        myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
-        myRubik.rotateFace(new Rotation(Face.B, Direction.CW));
-        myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
+        myRubik.rotateFace(Face.R, Direction.CW);
+        myRubik.rotateFace(Face.B, Direction.CW);
+        myRubik.rotateFace(Face.R, Direction.CW);
+        myRubik.rotateFace(Face.B, Direction.CW);
+        myRubik.rotateFace(Face.L, Direction.CW);
+        myRubik.rotateFace(Face.F, Direction.CW);
+        myRubik.rotateFace(Face.R, Direction.CW);
+        myRubik.rotateFace(Face.B, Direction.CW);
+        myRubik.rotateFace(Face.R, Direction.CW);
 
         myRubik.setPermutation(myPermutation);
         AssistAssertRubik.checkEntireCube(myRubik);
@@ -178,24 +178,24 @@ myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
     @Test
     public void positionTest() {
         Cube myRubik = new Cube();
-        myRubik.rotateFace(new Rotation(Face.U, Direction.CW));
+        myRubik.rotateFace(Face.U, Direction.CW);
         assertEquals("1",true, myRubik
                 .getPositionOfCubicleOfCubiclePlace(new Location(Face.D, Face.F))
                 .equals(new Position(Face.U, Face.F)));
 
-        myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
+        myRubik.rotateFace(Face.R, Direction.CW);
         assertEquals("2",true, myRubik
                 .getPositionOfCubicleOfCubiclePlace(new Location(Face.D, Face.F))
                 .equals(new Position(Face.U, Face.F)));
 
-        myRubik.rotateFace(new Rotation(Face.L, Direction.CW));
+        myRubik.rotateFace(Face.L, Direction.CW);
         assertEquals("3",true, myRubik
                 .getPositionOfCubicleOfCubiclePlace(new Location(Face.D, Face.F))
                 .equals(new Position(Face.U, Face.F)));
 
         Position yaki = myRubik.getPositionOfCubicleOfCubiclePlace(new Location(Face.D, Face.L));
 
-        myRubik.rotateFace(new Rotation(Face.D, Direction.CW));
+        myRubik.rotateFace(Face.D, Direction.CW);
         yaki = myRubik.getPositionOfCubicleOfCubiclePlace(new Location(Face.D, Face.F));
         assertEquals("4",true, myRubik
                 .getPositionOfCubicleOfCubiclePlace(new Location(Face.D, Face.F))
@@ -209,7 +209,7 @@ myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
         Cube myRubik = new Cube();
 
 
-        myRubik.rotateFace(new Rotation(Face.L, Direction.CW));
+        myRubik.rotateFace(Face.L, Direction.CW);
         assertEquals("1",true, myRubik
                 .getPositionOfCubicleOfCubiclePlace(new Location(Face.D, Face.F))
                 .equals(new Position(Face.U, Face.F)));
@@ -218,7 +218,7 @@ myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
                 .getPositionOfCubicleOfCubiclePlace(new Location(Face.D, Face.L))
                 .equals(new Position(Face.B, Face.U)));
 
-        myRubik.rotateFace(new Rotation(Face.D, Direction.CW));
+        myRubik.rotateFace(Face.D, Direction.CW);
         Position yaki = myRubik.getPositionOfCubicleOfCubiclePlace(new Location(Face.D, Face.F));
         assertEquals("4",true, myRubik
                 .getPositionOfCubicleOfCubiclePlace(new Location(Face.D, Face.F))
@@ -231,7 +231,7 @@ myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
     @Test
     public  void rotateTest1() {
         Cube myRubik = new Cube();
-        myRubik.rotateFace(new Rotation(Face.F, Direction.CW));
+        myRubik.rotateFace(Face.F, Direction.CW);
         assertEquals(true, (new Location(Face.F, Face.D))
                 .equals(myRubik.getOriginalLocationOfCurrentCubicleInLocation(new Location(Face.F, Face.L))));
 
@@ -240,7 +240,7 @@ myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
     @Test
     public void rotateTest2() {
         Cube myRubik = new Cube();
-        myRubik.rotateFace(new Rotation(Face.D, Direction.CCW));
+        myRubik.rotateFace(Face.D, Direction.CCW);
         assertEquals(true, (new Location(Face.D, Face.R))
                 .equals(myRubik.getOriginalLocationOfCurrentCubicleInLocation(new Location(Face.D, Face.F))));
     }
@@ -248,7 +248,7 @@ myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
     @Test
     public void rotateTest3() {
     	Cube myRubik = new Cube();
-        myRubik.rotateFace(new Rotation(Face.D, Direction.CCW));
+        myRubik.rotateFace(Face.D, Direction.CCW);
         assertEquals(true, (new Location(Face.D, Face.R, Face.B))
                 .equals(myRubik.getOriginalLocationOfCurrentCubicleInLocation(new Location(Face.D, Face.R, Face.F))));
     }
@@ -256,7 +256,7 @@ myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
     @Test
     public void TestgetOriginalLocationOfCurrentCubicleInLocation() {
         Cube myRubik = new Cube();
-        myRubik.rotateFace(new Rotation(Face.F, Direction.CW));
+        myRubik.rotateFace(Face.F, Direction.CW);
         Location yaki = myRubik.getOriginalLocationOfCurrentCubicleInLocation(new Location(Face.D, Face.F));
         assertEquals(true, (new Location(Face.F, Face.R))
                 .equals(myRubik.getOriginalLocationOfCurrentCubicleInLocation(new Location(Face.D, Face.F))));

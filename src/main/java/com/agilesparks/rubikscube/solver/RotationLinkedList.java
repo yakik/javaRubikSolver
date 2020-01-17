@@ -125,9 +125,11 @@ public Rotation get(int p_index){
     void applyToRubik(Cube p_rubik) {
         ListIterator<Rotation> l_itr=c_array.listIterator();
 
-        while(l_itr.hasNext())
+        while(l_itr.hasNext()) {
+        	Rotation nextRotation = l_itr.next();
 
-            p_rubik.rotateFace(l_itr.next());
+            p_rubik.rotateFace(nextRotation.getFace(), nextRotation.getDirection());
+        }
 
     }
 }

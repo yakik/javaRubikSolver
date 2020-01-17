@@ -96,66 +96,70 @@ public class Cube {
         }
 
     }
-
-    public void rotateFace(Rotation p_rotation) {
-        Face l_face = p_rotation.getFace();
+    
+    public void rotateFace(Face face, Direction direction) {
+    	
+    	Rotation rotation = new Rotation(face,direction);
+   
+    	
+        Face l_face = rotation.getFace();
         switch (l_face) {
             case U:
-                 rotate(p_rotation, getCubeCubicle(new Location(Face.U, Face.L))
+                 rotate(rotation, getCubeCubicle(new Location(Face.U, Face.L))
                         , getCubeCubicle(new Location(Face.U, Face.B))
                         , getCubeCubicle(new Location(Face.U, Face.R))
                         , getCubeCubicle(new Location(Face.U, Face.F)));
-             rotate(p_rotation, getCubeCubicle(new Location(Face.U, Face.L, Face.F))
+             rotate(rotation, getCubeCubicle(new Location(Face.U, Face.L, Face.F))
                     , getCubeCubicle(new Location(Face.U, Face.B, Face.L))
                     , getCubeCubicle(new Location(Face.U, Face.R, Face.B))
                     , getCubeCubicle(new Location(Face.U, Face.F, Face.R)));
             return;
             case D:
-                rotate(p_rotation, getCubeCubicle(new Location(Face.D, Face.L))
+                rotate(rotation, getCubeCubicle(new Location(Face.D, Face.L))
                         , getCubeCubicle(new Location(Face.D, Face.F))
                         , getCubeCubicle(new Location(Face.D, Face.R))
                         , getCubeCubicle(new Location(Face.D, Face.B)));
-                rotate(p_rotation, getCubeCubicle(new Location(Face.D, Face.L, Face.F))
+                rotate(rotation, getCubeCubicle(new Location(Face.D, Face.L, Face.F))
                         , getCubeCubicle(new Location(Face.D, Face.F, Face.R))
                         , getCubeCubicle(new Location(Face.D, Face.R, Face.B))
                         , getCubeCubicle(new Location(Face.D, Face.B, Face.L)));
                 return;
             case F:
-                rotate(p_rotation, getCubeCubicle(new Location(Face.F, Face.L))
+                rotate(rotation, getCubeCubicle(new Location(Face.F, Face.L))
                         , getCubeCubicle(new Location(Face.F, Face.U))
                         , getCubeCubicle(new Location(Face.F, Face.R))
                         , getCubeCubicle(new Location(Face.F, Face.D)));
-                rotate(p_rotation, getCubeCubicle(new Location(Face.F, Face.L, Face.U))
+                rotate(rotation, getCubeCubicle(new Location(Face.F, Face.L, Face.U))
                         , getCubeCubicle(new Location(Face.F, Face.U, Face.R))
                         , getCubeCubicle(new Location(Face.F, Face.R, Face.D))
                         , getCubeCubicle(new Location(Face.F, Face.D, Face.L)));
                 return;
             case B:
-                rotate(p_rotation, getCubeCubicle(new Location(Face.B, Face.L))
+                rotate(rotation, getCubeCubicle(new Location(Face.B, Face.L))
                         , getCubeCubicle(new Location(Face.B, Face.D))
                         , getCubeCubicle(new Location(Face.B, Face.R))
                         , getCubeCubicle(new Location(Face.B, Face.U)));
-                rotate(p_rotation, getCubeCubicle(new Location(Face.B, Face.L, Face.U))
+                rotate(rotation, getCubeCubicle(new Location(Face.B, Face.L, Face.U))
                         , getCubeCubicle(new Location(Face.B, Face.D, Face.L))
                         , getCubeCubicle(new Location(Face.B, Face.R, Face.D))
                         , getCubeCubicle(new Location(Face.B, Face.U, Face.R)));
                 return;
             case R:
-                rotate(p_rotation, getCubeCubicle(new Location(Face.R, Face.F))
+                rotate(rotation, getCubeCubicle(new Location(Face.R, Face.F))
                         , getCubeCubicle(new Location(Face.R, Face.U))
                         , getCubeCubicle(new Location(Face.R, Face.B))
                         , getCubeCubicle(new Location(Face.R, Face.D)));
-                rotate(p_rotation, getCubeCubicle(new Location(Face.R, Face.F, Face.U))
+                rotate(rotation, getCubeCubicle(new Location(Face.R, Face.F, Face.U))
                         , getCubeCubicle(new Location(Face.R, Face.U, Face.B))
                         , getCubeCubicle(new Location(Face.R, Face.B, Face.D))
                         , getCubeCubicle(new Location(Face.R, Face.D, Face.F)));
                 return;
             case L:
-                 rotate(p_rotation, getCubeCubicle(new Location(Face.L, Face.F))
+                 rotate(rotation, getCubeCubicle(new Location(Face.L, Face.F))
                         , getCubeCubicle(new Location(Face.L, Face.D))
                         , getCubeCubicle(new Location(Face.L, Face.B))
                         , getCubeCubicle(new Location(Face.L, Face.U)));
-             rotate(p_rotation, getCubeCubicle(new Location(Face.L, Face.F, Face.U))
+             rotate(rotation, getCubeCubicle(new Location(Face.L, Face.F, Face.U))
                     , getCubeCubicle(new Location(Face.L, Face.D, Face.F))
                     , getCubeCubicle(new Location(Face.L, Face.B, Face.D))
                     , getCubeCubicle(new Location(Face.L, Face.U, Face.B)));

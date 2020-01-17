@@ -103,7 +103,7 @@ public class Solver {
             if (l_rotationLinkedList != null) {
                 l_rubik.setPermutation(l_permutation);
                 for (int j=0;j<l_rotationLinkedList.size();j++)
-                    l_rubik.rotateFace(l_rotationLinkedList.get(j));
+                    l_rubik.rotateFace(l_rotationLinkedList.get(j).getFace(), l_rotationLinkedList.get(j).getDirection() );
                 Permutation l_resultPermutation = Permutation.getPermutationFromCube(l_rubik).getCopy();
 
                 if (l_resultPermutation.getValue(p_floor) >= p_minimumValue) {

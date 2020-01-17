@@ -19,7 +19,7 @@ public class PermutationTest {
     @Test
     public void getValue() {
         Cube myRubik = new Cube();
-        myRubik.rotateFace(new Rotation(Face.F, Direction.CW));
+        myRubik.rotateFace(Face.F, Direction.CW);
         Permutation myPermutation = Permutation.getPermutationFromCube(myRubik);
         assertEquals("first floor",10, myPermutation.getValue(1) );
         assertEquals("second floor", 14, myPermutation.getValue(2) );
