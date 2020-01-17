@@ -1,5 +1,10 @@
 package com.agilesparks.rubikscube;
 
+import com.agilesparks.rubikscube.utils.Direction;
+import com.agilesparks.rubikscube.utils.DirectionFactory;
+import com.agilesparks.rubikscube.utils.Face;
+import com.agilesparks.rubikscube.utils.FaceFactory;
+
 public class Rotation {
 
     private Face c_face;

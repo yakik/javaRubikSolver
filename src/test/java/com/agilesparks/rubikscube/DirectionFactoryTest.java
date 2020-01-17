@@ -6,6 +6,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.agilesparks.rubikscube.utils.Direction;
+import com.agilesparks.rubikscube.utils.DirectionFactory;
+
 public class DirectionFactoryTest {
 
     @Test

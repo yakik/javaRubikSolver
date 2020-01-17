@@ -5,6 +5,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.agilesparks.rubikscube.utils.Face;
+import com.agilesparks.rubikscube.utils.FaceFactory;
+
 public class FaceFactoryTest {
 
     @Test

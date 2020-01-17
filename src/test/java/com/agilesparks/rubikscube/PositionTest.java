@@ -4,6 +4,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.agilesparks.rubikscube.utils.Direction;
+import com.agilesparks.rubikscube.utils.Face;
+
 public class PositionTest {
 
     @Test

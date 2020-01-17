@@ -10,6 +10,8 @@ import com.agilesparks.rubikscube.RotationTree;
 import com.agilesparks.rubikscube.RotationTreeLoader;
 import com.agilesparks.rubikscube.Solution;
 import com.agilesparks.rubikscube.Solver;
+import com.agilesparks.rubikscube.utils.Direction;
+import com.agilesparks.rubikscube.utils.Face;
 
 public class SolverTest {
 

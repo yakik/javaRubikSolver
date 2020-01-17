@@ -1,5 +1,7 @@
 package com.agilesparks.rubikscube;
 
+import com.agilesparks.rubikscube.utils.Face;
+
 public class Location {
     boolean c_isEdge;
     private Face c_face0;
@@ -112,7 +114,7 @@ public class Location {
 //		return (getFace0() * 1 + getFace1() * 6 + getFace2() * 36 + isEdge() * 216);
 //	}
 
-    boolean equals(Location p_location) {
+    public boolean equals(Location p_location) {
         return ((c_face0 == p_location.c_face0) &&
                 (c_face1 == p_location.c_face1) &&
                 (c_face2 == p_location.c_face2) &&

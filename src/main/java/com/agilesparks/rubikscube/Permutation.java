@@ -3,6 +3,10 @@ package com.agilesparks.rubikscube;
 import java.io.FileReader;
 import java.io.IOException;
 
+import com.agilesparks.rubikscube.cube.CubeCubicle;
+import com.agilesparks.rubikscube.utils.Face;
+import com.agilesparks.rubikscube.utils.FaceFactory;
+
 public class Permutation {
     CubeCubicle c_Cube_cubicle[] = new CubeCubicle[20];
     short c_cubicles;
@@ -127,7 +131,7 @@ public class Permutation {
         return l_permutation;
     }
 
-    boolean equals( Permutation p_permutation) {
+    public boolean equals( Permutation p_permutation) {
         boolean l_answer = true;
         int i;
         for (i = 0; i < 20; i++)

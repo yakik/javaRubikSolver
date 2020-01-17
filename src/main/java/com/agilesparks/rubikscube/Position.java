@@ -1,5 +1,8 @@
 package com.agilesparks.rubikscube;
 
+import com.agilesparks.rubikscube.utils.Direction;
+import com.agilesparks.rubikscube.utils.Face;
+
 public class Position {
 
     private Face g_faceOrder[][] = {
@@ -93,7 +96,7 @@ public Position getCopy(){
         }
     }
 
-    boolean equals(Position p_position) {
+    public boolean equals(Position p_position) {
         return ((c_currentUp == p_position.c_currentUp) &&
                 (c_currentFront == p_position.c_currentFront));
     }

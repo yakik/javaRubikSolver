@@ -6,6 +6,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.agilesparks.rubikscube.utils.Direction;
+
 public class DirectionTest {
     @Test
     public void testDirectionGetIntGetChar() {

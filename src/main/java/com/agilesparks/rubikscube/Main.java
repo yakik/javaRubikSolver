@@ -1,5 +1,8 @@
 package com.agilesparks.rubikscube;
 
+import com.agilesparks.rubikscube.utils.Direction;
+import com.agilesparks.rubikscube.utils.Face;
+
 public class Main {
 
     public static void main(String[] args) {
