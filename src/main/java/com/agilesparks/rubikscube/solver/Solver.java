@@ -1,7 +1,7 @@
 
 package com.agilesparks.rubikscube.solver;
 
-import com.agilesparks.rubikscube.cube.Rubik;
+import com.agilesparks.rubikscube.cube.Cube;
 import com.agilesparks.rubikscube.utils.Permutation;
 
 public class Solver {
@@ -9,7 +9,7 @@ public class Solver {
     public Solver() {
     }
 
-    public Solution solve(Rubik p_rubik, RotationTree p_firstTree, RotationTree p_secondTree, RotationTree p_thirdTree) {
+    public Solution solve(Cube p_rubik, RotationTree p_firstTree, RotationTree p_secondTree, RotationTree p_thirdTree) {
 
         int l_numberOfCubicleInPlace;
         Permutation l_permutation = Permutation.getPermutationFromCube(p_rubik);
@@ -79,7 +79,7 @@ public class Solver {
 
     private void findBetterSolution(Solution p_solution, RotationTree p_tree, SolutionManager p_solutionManager,
                                     int p_floor) {
-        Rubik l_rubik = new Rubik();
+        Cube l_rubik = new Cube();
         Permutation l_permutation = p_solution.getPermutation().getCopy();
         RotationLinkedList l_rotationLinkedList = new RotationLinkedList();
         int l_minimumValue = l_permutation.getValue(p_floor);
@@ -93,11 +93,11 @@ public class Solver {
 
 
     public void searchTree(int p_minimumValue, RotationTree p_tree,
-                           Rubik p_rubik,SolutionManager p_solutionManager,
+                           Cube p_rubik,SolutionManager p_solutionManager,
                            Solution p_prevSolution, int p_floor, int depth) {
         if (p_minimumValue<2) p_minimumValue = 2;
         Permutation l_permutation = Permutation.getPermutationFromCube(p_rubik).getCopy();
-        Rubik l_rubik = new Rubik();
+        Cube l_rubik = new Cube();
         for (int i=0;i<p_tree.getSize();i++){
             RotationLinkedList l_rotationLinkedList = p_tree.getRotationLinkedList(i);
             if (l_rotationLinkedList != null) {

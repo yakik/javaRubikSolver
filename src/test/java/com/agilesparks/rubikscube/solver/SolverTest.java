@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.agilesparks.rubikscube.cube.Rubik;
+import com.agilesparks.rubikscube.cube.Cube;
 import com.agilesparks.rubikscube.cube.RubikFileReader;
 import com.agilesparks.rubikscube.solver.RotationLinkedList;
 import com.agilesparks.rubikscube.solver.RotationTree;
@@ -22,7 +22,7 @@ public class SolverTest {
 
     @Test
     public void simpleRotations() {
-        Rubik myRubik = new Rubik();
+        Cube myRubik = new Cube();
         for (int i=0;i<20;i++) {
             myRubik.rotateFace(new Rotation(Face.U, Direction.CW));
             myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
@@ -57,7 +57,7 @@ public class SolverTest {
 
     @Test
     public void simpleSolver() {
-        Rubik myRubik = new Rubik();
+        Cube myRubik = new Cube();
 
         myRubik.rotateFace(new Rotation(Face.U, Direction.CW));
         myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
@@ -92,7 +92,7 @@ public class SolverTest {
     @Test
     public void complexSolver() {
         long beginningTime = System.nanoTime();
-        Rubik myRubik = new Rubik();
+        Cube myRubik = new Cube();
         myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
         myRubik.rotateFace(new Rotation(Face.B, Direction.CW));
         myRubik.rotateFace(new Rotation(Face.R, Direction.CW));

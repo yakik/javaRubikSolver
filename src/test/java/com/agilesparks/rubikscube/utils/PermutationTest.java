@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import com.agilesparks.rubikscube.cube.CubeCubicle;
-import com.agilesparks.rubikscube.cube.Rubik;
+import com.agilesparks.rubikscube.cube.Cube;
 import com.agilesparks.rubikscube.utils.Direction;
 import com.agilesparks.rubikscube.utils.Face;
 import com.agilesparks.rubikscube.utils.Location;
@@ -18,7 +18,7 @@ public class PermutationTest {
 
     @Test
     public void getValue() {
-        Rubik myRubik = new Rubik();
+        Cube myRubik = new Cube();
         myRubik.rotateFace(new Rotation(Face.F, Direction.CW));
         Permutation myPermutation = Permutation.getPermutationFromCube(myRubik);
         assertEquals("first floor",10, myPermutation.getValue(1) );

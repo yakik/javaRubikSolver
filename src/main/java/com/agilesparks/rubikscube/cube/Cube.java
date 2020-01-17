@@ -7,7 +7,7 @@ import com.agilesparks.rubikscube.utils.Permutation;
 import com.agilesparks.rubikscube.utils.Position;
 import com.agilesparks.rubikscube.utils.Rotation;
 
-public class Rubik {
+public class Cube {
 
 
     private CubeCubicle cubeCubicles[] = new CubeCubicle[20];
@@ -21,7 +21,7 @@ public class Rubik {
     }
     };
 
-    public Rubik() {
+    public Cube() {
         initializeCubeCubicles();
     }
 
@@ -73,88 +73,6 @@ public class Rubik {
         return null;
 
     }
-
-    static public boolean isFirstFloor(Location p_location){
-        return (p_location.containsFace(Face.D));
-
-    }
-
-    static public boolean isThirdFloor(Location p_location){
-        return (p_location.containsFace(Face.U));
-
-    }
-
-    static public boolean isSecondFloor(Location p_location){
-        return (!(isFirstFloor(p_location)||isThirdFloor(p_location)));
-
-    }
-
-    public boolean changesOnlyInThirdFloor(Permutation p_comparedPermutation){
-        CubeCubicle l_permutationCubicle;
-        int l_counter = 0;
-        for (int i =0;i<20;i++)
-            if ((l_permutationCubicle=p_comparedPermutation.getCubicleData(i))!=null)
-                if (!Rubik.isThirdFloor(l_permutationCubicle.getLocation())) {
-                    if (!l_permutationCubicle.getCubiePosition()
-                            .equals(getPositionOfCubicleOfCubiclePlace(l_permutationCubicle.getLocation()))
-                            || !l_permutationCubicle.getCurrentCubieOriginalLocation()
-                            .equals(getOriginalLocationOfCurrentCubicleInLocation(l_permutationCubicle.getLocation())))
-                        return false;
-                } else {
-                    if (!l_permutationCubicle.getCubiePosition()
-                            .equals(getPositionOfCubicleOfCubiclePlace(l_permutationCubicle.getLocation()))
-                            || !l_permutationCubicle.getCurrentCubieOriginalLocation()
-                            .equals(getOriginalLocationOfCurrentCubicleInLocation(l_permutationCubicle.getLocation())))
-                        l_counter++;
-                }
-
-
-        if (l_counter>0) return true;
-        else return false;
-
-    }
-
-public boolean isDifferentItemsOnlyInSecondFloorLessThanThree(Permutation p_comparedPermutation){
-    CubeCubicle l_permutationCubicle;
-    int l_counter = 0;
-    for (int i =0;i<20;i++)
-        if ((l_permutationCubicle=p_comparedPermutation.getCubicleData(i))!=null)
-            if (Rubik.isSecondFloor(l_permutationCubicle.getLocation())) {
-                if (!l_permutationCubicle.getCubiePosition()
-                        .equals(getPositionOfCubicleOfCubiclePlace(l_permutationCubicle.getLocation()))
-                        || !l_permutationCubicle.getCurrentCubieOriginalLocation()
-                        .equals(getOriginalLocationOfCurrentCubicleInLocation(l_permutationCubicle.getLocation())))
-                    l_counter++;
-            } else {
-                if ((l_permutationCubicle=p_comparedPermutation.getCubicleData(i))!=null)
-                    if (Rubik.isFirstFloor(l_permutationCubicle.getLocation()))
-                        if (!l_permutationCubicle.getCubiePosition()
-                                .equals(getPositionOfCubicleOfCubiclePlace(l_permutationCubicle.getLocation()))
-                                || !l_permutationCubicle.getCurrentCubieOriginalLocation()
-                                .equals(getOriginalLocationOfCurrentCubicleInLocation(l_permutationCubicle.getLocation())))
-                            return false;
-            }
-
-
-    if (l_counter<3) return true;
-    else return false;
-}
-
-
-    public boolean isDifferentItemsInFirstFloorLessThanThree(Permutation p_comparedPermutation){
-        CubeCubicle l_permutationCubicle;
-        int l_counter = 0;
-        for (int i =0;i<20;i++)
-            if ((l_permutationCubicle=p_comparedPermutation.getCubicleData(i))!=null)
-                if (Rubik.isFirstFloor(l_permutationCubicle.getLocation()))
-                    if (!l_permutationCubicle.getCubiePosition()
-                .equals(getPositionOfCubicleOfCubiclePlace(l_permutationCubicle.getLocation()))
-                    || !l_permutationCubicle.getCurrentCubieOriginalLocation()
-                            .equals(getOriginalLocationOfCurrentCubicleInLocation(l_permutationCubicle.getLocation())))
-                        l_counter++;
-        if (l_counter<3) return true;
-                else return false;
-     }
 
     private void rotate(Rotation p_rotation
             , CubeCubicle cubicle1

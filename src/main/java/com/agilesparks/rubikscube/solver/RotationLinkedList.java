@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.ListIterator;
 //import java.io.IOException;
 
-import com.agilesparks.rubikscube.cube.Rubik;
+import com.agilesparks.rubikscube.cube.Cube;
 import com.agilesparks.rubikscube.cube.RubikFileReader;
 import com.agilesparks.rubikscube.cube.RubikFileWriter;
 import com.agilesparks.rubikscube.utils.Direction;
@@ -122,7 +122,7 @@ public Rotation get(int p_index){
         return l_rotationLinkedList;
     }
 
-    void applyToRubik(Rubik p_rubik) {
+    void applyToRubik(Cube p_rubik) {
         ListIterator<Rotation> l_itr=c_array.listIterator();
 
         while(l_itr.hasNext())

@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import com.agilesparks.rubikscube.cube.CubeCubicle;
-import com.agilesparks.rubikscube.cube.Rubik;
+import com.agilesparks.rubikscube.cube.Cube;
 
 public class Permutation {
     CubeCubicle c_Cube_cubicle[] = new CubeCubicle[20];
@@ -14,7 +14,7 @@ public class Permutation {
         c_cubicles = -1;
     }
     
-	public static Permutation getPermutationFromCube(Rubik cube) {
+	public static Permutation getPermutationFromCube(Cube cube) {
 		Location l_rubikLocation[] = {
 		        new Location(Face.F, Face.U),
 		        new Location(Face.F, Face.R),
@@ -66,7 +66,7 @@ public class Permutation {
     }
 
 
-    int getDifferece(Rubik p_rubik) {
+    int getDifferece(Cube p_rubik) {
         int i, l_counter = 0;
         for (i = 0; i < c_cubicles; i++) {
             if ((p_rubik.getOriginalLocationOfCurrentCubicleInLocation(c_Cube_cubicle[i].getLocation()) !=

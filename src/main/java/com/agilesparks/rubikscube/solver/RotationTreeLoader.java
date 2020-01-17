@@ -1,6 +1,6 @@
 package com.agilesparks.rubikscube.solver;
 
-import com.agilesparks.rubikscube.cube.Rubik;
+import com.agilesparks.rubikscube.cube.Cube;
 import com.agilesparks.rubikscube.cube.RubikFileReader;
 import com.agilesparks.rubikscube.cube.RubikFileWriter;
 import com.agilesparks.rubikscube.utils.Direction;
@@ -49,7 +49,7 @@ public class RotationTreeLoader {
         RubikFileWriter l_firstWriter = new RubikFileWriter(p_firstFloorFile);
         RubikFileWriter l_secondWriter = new RubikFileWriter(p_secondFloorFile);
         RubikFileWriter l_thirdWriter = new RubikFileWriter(p_thirdFloorFile);
-        Rubik l_rubik = new Rubik();
+        Cube l_rubik = new Cube();
         Permutation l_initialPermutation = Permutation.getPermutationFromCube(l_rubik);
         RotationLinkedList l_rotationLinkedList = new RotationLinkedList();
         BuildFilesForRotation(l_firstWriter,l_secondWriter,l_thirdWriter
@@ -61,7 +61,7 @@ public class RotationTreeLoader {
     }
 
     public static void BuildFilesForRotation(RubikFileWriter p_firstFloorFile, RubikFileWriter p_secondFloorFile, RubikFileWriter p_thirdFloorFile
-                                             , Rubik p_rubik
+                                             , Cube p_rubik
             , Permutation p_initialPermutation, RotationLinkedList p_rotationLinkedList, int p_level, String p_progressString){
 
         if (p_level == 0) return;
@@ -76,11 +76,11 @@ public class RotationTreeLoader {
                     continue;
                 p_rotationLinkedList.addRotation(newRotation);
                 p_rubik.rotateFace(newRotation);
-                if (p_rubik.isDifferentItemsInFirstFloorLessThanThree(p_initialPermutation))
+                if (CubeStatus.isDifferentItemsInFirstFloorLessThanThree(p_rubik, p_initialPermutation))
                     p_rotationLinkedList.writeToFile(p_firstFloorFile);
-                if (p_rubik.isDifferentItemsOnlyInSecondFloorLessThanThree(p_initialPermutation))
+                if (CubeStatus.isDifferentItemsOnlyInSecondFloorLessThanThree(p_rubik, p_initialPermutation))
                     p_rotationLinkedList.writeToFile((p_secondFloorFile));
-                if (p_rubik.changesOnlyInThirdFloor(p_initialPermutation))
+                if (CubeStatus.changesOnlyInThirdFloor(p_rubik, p_initialPermutation))
                     p_rotationLinkedList.writeToFile(p_thirdFloorFile);
 
                 BuildFilesForRotation(p_firstFloorFile,p_secondFloorFile,p_thirdFloorFile,

@@ -1,6 +1,6 @@
 package com.agilesparks.rubikscube.solver;
 
-import com.agilesparks.rubikscube.cube.Rubik;
+import com.agilesparks.rubikscube.cube.Cube;
 import com.agilesparks.rubikscube.cube.RubikFileReader;
 import com.agilesparks.rubikscube.utils.Direction;
 import com.agilesparks.rubikscube.utils.Face;
@@ -11,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
         long beginningTime = System.nanoTime();
-        Rubik myRubik = new Rubik();
+        Cube myRubik = new Cube();
         myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
       myRubik.rotateFace(new Rotation(Face.B, Direction.CW));
               myRubik.rotateFace(new Rotation(Face.R, Direction.CW));

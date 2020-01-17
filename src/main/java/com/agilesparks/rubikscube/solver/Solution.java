@@ -1,6 +1,6 @@
 package com.agilesparks.rubikscube.solver;
 
-import com.agilesparks.rubikscube.cube.Rubik;
+import com.agilesparks.rubikscube.cube.Cube;
 import com.agilesparks.rubikscube.utils.Permutation;
 
 public class Solution {
@@ -42,7 +42,7 @@ public class Solution {
         System.out.format("\n");
     }
 
-    public void applyToRubik(Rubik p_rubik) {
+    public void applyToRubik(Cube p_rubik) {
         if (c_prevSolution != null)
             c_prevSolution.applyToRubik(p_rubik);
         c_rotationLinkedList.applyToRubik(p_rubik);
