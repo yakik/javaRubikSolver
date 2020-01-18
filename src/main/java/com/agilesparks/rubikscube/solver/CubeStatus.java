@@ -76,12 +76,12 @@ public class CubeStatus {
 	}
 
 	static public boolean isFirstFloor(Location p_location){
-	    return (p_location.containsFace(Face.D));
+	    return (p_location.containsFace(Face.BOTTOM));
 	
 	}
 
 	static public boolean isThirdFloor(Location p_location){
-	    return (p_location.containsFace(Face.U));
+	    return (p_location.containsFace(Face.TOP));
 	
 	}
 

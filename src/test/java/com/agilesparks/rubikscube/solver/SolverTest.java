@@ -3,6 +3,7 @@ package com.agilesparks.rubikscube.solver;
 
 import static org.junit.Assert.*;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.agilesparks.rubikscube.cube.Cube;
@@ -24,31 +25,31 @@ public class SolverTest {
     public void simpleRotations() {
         Cube myRubik = new Cube();
         for (int i=0;i<20;i++) {
-            myRubik.rotateFace(Face.U, Direction.CW);
-            myRubik.rotateFace(Face.R, Direction.CW);
-            myRubik.rotateFace(Face.L, Direction.CW);
-            myRubik.rotateFace(Face.D, Direction.CW);
-            myRubik.rotateFace(Face.R, Direction.CW);
-            myRubik.rotateFace(Face.U, Direction.CW);
-            myRubik.rotateFace(Face.R, Direction.CW);
-            myRubik.rotateFace(Face.B, Direction.CW);
-            myRubik.rotateFace(Face.L, Direction.CW);
-            myRubik.rotateFace(Face.F, Direction.CW);
+            myRubik.rotateFace(Face.TOP, Direction.CW);
+            myRubik.rotateFace(Face.RIGHT, Direction.CW);
+            myRubik.rotateFace(Face.LEFT, Direction.CW);
+            myRubik.rotateFace(Face.BOTTOM, Direction.CW);
+            myRubik.rotateFace(Face.RIGHT, Direction.CW);
+            myRubik.rotateFace(Face.TOP, Direction.CW);
+            myRubik.rotateFace(Face.RIGHT, Direction.CW);
+            myRubik.rotateFace(Face.BACK, Direction.CW);
+            myRubik.rotateFace(Face.LEFT, Direction.CW);
+            myRubik.rotateFace(Face.FRONT, Direction.CW);
         }
         for (int i=0;i<20;i++) {
-            myRubik.rotateFace(Face.F, Direction.CCW);
-            myRubik.rotateFace(Face.L, Direction.CCW);
-            myRubik.rotateFace(Face.B, Direction.CCW);
-            myRubik.rotateFace(Face.R, Direction.CCW);
-            myRubik.rotateFace(Face.U, Direction.CCW);
-            myRubik.rotateFace(Face.R, Direction.CCW);
-            myRubik.rotateFace(Face.D, Direction.CCW);
-            myRubik.rotateFace(Face.L, Direction.CCW);
-            myRubik.rotateFace(Face.R, Direction.CCW);
-            myRubik.rotateFace(Face.U, Direction.CCW);
+            myRubik.rotateFace(Face.FRONT, Direction.CCW);
+            myRubik.rotateFace(Face.LEFT, Direction.CCW);
+            myRubik.rotateFace(Face.BACK, Direction.CCW);
+            myRubik.rotateFace(Face.RIGHT, Direction.CCW);
+            myRubik.rotateFace(Face.TOP, Direction.CCW);
+            myRubik.rotateFace(Face.RIGHT, Direction.CCW);
+            myRubik.rotateFace(Face.BOTTOM, Direction.CCW);
+            myRubik.rotateFace(Face.LEFT, Direction.CCW);
+            myRubik.rotateFace(Face.RIGHT, Direction.CCW);
+            myRubik.rotateFace(Face.TOP, Direction.CCW);
         }
-        myRubik.rotateFace(Face.F, Direction.CW);
-        myRubik.rotateFace(Face.F, Direction.CCW);
+        myRubik.rotateFace(Face.FRONT, Direction.CW);
+        myRubik.rotateFace(Face.FRONT, Direction.CCW);
         AssistAssertRubik.checkEntireCube(myRubik);
 
     }
@@ -59,25 +60,25 @@ public class SolverTest {
     public void simpleSolver() {
         Cube myRubik = new Cube();
 
-        myRubik.rotateFace(Face.U, Direction.CW);
-        myRubik.rotateFace(Face.R, Direction.CW);
-        myRubik.rotateFace(Face.L, Direction.CW);
-        myRubik.rotateFace(Face.D, Direction.CW);
+        myRubik.rotateFace(Face.TOP, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
+        myRubik.rotateFace(Face.LEFT, Direction.CW);
+        myRubik.rotateFace(Face.BOTTOM, Direction.CW);
         RotationTree myTree = new RotationTree();
         RotationLinkedList myRotationLinkedList = new RotationLinkedList();
-        myRotationLinkedList.addRotation(new Rotation(Face.U, Direction.CCW));
+        myRotationLinkedList.addRotation(new Rotation(Face.TOP, Direction.CCW));
         myTree.addRotationLinkedList(myRotationLinkedList);
 
         myRotationLinkedList = new RotationLinkedList();
-        myRotationLinkedList.addRotation(new Rotation(Face.R, Direction.CCW));
+        myRotationLinkedList.addRotation(new Rotation(Face.RIGHT, Direction.CCW));
         myTree.addRotationLinkedList(myRotationLinkedList);
 
         myRotationLinkedList = new RotationLinkedList();
-        myRotationLinkedList.addRotation(new Rotation(Face.L, Direction.CCW));
+        myRotationLinkedList.addRotation(new Rotation(Face.LEFT, Direction.CCW));
         myTree.addRotationLinkedList(myRotationLinkedList);
 
         myRotationLinkedList = new RotationLinkedList();
-        myRotationLinkedList.addRotation(new Rotation(Face.D, Direction.CCW));
+        myRotationLinkedList.addRotation(new Rotation(Face.BOTTOM, Direction.CCW));
         myTree.addRotationLinkedList(myRotationLinkedList);
 
         Solver mySolver = new Solver();
@@ -89,59 +90,60 @@ public class SolverTest {
 
     }
 
+    @Ignore
     @Test
     public void complexSolver() {
         long beginningTime = System.nanoTime();
         Cube myRubik = new Cube();
-        myRubik.rotateFace(Face.R, Direction.CW);
-        myRubik.rotateFace(Face.B, Direction.CW);
-        myRubik.rotateFace(Face.R, Direction.CW);
-        myRubik.rotateFace(Face.B, Direction.CW);
-        myRubik.rotateFace(Face.L, Direction.CW);
-        myRubik.rotateFace(Face.F, Direction.CW);
-        myRubik.rotateFace(Face.R, Direction.CW);
-        myRubik.rotateFace(Face.B, Direction.CW);
-        myRubik.rotateFace(Face.R, Direction.CW);
-        myRubik.rotateFace(Face.B, Direction.CW);
-        myRubik.rotateFace(Face.L, Direction.CW);
-        myRubik.rotateFace(Face.F, Direction.CW);
-        myRubik.rotateFace(Face.R, Direction.CW);
-        myRubik.rotateFace(Face.B, Direction.CW);
-        myRubik.rotateFace(Face.R, Direction.CW);
-        myRubik.rotateFace(Face.B, Direction.CW);
-        myRubik.rotateFace(Face.L, Direction.CW);
-        myRubik.rotateFace(Face.F, Direction.CW);
-        myRubik.rotateFace(Face.R, Direction.CW);
-        myRubik.rotateFace(Face.B, Direction.CW);
-        myRubik.rotateFace(Face.R, Direction.CW);
-        myRubik.rotateFace(Face.B, Direction.CW);
-        myRubik.rotateFace(Face.L, Direction.CW);
-        myRubik.rotateFace(Face.F, Direction.CW);
-        myRubik.rotateFace(Face.R, Direction.CW);
-        myRubik.rotateFace(Face.B, Direction.CW);
-        myRubik.rotateFace(Face.R, Direction.CW);
-        myRubik.rotateFace(Face.B, Direction.CW);
-        myRubik.rotateFace(Face.L, Direction.CW);
-        myRubik.rotateFace(Face.F, Direction.CW);
-        myRubik.rotateFace(Face.R, Direction.CW);
-        myRubik.rotateFace(Face.B, Direction.CW);
-        myRubik.rotateFace(Face.R, Direction.CW);
-        myRubik.rotateFace(Face.B, Direction.CW);
-        myRubik.rotateFace(Face.L, Direction.CW);
-        myRubik.rotateFace(Face.F, Direction.CW);
-        myRubik.rotateFace(Face.R, Direction.CW);
-        myRubik.rotateFace(Face.B, Direction.CW);
-        myRubik.rotateFace(Face.R, Direction.CW);
-        myRubik.rotateFace(Face.B, Direction.CW);
-        myRubik.rotateFace(Face.L, Direction.CW);
-        myRubik.rotateFace(Face.F, Direction.CW);
-        myRubik.rotateFace(Face.R, Direction.CW);
-        myRubik.rotateFace(Face.B, Direction.CW);
-        myRubik.rotateFace(Face.R, Direction.CW);
-        myRubik.rotateFace(Face.B, Direction.CW);
-        myRubik.rotateFace(Face.L, Direction.CW);
-        myRubik.rotateFace(Face.F, Direction.CW);
-        myRubik.rotateFace(Face.R, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
+        myRubik.rotateFace(Face.BACK, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
+        myRubik.rotateFace(Face.BACK, Direction.CW);
+        myRubik.rotateFace(Face.LEFT, Direction.CW);
+        myRubik.rotateFace(Face.FRONT, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
+        myRubik.rotateFace(Face.BACK, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
+        myRubik.rotateFace(Face.BACK, Direction.CW);
+        myRubik.rotateFace(Face.LEFT, Direction.CW);
+        myRubik.rotateFace(Face.FRONT, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
+        myRubik.rotateFace(Face.BACK, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
+        myRubik.rotateFace(Face.BACK, Direction.CW);
+        myRubik.rotateFace(Face.LEFT, Direction.CW);
+        myRubik.rotateFace(Face.FRONT, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
+        myRubik.rotateFace(Face.BACK, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
+        myRubik.rotateFace(Face.BACK, Direction.CW);
+        myRubik.rotateFace(Face.LEFT, Direction.CW);
+        myRubik.rotateFace(Face.FRONT, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
+        myRubik.rotateFace(Face.BACK, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
+        myRubik.rotateFace(Face.BACK, Direction.CW);
+        myRubik.rotateFace(Face.LEFT, Direction.CW);
+        myRubik.rotateFace(Face.FRONT, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
+        myRubik.rotateFace(Face.BACK, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
+        myRubik.rotateFace(Face.BACK, Direction.CW);
+        myRubik.rotateFace(Face.LEFT, Direction.CW);
+        myRubik.rotateFace(Face.FRONT, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
+        myRubik.rotateFace(Face.BACK, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
+        myRubik.rotateFace(Face.BACK, Direction.CW);
+        myRubik.rotateFace(Face.LEFT, Direction.CW);
+        myRubik.rotateFace(Face.FRONT, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
+        myRubik.rotateFace(Face.BACK, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
+        myRubik.rotateFace(Face.BACK, Direction.CW);
+        myRubik.rotateFace(Face.LEFT, Direction.CW);
+        myRubik.rotateFace(Face.FRONT, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
         Solver mySolver = new Solver();
         RotationTree firstFloorTree = new RotationTree();
         RotationTree secondFloorTree = new RotationTree();

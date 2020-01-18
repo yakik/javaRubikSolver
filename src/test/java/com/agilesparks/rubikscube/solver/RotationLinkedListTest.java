@@ -18,8 +18,8 @@ public class RotationLinkedListTest {
     @Test
     public void isRedundantCW() {
         RotationLinkedList myList = new RotationLinkedList();
-                myList.addRotation(new Rotation(Face.F,Direction.CW));
-        assertEquals(true,myList.isRedundant(new Rotation(Face.F, Direction.CW)));
+                myList.addRotation(new Rotation(Face.FRONT,Direction.CW));
+        assertEquals(true,myList.isRedundant(new Rotation(Face.FRONT, Direction.CW)));
 
 
     }
@@ -28,8 +28,8 @@ public class RotationLinkedListTest {
     @Test
     public void testWriteRead() {
         RotationLinkedList myList = new RotationLinkedList();
-        myList.addRotation(new Rotation(Face.F,Direction.CW));
-        myList.addRotation(new Rotation(Face.U,Direction.CCW));
+        myList.addRotation(new Rotation(Face.FRONT,Direction.CW));
+        myList.addRotation(new Rotation(Face.TOP,Direction.CCW));
         RubikFileWriter myWriter = new RubikFileWriter("writeLinked.txt");
         myList.writeToFile(myWriter);
         myWriter.close();
@@ -45,9 +45,9 @@ public class RotationLinkedListTest {
     @Test
     public void isRedundantCCW() {
         RotationLinkedList myList = new RotationLinkedList();
-        myList.addRotation(new Rotation(Face.F,Direction.CCW));
-        myList.addRotation(new Rotation(Face.F,Direction.CCW));
-        assertEquals(true,myList.isRedundant(new Rotation(Face.F, Direction.CCW)));
+        myList.addRotation(new Rotation(Face.FRONT,Direction.CCW));
+        myList.addRotation(new Rotation(Face.FRONT,Direction.CCW));
+        assertEquals(true,myList.isRedundant(new Rotation(Face.FRONT, Direction.CCW)));
 
 
     }

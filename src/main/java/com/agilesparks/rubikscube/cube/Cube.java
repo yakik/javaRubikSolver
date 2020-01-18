@@ -13,11 +13,11 @@ public class Cube {
     private CubeCubicle cubeCubicles[] = new CubeCubicle[20];
 
     private Face g_faceOrder[][] = {
-            {Face.F, Face.L, Face.B, Face.R}, {Face.R, Face.B, Face.L, Face.F
-    }, {Face.U, Face.B, Face.D, Face.F
-    }, {Face.U, Face.F, Face.D, Face.B
-    }, {Face.U, Face.R, Face.D, Face.L
-    }, {Face.U, Face.L, Face.D, Face.R
+            {Face.FRONT, Face.LEFT, Face.BACK, Face.RIGHT}, {Face.RIGHT, Face.BACK, Face.LEFT, Face.FRONT
+    }, {Face.TOP, Face.BACK, Face.BOTTOM, Face.FRONT
+    }, {Face.TOP, Face.FRONT, Face.BOTTOM, Face.BACK
+    }, {Face.TOP, Face.RIGHT, Face.BOTTOM, Face.LEFT
+    }, {Face.TOP, Face.LEFT, Face.BOTTOM, Face.RIGHT
     }
     };
 
@@ -26,50 +26,50 @@ public class Cube {
     }
 
     private void initializeCubeCubicles() {
-        cubeCubicles[0] = new CubeCubicle(new Location(Face.F, Face.U), new Location(Face.F, Face.U), new Position(Face.U, Face.F));
-        cubeCubicles[1] = new CubeCubicle(new Location(Face.F, Face.R), new Location(Face.F, Face.R), new Position(Face.U, Face.F));
-        cubeCubicles[2] = new CubeCubicle(new Location(Face.F, Face.L), new Location(Face.F, Face.L), new Position(Face.U, Face.F));
-        cubeCubicles[3] = new CubeCubicle(new Location(Face.F, Face.D), new Location(Face.F, Face.D), new Position(Face.U, Face.F));
-        cubeCubicles[4] = new CubeCubicle(new Location(Face.B, Face.U), new Location(Face.B, Face.U), new Position(Face.U, Face.F));
-        cubeCubicles[5] = new CubeCubicle(new Location(Face.B, Face.R), new Location(Face.B, Face.R), new Position(Face.U, Face.F));
-        cubeCubicles[6] = new CubeCubicle(new Location(Face.B, Face.L), new Location(Face.B, Face.L), new Position(Face.U, Face.F));
-        cubeCubicles[7] = new CubeCubicle(new Location(Face.B, Face.D), new Location(Face.B, Face.D), new Position(Face.U, Face.F));
-        cubeCubicles[8] = new CubeCubicle(new Location(Face.U, Face.R), new Location(Face.U, Face.R), new Position(Face.U, Face.F));
-        cubeCubicles[9] = new CubeCubicle(new Location(Face.U, Face.L), new Location(Face.U, Face.L), new Position(Face.U, Face.F));
-        cubeCubicles[10] = new CubeCubicle(new Location(Face.D, Face.R), new Location(Face.D, Face.R), new Position(Face.U, Face.F));
-        cubeCubicles[11] = new CubeCubicle(new Location(Face.D, Face.L), new Location(Face.D, Face.L), new Position(Face.U, Face.F));
-        cubeCubicles[12] = new CubeCubicle(new Location(Face.F, Face.U, Face.R), new Location(Face.F, Face.U, Face.R), new Position(Face.U, Face.F));
-        cubeCubicles[13] = new CubeCubicle(new Location(Face.F, Face.U, Face.L), new Location(Face.F, Face.U, Face.L), new Position(Face.U, Face.F));
-        cubeCubicles[14] = new CubeCubicle(new Location(Face.F, Face.D, Face.R), new Location(Face.F, Face.D, Face.R), new Position(Face.U, Face.F));
-        cubeCubicles[15] = new CubeCubicle(new Location(Face.F, Face.D, Face.L), new Location(Face.F, Face.D, Face.L), new Position(Face.U, Face.F));
-        cubeCubicles[16] = new CubeCubicle(new Location(Face.B, Face.U, Face.R), new Location(Face.B, Face.U, Face.R), new Position(Face.U, Face.F));
-        cubeCubicles[17] = new CubeCubicle(new Location(Face.B, Face.U, Face.L), new Location(Face.B, Face.U, Face.L), new Position(Face.U, Face.F));
-        cubeCubicles[18] = new CubeCubicle(new Location(Face.B, Face.D, Face.R), new Location(Face.B, Face.D, Face.R), new Position(Face.U, Face.F));
-        cubeCubicles[19] = new CubeCubicle(new Location(Face.B, Face.D, Face.L), new Location(Face.B, Face.D, Face.L), new Position(Face.U, Face.F));
+        cubeCubicles[0] = new CubeCubicle(new Location(Face.FRONT, Face.TOP), new Location(Face.FRONT, Face.TOP), new Position(Face.TOP, Face.FRONT));
+        cubeCubicles[1] = new CubeCubicle(new Location(Face.FRONT, Face.RIGHT), new Location(Face.FRONT, Face.RIGHT), new Position(Face.TOP, Face.FRONT));
+        cubeCubicles[2] = new CubeCubicle(new Location(Face.FRONT, Face.LEFT), new Location(Face.FRONT, Face.LEFT), new Position(Face.TOP, Face.FRONT));
+        cubeCubicles[3] = new CubeCubicle(new Location(Face.FRONT, Face.BOTTOM), new Location(Face.FRONT, Face.BOTTOM), new Position(Face.TOP, Face.FRONT));
+        cubeCubicles[4] = new CubeCubicle(new Location(Face.BACK, Face.TOP), new Location(Face.BACK, Face.TOP), new Position(Face.TOP, Face.FRONT));
+        cubeCubicles[5] = new CubeCubicle(new Location(Face.BACK, Face.RIGHT), new Location(Face.BACK, Face.RIGHT), new Position(Face.TOP, Face.FRONT));
+        cubeCubicles[6] = new CubeCubicle(new Location(Face.BACK, Face.LEFT), new Location(Face.BACK, Face.LEFT), new Position(Face.TOP, Face.FRONT));
+        cubeCubicles[7] = new CubeCubicle(new Location(Face.BACK, Face.BOTTOM), new Location(Face.BACK, Face.BOTTOM), new Position(Face.TOP, Face.FRONT));
+        cubeCubicles[8] = new CubeCubicle(new Location(Face.TOP, Face.RIGHT), new Location(Face.TOP, Face.RIGHT), new Position(Face.TOP, Face.FRONT));
+        cubeCubicles[9] = new CubeCubicle(new Location(Face.TOP, Face.LEFT), new Location(Face.TOP, Face.LEFT), new Position(Face.TOP, Face.FRONT));
+        cubeCubicles[10] = new CubeCubicle(new Location(Face.BOTTOM, Face.RIGHT), new Location(Face.BOTTOM, Face.RIGHT), new Position(Face.TOP, Face.FRONT));
+        cubeCubicles[11] = new CubeCubicle(new Location(Face.BOTTOM, Face.LEFT), new Location(Face.BOTTOM, Face.LEFT), new Position(Face.TOP, Face.FRONT));
+        cubeCubicles[12] = new CubeCubicle(new Location(Face.FRONT, Face.TOP, Face.RIGHT), new Location(Face.FRONT, Face.TOP, Face.RIGHT), new Position(Face.TOP, Face.FRONT));
+        cubeCubicles[13] = new CubeCubicle(new Location(Face.FRONT, Face.TOP, Face.LEFT), new Location(Face.FRONT, Face.TOP, Face.LEFT), new Position(Face.TOP, Face.FRONT));
+        cubeCubicles[14] = new CubeCubicle(new Location(Face.FRONT, Face.BOTTOM, Face.RIGHT), new Location(Face.FRONT, Face.BOTTOM, Face.RIGHT), new Position(Face.TOP, Face.FRONT));
+        cubeCubicles[15] = new CubeCubicle(new Location(Face.FRONT, Face.BOTTOM, Face.LEFT), new Location(Face.FRONT, Face.BOTTOM, Face.LEFT), new Position(Face.TOP, Face.FRONT));
+        cubeCubicles[16] = new CubeCubicle(new Location(Face.BACK, Face.TOP, Face.RIGHT), new Location(Face.BACK, Face.TOP, Face.RIGHT), new Position(Face.TOP, Face.FRONT));
+        cubeCubicles[17] = new CubeCubicle(new Location(Face.BACK, Face.TOP, Face.LEFT), new Location(Face.BACK, Face.TOP, Face.LEFT), new Position(Face.TOP, Face.FRONT));
+        cubeCubicles[18] = new CubeCubicle(new Location(Face.BACK, Face.BOTTOM, Face.RIGHT), new Location(Face.BACK, Face.BOTTOM, Face.RIGHT), new Position(Face.TOP, Face.FRONT));
+        cubeCubicles[19] = new CubeCubicle(new Location(Face.BACK, Face.BOTTOM, Face.LEFT), new Location(Face.BACK, Face.BOTTOM, Face.LEFT), new Position(Face.TOP, Face.FRONT));
 
     }
 
     private CubeCubicle getCubeCubicle(Location p_location) {
-        if ((new Location(Face.F, Face.U)).equals(p_location)) return cubeCubicles[0];
-        if ((new Location(Face.F, Face.R)).equals(p_location)) return cubeCubicles[1];
-        if ((new Location(Face.F, Face.L)).equals(p_location)) return cubeCubicles[2];
-        if ((new Location(Face.F, Face.D)).equals(p_location)) return cubeCubicles[3];
-        if ((new Location(Face.B, Face.U)).equals(p_location)) return cubeCubicles[4];
-        if ((new Location(Face.B, Face.R)).equals(p_location)) return cubeCubicles[5];
-        if ((new Location(Face.B, Face.L)).equals(p_location)) return cubeCubicles[6];
-        if ((new Location(Face.B, Face.D)).equals(p_location)) return cubeCubicles[7];
-        if ((new Location(Face.U, Face.R)).equals(p_location)) return cubeCubicles[8];
-        if ((new Location(Face.U, Face.L)).equals(p_location)) return cubeCubicles[9];
-        if ((new Location(Face.D, Face.R)).equals(p_location)) return cubeCubicles[10];
-        if ((new Location(Face.D, Face.L)).equals(p_location)) return cubeCubicles[11];
-        if ((new Location(Face.F, Face.U, Face.R)).equals(p_location)) return cubeCubicles[12];
-        if ((new Location(Face.F, Face.U, Face.L)).equals(p_location)) return cubeCubicles[13];
-        if ((new Location(Face.F, Face.D, Face.R)).equals(p_location)) return cubeCubicles[14];
-        if ((new Location(Face.F, Face.D, Face.L)).equals(p_location)) return cubeCubicles[15];
-        if ((new Location(Face.B, Face.U, Face.R)).equals(p_location)) return cubeCubicles[16];
-        if ((new Location(Face.B, Face.U, Face.L)).equals(p_location)) return cubeCubicles[17];
-        if ((new Location(Face.B, Face.D, Face.R)).equals(p_location)) return cubeCubicles[18];
-        if ((new Location(Face.B, Face.D, Face.L)).equals(p_location)) return cubeCubicles[19];
+        if ((new Location(Face.FRONT, Face.TOP)).equals(p_location)) return cubeCubicles[0];
+        if ((new Location(Face.FRONT, Face.RIGHT)).equals(p_location)) return cubeCubicles[1];
+        if ((new Location(Face.FRONT, Face.LEFT)).equals(p_location)) return cubeCubicles[2];
+        if ((new Location(Face.FRONT, Face.BOTTOM)).equals(p_location)) return cubeCubicles[3];
+        if ((new Location(Face.BACK, Face.TOP)).equals(p_location)) return cubeCubicles[4];
+        if ((new Location(Face.BACK, Face.RIGHT)).equals(p_location)) return cubeCubicles[5];
+        if ((new Location(Face.BACK, Face.LEFT)).equals(p_location)) return cubeCubicles[6];
+        if ((new Location(Face.BACK, Face.BOTTOM)).equals(p_location)) return cubeCubicles[7];
+        if ((new Location(Face.TOP, Face.RIGHT)).equals(p_location)) return cubeCubicles[8];
+        if ((new Location(Face.TOP, Face.LEFT)).equals(p_location)) return cubeCubicles[9];
+        if ((new Location(Face.BOTTOM, Face.RIGHT)).equals(p_location)) return cubeCubicles[10];
+        if ((new Location(Face.BOTTOM, Face.LEFT)).equals(p_location)) return cubeCubicles[11];
+        if ((new Location(Face.FRONT, Face.TOP, Face.RIGHT)).equals(p_location)) return cubeCubicles[12];
+        if ((new Location(Face.FRONT, Face.TOP, Face.LEFT)).equals(p_location)) return cubeCubicles[13];
+        if ((new Location(Face.FRONT, Face.BOTTOM, Face.RIGHT)).equals(p_location)) return cubeCubicles[14];
+        if ((new Location(Face.FRONT, Face.BOTTOM, Face.LEFT)).equals(p_location)) return cubeCubicles[15];
+        if ((new Location(Face.BACK, Face.TOP, Face.RIGHT)).equals(p_location)) return cubeCubicles[16];
+        if ((new Location(Face.BACK, Face.TOP, Face.LEFT)).equals(p_location)) return cubeCubicles[17];
+        if ((new Location(Face.BACK, Face.BOTTOM, Face.RIGHT)).equals(p_location)) return cubeCubicles[18];
+        if ((new Location(Face.BACK, Face.BOTTOM, Face.LEFT)).equals(p_location)) return cubeCubicles[19];
         return null;
 
     }
@@ -104,65 +104,65 @@ public class Cube {
     	
         Face l_face = rotation.getFace();
         switch (l_face) {
-            case U:
-                 rotate(rotation, getCubeCubicle(new Location(Face.U, Face.L))
-                        , getCubeCubicle(new Location(Face.U, Face.B))
-                        , getCubeCubicle(new Location(Face.U, Face.R))
-                        , getCubeCubicle(new Location(Face.U, Face.F)));
-             rotate(rotation, getCubeCubicle(new Location(Face.U, Face.L, Face.F))
-                    , getCubeCubicle(new Location(Face.U, Face.B, Face.L))
-                    , getCubeCubicle(new Location(Face.U, Face.R, Face.B))
-                    , getCubeCubicle(new Location(Face.U, Face.F, Face.R)));
+            case TOP:
+                 rotate(rotation, getCubeCubicle(new Location(Face.TOP, Face.LEFT))
+                        , getCubeCubicle(new Location(Face.TOP, Face.BACK))
+                        , getCubeCubicle(new Location(Face.TOP, Face.RIGHT))
+                        , getCubeCubicle(new Location(Face.TOP, Face.FRONT)));
+             rotate(rotation, getCubeCubicle(new Location(Face.TOP, Face.LEFT, Face.FRONT))
+                    , getCubeCubicle(new Location(Face.TOP, Face.BACK, Face.LEFT))
+                    , getCubeCubicle(new Location(Face.TOP, Face.RIGHT, Face.BACK))
+                    , getCubeCubicle(new Location(Face.TOP, Face.FRONT, Face.RIGHT)));
             return;
-            case D:
-                rotate(rotation, getCubeCubicle(new Location(Face.D, Face.L))
-                        , getCubeCubicle(new Location(Face.D, Face.F))
-                        , getCubeCubicle(new Location(Face.D, Face.R))
-                        , getCubeCubicle(new Location(Face.D, Face.B)));
-                rotate(rotation, getCubeCubicle(new Location(Face.D, Face.L, Face.F))
-                        , getCubeCubicle(new Location(Face.D, Face.F, Face.R))
-                        , getCubeCubicle(new Location(Face.D, Face.R, Face.B))
-                        , getCubeCubicle(new Location(Face.D, Face.B, Face.L)));
+            case BOTTOM:
+                rotate(rotation, getCubeCubicle(new Location(Face.BOTTOM, Face.LEFT))
+                        , getCubeCubicle(new Location(Face.BOTTOM, Face.FRONT))
+                        , getCubeCubicle(new Location(Face.BOTTOM, Face.RIGHT))
+                        , getCubeCubicle(new Location(Face.BOTTOM, Face.BACK)));
+                rotate(rotation, getCubeCubicle(new Location(Face.BOTTOM, Face.LEFT, Face.FRONT))
+                        , getCubeCubicle(new Location(Face.BOTTOM, Face.FRONT, Face.RIGHT))
+                        , getCubeCubicle(new Location(Face.BOTTOM, Face.RIGHT, Face.BACK))
+                        , getCubeCubicle(new Location(Face.BOTTOM, Face.BACK, Face.LEFT)));
                 return;
-            case F:
-                rotate(rotation, getCubeCubicle(new Location(Face.F, Face.L))
-                        , getCubeCubicle(new Location(Face.F, Face.U))
-                        , getCubeCubicle(new Location(Face.F, Face.R))
-                        , getCubeCubicle(new Location(Face.F, Face.D)));
-                rotate(rotation, getCubeCubicle(new Location(Face.F, Face.L, Face.U))
-                        , getCubeCubicle(new Location(Face.F, Face.U, Face.R))
-                        , getCubeCubicle(new Location(Face.F, Face.R, Face.D))
-                        , getCubeCubicle(new Location(Face.F, Face.D, Face.L)));
+            case FRONT:
+                rotate(rotation, getCubeCubicle(new Location(Face.FRONT, Face.LEFT))
+                        , getCubeCubicle(new Location(Face.FRONT, Face.TOP))
+                        , getCubeCubicle(new Location(Face.FRONT, Face.RIGHT))
+                        , getCubeCubicle(new Location(Face.FRONT, Face.BOTTOM)));
+                rotate(rotation, getCubeCubicle(new Location(Face.FRONT, Face.LEFT, Face.TOP))
+                        , getCubeCubicle(new Location(Face.FRONT, Face.TOP, Face.RIGHT))
+                        , getCubeCubicle(new Location(Face.FRONT, Face.RIGHT, Face.BOTTOM))
+                        , getCubeCubicle(new Location(Face.FRONT, Face.BOTTOM, Face.LEFT)));
                 return;
-            case B:
-                rotate(rotation, getCubeCubicle(new Location(Face.B, Face.L))
-                        , getCubeCubicle(new Location(Face.B, Face.D))
-                        , getCubeCubicle(new Location(Face.B, Face.R))
-                        , getCubeCubicle(new Location(Face.B, Face.U)));
-                rotate(rotation, getCubeCubicle(new Location(Face.B, Face.L, Face.U))
-                        , getCubeCubicle(new Location(Face.B, Face.D, Face.L))
-                        , getCubeCubicle(new Location(Face.B, Face.R, Face.D))
-                        , getCubeCubicle(new Location(Face.B, Face.U, Face.R)));
+            case BACK:
+                rotate(rotation, getCubeCubicle(new Location(Face.BACK, Face.LEFT))
+                        , getCubeCubicle(new Location(Face.BACK, Face.BOTTOM))
+                        , getCubeCubicle(new Location(Face.BACK, Face.RIGHT))
+                        , getCubeCubicle(new Location(Face.BACK, Face.TOP)));
+                rotate(rotation, getCubeCubicle(new Location(Face.BACK, Face.LEFT, Face.TOP))
+                        , getCubeCubicle(new Location(Face.BACK, Face.BOTTOM, Face.LEFT))
+                        , getCubeCubicle(new Location(Face.BACK, Face.RIGHT, Face.BOTTOM))
+                        , getCubeCubicle(new Location(Face.BACK, Face.TOP, Face.RIGHT)));
                 return;
-            case R:
-                rotate(rotation, getCubeCubicle(new Location(Face.R, Face.F))
-                        , getCubeCubicle(new Location(Face.R, Face.U))
-                        , getCubeCubicle(new Location(Face.R, Face.B))
-                        , getCubeCubicle(new Location(Face.R, Face.D)));
-                rotate(rotation, getCubeCubicle(new Location(Face.R, Face.F, Face.U))
-                        , getCubeCubicle(new Location(Face.R, Face.U, Face.B))
-                        , getCubeCubicle(new Location(Face.R, Face.B, Face.D))
-                        , getCubeCubicle(new Location(Face.R, Face.D, Face.F)));
+            case RIGHT:
+                rotate(rotation, getCubeCubicle(new Location(Face.RIGHT, Face.FRONT))
+                        , getCubeCubicle(new Location(Face.RIGHT, Face.TOP))
+                        , getCubeCubicle(new Location(Face.RIGHT, Face.BACK))
+                        , getCubeCubicle(new Location(Face.RIGHT, Face.BOTTOM)));
+                rotate(rotation, getCubeCubicle(new Location(Face.RIGHT, Face.FRONT, Face.TOP))
+                        , getCubeCubicle(new Location(Face.RIGHT, Face.TOP, Face.BACK))
+                        , getCubeCubicle(new Location(Face.RIGHT, Face.BACK, Face.BOTTOM))
+                        , getCubeCubicle(new Location(Face.RIGHT, Face.BOTTOM, Face.FRONT)));
                 return;
-            case L:
-                 rotate(rotation, getCubeCubicle(new Location(Face.L, Face.F))
-                        , getCubeCubicle(new Location(Face.L, Face.D))
-                        , getCubeCubicle(new Location(Face.L, Face.B))
-                        , getCubeCubicle(new Location(Face.L, Face.U)));
-             rotate(rotation, getCubeCubicle(new Location(Face.L, Face.F, Face.U))
-                    , getCubeCubicle(new Location(Face.L, Face.D, Face.F))
-                    , getCubeCubicle(new Location(Face.L, Face.B, Face.D))
-                    , getCubeCubicle(new Location(Face.L, Face.U, Face.B)));
+            case LEFT:
+                 rotate(rotation, getCubeCubicle(new Location(Face.LEFT, Face.FRONT))
+                        , getCubeCubicle(new Location(Face.LEFT, Face.BOTTOM))
+                        , getCubeCubicle(new Location(Face.LEFT, Face.BACK))
+                        , getCubeCubicle(new Location(Face.LEFT, Face.TOP)));
+             rotate(rotation, getCubeCubicle(new Location(Face.LEFT, Face.FRONT, Face.TOP))
+                    , getCubeCubicle(new Location(Face.LEFT, Face.BOTTOM, Face.FRONT))
+                    , getCubeCubicle(new Location(Face.LEFT, Face.BACK, Face.BOTTOM))
+                    , getCubeCubicle(new Location(Face.LEFT, Face.TOP, Face.BACK)));
             return;
 
         }
@@ -170,7 +170,7 @@ public class Cube {
 
     }
 
-    void updateCubeCubicle(Location p_location,Location p_currentLocation, Position p_currentPosition){
+    private void updateCubeCubicle(Location p_location,Location p_currentLocation, Position p_currentPosition){
         getCubeCubicle(p_location).c_currentPosition = p_currentPosition.getCopy();
         getCubeCubicle(p_location).c_currentCubieOriginalLocation = p_currentLocation.getCopy();
 }

@@ -75,29 +75,29 @@ public class Location {
     }
 
     public int getFloor() {
-        if (this.equals(new Location(Face.U, Face.L, Face.F))) return 3;
-        if (this.equals(new Location(Face.U, Face.L, Face.B))) return 3;
-        if (this.equals(new Location(Face.U, Face.R, Face.F))) return 3;
-        if (this.equals(new Location(Face.U, Face.R, Face.B))) return 3;
-        if (this.equals(new Location(Face.D, Face.L, Face.F))) return 1;
-        if (this.equals(new Location(Face.D, Face.L, Face.B))) return 1;
-        if (this.equals(new Location(Face.D, Face.R, Face.F))) return 1;
-        if (this.equals(new Location(Face.D, Face.R, Face.B))) return 1;
+        if (this.equals(new Location(Face.TOP, Face.LEFT, Face.FRONT))) return 3;
+        if (this.equals(new Location(Face.TOP, Face.LEFT, Face.BACK))) return 3;
+        if (this.equals(new Location(Face.TOP, Face.RIGHT, Face.FRONT))) return 3;
+        if (this.equals(new Location(Face.TOP, Face.RIGHT, Face.BACK))) return 3;
+        if (this.equals(new Location(Face.BOTTOM, Face.LEFT, Face.FRONT))) return 1;
+        if (this.equals(new Location(Face.BOTTOM, Face.LEFT, Face.BACK))) return 1;
+        if (this.equals(new Location(Face.BOTTOM, Face.RIGHT, Face.FRONT))) return 1;
+        if (this.equals(new Location(Face.BOTTOM, Face.RIGHT, Face.BACK))) return 1;
 
-        if (this.equals(new Location(Face.U, Face.F))) return 3;
-        if (this.equals(new Location(Face.U, Face.B))) return 3;
-        if (this.equals(new Location(Face.U, Face.L))) return 3;
-        if (this.equals(new Location(Face.U, Face.R))) return 3;
+        if (this.equals(new Location(Face.TOP, Face.FRONT))) return 3;
+        if (this.equals(new Location(Face.TOP, Face.BACK))) return 3;
+        if (this.equals(new Location(Face.TOP, Face.LEFT))) return 3;
+        if (this.equals(new Location(Face.TOP, Face.RIGHT))) return 3;
 
-        if (this.equals(new Location(Face.F, Face.L))) return 2;
-        if (this.equals(new Location(Face.F, Face.R))) return 2;
-        if (this.equals(new Location(Face.B, Face.L))) return 2;
-        if (this.equals(new Location(Face.B, Face.R))) return 2;
+        if (this.equals(new Location(Face.FRONT, Face.LEFT))) return 2;
+        if (this.equals(new Location(Face.FRONT, Face.RIGHT))) return 2;
+        if (this.equals(new Location(Face.BACK, Face.LEFT))) return 2;
+        if (this.equals(new Location(Face.BACK, Face.RIGHT))) return 2;
 
-        if (this.equals(new Location(Face.D, Face.L))) return 1;
-        if (this.equals(new Location(Face.D, Face.R))) return 1;
-        if (this.equals(new Location(Face.F, Face.D))) return 1;
-        if (this.equals(new Location(Face.B, Face.D))) return 1;
+        if (this.equals(new Location(Face.BOTTOM, Face.LEFT))) return 1;
+        if (this.equals(new Location(Face.BOTTOM, Face.RIGHT))) return 1;
+        if (this.equals(new Location(Face.FRONT, Face.BOTTOM))) return 1;
+        if (this.equals(new Location(Face.BACK, Face.BOTTOM))) return 1;
         return 0;
     }
 

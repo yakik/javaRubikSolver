@@ -13,54 +13,54 @@ public class PositionTest {
 
     @Test
     public void getString() {
-        Position myPosition = new Position(Face.U,Face.F);
+        Position myPosition = new Position(Face.TOP,Face.FRONT);
         assertEquals("U, F",myPosition.getString());
     }
 
     @Test
     public void rotateCW_U() {
-        Position myPosition = new Position(Face.U, Face.F);
-        myPosition.rotate(new Rotation(Face.F, Direction.CW));
-        assertEquals(Face.L,myPosition.getFace(Face.U));
+        Position myPosition = new Position(Face.TOP, Face.FRONT);
+        myPosition.rotate(new Rotation(Face.FRONT, Direction.CW));
+        assertEquals(Face.LEFT,myPosition.getFace(Face.TOP));
     }
 
     @Test
     public void rotateCW_D() {
-        Position myPosition = new Position(Face.U, Face.F);
-        myPosition.rotate(new Rotation(Face.F, Direction.CW));
-        assertEquals(Face.R,myPosition.getFace(Face.D));
+        Position myPosition = new Position(Face.TOP, Face.FRONT);
+        myPosition.rotate(new Rotation(Face.FRONT, Direction.CW));
+        assertEquals(Face.RIGHT,myPosition.getFace(Face.BOTTOM));
     }
 
     @Test
     public void  rotateCCW() {
-        Position myPosition = new Position(Face.U, Face.F);
-        myPosition.rotate(new Rotation(Face.F, Direction.CCW));
-        assertEquals(Face.R,myPosition.getFace(Face.U));
+        Position myPosition = new Position(Face.TOP, Face.FRONT);
+        myPosition.rotate(new Rotation(Face.FRONT, Direction.CCW));
+        assertEquals(Face.RIGHT,myPosition.getFace(Face.TOP));
     }
 
     @Test
     public void rotateCCW_D() {
-        Position myPosition = new Position(Face.U, Face.F);
-        myPosition.rotate(new Rotation(Face.F, Direction.CCW));
-        assertEquals(Face.L,myPosition.getFace(Face.D));
+        Position myPosition = new Position(Face.TOP, Face.FRONT);
+        myPosition.rotate(new Rotation(Face.FRONT, Direction.CCW));
+        assertEquals(Face.LEFT,myPosition.getFace(Face.BOTTOM));
     }
 
     @Test
     public void moreRotationTests() {
-        Position myPosition = new Position(Face.U, Face.F);
-        myPosition.rotate(new Rotation(Face.L, Direction.CW));
-        assertEquals(true,myPosition.equals(new Position(Face.B,Face.U)));
-        myPosition.rotate(new Rotation(Face.D, Direction.CW));
-        assertEquals(true,myPosition.equals(new Position(Face.B,Face.L)));
-        myPosition.rotate(new Rotation(Face.D, Direction.CCW));
-        assertEquals(true,myPosition.equals(new Position(Face.B,Face.U)));
+        Position myPosition = new Position(Face.TOP, Face.FRONT);
+        myPosition.rotate(new Rotation(Face.LEFT, Direction.CW));
+        assertEquals(true,myPosition.equals(new Position(Face.BACK,Face.TOP)));
+        myPosition.rotate(new Rotation(Face.BOTTOM, Direction.CW));
+        assertEquals(true,myPosition.equals(new Position(Face.BACK,Face.LEFT)));
+        myPosition.rotate(new Rotation(Face.BOTTOM, Direction.CCW));
+        assertEquals(true,myPosition.equals(new Position(Face.BACK,Face.TOP)));
     }
 
     @Test
     public void rotateCCW_DD() {
-        Position myPosition = new Position(Face.U, Face.F);
-        myPosition.rotate(new Rotation(Face.D, Direction.CCW));
-        assertEquals(Face.D,myPosition.getFace(Face.D));
+        Position myPosition = new Position(Face.TOP, Face.FRONT);
+        myPosition.rotate(new Rotation(Face.BOTTOM, Direction.CCW));
+        assertEquals(Face.BOTTOM,myPosition.getFace(Face.BOTTOM));
     }
    
 }

@@ -3,11 +3,11 @@ package com.agilesparks.rubikscube.utils;
 public class Position {
 
     private Face g_faceOrder[][] = {
-            {Face.F, Face.L, Face.B, Face.R}, {Face.R, Face.B, Face.L, Face.F
-    }, {Face.U, Face.B, Face.D, Face.F
-    }, {Face.U, Face.F, Face.D, Face.B
-    }, {Face.U, Face.R, Face.D, Face.L
-    }, {Face.U, Face.L, Face.D, Face.R
+            {Face.FRONT, Face.LEFT, Face.BACK, Face.RIGHT}, {Face.RIGHT, Face.BACK, Face.LEFT, Face.FRONT
+    }, {Face.TOP, Face.BACK, Face.BOTTOM, Face.FRONT
+    }, {Face.TOP, Face.FRONT, Face.BOTTOM, Face.BACK
+    }, {Face.TOP, Face.RIGHT, Face.BOTTOM, Face.LEFT
+    }, {Face.TOP, Face.LEFT, Face.BOTTOM, Face.RIGHT
     }
     };
     private Face c_currentUp;
@@ -19,8 +19,8 @@ public class Position {
     }
 
     Position() {
-        c_currentUp = Face.U;
-        c_currentFront = Face.F;
+        c_currentUp = Face.TOP;
+        c_currentFront = Face.FRONT;
     }
 
     public String getString() {
@@ -31,26 +31,26 @@ public class Position {
         Face l_temp;
         Face l_face = p_rotation.getFace();
         Direction l_direction = p_rotation.getDirection();
-        if (l_face == Face.U)
+        if (l_face == Face.TOP)
             if (l_direction == Direction.CW)
-                c_currentFront = getFace(Face.R);
+                c_currentFront = getFace(Face.RIGHT);
             else
-                c_currentFront = getFace(Face.L);
-        else if (l_face == Face.R)
+                c_currentFront = getFace(Face.LEFT);
+        else if (l_face == Face.RIGHT)
             if (l_direction == Direction.CW) {
                 l_temp = c_currentFront;
-                c_currentFront = getFace(Face.D);
+                c_currentFront = getFace(Face.BOTTOM);
                 c_currentUp = l_temp;
             } else {
-                l_temp = getFace(Face.B);
+                l_temp = getFace(Face.BACK);
                 c_currentFront = c_currentUp;
                 c_currentUp = l_temp;
             }
-        else if (l_face == Face.F)
+        else if (l_face == Face.FRONT)
             if (l_direction == Direction.CW)
-                c_currentUp = getFace(Face.L);
+                c_currentUp = getFace(Face.LEFT);
             else
-                c_currentUp = getFace(Face.R);
+                c_currentUp = getFace(Face.RIGHT);
         else
             rotate(new Rotation(l_face.getOpposite(), l_direction.getOpposite()));
 
@@ -60,9 +60,9 @@ public Position getCopy(){
         return new Position(c_currentUp,c_currentFront);
 }
     public Face getFace(Face p_viewpoint) {
-        if (p_viewpoint == Face.U)
+        if (p_viewpoint == Face.TOP)
             return c_currentUp;
-        else if (p_viewpoint == Face.D)
+        else if (p_viewpoint == Face.BOTTOM)
             return c_currentUp.getOpposite();
         else
             return getHorizonalFacebyVirtual(p_viewpoint);
@@ -75,20 +75,20 @@ public Position getCopy(){
         while (g_faceOrder[c_currentUp.getInt()][i] != c_currentFront && i < 4)
             i++;
         switch (p_viewpoint) {
-            case F:
+            case FRONT:
                 return g_faceOrder[c_currentUp.getInt()][i];
 
-            case L:
+            case LEFT:
                 return g_faceOrder[c_currentUp.getInt()][(i + 1) % 4];
 
-            case B:
+            case BACK:
                 return g_faceOrder[c_currentUp.getInt()][(i + 2) % 4];
 
-            case R:
+            case RIGHT:
                 return g_faceOrder[c_currentUp.getInt()][(i + 3) % 4];
 
             default:
-                return Face.U;
+                return Face.TOP;
 
         }
     }

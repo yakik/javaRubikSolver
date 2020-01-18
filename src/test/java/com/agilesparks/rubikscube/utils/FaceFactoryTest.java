@@ -13,12 +13,12 @@ public class FaceFactoryTest {
     @Test
     public void getFaceByInt() {
         FaceFactory myFactory = new FaceFactory();
-        assertEquals(Face.L, FaceFactory.getFaceByInt(3));
-        assertEquals(Face.R, FaceFactory.getFaceByInt(2));
-        assertEquals(Face.U, FaceFactory.getFaceByInt(0));
-        assertEquals(Face.D, FaceFactory.getFaceByInt(1));
-        assertEquals(Face.F, FaceFactory.getFaceByInt(4));
-        assertEquals(Face.B, FaceFactory.getFaceByInt(5));
+        assertEquals(Face.LEFT, FaceFactory.getFaceByInt(3));
+        assertEquals(Face.RIGHT, FaceFactory.getFaceByInt(2));
+        assertEquals(Face.TOP, FaceFactory.getFaceByInt(0));
+        assertEquals(Face.BOTTOM, FaceFactory.getFaceByInt(1));
+        assertEquals(Face.FRONT, FaceFactory.getFaceByInt(4));
+        assertEquals(Face.BACK, FaceFactory.getFaceByInt(5));
 
 
     }

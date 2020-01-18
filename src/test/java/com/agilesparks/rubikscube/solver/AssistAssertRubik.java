@@ -24,30 +24,30 @@ public class AssistAssertRubik {
     }
 
     public static void checkEntireCube(Cube p_rubik){
-        myAssertEdge(Face.U, Face.L, p_rubik);
-        myAssertEdge(Face.U, Face.R, p_rubik);
-        myAssertEdge(Face.U, Face.F, p_rubik);
-        myAssertEdge(Face.U, Face.B, p_rubik);
+        myAssertEdge(Face.TOP, Face.LEFT, p_rubik);
+        myAssertEdge(Face.TOP, Face.RIGHT, p_rubik);
+        myAssertEdge(Face.TOP, Face.FRONT, p_rubik);
+        myAssertEdge(Face.TOP, Face.BACK, p_rubik);
 
-        myAssertEdge(Face.D, Face.L, p_rubik);
-        myAssertEdge(Face.D, Face.R, p_rubik);
-        myAssertEdge(Face.D, Face.F, p_rubik);
-        myAssertEdge(Face.D, Face.B, p_rubik);
+        myAssertEdge(Face.BOTTOM, Face.LEFT, p_rubik);
+        myAssertEdge(Face.BOTTOM, Face.RIGHT, p_rubik);
+        myAssertEdge(Face.BOTTOM, Face.FRONT, p_rubik);
+        myAssertEdge(Face.BOTTOM, Face.BACK, p_rubik);
 
-        myAssertEdge(Face.F, Face.L, p_rubik);
-        myAssertEdge(Face.F, Face.R, p_rubik);
-        myAssertEdge(Face.B, Face.L, p_rubik);
-        myAssertEdge(Face.B, Face.R, p_rubik);
+        myAssertEdge(Face.FRONT, Face.LEFT, p_rubik);
+        myAssertEdge(Face.FRONT, Face.RIGHT, p_rubik);
+        myAssertEdge(Face.BACK, Face.LEFT, p_rubik);
+        myAssertEdge(Face.BACK, Face.RIGHT, p_rubik);
 
-        myAssertCorner(Face.D, Face.L, Face.B, p_rubik);
-        myAssertCorner(Face.D, Face.L, Face.F, p_rubik);
-        myAssertCorner(Face.D, Face.R, Face.B, p_rubik);
-        myAssertCorner(Face.D, Face.R, Face.F, p_rubik);
+        myAssertCorner(Face.BOTTOM, Face.LEFT, Face.BACK, p_rubik);
+        myAssertCorner(Face.BOTTOM, Face.LEFT, Face.FRONT, p_rubik);
+        myAssertCorner(Face.BOTTOM, Face.RIGHT, Face.BACK, p_rubik);
+        myAssertCorner(Face.BOTTOM, Face.RIGHT, Face.FRONT, p_rubik);
 
-        myAssertCorner(Face.U, Face.L, Face.B, p_rubik);
-        myAssertCorner(Face.U, Face.L, Face.F, p_rubik);
-        myAssertCorner(Face.U, Face.R, Face.B, p_rubik);
-        myAssertCorner(Face.U, Face.R, Face.F, p_rubik);
+        myAssertCorner(Face.TOP, Face.LEFT, Face.BACK, p_rubik);
+        myAssertCorner(Face.TOP, Face.LEFT, Face.FRONT, p_rubik);
+        myAssertCorner(Face.TOP, Face.RIGHT, Face.BACK, p_rubik);
+        myAssertCorner(Face.TOP, Face.RIGHT, Face.FRONT, p_rubik);
     }
 
 }

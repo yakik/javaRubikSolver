@@ -1,7 +1,7 @@
 package com.agilesparks.rubikscube.utils;
 
 public enum Face {
-    U('U', 0), D('D', 1), R('R', 2), L('L', 3), F('F', 4), B('B', 5)/*, NOTDEFINED('Z', 9)*/; //don't change this sequence, for Rubik's sake!
+    TOP('U', 0), BOTTOM('D', 1), RIGHT('R', 2), LEFT('L', 3), FRONT('F', 4), BACK('B', 5)/*, NOTDEFINED('Z', 9)*/; //don't change this sequence, for Rubik's sake!
 
     private final char charValue;      // Private variable
     private final int intValue;
@@ -24,22 +24,22 @@ public enum Face {
 
     public Face getOpposite() {
         switch (this) {
-            case L:
-                return Face.R;
-            case R:
-                return Face.L;
-            case U:
-                return Face.D;
-            case D:
-                return Face.U;
-            case F:
-                return Face.B;
-            case B:
-                return Face.F;
+            case LEFT:
+                return Face.RIGHT;
+            case RIGHT:
+                return Face.LEFT;
+            case TOP:
+                return Face.BOTTOM;
+            case BOTTOM:
+                return Face.TOP;
+            case FRONT:
+                return Face.BACK;
+            case BACK:
+                return Face.FRONT;
 //            case NOTDEFINED:
 //                return NOTDEFINED;
             default:
-                return Face.U;
+                return Face.TOP;
         }
     }
 }

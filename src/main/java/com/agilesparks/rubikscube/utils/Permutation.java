@@ -16,26 +16,26 @@ public class Permutation {
     
 	public static Permutation getPermutationFromCube(Cube cube) {
 		Location l_rubikLocation[] = {
-		        new Location(Face.F, Face.U),
-		        new Location(Face.F, Face.R),
-		        new Location(Face.F, Face.L),
-		        new Location(Face.F, Face.D),
-		        new Location(Face.B, Face.U),
-		        new Location(Face.B, Face.R),
-		        new Location(Face.B, Face.L),
-		        new Location(Face.B, Face.D),
-		        new Location(Face.U, Face.R),
-		        new Location(Face.U, Face.L),
-		        new Location(Face.D, Face.R),
-		        new Location(Face.D, Face.L),
-		        new Location(Face.F, Face.U, Face.R),
-		        new Location(Face.F, Face.U, Face.L),
-		        new Location(Face.F, Face.D, Face.R),
-		        new Location(Face.F, Face.D, Face.L),
-		        new Location(Face.B, Face.U, Face.R),
-		        new Location(Face.B, Face.U, Face.L),
-		        new Location(Face.B, Face.D, Face.R),
-		        new Location(Face.B, Face.D, Face.L)
+		        new Location(Face.FRONT, Face.TOP),
+		        new Location(Face.FRONT, Face.RIGHT),
+		        new Location(Face.FRONT, Face.LEFT),
+		        new Location(Face.FRONT, Face.BOTTOM),
+		        new Location(Face.BACK, Face.TOP),
+		        new Location(Face.BACK, Face.RIGHT),
+		        new Location(Face.BACK, Face.LEFT),
+		        new Location(Face.BACK, Face.BOTTOM),
+		        new Location(Face.TOP, Face.RIGHT),
+		        new Location(Face.TOP, Face.LEFT),
+		        new Location(Face.BOTTOM, Face.RIGHT),
+		        new Location(Face.BOTTOM, Face.LEFT),
+		        new Location(Face.FRONT, Face.TOP, Face.RIGHT),
+		        new Location(Face.FRONT, Face.TOP, Face.LEFT),
+		        new Location(Face.FRONT, Face.BOTTOM, Face.RIGHT),
+		        new Location(Face.FRONT, Face.BOTTOM, Face.LEFT),
+		        new Location(Face.BACK, Face.TOP, Face.RIGHT),
+		        new Location(Face.BACK, Face.TOP, Face.LEFT),
+		        new Location(Face.BACK, Face.BOTTOM, Face.RIGHT),
+		        new Location(Face.BACK, Face.BOTTOM, Face.LEFT)
 		};
 		int i;
 		Permutation l_permutation = new Permutation();
@@ -47,7 +47,7 @@ public class Permutation {
 	}
     
 
-    CubeCubicle getCubeCubicale(Location p_location){
+    private CubeCubicle getCubeCubicle(Location p_location){
              for (int i=0;i<12;i++)
                 if (c_Cube_cubicle[i]!=null)
                     if (c_Cube_cubicle[i].c_locationInCube.equals(p_location))
@@ -147,7 +147,7 @@ public class Permutation {
             Location l_currLocation = c_Cube_cubicle[i].getLocation();
             if (l_currLocation.getFloor() <= p_highestFloor)
                 if (c_Cube_cubicle[i].getLocation().equals(c_Cube_cubicle[i].currentCubieOriginalLocation())
-                        && (c_Cube_cubicle[i].getCubiePosition().equals(new Position(Face.U, Face.F)))
+                        && (c_Cube_cubicle[i].getCubiePosition().equals(new Position(Face.TOP, Face.FRONT)))
                         )
                     l_value += 2;
 

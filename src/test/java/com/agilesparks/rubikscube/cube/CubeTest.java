@@ -21,40 +21,40 @@ public class CubeTest {
     @Test
     public  void setPermutationTest() {
         Permutation myPermutation = new Permutation();
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.F, Face.U), new Location(Face.F, Face.U), new Position(Face.U, Face.F)));
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.F, Face.R), new Location(Face.F, Face.R), new Position(Face.U, Face.F)));
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.F, Face.L), new Location(Face.F, Face.L), new Position(Face.U, Face.F)));
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.F, Face.D), new Location(Face.F, Face.D), new Position(Face.U, Face.F)));
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.B, Face.U), new Location(Face.B, Face.U), new Position(Face.U, Face.F)));
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.B, Face.R), new Location(Face.B, Face.R), new Position(Face.U, Face.F)));
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.B, Face.L), new Location(Face.B, Face.L), new Position(Face.U, Face.F)));
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.B, Face.D), new Location(Face.B, Face.D), new Position(Face.U, Face.F)));
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.U, Face.R), new Location(Face.U, Face.R), new Position(Face.U, Face.F)));
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.U, Face.L), new Location(Face.U, Face.L), new Position(Face.U, Face.F)));
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.D, Face.R), new Location(Face.D, Face.R), new Position(Face.U, Face.F)));
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.D, Face.L), new Location(Face.D, Face.L), new Position(Face.U, Face.F)));
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.F, Face.U, Face.R), new Location(Face.F, Face.U, Face.R), new Position(Face.U, Face.F)));
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.F, Face.U, Face.L), new Location(Face.F, Face.U, Face.L), new Position(Face.U, Face.F)));
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.F, Face.D, Face.R), new Location(Face.F, Face.D, Face.R), new Position(Face.U, Face.F)));
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.F, Face.D, Face.L), new Location(Face.F, Face.D, Face.L), new Position(Face.U, Face.F)));
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.B, Face.U, Face.R), new Location(Face.B, Face.U, Face.R), new Position(Face.U, Face.F)));
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.B, Face.U, Face.L), new Location(Face.B, Face.U, Face.L), new Position(Face.U, Face.F)));
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.B, Face.D, Face.R), new Location(Face.B, Face.D, Face.R), new Position(Face.U, Face.F)));
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.B, Face.D, Face.L), new Location(Face.B, Face.D, Face.L), new Position(Face.U, Face.F)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.FRONT, Face.TOP), new Location(Face.FRONT, Face.TOP), new Position(Face.TOP, Face.FRONT)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.FRONT, Face.RIGHT), new Location(Face.FRONT, Face.RIGHT), new Position(Face.TOP, Face.FRONT)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.FRONT, Face.LEFT), new Location(Face.FRONT, Face.LEFT), new Position(Face.TOP, Face.FRONT)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.FRONT, Face.BOTTOM), new Location(Face.FRONT, Face.BOTTOM), new Position(Face.TOP, Face.FRONT)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.BACK, Face.TOP), new Location(Face.BACK, Face.TOP), new Position(Face.TOP, Face.FRONT)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.BACK, Face.RIGHT), new Location(Face.BACK, Face.RIGHT), new Position(Face.TOP, Face.FRONT)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.BACK, Face.LEFT), new Location(Face.BACK, Face.LEFT), new Position(Face.TOP, Face.FRONT)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.BACK, Face.BOTTOM), new Location(Face.BACK, Face.BOTTOM), new Position(Face.TOP, Face.FRONT)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.TOP, Face.RIGHT), new Location(Face.TOP, Face.RIGHT), new Position(Face.TOP, Face.FRONT)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.TOP, Face.LEFT), new Location(Face.TOP, Face.LEFT), new Position(Face.TOP, Face.FRONT)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.BOTTOM, Face.RIGHT), new Location(Face.BOTTOM, Face.RIGHT), new Position(Face.TOP, Face.FRONT)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.BOTTOM, Face.LEFT), new Location(Face.BOTTOM, Face.LEFT), new Position(Face.TOP, Face.FRONT)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.FRONT, Face.TOP, Face.RIGHT), new Location(Face.FRONT, Face.TOP, Face.RIGHT), new Position(Face.TOP, Face.FRONT)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.FRONT, Face.TOP, Face.LEFT), new Location(Face.FRONT, Face.TOP, Face.LEFT), new Position(Face.TOP, Face.FRONT)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.FRONT, Face.BOTTOM, Face.RIGHT), new Location(Face.FRONT, Face.BOTTOM, Face.RIGHT), new Position(Face.TOP, Face.FRONT)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.FRONT, Face.BOTTOM, Face.LEFT), new Location(Face.FRONT, Face.BOTTOM, Face.LEFT), new Position(Face.TOP, Face.FRONT)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.BACK, Face.TOP, Face.RIGHT), new Location(Face.BACK, Face.TOP, Face.RIGHT), new Position(Face.TOP, Face.FRONT)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.BACK, Face.TOP, Face.LEFT), new Location(Face.BACK, Face.TOP, Face.LEFT), new Position(Face.TOP, Face.FRONT)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.BACK, Face.BOTTOM, Face.RIGHT), new Location(Face.BACK, Face.BOTTOM, Face.RIGHT), new Position(Face.TOP, Face.FRONT)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.BACK, Face.BOTTOM, Face.LEFT), new Location(Face.BACK, Face.BOTTOM, Face.LEFT), new Position(Face.TOP, Face.FRONT)));
 
         Cube myRubik = new Cube();
 
 
 
-        myRubik.rotateFace(Face.R, Direction.CW);
-        myRubik.rotateFace(Face.B, Direction.CW);
-        myRubik.rotateFace(Face.R, Direction.CW);
-        myRubik.rotateFace(Face.B, Direction.CW);
-        myRubik.rotateFace(Face.L, Direction.CW);
-        myRubik.rotateFace(Face.F, Direction.CW);
-        myRubik.rotateFace(Face.R, Direction.CW);
-        myRubik.rotateFace(Face.B, Direction.CW);
-        myRubik.rotateFace(Face.R, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
+        myRubik.rotateFace(Face.BACK, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
+        myRubik.rotateFace(Face.BACK, Direction.CW);
+        myRubik.rotateFace(Face.LEFT, Direction.CW);
+        myRubik.rotateFace(Face.FRONT, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
+        myRubik.rotateFace(Face.BACK, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
 
         myRubik.setPermutation(myPermutation);
         AssistAssertRubik.checkEntireCube(myRubik);
@@ -66,12 +66,12 @@ public class CubeTest {
         Permutation myPermutation = new Permutation();
         Cube myCube = new Cube();
 
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.F, Face.U)
-                , new Location(Face.F, Face.R), new Position(Face.U, Face.B)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.FRONT, Face.TOP)
+                , new Location(Face.FRONT, Face.RIGHT), new Position(Face.TOP, Face.BACK)));
         assertEquals("one",true, CubeStatus.changesOnlyInThirdFloor(myCube, myPermutation));
 
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.F, Face.D)
-                , new Location(Face.F, Face.L), new Position(Face.U, Face.B)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.FRONT, Face.BOTTOM)
+                , new Location(Face.FRONT, Face.LEFT), new Position(Face.TOP, Face.BACK)));
         assertEquals("two",false, CubeStatus.changesOnlyInThirdFloor(myCube, myPermutation));
     }
 
@@ -81,12 +81,12 @@ public class CubeTest {
         Permutation myPermutation = new Permutation();
         Cube myCube = new Cube();
 
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.F, Face.U)
-                , new Location(Face.F, Face.R), new Position(Face.U, Face.B)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.FRONT, Face.TOP)
+                , new Location(Face.FRONT, Face.RIGHT), new Position(Face.TOP, Face.BACK)));
         assertEquals("one",true, CubeStatus.changesOnlyInThirdFloor(myCube, myPermutation));
 
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.F, Face.L)
-                , new Location(Face.F, Face.L), new Position(Face.U, Face.B)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.FRONT, Face.LEFT)
+                , new Location(Face.FRONT, Face.LEFT), new Position(Face.TOP, Face.BACK)));
         assertEquals("two",false, CubeStatus.changesOnlyInThirdFloor(myCube, myPermutation));
         }
 
@@ -95,16 +95,16 @@ public class CubeTest {
         Permutation myPermutation = new Permutation();
         Cube myCube = new Cube();
 
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.F, Face.R)
-                , new Location(Face.F, Face.R), new Position(Face.U, Face.B)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.FRONT, Face.RIGHT)
+                , new Location(Face.FRONT, Face.RIGHT), new Position(Face.TOP, Face.BACK)));
         assertEquals("one",true, CubeStatus.isDifferentItemsOnlyInSecondFloorLessThanThree(myCube, myPermutation));
 
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.F, Face.L)
-                , new Location(Face.F, Face.L), new Position(Face.U, Face.B)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.FRONT, Face.LEFT)
+                , new Location(Face.FRONT, Face.LEFT), new Position(Face.TOP, Face.BACK)));
         assertEquals("two",true, CubeStatus.isDifferentItemsOnlyInSecondFloorLessThanThree(myCube, myPermutation));
 
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.B, Face.L)
-                , new Location(Face.B, Face.R), new Position(Face.U, Face.F)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.BACK, Face.LEFT)
+                , new Location(Face.BACK, Face.RIGHT), new Position(Face.TOP, Face.FRONT)));
         assertEquals("three",false, CubeStatus.isDifferentItemsOnlyInSecondFloorLessThanThree(myCube, myPermutation));
 
             }
@@ -114,16 +114,16 @@ public class CubeTest {
         Permutation myPermutation = new Permutation();
         Cube myCube = new Cube();
 
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.F, Face.R)
-                , new Location(Face.F, Face.R), new Position(Face.U, Face.B)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.FRONT, Face.RIGHT)
+                , new Location(Face.FRONT, Face.RIGHT), new Position(Face.TOP, Face.BACK)));
         assertEquals("one",true, CubeStatus.isDifferentItemsOnlyInSecondFloorLessThanThree(myCube, myPermutation));
 
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.F, Face.L)
-                , new Location(Face.F, Face.L), new Position(Face.U, Face.B)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.FRONT, Face.LEFT)
+                , new Location(Face.FRONT, Face.LEFT), new Position(Face.TOP, Face.BACK)));
         assertEquals("two",true, CubeStatus.isDifferentItemsOnlyInSecondFloorLessThanThree(myCube, myPermutation));
 
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.B, Face.D)
-                , new Location(Face.B, Face.R), new Position(Face.U, Face.F)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.BACK, Face.BOTTOM)
+                , new Location(Face.BACK, Face.RIGHT), new Position(Face.TOP, Face.FRONT)));
         assertEquals("three",false, CubeStatus.isDifferentItemsOnlyInSecondFloorLessThanThree(myCube, myPermutation));
 
     }
@@ -134,20 +134,20 @@ public class CubeTest {
         Permutation myPermutation = new Permutation();
         Cube myCube = new Cube();
 
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.F, Face.D)
-                , new Location(Face.F, Face.U), new Position(Face.U, Face.F)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.FRONT, Face.BOTTOM)
+                , new Location(Face.FRONT, Face.TOP), new Position(Face.TOP, Face.FRONT)));
         assertEquals("one",true, CubeStatus.isDifferentItemsInFirstFloorLessThanThree(myCube, myPermutation));
                              
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.F, Face.D, Face.R)
-                , new         Location(Face.F, Face.D, Face.R), new Position(Face.U, Face.B)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.FRONT, Face.BOTTOM, Face.RIGHT)
+                , new         Location(Face.FRONT, Face.BOTTOM, Face.RIGHT), new Position(Face.TOP, Face.BACK)));
         assertEquals("two",true, CubeStatus.isDifferentItemsInFirstFloorLessThanThree(myCube, myPermutation));
                              
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.F, Face.D, Face.L)
-                , new         Location(Face.F, Face.D, Face.L), new Position(Face.U, Face.F)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.FRONT, Face.BOTTOM, Face.LEFT)
+                , new         Location(Face.FRONT, Face.BOTTOM, Face.LEFT), new Position(Face.TOP, Face.FRONT)));
         assertEquals("three",true, CubeStatus.isDifferentItemsInFirstFloorLessThanThree(myCube, myPermutation));
                              
-        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.B, Face.D, Face.L)
-                , new         Location(Face.B, Face.D, Face.L), new Position(Face.U, Face.B)));
+        myPermutation.addCubicleData(new CubeCubicle(new Location(Face.BACK, Face.BOTTOM, Face.LEFT)
+                , new         Location(Face.BACK, Face.BOTTOM, Face.LEFT), new Position(Face.TOP, Face.BACK)));
         assertEquals("four",false, CubeStatus.isDifferentItemsInFirstFloorLessThanThree(myCube, myPermutation));
     }
 
@@ -178,28 +178,28 @@ public class CubeTest {
     @Test
     public void positionTest() {
         Cube myRubik = new Cube();
-        myRubik.rotateFace(Face.U, Direction.CW);
+        myRubik.rotateFace(Face.TOP, Direction.CW);
         assertEquals("1",true, myRubik
-                .getPositionOfCubicleOfCubiclePlace(new Location(Face.D, Face.F))
-                .equals(new Position(Face.U, Face.F)));
+                .getPositionOfCubicleOfCubiclePlace(new Location(Face.BOTTOM, Face.FRONT))
+                .equals(new Position(Face.TOP, Face.FRONT)));
 
-        myRubik.rotateFace(Face.R, Direction.CW);
+        myRubik.rotateFace(Face.RIGHT, Direction.CW);
         assertEquals("2",true, myRubik
-                .getPositionOfCubicleOfCubiclePlace(new Location(Face.D, Face.F))
-                .equals(new Position(Face.U, Face.F)));
+                .getPositionOfCubicleOfCubiclePlace(new Location(Face.BOTTOM, Face.FRONT))
+                .equals(new Position(Face.TOP, Face.FRONT)));
 
-        myRubik.rotateFace(Face.L, Direction.CW);
+        myRubik.rotateFace(Face.LEFT, Direction.CW);
         assertEquals("3",true, myRubik
-                .getPositionOfCubicleOfCubiclePlace(new Location(Face.D, Face.F))
-                .equals(new Position(Face.U, Face.F)));
+                .getPositionOfCubicleOfCubiclePlace(new Location(Face.BOTTOM, Face.FRONT))
+                .equals(new Position(Face.TOP, Face.FRONT)));
 
-        Position yaki = myRubik.getPositionOfCubicleOfCubiclePlace(new Location(Face.D, Face.L));
+        Position yaki = myRubik.getPositionOfCubicleOfCubiclePlace(new Location(Face.BOTTOM, Face.LEFT));
 
-        myRubik.rotateFace(Face.D, Direction.CW);
-        yaki = myRubik.getPositionOfCubicleOfCubiclePlace(new Location(Face.D, Face.F));
+        myRubik.rotateFace(Face.BOTTOM, Direction.CW);
+        yaki = myRubik.getPositionOfCubicleOfCubiclePlace(new Location(Face.BOTTOM, Face.FRONT));
         assertEquals("4",true, myRubik
-                .getPositionOfCubicleOfCubiclePlace(new Location(Face.D, Face.F))
-                .equals(new Position(Face.B, Face.L)));
+                .getPositionOfCubicleOfCubiclePlace(new Location(Face.BOTTOM, Face.FRONT))
+                .equals(new Position(Face.BACK, Face.LEFT)));
 
 
     }
@@ -209,20 +209,20 @@ public class CubeTest {
         Cube myRubik = new Cube();
 
 
-        myRubik.rotateFace(Face.L, Direction.CW);
+        myRubik.rotateFace(Face.LEFT, Direction.CW);
         assertEquals("1",true, myRubik
-                .getPositionOfCubicleOfCubiclePlace(new Location(Face.D, Face.F))
-                .equals(new Position(Face.U, Face.F)));
+                .getPositionOfCubicleOfCubiclePlace(new Location(Face.BOTTOM, Face.FRONT))
+                .equals(new Position(Face.TOP, Face.FRONT)));
 
         assertEquals("3",true, myRubik
-                .getPositionOfCubicleOfCubiclePlace(new Location(Face.D, Face.L))
-                .equals(new Position(Face.B, Face.U)));
+                .getPositionOfCubicleOfCubiclePlace(new Location(Face.BOTTOM, Face.LEFT))
+                .equals(new Position(Face.BACK, Face.TOP)));
 
-        myRubik.rotateFace(Face.D, Direction.CW);
-        Position yaki = myRubik.getPositionOfCubicleOfCubiclePlace(new Location(Face.D, Face.F));
+        myRubik.rotateFace(Face.BOTTOM, Direction.CW);
+        Position yaki = myRubik.getPositionOfCubicleOfCubiclePlace(new Location(Face.BOTTOM, Face.FRONT));
         assertEquals("4",true, myRubik
-                .getPositionOfCubicleOfCubiclePlace(new Location(Face.D, Face.F))
-                .equals(new Position(Face.B, Face.L)));
+                .getPositionOfCubicleOfCubiclePlace(new Location(Face.BOTTOM, Face.FRONT))
+                .equals(new Position(Face.BACK, Face.LEFT)));
 
 
     }
@@ -231,35 +231,35 @@ public class CubeTest {
     @Test
     public  void rotateTest1() {
         Cube myRubik = new Cube();
-        myRubik.rotateFace(Face.F, Direction.CW);
-        assertEquals(true, (new Location(Face.F, Face.D))
-                .equals(myRubik.getOriginalLocationOfCurrentCubicleInLocation(new Location(Face.F, Face.L))));
+        myRubik.rotateFace(Face.FRONT, Direction.CW);
+        assertEquals(true, (new Location(Face.FRONT, Face.BOTTOM))
+                .equals(myRubik.getOriginalLocationOfCurrentCubicleInLocation(new Location(Face.FRONT, Face.LEFT))));
 
     }
 
     @Test
     public void rotateTest2() {
         Cube myRubik = new Cube();
-        myRubik.rotateFace(Face.D, Direction.CCW);
-        assertEquals(true, (new Location(Face.D, Face.R))
-                .equals(myRubik.getOriginalLocationOfCurrentCubicleInLocation(new Location(Face.D, Face.F))));
+        myRubik.rotateFace(Face.BOTTOM, Direction.CCW);
+        assertEquals(true, (new Location(Face.BOTTOM, Face.RIGHT))
+                .equals(myRubik.getOriginalLocationOfCurrentCubicleInLocation(new Location(Face.BOTTOM, Face.FRONT))));
     }
 
     @Test
     public void rotateTest3() {
     	Cube myRubik = new Cube();
-        myRubik.rotateFace(Face.D, Direction.CCW);
-        assertEquals(true, (new Location(Face.D, Face.R, Face.B))
-                .equals(myRubik.getOriginalLocationOfCurrentCubicleInLocation(new Location(Face.D, Face.R, Face.F))));
+        myRubik.rotateFace(Face.BOTTOM, Direction.CCW);
+        assertEquals(true, (new Location(Face.BOTTOM, Face.RIGHT, Face.BACK))
+                .equals(myRubik.getOriginalLocationOfCurrentCubicleInLocation(new Location(Face.BOTTOM, Face.RIGHT, Face.FRONT))));
     }
 
     @Test
     public void TestgetOriginalLocationOfCurrentCubicleInLocation() {
         Cube myRubik = new Cube();
-        myRubik.rotateFace(Face.F, Direction.CW);
-        Location yaki = myRubik.getOriginalLocationOfCurrentCubicleInLocation(new Location(Face.D, Face.F));
-        assertEquals(true, (new Location(Face.F, Face.R))
-                .equals(myRubik.getOriginalLocationOfCurrentCubicleInLocation(new Location(Face.D, Face.F))));
+        myRubik.rotateFace(Face.FRONT, Direction.CW);
+        Location yaki = myRubik.getOriginalLocationOfCurrentCubicleInLocation(new Location(Face.BOTTOM, Face.FRONT));
+        assertEquals(true, (new Location(Face.FRONT, Face.RIGHT))
+                .equals(myRubik.getOriginalLocationOfCurrentCubicleInLocation(new Location(Face.BOTTOM, Face.FRONT))));
     }
 
 

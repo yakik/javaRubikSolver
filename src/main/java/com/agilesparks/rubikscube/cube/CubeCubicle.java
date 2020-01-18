@@ -43,7 +43,7 @@ public class CubeCubicle {
 
     public boolean inPlaceAndPosition(){
         return (this.getLocation().equals(this.currentCubieOriginalLocation()))
-                && this.getCubiePosition().equals(new Position(Face.U, Face.F));
+                && this.getCubiePosition().equals(new Position(Face.TOP, Face.FRONT));
     }
 
 

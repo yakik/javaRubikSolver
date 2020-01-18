@@ -26,17 +26,17 @@ public class RotationTest {
 
     @Test
     public void testRotationEquals() {
-        Rotation myRotation = new Rotation(Face.F, Direction.CW);
-        assertEquals(true, myRotation.equals((new Rotation(Face.F, Direction.CW))));
+        Rotation myRotation = new Rotation(Face.FRONT, Direction.CW);
+        assertEquals(true, myRotation.equals((new Rotation(Face.FRONT, Direction.CW))));
     }
     @Test
     public void rotationRead_B_CCW() {
-        rotationReadTest (" (5,1) ", Face.B,Direction.CCW);
+        rotationReadTest (" (5,1) ", Face.BACK,Direction.CCW);
     }
 
     @Test
     public  void rotationRead_D_CW() {
-        rotationReadTest (" (1,0) ", Face.D,Direction.CW);
+        rotationReadTest (" (1,0) ", Face.BOTTOM,Direction.CW);
 
     }
 }
