@@ -44,117 +44,165 @@ public class NewCube {
 	public void rotateFace(Face face, Direction direction) {
 		switch (face) {
 		case FRONT:
-			if (direction == Direction.CW) {
-				rotateLeftToRightFaceOnly(Face.FRONT);
-
-				rotateLeftToRight(Face.TOP, LocationInFace.BOTTOM,
-						Face.RIGHT, LocationInFace.LEFT,
-						Face.BOTTOM, LocationInFace.TOP,
-						Face.LEFT, LocationInFace.RIGHT);
-				rotateLeftToRight(Face.TOP, LocationInFace.BOTTOMLEFT,
-						Face.RIGHT, LocationInFace.TOPLEFT,
-						Face.BOTTOM,LocationInFace.TOPRIGHT,
-						Face.LEFT, LocationInFace.BOTTOMRIGHT);
-				rotateLeftToRight(Face.TOP, LocationInFace.BOTTOMRIGHT,
-						Face.RIGHT, LocationInFace.BOTTOMLEFT,
-						Face.BOTTOM, LocationInFace.TOPLEFT,
-						Face.LEFT, LocationInFace.TOPRIGHT);
-			}
+			rotateFrontFace(direction);
 			break;
 		case RIGHT:
-			if (direction == Direction.CW) {
-				rotateLeftToRightFaceOnly(Face.RIGHT);
-				
-				rotateLeftToRight(Face.TOP, LocationInFace.RIGHT, 
-						Face.BACK, LocationInFace.LEFT,
-						Face.BOTTOM, LocationInFace.RIGHT,
-						Face.FRONT, LocationInFace.RIGHT);
-				rotateLeftToRight(Face.TOP, LocationInFace.BOTTOMRIGHT,
-						Face.BACK, LocationInFace.TOPLEFT,
-						Face.BOTTOM, LocationInFace.BOTTOMRIGHT,
-						Face.FRONT,	LocationInFace.BOTTOMRIGHT);
-				rotateLeftToRight(Face.TOP, LocationInFace.TOPRIGHT,
-						Face.BACK, LocationInFace.BOTTOMLEFT,
-						Face.BOTTOM, LocationInFace.TOPRIGHT,
-						Face.FRONT, LocationInFace.TOPRIGHT);
-			}
+			rotateRightFace(direction);
 			break;
 		case LEFT:
-			if (direction == Direction.CW) {
-				rotateLeftToRightFaceOnly(Face.LEFT);
-				
-				rotateLeftToRight(Face.TOP, LocationInFace.LEFT, 
-						Face.FRONT, LocationInFace.LEFT,
-						Face.BOTTOM, LocationInFace.RIGHT,
-						Face.BACK, LocationInFace.LEFT);
-				rotateLeftToRight(Face.TOP, LocationInFace.BOTTOMLEFT,
-						Face.FRONT, LocationInFace.TOPLEFT,
-						Face.BOTTOM, LocationInFace.BOTTOMRIGHT,
-						Face.BACK,	LocationInFace.BOTTOMLEFT);
-				rotateLeftToRight(Face.TOP, LocationInFace.TOPLEFT,
-						Face.FRONT, LocationInFace.BOTTOMLEFT,
-						Face.BOTTOM, LocationInFace.TOPRIGHT,
-						Face.BACK, LocationInFace.TOPLEFT);
-			}
+			rotateLeftFace(direction);
 			break;
 		case BACK:
-			if (direction == Direction.CW) {
-				rotateLeftToRightFaceOnly(Face.BACK);
-
-				rotateLeftToRight(Face.TOP, LocationInFace.TOP,
-						Face.LEFT, LocationInFace.LEFT,
-						Face.BOTTOM, LocationInFace.BOTTOM,
-						Face.RIGHT, LocationInFace.RIGHT);
-				rotateLeftToRight(Face.TOP, LocationInFace.TOPLEFT,
-						Face.LEFT, LocationInFace.BOTTOMLEFT,
-						Face.BOTTOM,LocationInFace.BOTTOMRIGHT,
-						Face.RIGHT, LocationInFace.TOPRIGHT);
-				rotateLeftToRight(Face.TOP, LocationInFace.TOPRIGHT,
-						Face.LEFT, LocationInFace.TOPLEFT,
-						Face.BOTTOM, LocationInFace.BOTTOMLEFT,
-						Face.RIGHT, LocationInFace.TOPLEFT);
-			}
+			rotateBackFace(direction);
 			break;
 		case TOP:
-			if (direction == Direction.CW) {
-				rotateLeftToRightFaceOnly(Face.TOP);
-
-				rotateLeftToRight(Face.BACK, LocationInFace.TOP,
-						Face.RIGHT, LocationInFace.TOP,
-						Face.FRONT, LocationInFace.TOP,
-						Face.LEFT, LocationInFace.TOP);
-				rotateLeftToRight(Face.BACK, LocationInFace.TOPLEFT,
-						Face.RIGHT, LocationInFace.TOPLEFT,
-						Face.FRONT,LocationInFace.TOPLEFT,
-						Face.LEFT, LocationInFace.TOPLEFT);
-				rotateLeftToRight(Face.BACK, LocationInFace.TOPRIGHT,
-						Face.RIGHT, LocationInFace.TOPRIGHT,
-						Face.FRONT, LocationInFace.TOPRIGHT,
-						Face.LEFT, LocationInFace.TOPRIGHT);
-			}
+			rotateTopFace(direction);
 			break;
 		case BOTTOM:
-			if (direction == Direction.CW) {
-				rotateLeftToRightFaceOnly(Face.BOTTOM);
-
-				rotateLeftToRight(Face.BACK, LocationInFace.BOTTOM,
-						Face.LEFT, LocationInFace.BOTTOM,
-						Face.FRONT, LocationInFace.BOTTOM,
-						Face.RIGHT, LocationInFace.BOTTOM);
-				rotateLeftToRight(Face.BACK, LocationInFace.BOTTOMLEFT,
-						Face.LEFT, LocationInFace.BOTTOMLEFT,
-						Face.FRONT,LocationInFace.BOTTOMLEFT,
-						Face.RIGHT, LocationInFace.BOTTOMLEFT);
-				rotateLeftToRight(Face.BACK, LocationInFace.BOTTOMRIGHT,
-						Face.LEFT, LocationInFace.BOTTOMRIGHT,
-						Face.FRONT, LocationInFace.BOTTOMRIGHT,
-						Face.RIGHT, LocationInFace.BOTTOMRIGHT);
-			}
+			rotateBottomFace(direction);
 			break;
 		default:
 			break;
 		}
 
+	}
+
+	private void rotateBottomFace(Direction direction) {
+		if (direction == Direction.CW) {
+			rotateLeftToRightFaceOnly(Face.BOTTOM);
+
+			rotateLeftToRight(Face.BACK, LocationInFace.BOTTOM,
+					Face.LEFT, LocationInFace.BOTTOM,
+					Face.FRONT, LocationInFace.BOTTOM,
+					Face.RIGHT, LocationInFace.BOTTOM);
+			rotateLeftToRight(Face.BACK, LocationInFace.BOTTOMLEFT,
+					Face.LEFT, LocationInFace.BOTTOMLEFT,
+					Face.FRONT,LocationInFace.BOTTOMLEFT,
+					Face.RIGHT, LocationInFace.BOTTOMLEFT);
+			rotateLeftToRight(Face.BACK, LocationInFace.BOTTOMRIGHT,
+					Face.LEFT, LocationInFace.BOTTOMRIGHT,
+					Face.FRONT, LocationInFace.BOTTOMRIGHT,
+					Face.RIGHT, LocationInFace.BOTTOMRIGHT);
+		}
+		else {
+			for (int i=0;i<3;i++)
+				rotateBottomFace(Direction.CW);
+		}
+	}
+
+	private void rotateTopFace(Direction direction) {
+		if (direction == Direction.CW) {
+			rotateLeftToRightFaceOnly(Face.TOP);
+
+			rotateLeftToRight(Face.BACK, LocationInFace.TOP,
+					Face.RIGHT, LocationInFace.TOP,
+					Face.FRONT, LocationInFace.TOP,
+					Face.LEFT, LocationInFace.TOP);
+			rotateLeftToRight(Face.BACK, LocationInFace.TOPLEFT,
+					Face.RIGHT, LocationInFace.TOPLEFT,
+					Face.FRONT,LocationInFace.TOPLEFT,
+					Face.LEFT, LocationInFace.TOPLEFT);
+			rotateLeftToRight(Face.BACK, LocationInFace.TOPRIGHT,
+					Face.RIGHT, LocationInFace.TOPRIGHT,
+					Face.FRONT, LocationInFace.TOPRIGHT,
+					Face.LEFT, LocationInFace.TOPRIGHT);
+		}
+		else {
+			for (int i=0;i<3;i++)
+				rotateTopFace(Direction.CW);
+		}
+	}
+
+	private void rotateBackFace(Direction direction) {
+		if (direction == Direction.CW) {
+			rotateLeftToRightFaceOnly(Face.BACK);
+
+			rotateLeftToRight(Face.TOP, LocationInFace.TOP,
+					Face.LEFT, LocationInFace.LEFT,
+					Face.BOTTOM, LocationInFace.BOTTOM,
+					Face.RIGHT, LocationInFace.RIGHT);
+			rotateLeftToRight(Face.TOP, LocationInFace.TOPLEFT,
+					Face.LEFT, LocationInFace.BOTTOMLEFT,
+					Face.BOTTOM,LocationInFace.BOTTOMRIGHT,
+					Face.RIGHT, LocationInFace.TOPRIGHT);
+			rotateLeftToRight(Face.TOP, LocationInFace.TOPRIGHT,
+					Face.LEFT, LocationInFace.TOPLEFT,
+					Face.BOTTOM, LocationInFace.BOTTOMLEFT,
+					Face.RIGHT, LocationInFace.TOPLEFT);
+		}
+		else {
+			for (int i=0;i<3;i++)
+				rotateBackFace(Direction.CW);
+		}
+	}
+
+	private void rotateLeftFace(Direction direction) {
+		if (direction == Direction.CW) {
+			rotateLeftToRightFaceOnly(Face.LEFT);
+			
+			rotateLeftToRight(Face.TOP, LocationInFace.LEFT, 
+					Face.FRONT, LocationInFace.LEFT,
+					Face.BOTTOM, LocationInFace.RIGHT,
+					Face.BACK, LocationInFace.LEFT);
+			rotateLeftToRight(Face.TOP, LocationInFace.BOTTOMLEFT,
+					Face.FRONT, LocationInFace.TOPLEFT,
+					Face.BOTTOM, LocationInFace.BOTTOMRIGHT,
+					Face.BACK,	LocationInFace.BOTTOMLEFT);
+			rotateLeftToRight(Face.TOP, LocationInFace.TOPLEFT,
+					Face.FRONT, LocationInFace.BOTTOMLEFT,
+					Face.BOTTOM, LocationInFace.TOPRIGHT,
+					Face.BACK, LocationInFace.TOPLEFT);
+		}
+		else {
+			for (int i=0;i<3;i++)
+				rotateLeftFace(Direction.CW);
+		}
+	}
+
+	private void rotateRightFace(Direction direction) {
+		if (direction == Direction.CW) {
+			rotateLeftToRightFaceOnly(Face.RIGHT);
+			
+			rotateLeftToRight(Face.TOP, LocationInFace.RIGHT, 
+					Face.BACK, LocationInFace.LEFT,
+					Face.BOTTOM, LocationInFace.RIGHT,
+					Face.FRONT, LocationInFace.RIGHT);
+			rotateLeftToRight(Face.TOP, LocationInFace.BOTTOMRIGHT,
+					Face.BACK, LocationInFace.TOPLEFT,
+					Face.BOTTOM, LocationInFace.BOTTOMRIGHT,
+					Face.FRONT,	LocationInFace.BOTTOMRIGHT);
+			rotateLeftToRight(Face.TOP, LocationInFace.TOPRIGHT,
+					Face.BACK, LocationInFace.BOTTOMLEFT,
+					Face.BOTTOM, LocationInFace.TOPRIGHT,
+					Face.FRONT, LocationInFace.TOPRIGHT);
+		}
+		else {
+			for (int i=0;i<3;i++)
+				rotateRightFace(Direction.CW);
+		}
+	}
+
+	private void rotateFrontFace(Direction direction) {
+		if (direction == Direction.CW) {
+			rotateLeftToRightFaceOnly(Face.FRONT);
+
+			rotateLeftToRight(Face.TOP, LocationInFace.BOTTOM,
+					Face.RIGHT, LocationInFace.LEFT,
+					Face.BOTTOM, LocationInFace.TOP,
+					Face.LEFT, LocationInFace.RIGHT);
+			rotateLeftToRight(Face.TOP, LocationInFace.BOTTOMLEFT,
+					Face.RIGHT, LocationInFace.TOPLEFT,
+					Face.BOTTOM,LocationInFace.TOPRIGHT,
+					Face.LEFT, LocationInFace.BOTTOMRIGHT);
+			rotateLeftToRight(Face.TOP, LocationInFace.BOTTOMRIGHT,
+					Face.RIGHT, LocationInFace.BOTTOMLEFT,
+					Face.BOTTOM, LocationInFace.TOPLEFT,
+					Face.LEFT, LocationInFace.TOPRIGHT);
+		}
+		else {
+			for (int i=0;i<3;i++)
+				rotateFrontFace(Direction.CW);
+		}
 	}
 
 
