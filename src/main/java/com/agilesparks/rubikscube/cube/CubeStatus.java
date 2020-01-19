@@ -1,10 +1,7 @@
-package com.agilesparks.rubikscube.solver;
+package com.agilesparks.rubikscube.cube;
 
-import com.agilesparks.rubikscube.cube.Cube;
-import com.agilesparks.rubikscube.cube.CubeCubicle;
 import com.agilesparks.rubikscube.utils.Face;
 import com.agilesparks.rubikscube.utils.Location;
-import com.agilesparks.rubikscube.utils.Permutation;
 
 public class CubeStatus {
 

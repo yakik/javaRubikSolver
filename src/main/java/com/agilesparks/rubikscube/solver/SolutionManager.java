@@ -2,7 +2,7 @@ package com.agilesparks.rubikscube.solver;
 
 import java.util.ArrayList;
 
-import com.agilesparks.rubikscube.utils.Permutation;
+import com.agilesparks.rubikscube.cube.Permutation;
 
 public class SolutionManager {
 

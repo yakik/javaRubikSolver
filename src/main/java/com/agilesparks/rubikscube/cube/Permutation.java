@@ -1,10 +1,12 @@
-package com.agilesparks.rubikscube.utils;
+package com.agilesparks.rubikscube.cube;
 
 import java.io.FileReader;
 import java.io.IOException;
 
-import com.agilesparks.rubikscube.cube.CubeCubicle;
-import com.agilesparks.rubikscube.cube.Cube;
+import com.agilesparks.rubikscube.utils.Face;
+import com.agilesparks.rubikscube.utils.FaceFactory;
+import com.agilesparks.rubikscube.utils.Location;
+import com.agilesparks.rubikscube.utils.Position;
 
 public class Permutation {
     CubeCubicle c_Cube_cubicle[] = new CubeCubicle[20];
@@ -47,36 +49,17 @@ public class Permutation {
 	}
     
 
-    private CubeCubicle getCubeCubicle(Location p_location){
-             for (int i=0;i<12;i++)
-                if (c_Cube_cubicle[i]!=null)
-                    if (c_Cube_cubicle[i].c_locationInCube.equals(p_location))
-                        return c_Cube_cubicle[i];
-             return null;
-
-        }
-
-    public CubeCubicle getCubicleData(int p_index) {
+    CubeCubicle getCubicleData(int p_index) {
         return c_Cube_cubicle[p_index];
     }
 
-    public void addCubicleData(CubeCubicle p_cubicleData) {
+    void addCubicleData(CubeCubicle p_cubicleData) {
         c_cubicles++;
         c_Cube_cubicle[c_cubicles] = p_cubicleData;
     }
 
 
-    int getDifferece(Cube p_rubik) {
-        int i, l_counter = 0;
-        for (i = 0; i < c_cubicles; i++) {
-            if ((p_rubik.getOriginalLocationOfCurrentCubicleInLocation(c_Cube_cubicle[i].getLocation()) !=
-                    c_Cube_cubicle[i].currentCubieOriginalLocation()) ||
-                    (p_rubik.getPositionOfCubicleOfCubiclePlace(c_Cube_cubicle[i].getLocation()) !=
-                            c_Cube_cubicle[i].getCubiePosition()))
-                l_counter++;
-        }
-        return l_counter;
-    }
+
 
     public void print() {
         int i;

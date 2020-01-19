@@ -1,10 +1,10 @@
 package com.agilesparks.rubikscube.solver;
 
 import com.agilesparks.rubikscube.cube.Cube;
+import com.agilesparks.rubikscube.cube.Permutation;
 import com.agilesparks.rubikscube.cube.RubikFileReader;
 import com.agilesparks.rubikscube.utils.Direction;
 import com.agilesparks.rubikscube.utils.Face;
-import com.agilesparks.rubikscube.utils.Permutation;
 import com.agilesparks.rubikscube.utils.Rotation;
 
 public class Main {

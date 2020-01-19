@@ -7,6 +7,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import com.agilesparks.rubikscube.cube.Cube;
+import com.agilesparks.rubikscube.cube.Permutation;
 import com.agilesparks.rubikscube.cube.RubikFileReader;
 import com.agilesparks.rubikscube.solver.RotationLinkedList;
 import com.agilesparks.rubikscube.solver.RotationTree;
@@ -15,7 +16,6 @@ import com.agilesparks.rubikscube.solver.Solution;
 import com.agilesparks.rubikscube.solver.Solver;
 import com.agilesparks.rubikscube.utils.Direction;
 import com.agilesparks.rubikscube.utils.Face;
-import com.agilesparks.rubikscube.utils.Permutation;
 import com.agilesparks.rubikscube.utils.Rotation;
 
 public class SolverTest {

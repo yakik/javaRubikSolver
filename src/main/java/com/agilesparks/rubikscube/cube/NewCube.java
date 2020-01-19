@@ -11,7 +11,7 @@ public class NewCube {
 
 	private Color colors[][] = new Color[6][8];
 
-	private void setColor(Face face, LocationInFace locationInFace, Color color) {
+	public void setColor(Face face, LocationInFace locationInFace, Color color) {
 		colors[face.getInt()][locationInFace.getInt()] = color;
 	}
 
@@ -71,21 +71,14 @@ public class NewCube {
 		if (direction == Direction.CW) {
 			rotateLeftToRightFaceOnly(Face.BOTTOM);
 
-			rotateLeftToRight(Face.BACK, LocationInFace.BOTTOM,
-					Face.LEFT, LocationInFace.BOTTOM,
-					Face.FRONT, LocationInFace.BOTTOM,
-					Face.RIGHT, LocationInFace.BOTTOM);
-			rotateLeftToRight(Face.BACK, LocationInFace.BOTTOMLEFT,
-					Face.LEFT, LocationInFace.BOTTOMLEFT,
-					Face.FRONT,LocationInFace.BOTTOMLEFT,
-					Face.RIGHT, LocationInFace.BOTTOMLEFT);
-			rotateLeftToRight(Face.BACK, LocationInFace.BOTTOMRIGHT,
-					Face.LEFT, LocationInFace.BOTTOMRIGHT,
-					Face.FRONT, LocationInFace.BOTTOMRIGHT,
-					Face.RIGHT, LocationInFace.BOTTOMRIGHT);
-		}
-		else {
-			for (int i=0;i<3;i++)
+			rotateLeftToRight(Face.BACK, LocationInFace.BOTTOM, Face.LEFT, LocationInFace.BOTTOM, Face.FRONT,
+					LocationInFace.BOTTOM, Face.RIGHT, LocationInFace.BOTTOM);
+			rotateLeftToRight(Face.BACK, LocationInFace.BOTTOMLEFT, Face.LEFT, LocationInFace.BOTTOMLEFT, Face.FRONT,
+					LocationInFace.BOTTOMLEFT, Face.RIGHT, LocationInFace.BOTTOMLEFT);
+			rotateLeftToRight(Face.BACK, LocationInFace.BOTTOMRIGHT, Face.LEFT, LocationInFace.BOTTOMRIGHT, Face.FRONT,
+					LocationInFace.BOTTOMRIGHT, Face.RIGHT, LocationInFace.BOTTOMRIGHT);
+		} else {
+			for (int i = 0; i < 3; i++)
 				rotateBottomFace(Direction.CW);
 		}
 	}
@@ -94,21 +87,14 @@ public class NewCube {
 		if (direction == Direction.CW) {
 			rotateLeftToRightFaceOnly(Face.TOP);
 
-			rotateLeftToRight(Face.BACK, LocationInFace.TOP,
-					Face.RIGHT, LocationInFace.TOP,
-					Face.FRONT, LocationInFace.TOP,
-					Face.LEFT, LocationInFace.TOP);
-			rotateLeftToRight(Face.BACK, LocationInFace.TOPLEFT,
-					Face.RIGHT, LocationInFace.TOPLEFT,
-					Face.FRONT,LocationInFace.TOPLEFT,
-					Face.LEFT, LocationInFace.TOPLEFT);
-			rotateLeftToRight(Face.BACK, LocationInFace.TOPRIGHT,
-					Face.RIGHT, LocationInFace.TOPRIGHT,
-					Face.FRONT, LocationInFace.TOPRIGHT,
-					Face.LEFT, LocationInFace.TOPRIGHT);
-		}
-		else {
-			for (int i=0;i<3;i++)
+			rotateLeftToRight(Face.BACK, LocationInFace.TOP, Face.RIGHT, LocationInFace.TOP, Face.FRONT,
+					LocationInFace.TOP, Face.LEFT, LocationInFace.TOP);
+			rotateLeftToRight(Face.BACK, LocationInFace.TOPLEFT, Face.RIGHT, LocationInFace.TOPLEFT, Face.FRONT,
+					LocationInFace.TOPLEFT, Face.LEFT, LocationInFace.TOPLEFT);
+			rotateLeftToRight(Face.BACK, LocationInFace.TOPRIGHT, Face.RIGHT, LocationInFace.TOPRIGHT, Face.FRONT,
+					LocationInFace.TOPRIGHT, Face.LEFT, LocationInFace.TOPRIGHT);
+		} else {
+			for (int i = 0; i < 3; i++)
 				rotateTopFace(Direction.CW);
 		}
 	}
@@ -117,21 +103,14 @@ public class NewCube {
 		if (direction == Direction.CW) {
 			rotateLeftToRightFaceOnly(Face.BACK);
 
-			rotateLeftToRight(Face.TOP, LocationInFace.TOP,
-					Face.LEFT, LocationInFace.LEFT,
-					Face.BOTTOM, LocationInFace.BOTTOM,
-					Face.RIGHT, LocationInFace.RIGHT);
-			rotateLeftToRight(Face.TOP, LocationInFace.TOPLEFT,
-					Face.LEFT, LocationInFace.BOTTOMLEFT,
-					Face.BOTTOM,LocationInFace.BOTTOMRIGHT,
-					Face.RIGHT, LocationInFace.TOPRIGHT);
-			rotateLeftToRight(Face.TOP, LocationInFace.TOPRIGHT,
-					Face.LEFT, LocationInFace.TOPLEFT,
-					Face.BOTTOM, LocationInFace.BOTTOMLEFT,
-					Face.RIGHT, LocationInFace.TOPLEFT);
-		}
-		else {
-			for (int i=0;i<3;i++)
+			rotateLeftToRight(Face.TOP, LocationInFace.TOP, Face.LEFT, LocationInFace.LEFT, Face.BOTTOM,
+					LocationInFace.BOTTOM, Face.RIGHT, LocationInFace.RIGHT);
+			rotateLeftToRight(Face.TOP, LocationInFace.TOPLEFT, Face.LEFT, LocationInFace.BOTTOMLEFT, Face.BOTTOM,
+					LocationInFace.BOTTOMRIGHT, Face.RIGHT, LocationInFace.TOPRIGHT);
+			rotateLeftToRight(Face.TOP, LocationInFace.TOPRIGHT, Face.LEFT, LocationInFace.TOPLEFT, Face.BOTTOM,
+					LocationInFace.BOTTOMLEFT, Face.RIGHT, LocationInFace.TOPLEFT);
+		} else {
+			for (int i = 0; i < 3; i++)
 				rotateBackFace(Direction.CW);
 		}
 	}
@@ -139,22 +118,15 @@ public class NewCube {
 	private void rotateLeftFace(Direction direction) {
 		if (direction == Direction.CW) {
 			rotateLeftToRightFaceOnly(Face.LEFT);
-			
-			rotateLeftToRight(Face.TOP, LocationInFace.LEFT, 
-					Face.FRONT, LocationInFace.LEFT,
-					Face.BOTTOM, LocationInFace.RIGHT,
-					Face.BACK, LocationInFace.LEFT);
-			rotateLeftToRight(Face.TOP, LocationInFace.BOTTOMLEFT,
-					Face.FRONT, LocationInFace.TOPLEFT,
-					Face.BOTTOM, LocationInFace.BOTTOMRIGHT,
-					Face.BACK,	LocationInFace.BOTTOMLEFT);
-			rotateLeftToRight(Face.TOP, LocationInFace.TOPLEFT,
-					Face.FRONT, LocationInFace.BOTTOMLEFT,
-					Face.BOTTOM, LocationInFace.TOPRIGHT,
-					Face.BACK, LocationInFace.TOPLEFT);
-		}
-		else {
-			for (int i=0;i<3;i++)
+
+			rotateLeftToRight(Face.TOP, LocationInFace.LEFT, Face.FRONT, LocationInFace.LEFT, Face.BOTTOM,
+					LocationInFace.RIGHT, Face.BACK, LocationInFace.LEFT);
+			rotateLeftToRight(Face.TOP, LocationInFace.BOTTOMLEFT, Face.FRONT, LocationInFace.TOPLEFT, Face.BOTTOM,
+					LocationInFace.BOTTOMRIGHT, Face.BACK, LocationInFace.BOTTOMLEFT);
+			rotateLeftToRight(Face.TOP, LocationInFace.TOPLEFT, Face.FRONT, LocationInFace.BOTTOMLEFT, Face.BOTTOM,
+					LocationInFace.TOPRIGHT, Face.BACK, LocationInFace.TOPLEFT);
+		} else {
+			for (int i = 0; i < 3; i++)
 				rotateLeftFace(Direction.CW);
 		}
 	}
@@ -162,22 +134,15 @@ public class NewCube {
 	private void rotateRightFace(Direction direction) {
 		if (direction == Direction.CW) {
 			rotateLeftToRightFaceOnly(Face.RIGHT);
-			
-			rotateLeftToRight(Face.TOP, LocationInFace.RIGHT, 
-					Face.BACK, LocationInFace.LEFT,
-					Face.BOTTOM, LocationInFace.RIGHT,
-					Face.FRONT, LocationInFace.RIGHT);
-			rotateLeftToRight(Face.TOP, LocationInFace.BOTTOMRIGHT,
-					Face.BACK, LocationInFace.TOPLEFT,
-					Face.BOTTOM, LocationInFace.BOTTOMRIGHT,
-					Face.FRONT,	LocationInFace.BOTTOMRIGHT);
-			rotateLeftToRight(Face.TOP, LocationInFace.TOPRIGHT,
-					Face.BACK, LocationInFace.BOTTOMLEFT,
-					Face.BOTTOM, LocationInFace.TOPRIGHT,
-					Face.FRONT, LocationInFace.TOPRIGHT);
-		}
-		else {
-			for (int i=0;i<3;i++)
+
+			rotateLeftToRight(Face.TOP, LocationInFace.RIGHT, Face.BACK, LocationInFace.LEFT, Face.BOTTOM,
+					LocationInFace.RIGHT, Face.FRONT, LocationInFace.RIGHT);
+			rotateLeftToRight(Face.TOP, LocationInFace.BOTTOMRIGHT, Face.BACK, LocationInFace.TOPLEFT, Face.BOTTOM,
+					LocationInFace.BOTTOMRIGHT, Face.FRONT, LocationInFace.BOTTOMRIGHT);
+			rotateLeftToRight(Face.TOP, LocationInFace.TOPRIGHT, Face.BACK, LocationInFace.BOTTOMLEFT, Face.BOTTOM,
+					LocationInFace.TOPRIGHT, Face.FRONT, LocationInFace.TOPRIGHT);
+		} else {
+			for (int i = 0; i < 3; i++)
 				rotateRightFace(Direction.CW);
 		}
 	}
@@ -186,37 +151,27 @@ public class NewCube {
 		if (direction == Direction.CW) {
 			rotateLeftToRightFaceOnly(Face.FRONT);
 
-			rotateLeftToRight(Face.TOP, LocationInFace.BOTTOM,
-					Face.RIGHT, LocationInFace.LEFT,
-					Face.BOTTOM, LocationInFace.TOP,
-					Face.LEFT, LocationInFace.RIGHT);
-			rotateLeftToRight(Face.TOP, LocationInFace.BOTTOMLEFT,
-					Face.RIGHT, LocationInFace.TOPLEFT,
-					Face.BOTTOM,LocationInFace.TOPRIGHT,
-					Face.LEFT, LocationInFace.BOTTOMRIGHT);
-			rotateLeftToRight(Face.TOP, LocationInFace.BOTTOMRIGHT,
-					Face.RIGHT, LocationInFace.BOTTOMLEFT,
-					Face.BOTTOM, LocationInFace.TOPLEFT,
-					Face.LEFT, LocationInFace.TOPRIGHT);
-		}
-		else {
-			for (int i=0;i<3;i++)
+			rotateLeftToRight(Face.TOP, LocationInFace.BOTTOM, Face.RIGHT, LocationInFace.LEFT, Face.BOTTOM,
+					LocationInFace.TOP, Face.LEFT, LocationInFace.RIGHT);
+			rotateLeftToRight(Face.TOP, LocationInFace.BOTTOMLEFT, Face.RIGHT, LocationInFace.TOPLEFT, Face.BOTTOM,
+					LocationInFace.TOPRIGHT, Face.LEFT, LocationInFace.BOTTOMRIGHT);
+			rotateLeftToRight(Face.TOP, LocationInFace.BOTTOMRIGHT, Face.RIGHT, LocationInFace.BOTTOMLEFT, Face.BOTTOM,
+					LocationInFace.TOPLEFT, Face.LEFT, LocationInFace.TOPRIGHT);
+		} else {
+			for (int i = 0; i < 3; i++)
 				rotateFrontFace(Direction.CW);
 		}
 	}
 
-
 	private void rotateLeftToRightFaceOnly(Face face) {
-		rotateLeftToRight(face, LocationInFace.TOP, face, LocationInFace.RIGHT, face,
-				LocationInFace.BOTTOM, face, LocationInFace.LEFT);
-		rotateLeftToRight(face, LocationInFace.BOTTOMLEFT, face, LocationInFace.TOPLEFT, face,
-				LocationInFace.TOPRIGHT, face, LocationInFace.BOTTOMRIGHT);
-	}	
+		rotateLeftToRight(face, LocationInFace.TOP, face, LocationInFace.RIGHT, face, LocationInFace.BOTTOM, face,
+				LocationInFace.LEFT);
+		rotateLeftToRight(face, LocationInFace.BOTTOMLEFT, face, LocationInFace.TOPLEFT, face, LocationInFace.TOPRIGHT,
+				face, LocationInFace.BOTTOMRIGHT);
+	}
 //                 TL T TR
 //                 L TOP R 
 //                 BL B BR
-
-
 
 // TL T TR TL T TR TL T TR TL T TR
 // LBACK R LLEFT R LFRONTR LRIGHTR 
@@ -235,6 +190,111 @@ public class NewCube {
 		setColor(secondFace, secondLocationInFace, getColor(firstFace, firstLocationInFace));
 		setColor(firstFace, firstLocationInFace, temp);
 
+	}
+	
+	public int countDifferenceSecondFloor(NewCube myRubik2) {
+		int counter = 0;
+		if (colorInFaceNotEqual(myRubik2, Face.FRONT, LocationInFace.LEFT) ||
+				colorInFaceNotEqual(myRubik2, Face.LEFT, LocationInFace.RIGHT))
+			counter++;
+		if (colorInFaceNotEqual(myRubik2, Face.LEFT, LocationInFace.LEFT) ||
+				colorInFaceNotEqual(myRubik2, Face.BACK, LocationInFace.RIGHT))
+			counter++;
+		if (colorInFaceNotEqual(myRubik2, Face.BACK, LocationInFace.LEFT) ||
+				colorInFaceNotEqual(myRubik2, Face.RIGHT, LocationInFace.RIGHT))
+			counter++;
+		if (colorInFaceNotEqual(myRubik2, Face.RIGHT, LocationInFace.LEFT) ||
+				colorInFaceNotEqual(myRubik2, Face.FRONT, LocationInFace.RIGHT))
+			counter++;
+
+		return counter;
+
+	}
+
+
+	public int countDifferenceFirstFloor(NewCube myRubik2) {
+		int counter = 0;
+		if (colorInFaceNotEqual(myRubik2, Face.FRONT, LocationInFace.BOTTOM) ||
+				colorInFaceNotEqual(myRubik2, Face.BOTTOM, LocationInFace.TOP))
+			counter++;
+		if (colorInFaceNotEqual(myRubik2, Face.LEFT, LocationInFace.BOTTOM) ||
+				colorInFaceNotEqual(myRubik2, Face.BOTTOM, LocationInFace.LEFT))
+			counter++;
+		if (colorInFaceNotEqual(myRubik2, Face.BACK, LocationInFace.BOTTOM) ||
+				colorInFaceNotEqual(myRubik2, Face.BOTTOM, LocationInFace.BOTTOM))
+			counter++;
+		if (colorInFaceNotEqual(myRubik2, Face.RIGHT, LocationInFace.BOTTOM) ||
+				colorInFaceNotEqual(myRubik2, Face.BOTTOM, LocationInFace.RIGHT))
+			counter++;
+		
+		
+		if (colorInFaceNotEqual(myRubik2, Face.FRONT, LocationInFace.BOTTOMLEFT) ||
+				colorInFaceNotEqual(myRubik2, Face.BOTTOM, LocationInFace.TOPLEFT) ||
+				colorInFaceNotEqual(myRubik2, Face.LEFT, LocationInFace.BOTTOMRIGHT))
+			counter++;
+		if (colorInFaceNotEqual(myRubik2, Face.FRONT, LocationInFace.BOTTOMRIGHT) ||
+				colorInFaceNotEqual(myRubik2, Face.BOTTOM, LocationInFace.TOPRIGHT) ||
+				colorInFaceNotEqual(myRubik2, Face.RIGHT, LocationInFace.BOTTOMLEFT))
+			counter++;
+		if (colorInFaceNotEqual(myRubik2, Face.BACK, LocationInFace.BOTTOMRIGHT) ||
+				colorInFaceNotEqual(myRubik2, Face.BOTTOM, LocationInFace.BOTTOMLEFT) ||
+				colorInFaceNotEqual(myRubik2, Face.LEFT, LocationInFace.BOTTOMLEFT))
+			counter++;
+		if (colorInFaceNotEqual(myRubik2, Face.BACK, LocationInFace.BOTTOMLEFT) ||
+				colorInFaceNotEqual(myRubik2, Face.BOTTOM, LocationInFace.BOTTOMRIGHT) ||
+				colorInFaceNotEqual(myRubik2, Face.RIGHT, LocationInFace.BOTTOMRIGHT))
+			counter++;
+
+		return counter;
+
+	}
+	
+	public int countDifferenceThirdFloor(NewCube myRubik2) {
+		int counter = 0;
+		if (colorInFaceNotEqual(myRubik2, Face.FRONT, LocationInFace.TOP) ||
+				colorInFaceNotEqual(myRubik2, Face.TOP, LocationInFace.TOP))
+			counter++;
+		if (colorInFaceNotEqual(myRubik2, Face.LEFT, LocationInFace.TOP) ||
+				colorInFaceNotEqual(myRubik2, Face.TOP, LocationInFace.LEFT))
+			counter++;
+		if (colorInFaceNotEqual(myRubik2, Face.BACK, LocationInFace.TOP) ||
+				colorInFaceNotEqual(myRubik2, Face.TOP, LocationInFace.BOTTOM))
+			counter++;
+		if (colorInFaceNotEqual(myRubik2, Face.RIGHT, LocationInFace.TOP) ||
+				colorInFaceNotEqual(myRubik2, Face.TOP, LocationInFace.RIGHT))
+			counter++;
+		
+		
+		if (colorInFaceNotEqual(myRubik2, Face.FRONT, LocationInFace.TOPLEFT) ||
+				colorInFaceNotEqual(myRubik2, Face.TOP, LocationInFace.BOTTOMLEFT) ||
+				colorInFaceNotEqual(myRubik2, Face.LEFT, LocationInFace.TOPRIGHT))
+			counter++;
+		if (colorInFaceNotEqual(myRubik2, Face.FRONT, LocationInFace.TOPRIGHT) ||
+				colorInFaceNotEqual(myRubik2, Face.TOP, LocationInFace.BOTTOMRIGHT) ||
+				colorInFaceNotEqual(myRubik2, Face.RIGHT, LocationInFace.TOPLEFT))
+			counter++;
+		if (colorInFaceNotEqual(myRubik2, Face.BACK, LocationInFace.TOPRIGHT) ||
+				colorInFaceNotEqual(myRubik2, Face.TOP, LocationInFace.TOPLEFT) ||
+				colorInFaceNotEqual(myRubik2, Face.LEFT, LocationInFace.TOPLEFT))
+			counter++;
+		if (colorInFaceNotEqual(myRubik2, Face.BACK, LocationInFace.TOPLEFT) ||
+				colorInFaceNotEqual(myRubik2, Face.TOP, LocationInFace.TOPRIGHT) ||
+				colorInFaceNotEqual(myRubik2, Face.RIGHT, LocationInFace.TOPRIGHT))
+			counter++;
+
+		return counter;
+
+	}
+
+
+	private boolean colorInFaceNotEqual(NewCube comparedCube, Face face, LocationInFace locationInFace) {
+		return getColor(face, locationInFace) != comparedCube.getColor(face, LocationInFace.BOTTOM);
+	}
+
+	public int countAllDifferences(NewCube comparedCube) {
+		return countDifferenceThirdFloor(comparedCube)+
+				countDifferenceFirstFloor(comparedCube) +
+				countDifferenceSecondFloor(comparedCube);
 	}
 
 }

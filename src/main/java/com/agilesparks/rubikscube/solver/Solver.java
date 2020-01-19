@@ -2,7 +2,7 @@
 package com.agilesparks.rubikscube.solver;
 
 import com.agilesparks.rubikscube.cube.Cube;
-import com.agilesparks.rubikscube.utils.Permutation;
+import com.agilesparks.rubikscube.cube.Permutation;
 
 public class Solver {
 
