@@ -90,7 +90,6 @@ public class SolverTest {
 
     }
 
-    @Ignore
     @Test
     public void complexSolver() {
         long beginningTime = System.nanoTime();

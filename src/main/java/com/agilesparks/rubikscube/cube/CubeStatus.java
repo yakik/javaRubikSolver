@@ -8,7 +8,7 @@ public class CubeStatus {
 	public static boolean changesOnlyInThirdFloor(Cube cube, Permutation p_comparedPermutation) {
 		CubeCubicle l_permutationCubicle;
 		int l_counter = 0;
-		for (int i =0;i<20;i++)
+		/*for (int i =0;i<20;i++)
 		    if ((l_permutationCubicle=p_comparedPermutation.getCubicleData(i))!=null)
 		        if (!CubeStatus.isThirdFloor(l_permutationCubicle.getLocation())) {
 		            if (!l_permutationCubicle.getCubiePosition()
@@ -22,9 +22,13 @@ public class CubeStatus {
 		                    || !l_permutationCubicle.getCurrentCubieOriginalLocation()
 		                    .equals(cube.getOriginalLocationOfCurrentCubicleInLocation(l_permutationCubicle.getLocation())))
 		                l_counter++;
-		        }
+		        }*/
 		
 		
+		
+		//next line replaced previous code
+		l_counter = cube.newCube.countDifferenceThirdFloor(p_comparedPermutation.newCube);
+	
 		if (l_counter>0) return true;
 		else return false;
 	}
@@ -33,14 +37,17 @@ public class CubeStatus {
 			Permutation p_comparedPermutation) {
 		CubeCubicle l_permutationCubicle;
 		int l_counter = 0;
-		for (int i =0;i<20;i++)
+	/*	for (int i =0;i<20;i++)
 		    if ((l_permutationCubicle=p_comparedPermutation.getCubicleData(i))!=null)
 		        if (CubeStatus.isFirstFloor(l_permutationCubicle.getLocation()))
 		            if (!l_permutationCubicle.getCubiePosition()
 		        .equals(cube.getPositionOfCubicleOfCubiclePlace(l_permutationCubicle.getLocation()))
 		            || !l_permutationCubicle.getCurrentCubieOriginalLocation()
 		                    .equals(cube.getOriginalLocationOfCurrentCubicleInLocation(l_permutationCubicle.getLocation())))
-		                l_counter++;
+		                l_counter++;*/
+		l_counter = cube.newCube.countDifferenceFirstFloor(p_comparedPermutation.newCube);
+		
+		
 		if (l_counter<3) return true;
 		        else return false;
 	}
@@ -49,7 +56,7 @@ public class CubeStatus {
 			Permutation p_comparedPermutation) {
 		CubeCubicle l_permutationCubicle;
 		int l_counter = 0;
-		for (int i =0;i<20;i++)
+		/*for (int i =0;i<20;i++)
 		    if ((l_permutationCubicle=p_comparedPermutation.getCubicleData(i))!=null)
 		        if (CubeStatus.isSecondFloor(l_permutationCubicle.getLocation())) {
 		            if (!l_permutationCubicle.getCubiePosition()
@@ -65,7 +72,9 @@ public class CubeStatus {
 		                            || !l_permutationCubicle.getCurrentCubieOriginalLocation()
 		                            .equals(cube.getOriginalLocationOfCurrentCubicleInLocation(l_permutationCubicle.getLocation())))
 		                        return false;
-		        }
+		        }*/
+		l_counter = cube.newCube.countDifferenceSecondFloor(p_comparedPermutation.newCube);
+		
 		
 		
 		if (l_counter<3) return true;
