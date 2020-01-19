@@ -19,6 +19,10 @@ public class Cube {
     }, {Face.TOP, Face.LEFT, Face.BOTTOM, Face.RIGHT
     }
     };
+    
+    NewCube newCube = new NewCube();
+    
+    
 
     public Cube() {
         initializeCubeCubicles();
@@ -98,6 +102,10 @@ public class Cube {
     
     public void rotateFace(Face face, Direction direction) {
     	
+    	newCube.rotateFace(face, direction);
+    	
+    	
+    	
     	Rotation rotation = new Rotation(face,direction);
    
     	
@@ -176,6 +184,7 @@ public class Cube {
 
 
     public void setPermutation(Permutation p_permutation) {
+    	newCube = new NewCube(p_permutation.newCube);
         int i;
         for (i = 0; i < 20; i++)
             updateCubeCubicle(p_permutation.getCubicleData(i).getLocation().getCopy()

@@ -40,6 +40,26 @@ public class NewCube {
 			setColor(Face.BOTTOM, locationInFace, Color.BOTTOMCOLOR);
 
 	}
+	
+	public NewCube(NewCube source) {
+		for (LocationInFace locationInFace : LocationInFace.values())
+			setColor(Face.FRONT, locationInFace, source.getColor(Face.FRONT, locationInFace));
+
+		for (LocationInFace locationInFace : LocationInFace.values())
+			setColor(Face.BACK, locationInFace,source.getColor(Face.BACK, locationInFace));
+
+		for (LocationInFace locationInFace : LocationInFace.values())
+			setColor(Face.RIGHT, locationInFace, source.getColor(Face.RIGHT, locationInFace));
+
+		for (LocationInFace locationInFace : LocationInFace.values())
+			setColor(Face.LEFT, locationInFace, source.getColor(Face.LEFT, locationInFace));
+
+		for (LocationInFace locationInFace : LocationInFace.values())
+			setColor(Face.TOP, locationInFace, source.getColor(Face.TOP, locationInFace));
+
+		for (LocationInFace locationInFace : LocationInFace.values())
+			setColor(Face.BOTTOM, locationInFace, source.getColor(Face.BOTTOM, locationInFace));
+	}
 
 	public void rotateFace(Face face, Direction direction) {
 		switch (face) {

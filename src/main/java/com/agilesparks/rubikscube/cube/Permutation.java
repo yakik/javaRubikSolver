@@ -8,15 +8,21 @@ import com.agilesparks.rubikscube.utils.FaceFactory;
 import com.agilesparks.rubikscube.utils.Location;
 import com.agilesparks.rubikscube.utils.Position;
 
+
+
 public class Permutation {
     CubeCubicle c_Cube_cubicle[] = new CubeCubicle[20];
     short c_cubicles;
+    
+    public NewCube newCube = new NewCube();
 
     public Permutation() {
         c_cubicles = -1;
     }
     
 	public static Permutation getPermutationFromCube(Cube cube) {
+		
+		
 		Location l_rubikLocation[] = {
 		        new Location(Face.FRONT, Face.TOP),
 		        new Location(Face.FRONT, Face.RIGHT),
@@ -41,6 +47,7 @@ public class Permutation {
 		};
 		int i;
 		Permutation l_permutation = new Permutation();
+		l_permutation.newCube = new NewCube(cube.newCube);
 		for (i = 0; i < 20; i++)
 		    l_permutation.addCubicleData(new CubeCubicle(l_rubikLocation[i].getCopy(),
 		            cube.getOriginalLocationOfCurrentCubicleInLocation(l_rubikLocation[i]).getCopy(),
