@@ -33,18 +33,6 @@ public class Permutation {
     }
 
   
-    public int getValue(int p_highestFloor) {
-        int  l_value = 0;
-      NewCube fixedCube = new NewCube();
-        l_value = 2*(8-newCube.countDifferenceFirstFloor(fixedCube));
-        if (p_highestFloor>1)
-        	l_value += 2*(4-newCube.countDifferenceSecondFloor(fixedCube));
-        if (p_highestFloor>2)
-        	l_value += 2*(8-newCube.countDifferenceThirdFloor(fixedCube));
-       
-        return l_value;
-    }
-
     public Permutation getCopy() {
         Permutation l_permutation = new Permutation();
         l_permutation.newCube = new NewCube(newCube);

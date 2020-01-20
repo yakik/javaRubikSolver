@@ -33,6 +33,20 @@ public class Cube {
     }
 
 
+
+	public static int getValueIndirection(Permutation permutation, int p_highestFloor) {
+		int  l_value = 0;
+		  NewCube fixedCube = new NewCube();
+		    l_value = 2*(8-permutation.newCube.countDifferenceFirstFloor(fixedCube));
+		    if (p_highestFloor>1)
+		    	l_value += 2*(4-permutation.newCube.countDifferenceSecondFloor(fixedCube));
+		    if (p_highestFloor>2)
+		    	l_value += 2*(8-permutation.newCube.countDifferenceThirdFloor(fixedCube));
+		
+		    return l_value;
+	}
+
+
 }
 
 

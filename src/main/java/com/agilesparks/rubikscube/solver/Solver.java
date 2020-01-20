@@ -19,14 +19,14 @@ public class Solver {
         RotationLinkedList l_rotationLinkedList = new RotationLinkedList();
 
         int l_floor = getTargetFloor(l_permutation);
-        l_numberOfCubicleInPlace = l_permutation.getValue(l_floor);
+        l_numberOfCubicleInPlace = Cube.getValueIndirection(l_permutation, l_floor);
 
         l_solutionManager.addSolution(l_rotationLinkedList, l_permutation, null, l_numberOfCubicleInPlace,l_floor);
         while ((l_solutionToDev = l_solutionManager.getBestUndeveloped()) != null &&
                 l_solutionManager.getBestValue() < 40) {
             int targetFloor = getTargetFloor(l_solutionToDev.getPermutation());
-           System.out.format("Searching %d",l_solutionToDev.getPermutation().getValue(targetFloor));
-            if (l_solutionManager.getBestValue()>l_solutionToDev.getPermutation().getValue(targetFloor)+14)
+           System.out.format("Searching %d",Cube.getValueIndirection(l_solutionToDev.getPermutation(), targetFloor));
+            if (l_solutionManager.getBestValue()>Cube.getValueIndirection(l_solutionToDev.getPermutation(), targetFloor)+14)
             {
                 System.out.println("Couldn't Find a Solution");
                 return l_solutionManager.getBest();
@@ -51,8 +51,8 @@ public class Solver {
     }
 
     public int getTargetFloor(Permutation p_permutation) {
-        if (p_permutation.getValue(1) >= 16) {
-            if (p_permutation.getValue(2) < 24) {
+        if (Cube.getValueIndirection(p_permutation, 1) >= 16) {
+            if (Cube.getValueIndirection(p_permutation, 2) < 24) {
                 return 2;
             } else {
                 return 3;
@@ -82,7 +82,7 @@ public class Solver {
         Cube l_rubik = new Cube();
         Permutation l_permutation = p_solution.getPermutation().getCopy();
         RotationLinkedList l_rotationLinkedList = new RotationLinkedList();
-        int l_minimumValue = l_permutation.getValue(p_floor);
+        int l_minimumValue = Cube.getValueIndirection(l_permutation, p_floor);
 
 //	if (l_minimumValue < 8)
 //		l_minimumValue = 8;
@@ -106,8 +106,8 @@ public class Solver {
                     l_rubik.rotateFace(l_rotationLinkedList.get(j).getFace(), l_rotationLinkedList.get(j).getDirection() );
                 Permutation l_resultPermutation = Permutation.getPermutationFromCube(l_rubik).getCopy();
 
-                if (l_resultPermutation.getValue(p_floor) >= p_minimumValue) {
-                    p_solutionManager.addSolution(l_rotationLinkedList, l_resultPermutation, p_prevSolution, l_resultPermutation.getValue(p_floor), p_floor);
+                if (Cube.getValueIndirection(l_resultPermutation, p_floor) >= p_minimumValue) {
+                    p_solutionManager.addSolution(l_rotationLinkedList, l_resultPermutation, p_prevSolution, Cube.getValueIndirection(l_resultPermutation, p_floor), p_floor);
                //     if (depth == 1) System.out.format("Hi,value=%d\n",l_resultPermutation.getValue(p_floor));
                 }
                 if (p_floor==3 && depth==0) {
