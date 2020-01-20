@@ -5,7 +5,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.agilesparks.rubikscube.cube.CubeCubicle;
 import com.agilesparks.rubikscube.cube.Permutation;
 import com.agilesparks.rubikscube.cube.Cube;
 import com.agilesparks.rubikscube.utils.Direction;
