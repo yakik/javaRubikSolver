@@ -72,68 +72,17 @@ public class Permutation {
 
 
     public void print() {
-        int i;
+       /* int i;
         System.out.format("\nnumber of cubicles is %d\n", c_cubicles + 1);
         for (i = 0; i <= c_cubicles; i++) {
             System.out.format("CubiclePlace Location:%s", c_Cube_cubicle[i].getLocation().getString());
             System.out.format(" Cubicle Location:%s", c_Cube_cubicle[i].currentCubieOriginalLocation().getString());
             System.out.format(" Cubicle Position:%s\n", c_Cube_cubicle[i].getCubiePosition().getString());
-        }
+        }*/
+    	newCube.print();
     }
 
-    void load(FileReader p_reader) {
-        // reading order is: 12 edges first, then 8 corners
-        // reading order: cubicle, current cubie location, current cubie position
-        int i;
-        Location l_cubicleLocation, l_currCubicleLocation;
-        Position l_position;
-        FaceFactory l_faceFactory = new FaceFactory();
-        try {
-            for (i = 0; i < 12; i++) {
-
-                Face l_cubicleFace0, l_cubicleFace1;
-                Face l_currCubicleFace0, l_currCubicleFace1;
-                Face l_up, l_front;
-
-                l_cubicleFace0 = FaceFactory.getFaceByInt(p_reader.read());
-                l_cubicleFace1 = FaceFactory.getFaceByInt(p_reader.read());
-                p_reader.read();
-                l_currCubicleFace0 = FaceFactory.getFaceByInt(p_reader.read());
-                l_currCubicleFace1 = FaceFactory.getFaceByInt(p_reader.read());
-                p_reader.read();
-                l_up = FaceFactory.getFaceByInt(p_reader.read());
-                l_front = FaceFactory.getFaceByInt(p_reader.read());
-                p_reader.read();
-                l_cubicleLocation = new Location(l_cubicleFace0, l_cubicleFace1);
-                l_currCubicleLocation = new Location(l_currCubicleFace0, l_currCubicleFace1);
-                l_position = new Position(l_up, l_front);
-                addCubicleData(new CubeCubicle(l_cubicleLocation, l_currCubicleLocation, l_position));
-            }
-            for (i = 0; i < 8; i++) {
-                Face l_cubicleFace0, l_cubicleFace1, l_cubicleFace2;
-                Face l_currCubicleFace0, l_currCubicleFace1, l_currCubicleFace2;
-                Face l_up, l_front;
-
-                l_cubicleFace0 = FaceFactory.getFaceByInt(p_reader.read());
-                l_cubicleFace1 = FaceFactory.getFaceByInt(p_reader.read());
-                l_cubicleFace2 = FaceFactory.getFaceByInt(p_reader.read());
-                p_reader.read();
-                l_currCubicleFace0 = FaceFactory.getFaceByInt(p_reader.read());
-                l_currCubicleFace1 = FaceFactory.getFaceByInt(p_reader.read());
-                l_currCubicleFace2 = FaceFactory.getFaceByInt(p_reader.read());
-                p_reader.read();
-                l_up = FaceFactory.getFaceByInt(p_reader.read());
-                l_front = FaceFactory.getFaceByInt(p_reader.read());
-                p_reader.read();
-                l_cubicleLocation = new Location(l_cubicleFace0, l_cubicleFace1, l_cubicleFace2);
-                l_currCubicleLocation = new Location(l_currCubicleFace0, l_currCubicleFace1, l_currCubicleFace2);
-                l_position = new Position(l_up, l_front);
-                addCubicleData(new CubeCubicle(l_cubicleLocation, l_currCubicleLocation, l_position));
-            }
-        } catch (IOException ex) {
-        }
-    }
-
+  
     public int getValue(int p_highestFloor) {
         int i, l_value = 0;
         for (i = 0; i < 20; i++) {
@@ -168,17 +117,6 @@ public class Permutation {
         l_permutation.newCube = new NewCube(newCube);
         l_permutation.newCubeOriginal = new NewCube(newCubeOriginal);
         return l_permutation;
-    }
-
-    public boolean equals( Permutation p_permutation) {
-        boolean l_answer = true;
-        int i;
-        for (i = 0; i < 20; i++)
-                    if (!(getCubicleData(i).equals(p_permutation.getCubicleData(i))))
-                        return false;
-                    else
-                        l_answer = true;
-        return l_answer;
     }
 
 

@@ -34,39 +34,6 @@ public class PermutationTest {
 
     }
 
-    @Test
-    public void testEqualsEqual() {
-        Permutation Apermutation = new Permutation();
-        Permutation Bpermutation = new Permutation();
-
-        for (int i=0;i<20;i++){
-            Apermutation.addCubicleData(new CubeCubicle(new Location(Face.BOTTOM, Face.RIGHT)
-                    , new Location(Face.BOTTOM, Face.RIGHT), new Position(Face.TOP, Face.FRONT)));
-            Bpermutation.addCubicleData(new CubeCubicle(new Location(Face.BOTTOM, Face.RIGHT)
-                    , new Location(Face.BOTTOM, Face.RIGHT), new Position(Face.TOP, Face.FRONT)));
-        }
-
-        assertEquals(true, Apermutation.equals(Bpermutation));
-
-    }
-    @Test
-    public void testEqualsFirstFloor() {
-        Permutation Apermutation = new Permutation();
-        Permutation Bpermutation = new Permutation();
-
-        for (int i=0;i<19;i++){
-            Apermutation.addCubicleData(new CubeCubicle(new Location(Face.BOTTOM, Face.RIGHT)
-                    , new Location(Face.BOTTOM, Face.RIGHT), new Position(Face.TOP, Face.FRONT)));
-            Bpermutation.addCubicleData(new CubeCubicle(new Location(Face.BOTTOM, Face.RIGHT)
-                    , new Location(Face.BOTTOM, Face.RIGHT), new Position(Face.TOP, Face.FRONT)));
-        }
-        Apermutation.addCubicleData(new CubeCubicle(new Location(Face.TOP, Face.RIGHT)
-                , new Location(Face.TOP, Face.RIGHT), new Position(Face.TOP, Face.FRONT)));
-        Bpermutation.addCubicleData(new CubeCubicle(new Location(Face.TOP, Face.RIGHT)
-                , new Location(Face.TOP, Face.LEFT), new Position(Face.TOP, Face.FRONT)));
-
-        assertEquals("first floor",false, Apermutation.equals(Bpermutation));
-        assertEquals("third floor",false, Apermutation.equals(Bpermutation));
-
-    }
+   
+   
 }

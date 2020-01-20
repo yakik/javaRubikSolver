@@ -10,6 +10,15 @@ import com.agilesparks.rubikscube.utils.LocationInFace;
 public class NewCube {
 
 	private Color colors[][] = new Color[6][8];
+	
+	 public boolean equals( NewCube comparedCube) {
+	        if (countDifferenceFirstFloor(comparedCube)+
+	        		countDifferenceSecondFloor(comparedCube)+
+	        		countDifferenceThirdFloor(comparedCube)==0)
+	        	return true;
+	        	else
+	        		return false;
+	    }
 
 	public void setColor(Face face, LocationInFace locationInFace, Color color) {
 		colors[face.getInt()][locationInFace.getInt()] = color;
@@ -201,6 +210,26 @@ public class NewCube {
 		rotateLeftToRight(face, LocationInFace.BOTTOMLEFT, face, LocationInFace.TOPLEFT, face, LocationInFace.TOPRIGHT,
 				face, LocationInFace.BOTTOMRIGHT);
 	}
+	
+	public void print() {
+		printFace(Face.TOP);
+		printFace(Face.BOTTOM);
+		printFace(Face.FRONT);
+		printFace(Face.BACK);
+		printFace(Face.LEFT);
+		printFace(Face.RIGHT);
+		
+	}
+
+	private void printFace(Face face) {
+		System.out.format("\n%S\n\n",face.name());
+		System.out.format("%11s %11s %11s\n",getColor(face,LocationInFace.TOPLEFT),
+				getColor(face,LocationInFace.TOP),getColor(face,LocationInFace.TOPRIGHT));
+		System.out.format("%11s             %11s\n",getColor(face,LocationInFace.LEFT),
+				getColor(face,LocationInFace.RIGHT));
+		System.out.format("%11s %11s %11s\n",getColor(face,LocationInFace.BOTTOMLEFT),
+				getColor(face,LocationInFace.BOTTOM),getColor(face,LocationInFace.BOTTOMRIGHT));
+	}
 //                 TL T TR
 //                 L TOP R 
 //                 BL B BR
@@ -224,19 +253,19 @@ public class NewCube {
 
 	}
 	
-	public int countDifferenceSecondFloor(NewCube myRubik2) {
+	public int countDifferenceSecondFloor(NewCube cube) {
 		int counter = 0;
-		if (colorInFaceNotEqual(myRubik2, Face.FRONT, LocationInFace.LEFT) ||
-				colorInFaceNotEqual(myRubik2, Face.LEFT, LocationInFace.RIGHT))
+		if (colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.LEFT) ||
+				colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.RIGHT))
 			counter++;
-		if (colorInFaceNotEqual(myRubik2, Face.LEFT, LocationInFace.LEFT) ||
-				colorInFaceNotEqual(myRubik2, Face.BACK, LocationInFace.RIGHT))
+		if (colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.LEFT) ||
+				colorInFaceNotEqual(cube, Face.BACK, LocationInFace.RIGHT))
 			counter++;
-		if (colorInFaceNotEqual(myRubik2, Face.BACK, LocationInFace.LEFT) ||
-				colorInFaceNotEqual(myRubik2, Face.RIGHT, LocationInFace.RIGHT))
+		if (colorInFaceNotEqual(cube, Face.BACK, LocationInFace.LEFT) ||
+				colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.RIGHT))
 			counter++;
-		if (colorInFaceNotEqual(myRubik2, Face.RIGHT, LocationInFace.LEFT) ||
-				colorInFaceNotEqual(myRubik2, Face.FRONT, LocationInFace.RIGHT))
+		if (colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.LEFT) ||
+				colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.RIGHT))
 			counter++;
 
 		return counter;
@@ -281,37 +310,37 @@ public class NewCube {
 
 	}
 	
-	public int countDifferenceThirdFloor(NewCube myRubik2) {
+	public int countDifferenceThirdFloor(NewCube cube) {
 		int counter = 0;
-		if (colorInFaceNotEqual(myRubik2, Face.FRONT, LocationInFace.TOP) ||
-				colorInFaceNotEqual(myRubik2, Face.TOP, LocationInFace.BOTTOM))
+		if (colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.TOP) ||
+				colorInFaceNotEqual(cube, Face.TOP, LocationInFace.BOTTOM))
 			counter++;
-		if (colorInFaceNotEqual(myRubik2, Face.LEFT, LocationInFace.TOP) ||
-				colorInFaceNotEqual(myRubik2, Face.TOP, LocationInFace.LEFT))
+		if (colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.TOP) ||
+				colorInFaceNotEqual(cube, Face.TOP, LocationInFace.LEFT))
 			counter++;
-		if (colorInFaceNotEqual(myRubik2, Face.BACK, LocationInFace.TOP) ||
-				colorInFaceNotEqual(myRubik2, Face.TOP, LocationInFace.TOP))
+		if (colorInFaceNotEqual(cube, Face.BACK, LocationInFace.TOP) ||
+				colorInFaceNotEqual(cube, Face.TOP, LocationInFace.TOP))
 			counter++;
-		if (colorInFaceNotEqual(myRubik2, Face.RIGHT, LocationInFace.TOP) ||
-				colorInFaceNotEqual(myRubik2, Face.TOP, LocationInFace.RIGHT))
+		if (colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.TOP) ||
+				colorInFaceNotEqual(cube, Face.TOP, LocationInFace.RIGHT))
 			counter++;
 		
 		
-		if (colorInFaceNotEqual(myRubik2, Face.FRONT, LocationInFace.TOPLEFT) ||
-				colorInFaceNotEqual(myRubik2, Face.TOP, LocationInFace.BOTTOMLEFT) ||
-				colorInFaceNotEqual(myRubik2, Face.LEFT, LocationInFace.TOPRIGHT))
+		if (colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.TOPLEFT) ||
+				colorInFaceNotEqual(cube, Face.TOP, LocationInFace.BOTTOMLEFT) ||
+				colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.TOPRIGHT))
 			counter++;
-		if (colorInFaceNotEqual(myRubik2, Face.FRONT, LocationInFace.TOPRIGHT) ||
-				colorInFaceNotEqual(myRubik2, Face.TOP, LocationInFace.BOTTOMRIGHT) ||
-				colorInFaceNotEqual(myRubik2, Face.RIGHT, LocationInFace.TOPLEFT))
+		if (colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.TOPRIGHT) ||
+				colorInFaceNotEqual(cube, Face.TOP, LocationInFace.BOTTOMRIGHT) ||
+				colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.TOPLEFT))
 			counter++;
-		if (colorInFaceNotEqual(myRubik2, Face.BACK, LocationInFace.TOPRIGHT) ||
-				colorInFaceNotEqual(myRubik2, Face.TOP, LocationInFace.TOPLEFT) ||
-				colorInFaceNotEqual(myRubik2, Face.LEFT, LocationInFace.TOPLEFT))
+		if (colorInFaceNotEqual(cube, Face.BACK, LocationInFace.TOPRIGHT) ||
+				colorInFaceNotEqual(cube, Face.TOP, LocationInFace.TOPLEFT) ||
+				colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.TOPLEFT))
 			counter++;
-		if (colorInFaceNotEqual(myRubik2, Face.BACK, LocationInFace.TOPLEFT) ||
-				colorInFaceNotEqual(myRubik2, Face.TOP, LocationInFace.TOPRIGHT) ||
-				colorInFaceNotEqual(myRubik2, Face.RIGHT, LocationInFace.TOPRIGHT))
+		if (colorInFaceNotEqual(cube, Face.BACK, LocationInFace.TOPLEFT) ||
+				colorInFaceNotEqual(cube, Face.TOP, LocationInFace.TOPRIGHT) ||
+				colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.TOPRIGHT))
 			counter++;
 
 		return counter;
