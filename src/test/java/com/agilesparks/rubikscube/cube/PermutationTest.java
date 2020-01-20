@@ -26,6 +26,13 @@ public class PermutationTest {
         assertEquals("third floor",24, myPermutation.getValue(3) );
 
     }
+    @Test
+    public void getValueFull() {
+        Cube myRubik = new Cube();
+        Permutation myPermutation = Permutation.getPermutationFromCube(myRubik);
+        assertEquals("Full",40, myPermutation.getValue(3) );
+
+    }
 
     @Test
     public void testEqualsEqual() {

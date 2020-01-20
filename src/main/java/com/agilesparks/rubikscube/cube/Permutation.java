@@ -15,6 +15,7 @@ public class Permutation {
     short c_cubicles;
     
     public NewCube newCube = new NewCube();
+    public NewCube newCubeOriginal = new NewCube();
 
     public Permutation() {
         c_cubicles = -1;
@@ -48,6 +49,8 @@ public class Permutation {
 		int i;
 		Permutation l_permutation = new Permutation();
 		l_permutation.newCube = new NewCube(cube.newCube);
+		l_permutation.newCubeOriginal = new NewCube(cube.newCube);
+		
 		for (i = 0; i < 20; i++)
 		    l_permutation.addCubicleData(new CubeCubicle(l_rubikLocation[i].getCopy(),
 		            cube.getOriginalLocationOfCurrentCubicleInLocation(l_rubikLocation[i]).getCopy(),
@@ -142,6 +145,18 @@ public class Permutation {
                     l_value += 2;
 
         }
+        
+       
+        int OLDvalue=l_value;
+      NewCube fixedCube = new NewCube();
+        l_value = 2*(8-newCube.countDifferenceFirstFloor(fixedCube));
+        if (p_highestFloor>1)
+        	l_value += 2*(4-newCube.countDifferenceSecondFloor(fixedCube));
+        if (p_highestFloor>2)
+        	l_value += 2*(8-newCube.countDifferenceThirdFloor(fixedCube));
+       
+        if (OLDvalue!=l_value)
+        	 System.out.format("Floor: %d OLD  = %d NEW = %d\n", p_highestFloor,OLDvalue,l_value);
         return l_value;
     }
 
@@ -150,6 +165,8 @@ public class Permutation {
         int i;
         for (i = 0; i < 20; i++)
             l_permutation.addCubicleData(getCubicleData(i));
+        l_permutation.newCube = new NewCube(newCube);
+        l_permutation.newCubeOriginal = new NewCube(newCubeOriginal);
         return l_permutation;
     }
 
