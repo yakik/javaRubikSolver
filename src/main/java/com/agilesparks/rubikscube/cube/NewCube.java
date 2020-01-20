@@ -7,7 +7,7 @@ import com.agilesparks.rubikscube.utils.Direction;
 import com.agilesparks.rubikscube.utils.Face;
 import com.agilesparks.rubikscube.utils.LocationInFace;
 
-public class NewCube {
+class NewCube {
 
 	private Color colors[][] = new Color[6][8];
 	

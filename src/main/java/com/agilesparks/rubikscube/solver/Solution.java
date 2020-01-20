@@ -1,23 +1,22 @@
 package com.agilesparks.rubikscube.solver;
 
 import com.agilesparks.rubikscube.cube.Cube;
-import com.agilesparks.rubikscube.cube.NewCube;
 
 public class Solution {
 
 
-    private NewCube c_permutation;
+    private Cube c_permutation;
     private RotationLinkedList c_rotationLinkedList;
     private Solution c_prevSolution;
 
 
-    Solution(RotationLinkedList p_rotationLinkedList, NewCube p_permutation, Solution p_prevSolution) {
+    Solution(RotationLinkedList p_rotationLinkedList, Cube p_permutation, Solution p_prevSolution) {
         c_rotationLinkedList = p_rotationLinkedList.getCopy();
         c_permutation = p_permutation.getCopy();
         c_prevSolution = p_prevSolution;
     }
 
-    NewCube getPermutation() {
+    Cube getPermutation() {
         return c_permutation;
     }
 

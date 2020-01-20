@@ -2,7 +2,7 @@ package com.agilesparks.rubikscube.solver;
 
 import java.util.ArrayList;
 
-import com.agilesparks.rubikscube.cube.NewCube;
+import com.agilesparks.rubikscube.cube.Cube;
 
 public class SolutionManager {
 
@@ -15,7 +15,7 @@ public class SolutionManager {
             c_solutionList.add(new ArrayList<SolutionNode>());
     }
 
-    void addSolution(RotationLinkedList p_rotationLinkedList, NewCube p_permutation, Solution p_prevSolution,
+    void addSolution(RotationLinkedList p_rotationLinkedList, Cube p_permutation, Solution p_prevSolution,
                      int p_value, int p_floor) {
 
            if (/*(p_value>=32 && getBestValue()>=36) ||*/ c_solutionList.get(p_value).size() < 40) {

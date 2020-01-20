@@ -2,7 +2,6 @@
 package com.agilesparks.rubikscube.solver;
 
 import com.agilesparks.rubikscube.cube.Cube;
-import com.agilesparks.rubikscube.cube.NewCube;
 
 public class Solver {
 
@@ -12,7 +11,7 @@ public class Solver {
     public Solution solve(Cube p_rubik, RotationTree p_firstTree, RotationTree p_secondTree, RotationTree p_thirdTree) {
 
         int l_numberOfCubicleInPlace;
-        NewCube l_permutation = Cube.getPermutationFromCube(p_rubik);
+        Cube l_permutation = Cube.getPermutationFromCube(p_rubik);
         SolutionManager l_solutionManager = new SolutionManager();
         Solution l_solutionToDev;
 
@@ -50,7 +49,7 @@ public class Solver {
 
     }
 
-    public int getTargetFloor(NewCube p_permutation) {
+    public int getTargetFloor(Cube p_permutation) {
         if (Cube.getValue(p_permutation, 1) >= 16) {
             if (Cube.getValue(p_permutation, 2) < 24) {
                 return 2;
@@ -80,7 +79,7 @@ public class Solver {
     private void findBetterSolution(Solution p_solution, RotationTree p_tree, SolutionManager p_solutionManager,
                                     int p_floor) {
         Cube l_rubik = new Cube();
-        NewCube l_permutation = p_solution.getPermutation().getCopy();
+        Cube l_permutation = p_solution.getPermutation().getCopy();
         RotationLinkedList l_rotationLinkedList = new RotationLinkedList();
         int l_minimumValue = Cube.getValue(l_permutation, p_floor);
 
@@ -96,7 +95,7 @@ public class Solver {
                            Cube p_rubik,SolutionManager p_solutionManager,
                            Solution p_prevSolution, int p_floor, int depth) {
         if (p_minimumValue<2) p_minimumValue = 2;
-        NewCube l_permutation = Cube.getPermutationFromCube(p_rubik).getCopy();
+        Cube l_permutation = Cube.getPermutationFromCube(p_rubik).getCopy();
         Cube l_rubik = new Cube();
         for (int i=0;i<p_tree.getSize();i++){
             RotationLinkedList l_rotationLinkedList = p_tree.getRotationLinkedList(i);
@@ -104,7 +103,7 @@ public class Solver {
                 l_rubik.reset(l_permutation);
                 for (int j=0;j<l_rotationLinkedList.size();j++)
                     l_rubik.rotateFace(l_rotationLinkedList.get(j).getFace(), l_rotationLinkedList.get(j).getDirection() );
-                NewCube l_resultPermutation = Cube.getPermutationFromCube(l_rubik).getCopy();
+                Cube l_resultPermutation = Cube.getPermutationFromCube(l_rubik).getCopy();
 
                 if (Cube.getValue(l_resultPermutation, p_floor) >= p_minimumValue) {
                     p_solutionManager.addSolution(l_rotationLinkedList, l_resultPermutation, p_prevSolution, Cube.getValue(l_resultPermutation, p_floor), p_floor);

@@ -10,11 +10,15 @@ public class Cube {
 
 
     
-    public NewCube newCube = new NewCube();
+    NewCube newCube = new NewCube();
     
     
 
     public Cube() {
+    }
+    
+    public boolean equals( Cube comparedCube) {
+        return newCube.equals(comparedCube.newCube);
     }
 
 
@@ -27,33 +31,48 @@ public class Cube {
     }
 
 
-    public void reset(NewCube cube) {
-    	newCube = new NewCube(cube);
+    public void reset(Cube cube) {
+    	newCube = new NewCube(cube.newCube);
 
     }
 
 
 
-	public static NewCube getPermutationFromCube(Cube cube) {
+	public static Cube getPermutationFromCube(Cube cube) {
 		
 		
-		NewCube newCube = new NewCube(cube.newCube);
-		
-		return newCube;
+		return cube.getCopy();
 	}
 
 
 
-	public static int getValue(NewCube cube, int p_highestFloor) {
+	public static int getValue(Cube l_permutation, int p_highestFloor) {
 		int  l_value = 0;
 		  NewCube fixedCube = new NewCube();
-		    l_value = 2*(8-cube.countDifferenceFirstFloor(fixedCube));
+		    l_value = 2*(8-l_permutation.newCube.countDifferenceFirstFloor(fixedCube));
 		    if (p_highestFloor>1)
-		    	l_value += 2*(4-cube.countDifferenceSecondFloor(fixedCube));
+		    	l_value += 2*(4-l_permutation.newCube.countDifferenceSecondFloor(fixedCube));
 		    if (p_highestFloor>2)
-		    	l_value += 2*(8-cube.countDifferenceThirdFloor(fixedCube));
+		    	l_value += 2*(8-l_permutation.newCube.countDifferenceThirdFloor(fixedCube));
 		
 		    return l_value;
+	}
+
+
+
+	public Cube getCopy() {
+		// TODO Auto-generated method stub
+		Cube cube = new Cube();
+		cube.newCube = new NewCube(newCube);
+		return cube;
+	}
+
+
+
+
+
+	public void print() {
+		newCube.print();
 	}
 
 

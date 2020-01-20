@@ -77,7 +77,7 @@ public class Main {
         long endTime = System.nanoTime();
         System.out.format("Elapsed Time=%d seconds", ((endTime - beginningTime) / 1000000000));
 //27-12-2017: started 11:39 PM, Failed
-        Cube.getPermutationFromCube(myRubik).print();
+        myRubik.print();
     }
 }
 
