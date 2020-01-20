@@ -8,7 +8,6 @@ import org.junit.Test;
 
 import com.agilesparks.rubikscube.cube.Cube;
 import com.agilesparks.rubikscube.cube.NewCube;
-import com.agilesparks.rubikscube.cube.Permutation;
 import com.agilesparks.rubikscube.cube.RubikFileReader;
 import com.agilesparks.rubikscube.solver.RotationLinkedList;
 import com.agilesparks.rubikscube.solver.RotationTree;
@@ -86,7 +85,7 @@ public class SolverTest {
         Solution mySolution = mySolver.solve(myRubik,myTree,myTree,myTree);
         mySolution.applyToRubik(myRubik);
         mySolution.print();
-        Permutation.getPermutationFromCube(myRubik).print();
+        Cube.getPermutationFromCube(myRubik).print();
         assertTrue(myRubik.newCube.equals(new NewCube()));
 
     }
@@ -160,7 +159,7 @@ public class SolverTest {
         long endTime = System.nanoTime();
         System.out.format("Elapsed Time=%d seconds", ((endTime - beginningTime) / 1000000000));
 //27-12-2017: started 11:39 PM, Failed
-        Permutation.getPermutationFromCube(myRubik).print();
+        Cube.getPermutationFromCube(myRubik).print();
         assertTrue(myRubik.newCube.equals(new NewCube()));
 
     }

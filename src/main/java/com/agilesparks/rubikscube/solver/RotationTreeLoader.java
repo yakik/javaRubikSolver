@@ -2,7 +2,7 @@ package com.agilesparks.rubikscube.solver;
 
 import com.agilesparks.rubikscube.cube.Cube;
 import com.agilesparks.rubikscube.cube.CubeStatus;
-import com.agilesparks.rubikscube.cube.Permutation;
+import com.agilesparks.rubikscube.cube.NewCube;
 import com.agilesparks.rubikscube.cube.RubikFileReader;
 import com.agilesparks.rubikscube.cube.RubikFileWriter;
 import com.agilesparks.rubikscube.utils.Direction;
@@ -51,7 +51,7 @@ public class RotationTreeLoader {
         RubikFileWriter l_secondWriter = new RubikFileWriter(p_secondFloorFile);
         RubikFileWriter l_thirdWriter = new RubikFileWriter(p_thirdFloorFile);
         Cube l_rubik = new Cube();
-        Permutation l_initialPermutation = Permutation.getPermutationFromCube(l_rubik);
+        NewCube l_initialPermutation = Cube.getPermutationFromCube(l_rubik);
         RotationLinkedList l_rotationLinkedList = new RotationLinkedList();
         BuildFilesForRotation(l_firstWriter,l_secondWriter,l_thirdWriter
                 ,l_rubik, l_initialPermutation, l_rotationLinkedList, p_levels,"");
@@ -63,7 +63,7 @@ public class RotationTreeLoader {
 
     public static void BuildFilesForRotation(RubikFileWriter p_firstFloorFile, RubikFileWriter p_secondFloorFile, RubikFileWriter p_thirdFloorFile
                                              , Cube p_rubik
-            , Permutation p_initialPermutation, RotationLinkedList p_rotationLinkedList, int p_level, String p_progressString){
+            , NewCube p_initialPermutation, RotationLinkedList p_rotationLinkedList, int p_level, String p_progressString){
 
         if (p_level == 0) return;
         if (p_level>5) System.out.println(p_progressString);

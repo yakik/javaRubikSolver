@@ -5,23 +5,23 @@ import com.agilesparks.rubikscube.utils.Location;
 
 public class CubeStatus {
 
-	public static boolean changesOnlyInThirdFloor(Cube cube, Permutation p_comparedPermutation) {
+	public static boolean changesOnlyInThirdFloor(Cube cube, NewCube p_comparedPermutation) {
 		int l_counter = 0;
 		
 		
 		
 		//next line replaced previous code
-		l_counter = cube.newCube.countDifferenceThirdFloor(p_comparedPermutation.newCube);
+		l_counter = cube.newCube.countDifferenceThirdFloor(p_comparedPermutation);
 	
 		if (l_counter>0) return true;
 		else return false;
 	}
 
 	public static boolean isDifferentItemsInFirstFloorLessThanThree(Cube cube,
-			Permutation p_comparedPermutation) {
+			NewCube p_comparedPermutation) {
 		int l_counter = 0;
 	
-		l_counter = cube.newCube.countDifferenceFirstFloor(p_comparedPermutation.newCube);
+		l_counter = cube.newCube.countDifferenceFirstFloor(p_comparedPermutation);
 		
 		
 		if (l_counter<3) return true;
@@ -29,10 +29,10 @@ public class CubeStatus {
 	}
 
 	public static boolean isDifferentItemsOnlyInSecondFloorLessThanThree(Cube cube,
-			Permutation p_comparedPermutation) {
+			NewCube p_comparedPermutation) {
 		int l_counter = 0;
 		
-		l_counter = cube.newCube.countDifferenceSecondFloor(p_comparedPermutation.newCube);
+		l_counter = cube.newCube.countDifferenceSecondFloor(p_comparedPermutation);
 		
 		
 		

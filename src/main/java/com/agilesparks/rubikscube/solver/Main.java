@@ -1,7 +1,6 @@
 package com.agilesparks.rubikscube.solver;
 
 import com.agilesparks.rubikscube.cube.Cube;
-import com.agilesparks.rubikscube.cube.Permutation;
 import com.agilesparks.rubikscube.cube.RubikFileReader;
 import com.agilesparks.rubikscube.utils.Direction;
 import com.agilesparks.rubikscube.utils.Face;
@@ -78,7 +77,7 @@ public class Main {
         long endTime = System.nanoTime();
         System.out.format("Elapsed Time=%d seconds", ((endTime - beginningTime) / 1000000000));
 //27-12-2017: started 11:39 PM, Failed
-        Permutation.getPermutationFromCube(myRubik).print();
+        Cube.getPermutationFromCube(myRubik).print();
     }
 }
 

@@ -358,4 +358,8 @@ public class NewCube {
 				countDifferenceSecondFloor(comparedCube);
 	}
 
+	public NewCube getCopy() {
+		return new NewCube(this);
+	}
+
 }

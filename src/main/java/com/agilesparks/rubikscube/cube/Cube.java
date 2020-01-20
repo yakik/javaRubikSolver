@@ -34,6 +34,16 @@ public class Cube {
 
 
 
+	public static NewCube getPermutationFromCube(Cube cube) {
+		
+		
+		NewCube newCube = new NewCube(cube.newCube);
+		
+		return newCube;
+	}
+
+
+
 	public static int getValue(NewCube cube, int p_highestFloor) {
 		int  l_value = 0;
 		  NewCube fixedCube = new NewCube();
