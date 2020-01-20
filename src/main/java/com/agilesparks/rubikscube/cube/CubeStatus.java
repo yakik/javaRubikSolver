@@ -11,7 +11,7 @@ public class CubeStatus {
 		
 		
 		//next line replaced previous code
-		l_counter = cube.newCube.countDifferenceThirdFloor(p_comparedPermutation.newCube);
+		l_counter = cube.countDifferenceThirdFloor(p_comparedPermutation);
 	
 		if (l_counter>0) return true;
 		else return false;
@@ -21,7 +21,7 @@ public class CubeStatus {
 			Cube p_comparedPermutation) {
 		int l_counter = 0;
 	
-		l_counter = cube.newCube.countDifferenceFirstFloor(p_comparedPermutation.newCube);
+		l_counter = cube.countDifferenceFirstFloor(p_comparedPermutation);
 		
 		
 		if (l_counter<3) return true;
@@ -32,7 +32,7 @@ public class CubeStatus {
 			Cube p_comparedPermutation) {
 		int l_counter = 0;
 		
-		l_counter = cube.newCube.countDifferenceSecondFloor(p_comparedPermutation.newCube);
+		l_counter = cube.countDifferenceSecondFloor(p_comparedPermutation);
 		
 		
 		

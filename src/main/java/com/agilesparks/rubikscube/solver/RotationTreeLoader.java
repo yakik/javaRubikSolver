@@ -50,7 +50,7 @@ public class RotationTreeLoader {
         RubikFileWriter l_secondWriter = new RubikFileWriter(p_secondFloorFile);
         RubikFileWriter l_thirdWriter = new RubikFileWriter(p_thirdFloorFile);
         Cube l_rubik = new Cube();
-        Cube l_initialPermutation = Cube.getPermutationFromCube(l_rubik);
+        Cube l_initialPermutation = new Cube(l_rubik);
         RotationLinkedList l_rotationLinkedList = new RotationLinkedList();
         BuildFilesForRotation(l_firstWriter,l_secondWriter,l_thirdWriter
                 ,l_rubik, l_initialPermutation, l_rotationLinkedList, p_levels,"");

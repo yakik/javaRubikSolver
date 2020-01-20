@@ -18,7 +18,7 @@ public class PermutationTest {
     public void getValue() {
         Cube myRubik = new Cube();
         myRubik.rotateFace(Face.FRONT, Direction.CW);
-        Cube myPermutation = Cube.getPermutationFromCube(myRubik);
+        Cube myPermutation = new Cube(myRubik);
         assertEquals("first floor",10, Cube.getValue(myPermutation, 1) );
         assertEquals("second floor", 14, Cube.getValue(myPermutation, 2) );
         assertEquals("third floor",24, Cube.getValue(myPermutation, 3) );
@@ -27,7 +27,7 @@ public class PermutationTest {
     @Test
     public void getValueFull() {
         Cube myRubik = new Cube();
-        Cube myPermutation = Cube.getPermutationFromCube(myRubik);
+        Cube myPermutation = new Cube(myRubik);
         assertEquals("Full",40, Cube.getValue(myPermutation, 3) );
 
     }

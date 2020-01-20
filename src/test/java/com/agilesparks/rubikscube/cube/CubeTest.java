@@ -13,10 +13,10 @@ import com.agilesparks.rubikscube.utils.Location;
 import com.agilesparks.rubikscube.utils.LocationInFace;
 import com.agilesparks.rubikscube.utils.Position;
 
-public class NewCubeTest {
+public class CubeTest {
 	@Test
     public  void overallTest() {
-		NewCube myRubik = new NewCube(), myRubik2 = new NewCube();
+		Cube myRubik = new Cube(), myRubik2 = new Cube();
 		myRubik.rotateFace(Face.FRONT, Direction.CW);
 		assertEquals(8,myRubik.countAllDifferences(myRubik2));
 		myRubik.rotateFace(Face.TOP, Direction.CW);
@@ -25,7 +25,7 @@ public class NewCubeTest {
 	
 	@Test
     public  void compareFirstFloor() {
-		NewCube myRubik = new NewCube(), myRubik2 = new NewCube();
+		Cube myRubik = new Cube(), myRubik2 = new Cube();
 		myRubik.setColor(Face.FRONT, LocationInFace.BOTTOMLEFT, Color.BACKCOLOR);
 		myRubik.setColor(Face.BACK, LocationInFace.BOTTOM, Color.FRONTCOLOR);
 		myRubik.setColor(Face.FRONT, LocationInFace.TOPLEFT, Color.BACKCOLOR);
@@ -38,7 +38,7 @@ public class NewCubeTest {
 	    @Test
 	    public  void rotateFrontClockwise() {
 	        //Colors for : Front, Back, Right, Left, Top and Bottom  faces
-	    	NewCube myRubik = new NewCube();
+	    	Cube myRubik = new Cube();
 	        myRubik.rotateFace(Face.FRONT, Direction.CW);
 	        assertEquals("1",Color.LEFTCOLOR, myRubik.getColor(Face.TOP, LocationInFace.BOTTOM));
 	        assertEquals("2",Color.LEFTCOLOR, myRubik.getColor(Face.TOP, LocationInFace.BOTTOMLEFT));
@@ -57,7 +57,7 @@ public class NewCubeTest {
 	    @Test
 	    public  void rotateLeftClockwise() {
 	        //Colors for : Front, Back, Right, Left, Top and Bottom  faces
-	    	NewCube myRubik = new NewCube();
+	    	Cube myRubik = new Cube();
 	        myRubik.rotateFace(Face.LEFT, Direction.CW);
 	        assertEquals("1",Color.BACKCOLOR, myRubik.getColor(Face.TOP, LocationInFace.LEFT));
 	        assertEquals("2",Color.BACKCOLOR, myRubik.getColor(Face.TOP, LocationInFace.BOTTOMLEFT));
@@ -76,7 +76,7 @@ public class NewCubeTest {
 	    @Test
 	    public  void rotateRightClockwise() {
 	        //Colors for : Front, Back, Right, Left, Top and Bottom  faces
-	    	NewCube myRubik = new NewCube();
+	    	Cube myRubik = new Cube();
 	        myRubik.rotateFace(Face.RIGHT, Direction.CW);
 	        assertEquals("1",Color.FRONTCOLOR, myRubik.getColor(Face.TOP, LocationInFace.RIGHT));
 	        assertEquals("2",Color.FRONTCOLOR, myRubik.getColor(Face.TOP, LocationInFace.BOTTOMRIGHT));
@@ -95,7 +95,7 @@ public class NewCubeTest {
 	    @Test
 	    public  void rotateBackClockwise() {
 	        //Colors for : Front, Back, Right, Left, Top and Bottom  faces
-	    	NewCube myRubik = new NewCube();
+	    	Cube myRubik = new Cube();
 	        myRubik.rotateFace(Face.BACK, Direction.CW);
 	        assertEquals("1",Color.RIGHTCOLOR, myRubik.getColor(Face.TOP, LocationInFace.TOP));
 	        assertEquals("2",Color.RIGHTCOLOR, myRubik.getColor(Face.TOP, LocationInFace.TOPRIGHT));
@@ -114,7 +114,7 @@ public class NewCubeTest {
 	    @Test
 	    public  void rotateTopClockwise() {
 	        //Colors for : Front, Back, Right, Left, Top and Bottom  faces
-	    	NewCube myRubik = new NewCube();
+	    	Cube myRubik = new Cube();
 	        myRubik.rotateFace(Face.TOP, Direction.CW);
 	        assertEquals("1",Color.RIGHTCOLOR, myRubik.getColor(Face.FRONT, LocationInFace.TOP));
 	        assertEquals("2",Color.RIGHTCOLOR, myRubik.getColor(Face.FRONT, LocationInFace.TOPRIGHT));
@@ -133,7 +133,7 @@ public class NewCubeTest {
 	    @Test
 	    public  void rotateBottomClockwise() {
 	        //Colors for : Front, Back, Right, Left, Top and Bottom  faces
-	    	NewCube myRubik = new NewCube();
+	    	Cube myRubik = new Cube();
 	        myRubik.rotateFace(Face.BOTTOM, Direction.CW);
 	        assertEquals("1",Color.LEFTCOLOR, myRubik.getColor(Face.FRONT, LocationInFace.BOTTOM));
 	        assertEquals("2",Color.LEFTCOLOR, myRubik.getColor(Face.FRONT, LocationInFace.BOTTOMRIGHT));
@@ -153,7 +153,7 @@ public class NewCubeTest {
 	    @Test
 	    public  void rotateFrontCounterClockwise() {
 	        //Colors for : Front, Back, Right, Left, Top and Bottom  faces
-	    	NewCube myRubik = new NewCube();
+	    	Cube myRubik = new Cube();
 	        myRubik.rotateFace(Face.FRONT, Direction.CCW);
 	        assertEquals("1",Color.RIGHTCOLOR, myRubik.getColor(Face.TOP, LocationInFace.BOTTOM));
 	        assertEquals("2",Color.RIGHTCOLOR, myRubik.getColor(Face.TOP, LocationInFace.BOTTOMLEFT));
@@ -172,7 +172,7 @@ public class NewCubeTest {
 	    @Test
 	    public  void rotateLeftCounterClockwise() {
 	        //Colors for : Front, Back, Right, Left, Top and Bottom  faces
-	    	NewCube myRubik = new NewCube();
+	    	Cube myRubik = new Cube();
 	        myRubik.rotateFace(Face.LEFT, Direction.CCW);
 	        assertEquals("1",Color.FRONTCOLOR, myRubik.getColor(Face.TOP, LocationInFace.LEFT));
 	        assertEquals("2",Color.FRONTCOLOR, myRubik.getColor(Face.TOP, LocationInFace.BOTTOMLEFT));
@@ -191,7 +191,7 @@ public class NewCubeTest {
 	    @Test
 	    public  void rotateRightCounterClockwise() {
 	        //Colors for : Front, Back, Right, Left, Top and Bottom  faces
-	    	NewCube myRubik = new NewCube();
+	    	Cube myRubik = new Cube();
 	        myRubik.rotateFace(Face.RIGHT, Direction.CCW);
 	        assertEquals("1",Color.BACKCOLOR, myRubik.getColor(Face.TOP, LocationInFace.RIGHT));
 	        assertEquals("2",Color.BACKCOLOR, myRubik.getColor(Face.TOP, LocationInFace.BOTTOMRIGHT));
@@ -210,7 +210,7 @@ public class NewCubeTest {
 	    @Test
 	    public  void rotateBackCounterClockwise() {
 	        //Colors for : Front, Back, Right, Left, Top and Bottom  faces
-	    	NewCube myRubik = new NewCube();
+	    	Cube myRubik = new Cube();
 	        myRubik.rotateFace(Face.BACK, Direction.CCW);
 	        assertEquals("1",Color.LEFTCOLOR, myRubik.getColor(Face.TOP, LocationInFace.TOP));
 	        assertEquals("2",Color.LEFTCOLOR, myRubik.getColor(Face.TOP, LocationInFace.TOPRIGHT));
@@ -229,7 +229,7 @@ public class NewCubeTest {
 	    @Test
 	    public  void rotateTopCounterClockwise() {
 	        //Colors for : Front, Back, Right, Left, Top and Bottom  faces
-	    	NewCube myRubik = new NewCube();
+	    	Cube myRubik = new Cube();
 	        myRubik.rotateFace(Face.TOP, Direction.CCW);
 	        assertEquals("1",Color.LEFTCOLOR, myRubik.getColor(Face.FRONT, LocationInFace.TOP));
 	        assertEquals("2",Color.LEFTCOLOR, myRubik.getColor(Face.FRONT, LocationInFace.TOPRIGHT));
@@ -248,7 +248,7 @@ public class NewCubeTest {
 	    @Test
 	    public  void rotateBottomCounterClockwise() {
 	        //Colors for : Front, Back, Right, Left, Top and Bottom  faces
-	    	NewCube myRubik = new NewCube();
+	    	Cube myRubik = new Cube();
 	        myRubik.rotateFace(Face.BOTTOM, Direction.CCW);
 	        assertEquals("1",Color.RIGHTCOLOR, myRubik.getColor(Face.FRONT, LocationInFace.BOTTOM));
 	        assertEquals("2",Color.RIGHTCOLOR, myRubik.getColor(Face.FRONT, LocationInFace.BOTTOMRIGHT));

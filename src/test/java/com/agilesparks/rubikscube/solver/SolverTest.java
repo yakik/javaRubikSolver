@@ -84,7 +84,7 @@ public class SolverTest {
         Solution mySolution = mySolver.solve(myRubik,myTree,myTree,myTree);
         mySolution.applyToRubik(myRubik);
         mySolution.print();
-        Cube.getPermutationFromCube(myRubik).print();
+        myRubik.print();
         assertTrue(myRubik.equals(new Cube()));
 
     }
@@ -158,7 +158,7 @@ public class SolverTest {
         long endTime = System.nanoTime();
         System.out.format("Elapsed Time=%d seconds", ((endTime - beginningTime) / 1000000000));
 //27-12-2017: started 11:39 PM, Failed
-        Cube.getPermutationFromCube(myRubik).print();
+        myRubik.print();
         assertTrue(myRubik.equals(new Cube()));
 
     }
