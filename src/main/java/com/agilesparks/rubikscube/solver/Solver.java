@@ -15,7 +15,7 @@ public class Solver {
         SolutionManager l_solutionManager = new SolutionManager();
         Solution l_solutionToDev;
 
-        RotationLinkedList l_rotationLinkedList = new RotationLinkedList();
+        RotationSequence l_rotationLinkedList = new RotationSequence();
 
         int l_floor = getTargetFloor(l_permutation);
         l_numberOfCubicleInPlace = Cube.getValue(l_permutation, l_floor);
@@ -80,7 +80,7 @@ public class Solver {
                                     int p_floor) {
         Cube l_rubik = new Cube();
         Cube l_permutation = p_solution.getPermutation().getCopy();
-        RotationLinkedList l_rotationLinkedList = new RotationLinkedList();
+        RotationSequence l_rotationLinkedList = new RotationSequence();
         int l_minimumValue = Cube.getValue(l_permutation, p_floor);
 
 //	if (l_minimumValue < 8)
@@ -91,33 +91,42 @@ public class Solver {
     }
 
 
-    public void searchTree(int p_minimumValue, RotationTree p_tree,
-                           Cube p_rubik,SolutionManager p_solutionManager,
-                           Solution p_prevSolution, int p_floor, int depth) {
-        if (p_minimumValue<2) p_minimumValue = 2;
-        Cube l_permutation = new Cube(p_rubik);
-        Cube l_rubik = new Cube();
-        for (int i=0;i<p_tree.getSize();i++){
-            RotationLinkedList l_rotationLinkedList = p_tree.getRotationLinkedList(i);
-            if (l_rotationLinkedList != null) {
-                l_rubik = new Cube(l_permutation);
-                for (int j=0;j<l_rotationLinkedList.size();j++)
-                    l_rubik.rotateFace(l_rotationLinkedList.get(j).getFace(), l_rotationLinkedList.get(j).getDirection() );
-                Cube l_resultPermutation = Cube.getPermutationFromCube(l_rubik).getCopy();
+    public void searchTree(int minimumValueToReach, RotationTree searchTree,
+                           Cube cubeToSolve,SolutionManager solutionManager,
+                           Solution previousSolution, int targetFloorToSortInCube, int depth) {
+        if (minimumValueToReach<2) minimumValueToReach = 2;
+        for (int rotationSequenceIndex=0;rotationSequenceIndex<searchTree.getSize();rotationSequenceIndex++){
+            RotationSequence rotationSequence = searchTree.getRotationSequence(rotationSequenceIndex);
+            if (rotationSequence != null) {
+                Cube cubeAfterRotationSequence = getCubeAfterApplyingSequence(new Cube(cubeToSolve), rotationSequence);
 
-                if (Cube.getValue(l_resultPermutation, p_floor) >= p_minimumValue) {
-                    p_solutionManager.addSolution(l_rotationLinkedList, l_resultPermutation, p_prevSolution, Cube.getValue(l_resultPermutation, p_floor), p_floor);
-               //     if (depth == 1) System.out.format("Hi,value=%d\n",l_resultPermutation.getValue(p_floor));
-                }
-                if (p_floor==3 && depth==0) {
-                  //  System.out.println("Hi");
-                    searchTree(p_minimumValue, p_tree, l_rubik, p_solutionManager,
-                            new Solution(l_rotationLinkedList, l_resultPermutation, p_prevSolution), p_floor, 1);
+                addSequenceToSolutionIfHigherValue(minimumValueToReach, solutionManager, previousSolution,
+						targetFloorToSortInCube, rotationSequence, cubeAfterRotationSequence);
+                if (targetFloorToSortInCube==3 && depth==0) {
+                    searchTree(minimumValueToReach, searchTree, cubeAfterRotationSequence, solutionManager,
+                            new Solution(rotationSequence, cubeAfterRotationSequence, previousSolution), targetFloorToSortInCube, 1);
 
                 }
             }
         }
     }
+
+	private void addSequenceToSolutionIfHigherValue(int minimumValueToReach, SolutionManager solutionManager,
+			Solution previousSolution, int targetFloorToSortInCube, RotationSequence rotationSequence,
+			Cube cubeAfterRotationSequence) {
+		if (Cube.getValue(cubeAfterRotationSequence, targetFloorToSortInCube) >= minimumValueToReach) {
+		    solutionManager.addSolution(rotationSequence, cubeAfterRotationSequence, previousSolution,
+		    		Cube.getValue(cubeAfterRotationSequence, targetFloorToSortInCube), targetFloorToSortInCube);
+		}
+	}
+
+	private Cube getCubeAfterApplyingSequence(Cube cubeForExperimentation, RotationSequence rotationSequence) {
+		for (int rotationIndex=0;rotationIndex<rotationSequence.size();rotationIndex++)
+		cubeForExperimentation.rotateFace(rotationSequence.getRotation(rotationIndex).getFace(), 
+				rotationSequence.getRotation(rotationIndex).getDirection() );
+		Cube cubeAfterRotationSequence = Cube.getPermutationFromCube(cubeForExperimentation).getCopy();
+		return cubeAfterRotationSequence;
+	}
 
 
 

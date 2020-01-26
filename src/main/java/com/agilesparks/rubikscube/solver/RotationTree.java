@@ -3,11 +3,11 @@ package com.agilesparks.rubikscube.solver;
 import java.util.ArrayList;
 
 public class RotationTree {
-    ArrayList<RotationLinkedList> c_array = new ArrayList<RotationLinkedList>();
+    ArrayList<RotationSequence> c_array = new ArrayList<RotationSequence>();
     public RotationTree (){
     }
 
-    public void addRotationLinkedList(RotationLinkedList p_list){
+    public void addRotationLinkedList(RotationSequence p_list){
 
         c_array.add(p_list.getCopy());
     }
@@ -16,7 +16,7 @@ public class RotationTree {
         return c_array.size();
     }
 
-    public RotationLinkedList getRotationLinkedList(int p_index){
+    public RotationSequence getRotationSequence(int p_index){
         return c_array.get(p_index);
     }
 }

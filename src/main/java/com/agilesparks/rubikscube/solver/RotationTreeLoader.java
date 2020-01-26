@@ -10,7 +10,7 @@ import com.agilesparks.rubikscube.utils.Rotation;
 
 public class RotationTreeLoader {
     static RotationTree loadSearchTree() {
-        RotationLinkedList l_rotationLinkedList = new RotationLinkedList();
+        RotationSequence l_rotationLinkedList = new RotationSequence();
         RotationTree l_tree = new RotationTree();
 
         RubikFileReader l_fileReader = new RubikFileReader("C:\\DevProj\\RubikSolver\\permRubik.txt");
@@ -23,14 +23,14 @@ public class RotationTreeLoader {
 
 
     public static void loadRotationTreeFromFile(RubikFileReader p_File, RotationTree p_tree) {
-        RotationLinkedList l_rotationLinkedList = new RotationLinkedList();
+        RotationSequence l_rotationLinkedList = new RotationSequence();
         while (l_rotationLinkedList.readFromFile(p_File)) {
             p_tree.addRotationLinkedList(l_rotationLinkedList);
         }
 
     }
 
-    public static void loadRotationTreeFromStandard(RotationTree p_tree, RotationLinkedList p_rotationLinkedList, int p_depth) {
+    public static void loadRotationTreeFromStandard(RotationTree p_tree, RotationSequence p_rotationLinkedList, int p_depth) {
         if (p_depth == 0) return;
         for (Face face : Face.values())
             for (Direction direction : Direction.values()) {
@@ -51,7 +51,7 @@ public class RotationTreeLoader {
         RubikFileWriter l_thirdWriter = new RubikFileWriter(p_thirdFloorFile);
         Cube l_rubik = new Cube();
         Cube l_initialPermutation = new Cube(l_rubik);
-        RotationLinkedList l_rotationLinkedList = new RotationLinkedList();
+        RotationSequence l_rotationLinkedList = new RotationSequence();
         BuildFilesForRotation(l_firstWriter,l_secondWriter,l_thirdWriter
                 ,l_rubik, l_initialPermutation, l_rotationLinkedList, p_levels,"");
         l_firstWriter.close();
@@ -62,7 +62,7 @@ public class RotationTreeLoader {
 
     public static void BuildFilesForRotation(RubikFileWriter p_firstFloorFile, RubikFileWriter p_secondFloorFile, RubikFileWriter p_thirdFloorFile
                                              , Cube p_rubik
-            , Cube p_initialPermutation, RotationLinkedList p_rotationLinkedList, int p_level, String p_progressString){
+            , Cube p_initialPermutation, RotationSequence p_rotationLinkedList, int p_level, String p_progressString){
 
         if (p_level == 0) return;
         if (p_level>5) System.out.println(p_progressString);

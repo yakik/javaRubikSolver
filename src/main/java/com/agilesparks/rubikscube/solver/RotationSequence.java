@@ -13,16 +13,16 @@ import com.agilesparks.rubikscube.utils.Direction;
 import com.agilesparks.rubikscube.utils.Face;
 import com.agilesparks.rubikscube.utils.Rotation;
 
-public class RotationLinkedList {
+public class RotationSequence {
 
     private ArrayList<Rotation> c_array = new ArrayList<Rotation>();
 
-    public RotationLinkedList() {
+    public RotationSequence() {
         c_array.clear();
     }
 
 
-    private  RotationLinkedList(ArrayList<Rotation> p_arrayList) {
+    private  RotationSequence(ArrayList<Rotation> p_arrayList) {
         c_array = p_arrayList;
 
     }
@@ -93,8 +93,8 @@ public class RotationLinkedList {
         return !(c_array.size()==0);
     }
 
-    RotationLinkedList getSubRotationLinkedList() {
-        return new RotationLinkedList(new ArrayList<>(c_array.subList(1, c_array.size())));
+    RotationSequence getSubRotationLinkedList() {
+        return new RotationSequence(new ArrayList<>(c_array.subList(1, c_array.size())));
     }
 
     int size(){
@@ -104,7 +104,7 @@ public class RotationLinkedList {
     Rotation getFirstRotation() {
         return c_array.get(0);
     }
-public Rotation get(int p_index){
+public Rotation getRotation(int p_index){
         return c_array.get(p_index);
 }
     boolean isNotEmpty() {
@@ -112,8 +112,8 @@ public Rotation get(int p_index){
         return (c_array.size()>0);
     }
 
-    RotationLinkedList getCopy() {
-        RotationLinkedList l_rotationLinkedList = new RotationLinkedList();
+    RotationSequence getCopy() {
+        RotationSequence l_rotationLinkedList = new RotationSequence();
         ListIterator<Rotation> l_itr=c_array.listIterator();
 
         while(l_itr.hasNext())

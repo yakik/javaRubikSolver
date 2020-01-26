@@ -7,7 +7,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import com.agilesparks.rubikscube.cube.RubikFileReader;
-import com.agilesparks.rubikscube.solver.RotationLinkedList;
+import com.agilesparks.rubikscube.solver.RotationSequence;
 import com.agilesparks.rubikscube.solver.RotationTree;
 import com.agilesparks.rubikscube.solver.RotationTreeLoader;
 import com.agilesparks.rubikscube.utils.Direction;
@@ -23,7 +23,7 @@ public class RotationTreeLoaderTest {
 
     @Test
     public void numberNodesRotationTree() {
-        RotationLinkedList l_rotationLinkedList = new RotationLinkedList();
+        RotationSequence l_rotationLinkedList = new RotationSequence();
         RotationTree l_tree = new RotationTree();
         RotationTreeLoader.loadRotationTreeFromStandard(l_tree, l_rotationLinkedList, 4);
      //   int numberOfNodes = l_tree.getNumberOfNodes();
@@ -35,12 +35,12 @@ public class RotationTreeLoaderTest {
     @Ignore
     @Test
     public  void loadRotationTreeFromFile() {
-        RotationLinkedList l_rotationLinkedList = new RotationLinkedList();
+        RotationSequence l_rotationLinkedList = new RotationSequence();
         RotationTree l_tree = new RotationTree();
         forTestRubikFileReader myTestReader = new forTestRubikFileReader("(5,1) (3,1) (1,0) (3,0) (4,0) (3,0) (4,1) (1,1) \n" +
                 "(5,1) (3,1) (1,0) (3,0) (5,0) \n");
         RotationTreeLoader.loadRotationTreeFromFile(myTestReader, l_tree);
-        assertEquals(Direction.CCW,l_tree.getRotationLinkedList(1).get(0).getDirection());
+        assertEquals(Direction.CCW,l_tree.getRotationSequence(1).getRotation(0).getDirection());
     }
 
     @Ignore
@@ -66,7 +66,7 @@ public class RotationTreeLoaderTest {
 
     @Test
     public void loadRotationTreeFromStandard() {
-        RotationLinkedList l_rotationLinkedList = new RotationLinkedList();
+        RotationSequence l_rotationLinkedList = new RotationSequence();
         RotationTree l_tree = new RotationTree();
         RotationTreeLoader.loadRotationTreeFromStandard(l_tree, l_rotationLinkedList, 1);
         int i=-1;
@@ -74,8 +74,8 @@ public class RotationTreeLoaderTest {
             for (Direction direction : Direction.values()) {
             i++;
                 int rotationValue = (new Rotation(face,direction)).getValue();
-                assertEquals(face, l_tree.getRotationLinkedList(i).get(0).getFace());
-                assertEquals(direction, l_tree.getRotationLinkedList(i).get(0).getDirection());
+                assertEquals(face, l_tree.getRotationSequence(i).getRotation(0).getFace());
+                assertEquals(direction, l_tree.getRotationSequence(i).getRotation(0).getDirection());
             }
     }
 }

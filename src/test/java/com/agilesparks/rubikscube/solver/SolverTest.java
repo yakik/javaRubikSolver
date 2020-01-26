@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import com.agilesparks.rubikscube.cube.Cube;
 import com.agilesparks.rubikscube.cube.RubikFileReader;
-import com.agilesparks.rubikscube.solver.RotationLinkedList;
+import com.agilesparks.rubikscube.solver.RotationSequence;
 import com.agilesparks.rubikscube.solver.RotationTree;
 import com.agilesparks.rubikscube.solver.RotationTreeLoader;
 import com.agilesparks.rubikscube.solver.Solution;
@@ -64,19 +64,19 @@ public class SolverTest {
         myRubik.rotateFace(Face.LEFT, Direction.CW);
         myRubik.rotateFace(Face.BOTTOM, Direction.CW);
         RotationTree myTree = new RotationTree();
-        RotationLinkedList myRotationLinkedList = new RotationLinkedList();
+        RotationSequence myRotationLinkedList = new RotationSequence();
         myRotationLinkedList.addRotation(new Rotation(Face.TOP, Direction.CCW));
         myTree.addRotationLinkedList(myRotationLinkedList);
 
-        myRotationLinkedList = new RotationLinkedList();
+        myRotationLinkedList = new RotationSequence();
         myRotationLinkedList.addRotation(new Rotation(Face.RIGHT, Direction.CCW));
         myTree.addRotationLinkedList(myRotationLinkedList);
 
-        myRotationLinkedList = new RotationLinkedList();
+        myRotationLinkedList = new RotationSequence();
         myRotationLinkedList.addRotation(new Rotation(Face.LEFT, Direction.CCW));
         myTree.addRotationLinkedList(myRotationLinkedList);
 
-        myRotationLinkedList = new RotationLinkedList();
+        myRotationLinkedList = new RotationSequence();
         myRotationLinkedList.addRotation(new Rotation(Face.BOTTOM, Direction.CCW));
         myTree.addRotationLinkedList(myRotationLinkedList);
 

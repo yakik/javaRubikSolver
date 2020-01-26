@@ -6,11 +6,11 @@ public class Solution {
 
 
     private Cube c_permutation;
-    private RotationLinkedList c_rotationLinkedList;
+    private RotationSequence c_rotationLinkedList;
     private Solution c_prevSolution;
 
 
-    Solution(RotationLinkedList p_rotationLinkedList, Cube p_permutation, Solution p_prevSolution) {
+    Solution(RotationSequence p_rotationLinkedList, Cube p_permutation, Solution p_prevSolution) {
         c_rotationLinkedList = p_rotationLinkedList.getCopy();
         c_permutation = p_permutation.getCopy();
         c_prevSolution = p_prevSolution;
@@ -20,7 +20,7 @@ public class Solution {
         return c_permutation;
     }
 
-    RotationLinkedList getRotationLinkedList() {
+    RotationSequence getRotationLinkedList() {
         return c_rotationLinkedList;
     }
 
