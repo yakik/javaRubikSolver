@@ -54,41 +54,7 @@ public class SolverTest {
     }
 
 
-
-    @Test
-    public void simpleSolver() {
-        Cube myRubik = new Cube();
-
-        myRubik.rotateFace(Face.TOP, Direction.CW);
-        myRubik.rotateFace(Face.RIGHT, Direction.CW);
-        myRubik.rotateFace(Face.LEFT, Direction.CW);
-        myRubik.rotateFace(Face.BOTTOM, Direction.CW);
-        RotationTree myTree = new RotationTree();
-        RotationSequence myRotationLinkedList = new RotationSequence();
-        myRotationLinkedList.addRotation(new Rotation(Face.TOP, Direction.CCW));
-        myTree.addRotationLinkedList(myRotationLinkedList);
-
-        myRotationLinkedList = new RotationSequence();
-        myRotationLinkedList.addRotation(new Rotation(Face.RIGHT, Direction.CCW));
-        myTree.addRotationLinkedList(myRotationLinkedList);
-
-        myRotationLinkedList = new RotationSequence();
-        myRotationLinkedList.addRotation(new Rotation(Face.LEFT, Direction.CCW));
-        myTree.addRotationLinkedList(myRotationLinkedList);
-
-        myRotationLinkedList = new RotationSequence();
-        myRotationLinkedList.addRotation(new Rotation(Face.BOTTOM, Direction.CCW));
-        myTree.addRotationLinkedList(myRotationLinkedList);
-
-        Solver mySolver = new Solver();
-        Solution mySolution = mySolver.solve(myRubik,myTree,myTree,myTree);
-        mySolution.applyToRubik(myRubik);
-        mySolution.print();
-        myRubik.print();
-        assertTrue(myRubik.equals(new Cube()));
-
-    }
-
+    
     @Test
     public void complexSolver() {
         long beginningTime = System.nanoTime();
@@ -152,13 +118,15 @@ public class SolverTest {
         RotationTreeLoader.loadRotationTreeFromFile(readFirstFloor,firstFloorTree);
         RotationTreeLoader.loadRotationTreeFromFile(readSecondFloor, secondFloorTree);
         RotationTreeLoader.loadRotationTreeFromFile(readThirdFloor,thirdFloorTree);
+        //System.out.format("****************");
         Solution mySolution = mySolver.solve(myRubik,firstFloorTree, secondFloorTree, thirdFloorTree);
+        //System.out.format("****************");
         mySolution.applyToRubik(myRubik);
-        mySolution.print();
+        //mySolution.print();
         long endTime = System.nanoTime();
         System.out.format("Elapsed Time=%d seconds", ((endTime - beginningTime) / 1000000000));
 //27-12-2017: started 11:39 PM, Failed
-        myRubik.print();
+        //myRubik.print();
         assertTrue(myRubik.equals(new Cube()));
 
     }

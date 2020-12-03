@@ -21,6 +21,7 @@ public class RotationTreeLoaderTest {
 //
     }
 
+    
     @Test
     public void numberNodesRotationTree() {
         RotationSequence l_rotationLinkedList = new RotationSequence();

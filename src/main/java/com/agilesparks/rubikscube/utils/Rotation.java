@@ -36,9 +36,13 @@ public class Rotation {
     public boolean readFromFile(RubikFileReader p_reader) {
         int l_int;
         l_int = p_reader.read();
-        while ((l_int == ' ') || (l_int == 10))
+        //System.out.format("%d ",l_int);
+        while ((l_int == ' ') || (l_int == 13 /*'\r'*/)){
             l_int = p_reader.read();
-        if ((l_int == /*'\n'*/13)  || (l_int == -1 /*EOF*/) || (l_int != '('))
+           // System.out.format("%d ",l_int);
+        }
+        
+        if ((l_int == /*'\n'*/10)  || (l_int == -1 /*EOF*/) || (l_int != '('))
             return false;
         else {
 

@@ -39,7 +39,7 @@ public class Solver {
 
             l_floor = getTargetFloor(l_solutionManager.getBestValue());
 
-            System.out.format("Floor=%d, Best yet:%d\n", l_floor, l_solutionManager.getBestValue());
+            System.out.format("Floor=%d, Best yet:%d, bestUnDeveloped=%b\n", l_floor, l_solutionManager.getBestValue(),l_solutionManager.getBestUndeveloped() != null);
             // l_solutionManager.getBest().print();
 
 

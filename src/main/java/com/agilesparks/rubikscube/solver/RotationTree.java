@@ -8,7 +8,7 @@ public class RotationTree {
     }
 
     public void addRotationLinkedList(RotationSequence p_list){
-
+        //System.out.format("FFFFF");
         c_array.add(p_list.getCopy());
     }
 
