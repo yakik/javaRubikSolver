@@ -2,6 +2,8 @@ package com.agilesparks.rubikscube.solver;
 
 import java.util.ArrayList;
 
+import com.agilesparks.rubikscube.cube.RubikFileReader;
+
 public class RotationTree {
     ArrayList<RotationSequence> c_array = new ArrayList<RotationSequence>();
     public RotationTree (){
@@ -19,4 +21,14 @@ public class RotationTree {
     public RotationSequence getRotationSequence(int p_index){
         return c_array.get(p_index);
     }
+
+	public static RotationTree getRotationTreeFromFile(RubikFileReader p_File) {
+        RotationTree myTree = new RotationTree();
+        RotationSequence l_rotationLinkedList = new RotationSequence();
+	    while (l_rotationLinkedList.readFromFile(p_File)) {
+	        myTree.addRotationLinkedList(l_rotationLinkedList);
+        }
+        return myTree;
+	
+	}
 }

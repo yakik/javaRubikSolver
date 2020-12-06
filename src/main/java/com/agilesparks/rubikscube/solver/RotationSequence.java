@@ -39,7 +39,7 @@ public class RotationSequence {
         c_array.add(p_rotation);
     }
 
-    void removeRotation() {
+    public void removeRotation() {
         c_array.remove(c_array.size()-1);
     }
 

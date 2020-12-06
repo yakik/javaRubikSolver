@@ -3,15 +3,12 @@ package com.agilesparks.rubikscube.cube;
 
 import static org.junit.Assert.*;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import com.agilesparks.rubikscube.utils.Color;
 import com.agilesparks.rubikscube.utils.Direction;
 import com.agilesparks.rubikscube.utils.Face;
-import com.agilesparks.rubikscube.utils.Location;
 import com.agilesparks.rubikscube.utils.LocationInFace;
-import com.agilesparks.rubikscube.utils.Position;
 
 public class CubeTest {
 	@Test
@@ -262,6 +259,39 @@ public class CubeTest {
 	        assertEquals("7",Color.FRONTCOLOR, myRubik.getColor(Face.FRONT, LocationInFace.BOTTOMLEFT)); 
 	        assertEquals("8",Color.BOTTOMCOLOR, myRubik.getColor(Face.BOTTOM,LocationInFace.BOTTOMLEFT));
 
-	    }
+		}
+		
+		@Test
+    public void simpleRotations() {
+        Cube myRubik = new Cube();
+        for (int i=0;i<20;i++) {
+            myRubik.rotateFace(Face.TOP, Direction.CW);
+            myRubik.rotateFace(Face.RIGHT, Direction.CW);
+            myRubik.rotateFace(Face.LEFT, Direction.CW);
+            myRubik.rotateFace(Face.BOTTOM, Direction.CW);
+            myRubik.rotateFace(Face.RIGHT, Direction.CW);
+            myRubik.rotateFace(Face.TOP, Direction.CW);
+            myRubik.rotateFace(Face.RIGHT, Direction.CW);
+            myRubik.rotateFace(Face.BACK, Direction.CW);
+            myRubik.rotateFace(Face.LEFT, Direction.CW);
+            myRubik.rotateFace(Face.FRONT, Direction.CW);
+        }
+        for (int i=0;i<20;i++) {
+            myRubik.rotateFace(Face.FRONT, Direction.CCW);
+            myRubik.rotateFace(Face.LEFT, Direction.CCW);
+            myRubik.rotateFace(Face.BACK, Direction.CCW);
+            myRubik.rotateFace(Face.RIGHT, Direction.CCW);
+            myRubik.rotateFace(Face.TOP, Direction.CCW);
+            myRubik.rotateFace(Face.RIGHT, Direction.CCW);
+            myRubik.rotateFace(Face.BOTTOM, Direction.CCW);
+            myRubik.rotateFace(Face.LEFT, Direction.CCW);
+            myRubik.rotateFace(Face.RIGHT, Direction.CCW);
+            myRubik.rotateFace(Face.TOP, Direction.CCW);
+        }
+        myRubik.rotateFace(Face.FRONT, Direction.CW);
+        myRubik.rotateFace(Face.FRONT, Direction.CCW);
+        assertTrue(myRubik.equals(new Cube()));
+
+    }
 	    
 }

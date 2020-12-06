@@ -40,13 +40,9 @@ public class Solver {
             l_floor = getTargetFloor(l_solutionManager.getBestValue());
 
             System.out.format("Floor=%d, Best yet:%d, bestUnDeveloped=%b\n", l_floor, l_solutionManager.getBestValue(),l_solutionManager.getBestUndeveloped() != null);
-            // l_solutionManager.getBest().print();
-
-
         }
 
         return l_solutionManager.getBest();
-
     }
 
     public int getTargetFloor(Cube p_permutation) {
@@ -80,11 +76,8 @@ public class Solver {
                                     int p_floor) {
         Cube l_rubik = new Cube();
         Cube l_permutation = p_solution.getPermutation().getCopy();
-        RotationSequence l_rotationLinkedList = new RotationSequence();
         int l_minimumValue = Cube.getValue(l_permutation, p_floor);
 
-//	if (l_minimumValue < 8)
-//		l_minimumValue = 8;
         l_rubik = new Cube(l_permutation);
         searchTree(l_minimumValue-4, p_tree, l_rubik, p_solutionManager,
                 p_solution, p_floor, 0);

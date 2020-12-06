@@ -5,24 +5,17 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class RubikFileReader {
-   // FileReader c_fileReader;
     boolean c_fileIsOK;
 
-   // ClassLoader classloader = Thread.currentThread().getContextClassLoader();
     InputStream c_fileReader;
     
     public RubikFileReader() {
     }
 
     public RubikFileReader(String p_fileLocation) {
-      //  try {
-           // c_fileReader = new FileReader(p_fileLocation);
          c_fileReader = getClass()
      			.getClassLoader().getResourceAsStream(p_fileLocation);
             c_fileIsOK = true;
-     //   } catch (IOException ex) {
-     //       c_fileIsOK = false;
-     //   }
     }
 
     public int read() {
@@ -35,7 +28,6 @@ public class RubikFileReader {
             } catch (IOException ex) {
                 return -1;
             }
-
     }
 
     public void close(){

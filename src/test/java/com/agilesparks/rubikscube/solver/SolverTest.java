@@ -3,58 +3,16 @@ package com.agilesparks.rubikscube.solver;
 
 import static org.junit.Assert.*;
 
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.*;
 
 import com.agilesparks.rubikscube.cube.Cube;
 import com.agilesparks.rubikscube.cube.RubikFileReader;
-import com.agilesparks.rubikscube.solver.RotationSequence;
-import com.agilesparks.rubikscube.solver.RotationTree;
-import com.agilesparks.rubikscube.solver.RotationTreeLoader;
-import com.agilesparks.rubikscube.solver.Solution;
-import com.agilesparks.rubikscube.solver.Solver;
 import com.agilesparks.rubikscube.utils.Direction;
 import com.agilesparks.rubikscube.utils.Face;
-import com.agilesparks.rubikscube.utils.Rotation;
 
 public class SolverTest {
-
-
-    @Test
-    public void simpleRotations() {
-        Cube myRubik = new Cube();
-        for (int i=0;i<20;i++) {
-            myRubik.rotateFace(Face.TOP, Direction.CW);
-            myRubik.rotateFace(Face.RIGHT, Direction.CW);
-            myRubik.rotateFace(Face.LEFT, Direction.CW);
-            myRubik.rotateFace(Face.BOTTOM, Direction.CW);
-            myRubik.rotateFace(Face.RIGHT, Direction.CW);
-            myRubik.rotateFace(Face.TOP, Direction.CW);
-            myRubik.rotateFace(Face.RIGHT, Direction.CW);
-            myRubik.rotateFace(Face.BACK, Direction.CW);
-            myRubik.rotateFace(Face.LEFT, Direction.CW);
-            myRubik.rotateFace(Face.FRONT, Direction.CW);
-        }
-        for (int i=0;i<20;i++) {
-            myRubik.rotateFace(Face.FRONT, Direction.CCW);
-            myRubik.rotateFace(Face.LEFT, Direction.CCW);
-            myRubik.rotateFace(Face.BACK, Direction.CCW);
-            myRubik.rotateFace(Face.RIGHT, Direction.CCW);
-            myRubik.rotateFace(Face.TOP, Direction.CCW);
-            myRubik.rotateFace(Face.RIGHT, Direction.CCW);
-            myRubik.rotateFace(Face.BOTTOM, Direction.CCW);
-            myRubik.rotateFace(Face.LEFT, Direction.CCW);
-            myRubik.rotateFace(Face.RIGHT, Direction.CCW);
-            myRubik.rotateFace(Face.TOP, Direction.CCW);
-        }
-        myRubik.rotateFace(Face.FRONT, Direction.CW);
-        myRubik.rotateFace(Face.FRONT, Direction.CCW);
-        assertTrue(myRubik.equals(new Cube()));
-
-    }
-
-
     
+    //@Ignore
     @Test
     public void complexSolver() {
         long beginningTime = System.nanoTime();
@@ -109,15 +67,13 @@ public class SolverTest {
         myRubik.rotateFace(Face.FRONT, Direction.CW);
         myRubik.rotateFace(Face.RIGHT, Direction.CW);
         Solver mySolver = new Solver();
-        RotationTree firstFloorTree = new RotationTree();
-        RotationTree secondFloorTree = new RotationTree();
-        RotationTree thirdFloorTree = new RotationTree();
+        
         RubikFileReader readFirstFloor = new RubikFileReader("FirstFloor.txt");
         RubikFileReader readSecondFloor = new RubikFileReader("SecondFloor.txt");
         RubikFileReader readThirdFloor = new RubikFileReader("ThirdFloor.txt");
-        RotationTreeLoader.loadRotationTreeFromFile(readFirstFloor,firstFloorTree);
-        RotationTreeLoader.loadRotationTreeFromFile(readSecondFloor, secondFloorTree);
-        RotationTreeLoader.loadRotationTreeFromFile(readThirdFloor,thirdFloorTree);
+        RotationTree firstFloorTree = RotationTree.getRotationTreeFromFile(readFirstFloor);
+        RotationTree secondFloorTree = RotationTree.getRotationTreeFromFile(readSecondFloor);
+        RotationTree thirdFloorTree = RotationTree.getRotationTreeFromFile(readThirdFloor);
         //System.out.format("****************");
         Solution mySolution = mySolver.solve(myRubik,firstFloorTree, secondFloorTree, thirdFloorTree);
         //System.out.format("****************");
