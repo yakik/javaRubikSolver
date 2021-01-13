@@ -148,10 +148,10 @@ namespace utils
         public String getString()
         {
             if (c_isEdge)
-                return String.Format("%c, %c", FaceHandler.getCharValue(c_face0), FaceHandler.getCharValue(c_face1));
+                return String.Format("{0}, {1}", FaceHandler.getCharValue(c_face0), FaceHandler.getCharValue(c_face1));
             else
             {
-                return String.Format("%c, %c, %c", FaceHandler.getCharValue(c_face0), FaceHandler.getCharValue(c_face1), FaceHandler.getCharValue(c_face2));
+                return String.Format("{0}, {1}, {2}", FaceHandler.getCharValue(c_face0), FaceHandler.getCharValue(c_face1), FaceHandler.getCharValue(c_face2));
             }
         }
 

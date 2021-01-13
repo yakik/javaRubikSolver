@@ -5,6 +5,7 @@ using utils;
 namespace CSharpRubikSolverUTests
 {
 
+    [TestClass]
     public class PermutationTest
     {
 

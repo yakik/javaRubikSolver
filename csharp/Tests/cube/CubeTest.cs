@@ -5,6 +5,7 @@ using utils;
 namespace CSharpRubikSolverUTests
 {
 
+	[TestClass]
 	public class CubeTest {
 		[TestMethod]
 	public void overallTest() {

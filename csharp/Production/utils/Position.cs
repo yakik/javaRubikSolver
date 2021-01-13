@@ -31,7 +31,7 @@ namespace utils
     }
 
     public String getString() {
-        return String.Format("%c, %c", FaceHandler.getCharValue(c_currentUp), FaceHandler.getCharValue(c_currentFront));
+        return String.Format("{0}, {1}", FaceHandler.getCharValue(c_currentUp), FaceHandler.getCharValue(c_currentFront));
     }
 
     public void rotate(Rotation p_rotation) {

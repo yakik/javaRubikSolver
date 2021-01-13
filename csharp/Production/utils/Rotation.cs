@@ -73,7 +73,7 @@ namespace utils
         }
 
         public void print() {
-            Console.Write("(%c,%s)", FaceHandler.getCharValue(c_face),DirectionHandler.getString(c_direction));
+            Console.Write("({0},{1})", FaceHandler.getCharValue(c_face),DirectionHandler.getString(c_direction));
         }
 
         public Rotation getReverse() {

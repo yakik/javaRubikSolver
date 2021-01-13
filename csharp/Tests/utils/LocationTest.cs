@@ -78,9 +78,9 @@ namespace CSharpRubikSolverUTests
         public void getString()
         {
             Location myLocation = new Location(Face.BOTTOM, Face.LEFT, Face.FRONT);
-            Assert.AreEqual("D, L, F", myLocation.getString());
+            Assert.AreEqual("D, L, F", myLocation.getString(),"first");
             myLocation = new Location(Face.BOTTOM, Face.LEFT);
-            Assert.AreEqual("D, L", myLocation.getString());
+            Assert.AreEqual("D, L", myLocation.getString(),"second");
 
         }
     }

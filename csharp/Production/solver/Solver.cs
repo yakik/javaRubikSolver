@@ -44,7 +44,7 @@ namespace solver
 
                 l_floor = getTargetFloor(l_solutionManager.getBestValue());
 
-                Console.Write("Floor=%d, Best yet:%d, bestUnDeveloped=%b\n", l_floor, l_solutionManager.getBestValue(), l_solutionManager.getBestUndeveloped() != null);
+                Console.Write("Floor={0}, Best yet:{1}, bestUnDeveloped={2}\n", l_floor, l_solutionManager.getBestValue(), l_solutionManager.getBestUndeveloped() != null);
             }
 
             return l_solutionManager.getBest();

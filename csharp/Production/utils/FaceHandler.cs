@@ -2,7 +2,7 @@
 {
     public class FaceHandler { 
 
-    static public int getCharValue(Face face)
+    static public char getCharValue(Face face)
         {
             switch (face)
             {
