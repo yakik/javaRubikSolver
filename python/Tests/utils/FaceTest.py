@@ -4,22 +4,22 @@ class FaceTest(unittest.TestCase):
         
         def testFaceGetIntGetChar(self):
            myFace = Face.BOTTOM
-            self.assertEqual(1,(int) myFace)
+            self.assertEqual(1, myFace)
             self.assertEqual('D', FaceHandler.getCharValue(myFace))
             myFace = Face.FRONT
-            self.assertEqual(4, (int)myFace)
+            self.assertEqual(4, myFace)
             self.assertEqual('F', FaceHandler.getCharValue(myFace))
             myFace = Face.RIGHT
-            self.assertEqual(2, (int)myFace)
+            self.assertEqual(2, myFace)
             self.assertEqual('R', FaceHandler.getCharValue(myFace))
             myFace = Face.TOP
-            self.assertEqual(0, (int)myFace)
+            self.assertEqual(0, myFace)
             self.assertEqual('U', FaceHandler.getCharValue(myFace))
             myFace = Face.BACK
-            self.assertEqual(5, (int)myFace)
+            self.assertEqual(5, myFace)
             self.assertEqual('B', FaceHandler.getCharValue(myFace))
             myFace = Face.LEFT
-            self.assertEqual(3, (int)myFace)
+            self.assertEqual(3, myFace)
             self.assertEqual('L', FaceHandler.getCharValue(myFace))
         
 

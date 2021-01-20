@@ -19,7 +19,7 @@ class Rotation :
         
 
         def writeToFile(self, RubikFileWriter p_write):
-           l_toWrite = String.Format(" (%d,%d)", (int)self.c_face, (int)self.c_direction)
+           l_toWrite = String.Format(" (%d,%d)", c_face, self.ection)
             p_write.write(l_toWrite)
         
 
@@ -36,9 +36,9 @@ class Rotation :
                 return False
             else:
 
-                self.c_face = FaceHandler.getFace((int)Char.GetNumericValue((char)(p_reader.read())))
+                self.c_face = FaceHandler.getFace(GetNumericValue((char)(p_reader.read())))
                 p_reader.read()
-                self.c_direction = DirectionHandler.getDirection((int)Char.GetNumericValue((char)(p_reader.read())))
+                self.c_direction = DirectionHandler.getDirection(GetNumericValue((char)(p_reader.read())))
                 p_reader.read()
                 return True
             
@@ -46,7 +46,7 @@ class Rotation :
 
 
         def getValue(self):
-            return ((int)self.c_face + (int)self.c_direction * 6)
+            return (c_face + self.ection * 6)
         
 
         def getFace(self):
@@ -80,10 +80,10 @@ class Rotation :
             return False
         
         Rotation other = (Rotation) obj
-        if this.getFace() != other.getFace()):
+        if self.getFace() != other.getFace()):
             return False
         
-        if this.getDirection() != other.getDirection()):
+        if self.getDirection() != other.getDirection()):
             return False
         
         return True

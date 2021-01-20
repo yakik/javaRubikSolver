@@ -87,7 +87,7 @@ class Solver:
                     addSequenceToSolutionIfHigherValue(minimumValueToReach, solutionManager, previousSolution,
                             targetFloorToSortInCube, rotationSequence, cubeAfterRotationSequence)
                     if targetFloorToSortInCube == 3 and depth == 0:
-                        this.searchTree(minimumValueToReach, searchTree, cubeAfterRotationSequence, solutionManager,
+                        self.searchTree(minimumValueToReach, searchTree, cubeAfterRotationSequence, solutionManager,
                                 Solution(rotationSequence, cubeAfterRotationSequence, previousSolution), targetFloorToSortInCube, 1)
 
                     

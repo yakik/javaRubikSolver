@@ -31,7 +31,7 @@ class RotationSequence:
                 if self.c_array[len(self.c_array) - 1].getReverse().equals(p_rotation):
                     l_returnValue = True
                 # previouswas opposite and previousgreater then current face
-                if (p_rotation.getFace() == FaceHandler.getOpposite(l_lastFace) and ((int)l_lastFace > (int)p_rotation.getFace())):
+                if (p_rotation.getFace() == FaceHandler.getOpposite(l_lastFace) and (tFace > p_rot.getFace())):
                     l_returnValue = True
                 # two clockwise rotation of same face
                 if (p_rotation.getFace() == l_lastFace) and (l_lastDirection == Direction.CW) and

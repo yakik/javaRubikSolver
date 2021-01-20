@@ -4,10 +4,10 @@ class DirectionTest(unittest.TestCase):
         
         def testDirectionGetIntGetChar(self):
            myDirection = Direction.CW
-            self.assertEqual(0, (int)myDirection)
+            self.assertEqual(0, myDirection)
             self.assertEqual("CW", myDirection.getString())
             myDirection = Direction.CCW
-            self.assertEqual(1,(int) myDirection)
+            self.assertEqual(1, myDirection)
             self.assertEqual("CCW", myDirection.getString())
         
 

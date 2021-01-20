@@ -70,20 +70,20 @@ def getCopy(self)
     def getHorizonalFacebyVirtual(self,p_viewpoint):
         i = 0
 
-        while g_faceOrder[(int)c_currentUp,i] != c_currentFront and i < 4:
+        while g_faceOrder[rentUp,i] != c_currentFront and i < 4:
             i+=1
         switch (p_viewpoint):
             case Face.FRONT:
-                return g_faceOrder[(int)c_currentUp,i]
+                return g_faceOrder[rentUp,i]
 
             case Face.LEFT:
-                return g_faceOrder[(int)c_currentUp,(i + 1) % 4]
+                return g_faceOrder[rentUp,(i + 1) % 4]
 
             case Face.BACK:
-                return g_faceOrder[(int)c_currentUp,(i + 2) % 4]
+                return g_faceOrder[rentUp,(i + 2) % 4]
 
             case Face.RIGHT:
-                return g_faceOrder[(int)c_currentUp,(i + 3) % 4]
+                return g_faceOrder[rentUp,(i + 3) % 4]
 
             default:
                 return Face.TOP
