@@ -3,7 +3,7 @@ import unittest
 
 class PermutationTest(unittest.TestCase):
 
-    def getValue(self):
+    def test_getValue(self):
         myRubik = Cube()
         myRubik.rotateFace(Face.FRONT, Direction.CW)
         myPermutation = Cube(myRubik)
@@ -13,7 +13,7 @@ class PermutationTest(unittest.TestCase):
         self.assertEqual(24, Cube.getValue(myPermutation, 3), "third floor")
 
 
-    def getValueFull(self):
+    def test_getValueFull(self):
         myRubik = Cube()
         myPermutation = Cube(myRubik)
         self.assertEqual(40, Cube.getValue(myPermutation, 3))

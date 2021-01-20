@@ -1,25 +1,26 @@
+from production.utils.faceHandler import FaceHandler
 class Rotation :
 
 
-        def Rotation(self,p_face,p_direction):
+        def __init__(self,p_face,p_direction):
             self.c_face = p_face
             self.c_direction = p_direction
         
 
 
 
-        def Rotation(self, p_value):
-            if p_value > 5:
-                self.c_direction = DirectionFactory.getDirectionByInt(1)
-                self.c_face = FaceHandler.getFace(p_value - 6)
-            else:
-                self.c_direction = DirectionFactory.getDirectionByInt(0)
-                self.c_face = FaceHandler.getFace(p_value)
+       # def Rotation(self, p_value):
+       #     if p_value > 5:
+       #         self.c_direction = DirectionFactory.getDirectionByInt(1)
+       #         self.c_face = FaceHandler.getFace(p_value - 6)
+       #     else:
+       #         self.c_direction = DirectionFactory.getDirectionByInt(0)
+       #         self.c_face = FaceHandler.getFace(p_value)
             
         
 
         def writeToFile(self, p_write):
-            l_toWrite = String.Format(" (%d,%d)", c_face, self.ection)
+            l_toWrite = "("+ self.c_face + "," + self.c_direction+")"
             p_write.write(l_toWrite)
         
 

@@ -4,7 +4,7 @@ from production.utils.faceHandler import FaceHandler
 class FaceTest(unittest.TestCase):
     
         
-   def testFaceGetIntGetChar(self):
+   def test_FaceGetIntGetChar(self):
       myFace = Face.BOTTOM
       self.assertEqual(1,myFace)
       self.assertEqual('D', FaceHandler.getCharValue(myFace))
@@ -26,14 +26,14 @@ class FaceTest(unittest.TestCase):
         
 
         
-   def testFaceEquals(self):
+   def test_FaceEquals(self):
       myFace = Face.BOTTOM
       self.assertEqual(Face.BOTTOM, myFace)
       self.assertEqual(True, myFace == Face.BOTTOM)
         
 
         
-   def testFaceGetOpposite(self):
+   def test_FaceGetOpposite(self):
       myFace = Face.BOTTOM
       self.assertEqual(Face.TOP, FaceHandler.getOpposite(myFace))
       myFace = Face.FRONT

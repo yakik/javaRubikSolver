@@ -6,15 +6,15 @@ class LocationTest(unittest.TestCase):
     
 
         
-    def isEdge(self):
+    def test_isEdge(self):
         myLocation= Location(Face.BOTTOM, Face.LEFT, Face.FRONT)
         self.assertEqual(False, myLocation.isEdge())
-        my= Location(Face.BOTTOM, Face.LEFT)
+        myLocation= Location(Face.BOTTOM, Face.LEFT)
         self.assertEqual(True, myLocation.isEdge())
     
 
     
-    def getFaces(self):
+    def test_getFaces(self):
         myLocation= Location(Face.BOTTOM, Face.LEFT, Face.FRONT)
         #taking into account facecs are sorted according to value
         self.assertEqual(Face.BOTTOM, myLocation.getFace0())
@@ -23,7 +23,7 @@ class LocationTest(unittest.TestCase):
     
 
     
-    def equals(self):
+    def test_equals(self):
         myLocation= Location(Face.BOTTOM, Face.LEFT, Face.FRONT)
         mySecond= Location(Face.LEFT, Face.FRONT, Face.BOTTOM)
         myThird= Location(Face.RIGHT, Face.FRONT, Face.BOTTOM)
@@ -32,7 +32,7 @@ class LocationTest(unittest.TestCase):
     
 
     
-    def testGetFloor(self):
+    def test_GetFloor(self):
         self.assertEqual(3, Location(Face.TOP, Face.LEFT, Face.FRONT).getFloor(), "1")
         self.assertEqual(3, Location(Face.TOP, Face.LEFT, Face.BACK).getFloor(), "2")
         self.assertEqual(3, Location(Face.TOP, Face.RIGHT, Face.FRONT).getFloor(), "3")
@@ -61,7 +61,7 @@ class LocationTest(unittest.TestCase):
     
 
     
-    def getString(self):
+    def test_getString(self):
         myLocation= Location(Face.BOTTOM, Face.LEFT, Face.FRONT)
         self.assertEqual("D, L, F", myLocation.getString(),"first")
         myLocation= Location(Face.BOTTOM, Face.LEFT)

@@ -6,7 +6,7 @@ class SolverTest(unittest.TestCase):
 
         #@Ignore
         
-        def complexSolver(self):
+        def test_complexSolver(self):
             #long beginningTime = System.nanoTime()
             myRubik = Cube()
             myRubik.rotateFace(Face.RIGHT, Direction.CW)

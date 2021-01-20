@@ -1,4 +1,5 @@
 from .face import Face
+
 class Location:
 
     def containsFace(self,p_face):

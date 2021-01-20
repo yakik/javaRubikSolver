@@ -10,30 +10,19 @@ class LocationInFace(Enum):
         BOTTOMRIGHT=6
         BOTTOMLEFT=7#, NOTDEFINED('Z', 9)*/ #don't change this sequence, for Rubik's sake!
     
-    class LocationInFaceHandle  
+class LocationInFaceHandle:
    
     @staticmethod
-    defGetLocationInFace( intValue):
-            switch (intValue):
-            
-                case 0:
-                    return LocationInFace.TOP
-                case 1:
-                    return LocationInFace.BOTTOM
-                case 2:
-                    return LocationInFace.RIGHT
-                case 3:
-                    return LocationInFace.LEFT
-                case 4:
-                    return LocationInFace.TOPRIGHT
-                case 5:
-                    return LocationInFace.TOPLEFT
-                case 6:
-                    return LocationInFace.BOTTOMRIGHT
-                case 7:
-                    return LocationInFace.BOTTOMLEFT
-                default:
-                    return LocationInFace.TOP
+    def GetLocationInFace( intValue):
+        switcher={0: LocationInFace.TOP,
+               1:LocationInFace.BOTTOM,
+                2:LocationInFace.RIGHT,
+                3:LocationInFace.LEFT,
+                4:LocationInFace.TOPRIGHT,
+                5:LocationInFace.TOPLEFT,
+                6:LocationInFace.BOTTOMRIGHT,
+                7:LocationInFace.BOTTOMLEFT}
+        return switcher.get(intValue)
 
             
            

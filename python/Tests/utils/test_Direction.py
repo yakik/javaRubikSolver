@@ -3,7 +3,7 @@ from production.utils.direction import Direction
 from production.utils.directionHandler import DirectionHandler
 class DirectionTest(unittest.TestCase):
    
-   def testDirectionGetIntGetChar(self):
+   def test_DirectionGetIntGetChar(self):
       myDirection = Direction.CW
       self.assertEqual(Direction.CW, myDirection)
       self.assertEqual("CW",DirectionHandler.getString(myDirection))
@@ -11,12 +11,12 @@ class DirectionTest(unittest.TestCase):
       self.assertEqual(Direction.CCW, myDirection)
       self.assertEqual("CCW", DirectionHandler.getString(myDirection))
    
-   def testDirectionEquals(self):
+   def test_DirectionEquals(self):
       myDirection = Direction.CW
       self.assertEqual(Direction.CW, myDirection)
       self.assertEqual(True, myDirection == Direction.CW)
    
-   def DirectionOpposite(self):
+   def test_DirectionOpposite(self):
       myDirection = Direction.CW
       self.assertEqual(Direction.CCW, DirectionHandler.getOpposite(myDirection))
       myDirection = Direction.CCW
