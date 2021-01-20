@@ -19,10 +19,6 @@ class Cube:
 			return l_value
 		
 
-
-
-
-		Color[,] colors = new Color[6,8]
 	
 	 def equals(self, Cube comparedCube):
 			if countDifferenceFirstFloor(comparedCube) +
@@ -34,11 +30,11 @@ class Cube:
 		
 
 		def setColor(self, Face face, LocationInFace locationInFace, Color color):
-			colors[(int)face,(int)locationInFace] = color
+			self.colors[(int)face,(int)locationInFace] = color
 		
 
 		def getColor(self, Face face, LocationInFace locationInFace):
-			return colors[(int)face,(int)locationInFace]
+			return self.colors[(int)face,(int)locationInFace]
 		
 
 		def __init__(self):
@@ -103,7 +99,7 @@ class Cube:
 				rotateLeftToRight(Face.BACK, LocationInFace.BOTTOMRIGHT, Face.LEFT, LocationInFace.BOTTOMRIGHT, Face.FRONT,
 						LocationInFace.BOTTOMRIGHT, Face.RIGHT, LocationInFace.BOTTOMRIGHT)
 			 else:
-				if i = 0 i < 3 i++)
+				for i =0 i < 3 i++)
 					rotateBottomFace(Direction.CW)
 			
 		
@@ -119,7 +115,7 @@ class Cube:
 				rotateLeftToRight(Face.BACK, LocationInFace.TOPRIGHT, Face.RIGHT, LocationInFace.TOPRIGHT, Face.FRONT,
 						LocationInFace.TOPRIGHT, Face.LEFT, LocationInFace.TOPRIGHT)
 			 else:
-				if i = 0 i < 3 i++)
+				for i =0 i < 3 i++)
 					rotateTopFace(Direction.CW)
 			
 		
@@ -135,7 +131,7 @@ class Cube:
 				rotateLeftToRight(Face.TOP, LocationInFace.TOPRIGHT, Face.LEFT, LocationInFace.TOPLEFT, Face.BOTTOM,
 						LocationInFace.BOTTOMLEFT, Face.RIGHT, LocationInFace.BOTTOMRIGHT)
 			 else:
-				if i = 0 i < 3 i++)
+				for i =0 i < 3 i++)
 					rotateBackFace(Direction.CW)
 			
 		
@@ -157,7 +153,7 @@ class Cube:
 						Face.BOTTOM, LocationInFace.TOPLEFT,
 						Face.BACK, LocationInFace.BOTTOMRIGHT)
 			 else:
-				if i = 0 i < 3 i++)
+				for i =0 i < 3 i++)
 					rotateLeftFace(Direction.CW)
 			
 		
@@ -179,7 +175,7 @@ class Cube:
 						Face.BOTTOM, LocationInFace.TOPRIGHT,
 						Face.FRONT, LocationInFace.TOPRIGHT)
 			 else:
-				if i = 0 i < 3 i++)
+				for i =0 i < 3 i++)
 					rotateRightFace(Direction.CW)
 			
 		
@@ -195,7 +191,7 @@ class Cube:
 				rotateLeftToRight(Face.TOP, LocationInFace.BOTTOMRIGHT, Face.RIGHT, LocationInFace.BOTTOMLEFT, Face.BOTTOM,
 						LocationInFace.TOPLEFT, Face.LEFT, LocationInFace.TOPRIGHT)
 			 else:
-				if i = 0 i < 3 i++)
+				for i =0 i < 3 i++)
 					rotateFrontFace(Direction.CW)
 			
 		

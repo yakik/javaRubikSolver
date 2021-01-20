@@ -254,7 +254,7 @@ class CubeTest(unittest.TestCase):
 		
 	def simpleRotations(self):
 			Cube myRubik = new Cube()
-			if i = 0 i < 20 i++):
+			for i =0 i < 20 i++):
 				myRubik.rotateFace(Face.TOP, Direction.CW)
 				myRubik.rotateFace(Face.RIGHT, Direction.CW)
 				myRubik.rotateFace(Face.LEFT, Direction.CW)
@@ -266,7 +266,7 @@ class CubeTest(unittest.TestCase):
 				myRubik.rotateFace(Face.LEFT, Direction.CW)
 				myRubik.rotateFace(Face.FRONT, Direction.CW)
 			
-			if i = 0 i < 20 i++):
+			for i =0 i < 20 i++):
 				myRubik.rotateFace(Face.FRONT, Direction.CCW)
 				myRubik.rotateFace(Face.LEFT, Direction.CCW)
 				myRubik.rotateFace(Face.BACK, Direction.CCW)

@@ -1,20 +1,20 @@
 class RotationTree:
     
-        List<RotationSequence> c_array = new List<RotationSequence>()
+        List<RotationSequence> self.c_array = new List<RotationSequence>()
         def __init__(self):
         
 
         def addRotationLinkedList(self, RotationSequence p_list):
             //Console.Write("FFFFF")
-            c_array.Add(p_list.getCopy())
+            self.c_array.Add(p_list.getCopy())
         
 
         def getSize(self):
-            return c_array.Count
+            return self.c_array.Count
         
 
         def getRotationSequence(self, p_index):
-            return c_array[p_index]
+            return self.c_array[p_index]
         
 
         @staticmethod
