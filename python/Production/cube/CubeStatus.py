@@ -1,7 +1,7 @@
 class CubeStatus:
 
 	@staticmethod
-	def changesOnlyInThirdFloor(cube,p_comparedPermutation):
+	def changesOnlyInThirdFloor(cube, p_comparedPermutation):
 
 		l_counter = 0
 

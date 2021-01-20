@@ -1,8 +1,6 @@
 class Solver:
 
-      
-
-        def solve(self,p_rubik,p_firstTree,p_secondTree,p_thirdTree):
+        def solve(self, p_rubik, p_firstTree, p_secondTree, p_thirdTree):
 
             l_numberOfCubicleInPlace
            l_permutation = Cube(p_rubik)

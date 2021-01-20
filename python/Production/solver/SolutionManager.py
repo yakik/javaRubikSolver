@@ -1,27 +1,19 @@
 class SolutionManager:
-    
-
 
         def __init__(self):
             self.c_solutionList = list()
-            for i in (0,41):
-                self.c_solutionList.append(List<SolutionNode>())
-        
+            for i in (0, 41):
+                self.c_solutionList.append(List < SolutionNode > ())
 
-        def addSolution(self,p_rotationLinkedList,p_permutation,p_prevSolution,
+        def addSolution(self, p_rotationLinkedList, p_permutation, p_prevSolution,
                          p_value, p_floor):
 
-            if  len(self.c_solutionList[p_value]) < 40:
-            
-                self.c_solutionList[p_value].append(SolutionNode(Solution(p_rotationLinkedList.getCopy(), p_permutation.getCopy(), p_prevSolution)))
+            if len(self.c_solutionList[p_value]) < 40:
+
+                self.c_solutionList[p_value].append(SolutionNode(Solution(
+                    p_rotationLinkedList.getCopy(), p_permutation.getCopy(), p_prevSolution)))
 
                 #         Console.Write("AddedValue=%d, Index=%d\n", p_value, p_value)
-            
-
-
-
-        
-
 
         def getBestUndeveloped(self):
             i = 40

@@ -1,10 +1,8 @@
-class Cube: 
-
+class Cube:
 
 		@staticmethod
 		def getPermutationFromCube(cube):
 			return cube.getCopy()
-		
 
 		@staticmethod
 		def getValue(l_permutation, p_highestFloor):
@@ -17,9 +15,9 @@ class Cube:
 				l_value += 2 * (8 - l_permutation.countDifferenceThirdFloor(fixedCube))
 
 			return l_value
-		
 
-	
+
+
 	 def equals(self,comparedCube):
 			if countDifferenceFirstFloor(comparedCube) +
 					countDifferenceSecondFloor(comparedCube) +

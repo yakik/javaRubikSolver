@@ -1,33 +1,23 @@
 class RotationSequence:
 
-       
-
         def __init__(self):
             self.c_array = list()
-        
-
 
         def __init__(self, p_List):
             self.c_array = p_List
 
-        
-
         def print(self):
-         
 
             for l_itr in self.c_array:
 
                 l_itr.print()
             Console.Write("\n")
-        
 
         def addRotation(self, p_rotation):
             self.c_array.append(p_rotation)
-        
 
         def removeRotation(self):
             self.c_array.RemoveAt(len(self.c_array) - 1)
-        
 
         def Boolean isRedundant(self, Rotation p_rotation):
             Boolean l_returnValue = False
