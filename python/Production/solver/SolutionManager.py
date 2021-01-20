@@ -1,13 +1,13 @@
 class SolutionManager
     
 
-        List<List<SolutionNode>> self.c_solutionList = new List<List<SolutionNode>>()
+        List<List<SolutionNode>> self.c_solutionList = List<List<SolutionNode>>()
 
 
         def __init__(self):
             i
             for i =0 i < 41 i++)
-                self.c_solutionList.Add(new List<SolutionNode>())
+                self.c_solutionList.Add(List<SolutionNode>())
         
 
         def addSolution(self,p_rotationLinkedList,p_permutation,p_prevSolution,
@@ -15,7 +15,7 @@ class SolutionManager
 
             if /*(p_value>=32 and getBestValue()>=36) or*/ self.c_solutionList[p_value].Count < 40)
             
-                self.c_solutionList[p_value].Add(new SolutionNode(new Solution(p_rotationLinkedList.getCopy(), p_permutation.getCopy(), p_prevSolution)))
+                self.c_solutionList[p_value].Add(SolutionNode(Solution(p_rotationLinkedList.getCopy(), p_permutation.getCopy(), p_prevSolution)))
 
                 #         Console.Write("AddedValue=%d, Index=%d\n", p_value, p_value)
             
@@ -78,7 +78,7 @@ class SolutionManager
 
             def SolutionNode(self,p_solution)
             
-                c_isDeveloped = false
+                c_isDeveloped = False
                 c_solution = p_solution
             
 
@@ -95,7 +95,7 @@ class SolutionManager
 
             def setDeveloped(self)
             
-                c_isDeveloped = true
+                c_isDeveloped = True
             
 
 

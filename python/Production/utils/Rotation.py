@@ -38,14 +38,14 @@ class Rotation :
             
 
             if (l_== /*'\n'*/10) or (l_== -1 /*EOF*/) or (l_!= '('))
-                return false
+                return False
             else:
 
                 c_face = FaceHandler.getFace((int)Char.GetNumericValue((char)(p_reader.read())))
                 p_reader.read()
                 c_direction = DirectionHandler.getDirection((int)Char.GetNumericValue((char)(p_reader.read())))
                 p_reader.read()
-                return true
+                return True
             
         
 
@@ -67,7 +67,7 @@ class Rotation :
         
 
         def getReverse(self):
-            return new Rotation(c_face,DirectionHandler.getOpposite(c_direction))
+            return Rotation(c_face,DirectionHandler.getOpposite(c_direction))
         
 
         def equals(self, Rotation p_rotation)
@@ -79,19 +79,19 @@ class Rotation :
 
     def equals(self, Object obj): 
             if obj == null):
-                return false
+                return False
             
-            if !(new Rotation()).GetType().IsAssignableFrom(obj.GetType())):
-            return false
+            if !(Rotation()).GetType().IsAssignableFrom(obj.GetType())):
+            return False
         
         Rotation other = (Rotation) obj
         if this.getFace() != other.getFace()):
-            return false
+            return False
         
         if this.getDirection() != other.getDirection()):
-            return false
+            return False
         
-        return true
+        return True
         
     
 

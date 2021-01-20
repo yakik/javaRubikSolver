@@ -5,11 +5,11 @@ class Solver:
         def solve(self,p_rubik,p_firstTree,p_secondTree,p_thirdTree):
 
             l_numberOfCubicleInPlace
-           l_permutation = new Cube(p_rubik)
-           l_solutionManager = new SolutionManager()
+           l_permutation = Cube(p_rubik)
+           l_solutionManager = SolutionManager()
            l_solutionToDev
 
-           l_rotationLinkedList = new RotationSequence()
+           l_rotationLinkedList = RotationSequence()
 
             l_floor = getTargetFloor(l_permutation)
             l_numberOfCubicleInPlace = Cube.getValue(l_permutation, l_floor)
@@ -67,11 +67,11 @@ class Solver:
 
         def findBetterSolution(self,p_solution,p_tree,p_solutionManager,
                                         p_floor):
-           l_rubik = new Cube()
+           l_rubik = Cube()
            l_permutation = p_solution.getPermutation().getCopy()
             l_minimumValue = Cube.getValue(l_permutation, p_floor)
 
-            l_rubik = new Cube(l_permutation)
+            l_rubik = Cube(l_permutation)
             searchTree(l_minimumValue - 4, p_tree, l_rubik, p_solutionManager,
                     p_solution, p_floor, 0)
         
@@ -84,13 +84,13 @@ class Solver:
             if rotationSequenceIndex = 0 rotationSequenceIndex < searchTree.getSize() rotationSequenceIndex++):
                rotationSequence = searchTree.getRotationSequence(rotationSequenceIndex)
                 if rotationSequence != null):
-                   cubeAfterRotationSequence = getCubeAfterApplyingSequence(new Cube(cubeToSolve), rotationSequence)
+                   cubeAfterRotationSequence = getCubeAfterApplyingSequence(Cube(cubeToSolve), rotationSequence)
 
                     addSequenceToSolutionIfHigherValue(minimumValueToReach, solutionManager, previousSolution,
                             targetFloorToSortInCube, rotationSequence, cubeAfterRotationSequence)
                     if targetFloorToSortInCube == 3 and depth == 0):
                         this.searchTree(minimumValueToReach, searchTree, cubeAfterRotationSequence, solutionManager,
-                                new Solution(rotationSequence, cubeAfterRotationSequence, previousSolution), targetFloorToSortInCube, 1)
+                                Solution(rotationSequence, cubeAfterRotationSequence, previousSolution), targetFloorToSortInCube, 1)
 
                     
                 

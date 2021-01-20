@@ -27,7 +27,7 @@ class FaceTest(unittest.TestCase):
         def testFaceEquals(self):
            myFace = Face.BOTTOM
             Assert.AreEqual(Face.BOTTOM, myFace)
-            Assert.AreEqual(true, myFace == Face.BOTTOM)
+            Assert.AreEqual(True, myFace == Face.BOTTOM)
         
 
         

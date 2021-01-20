@@ -5,7 +5,7 @@ class SolverTest(unittest.TestCase):
         
         def complexSolver(self):
             #long beginningTime = System.nanoTime()
-           myRubik = new Cube()
+           myRubik = Cube()
             myRubik.rotateFace(Face.RIGHT, Direction.CW)
             myRubik.rotateFace(Face.BACK, Direction.CW)
             myRubik.rotateFace(Face.RIGHT, Direction.CW)
@@ -55,12 +55,12 @@ class SolverTest(unittest.TestCase):
             myRubik.rotateFace(Face.LEFT, Direction.CW)
             myRubik.rotateFace(Face.FRONT, Direction.CW)
             myRubik.rotateFace(Face.RIGHT, Direction.CW)
-            Solver mySolver = new Solver()
+            Solver mySolver = Solver()
 
 
-            RubikFileReader readFirstFloor = new RubikFileReader("..\\..\\..\\Resources\\FirstFloor.txt")
-            RubikFileReader readSecondFloor = new RubikFileReader("..\\..\\..\\Resources\\SecondFloor.txt")
-            RubikFileReader readThirdFloor = new RubikFileReader("..\\..\\..\\Resources\\ThirdFloor.txt")
+            RubikFileReader readFirstFloor = RubikFileReader("..\\..\\..\\Resources\\FirstFloor.txt")
+            RubikFileReader readSecondFloor = RubikFileReader("..\\..\\..\\Resources\\SecondFloor.txt")
+            RubikFileReader readThirdFloor = RubikFileReader("..\\..\\..\\Resources\\ThirdFloor.txt")
 
         
            firstFloorTree = RotationTree.getRotationTreeFromFile(readFirstFloor)
@@ -75,7 +75,7 @@ class SolverTest(unittest.TestCase):
             #Console.WriteLine("Elapsed Time=%d seconds", ((endTime - beginningTime) / 1000000000))
             #27-12-2017: started 11:39 PM, Failed
             #myRubik.print()
-            Assert.IsTrue(myRubik.equals(new Cube()))
+            Assert.IsTrue(myRubik.equals(Cube()))
 
         
 

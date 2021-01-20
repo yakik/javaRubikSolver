@@ -4,13 +4,13 @@ class RubikFileReader:
         def __init__(self,p_fileLocation):
             try
             
-                self.c_fileReader = new StreamReader(p_fileLocation)
-                self.c_fileIsOK = true
+                self.c_fileReader = StreamReader(p_fileLocation)
+                self.c_fileIsOK = True
             
             catch (IOException ex)
             
                 Console.WriteLine(ex.Message)
-                self.c_fileIsOK = false
+                self.c_fileIsOK = False
             
         
 

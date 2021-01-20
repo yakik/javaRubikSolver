@@ -1,6 +1,6 @@
 class Position :
 
-    Face[,] g_faceOrder = new Face[,]
+    Face[,] g_faceOrder = Face[,]
             Face.FRONT, Face.LEFT, Face.BACK, Face.RIGHT, Face.RIGHT, Face.BACK, Face.LEFT, Face.FRONT
     , Face.TOP, Face.BACK, Face.BOTTOM, Face.FRONT
     , Face.TOP, Face.FRONT, Face.BOTTOM, Face.BACK
@@ -50,12 +50,12 @@ class Position :
             else
                 c_currentUp = getFace(Face.RIGHT)
         else
-            rotate(new Rotation(FaceHandler.getOpposite(l_face), DirectionHandler.getOpposite(l_direction)))
+            rotate(Rotation(FaceHandler.getOpposite(l_face), DirectionHandler.getOpposite(l_direction)))
 
     
 
 def getCopy(self)
-        return new Position(c_currentUp,c_currentFront)
+        return Position(c_currentUp,c_currentFront)
 
    getFace(Face p_viewpoint):
         if p_viewpo== Face.TOP)

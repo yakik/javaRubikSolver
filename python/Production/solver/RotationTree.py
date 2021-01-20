@@ -1,6 +1,6 @@
 class RotationTree:
     
-        List<RotationSequence> self.c_array = new List<RotationSequence>()
+        List<RotationSequence> self.c_array = List<RotationSequence>()
         def __init__(self):
         
 
@@ -19,8 +19,8 @@ class RotationTree:
 
         @staticmethod
         def getRotationTreeFromFile(RubikFileReader p_File):
-           myTree = new RotationTree()
-           l_rotationLinkedList = new RotationSequence()
+           myTree = RotationTree()
+           l_rotationLinkedList = RotationSequence()
             while l_rotationLinkedList.readFromFile(p_File))
             
                 myTree.addRotationLinkedList(l_rotationLinkedList)

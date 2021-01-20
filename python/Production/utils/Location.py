@@ -10,21 +10,21 @@ class Location:
 
         def containsFace(self,p_face):
             if p_face == c_face0 or p_face == c_face1 or (!c_isEdge and (p_face == c_face2)))
-                return true
+                return True
             else
-                return false
+                return False
         
 
         def getCopy(self):
             if isEdge())
-                return new Location(c_face0, c_face1)
+                return Location(c_face0, c_face1)
             else
-                return new Location(c_face0, c_face1, c_face2)
+                return Location(c_face0, c_face1, c_face2)
         
 
         def Location(self,p_face0,p_face1,p_face2):
            l_tmp
-            c_isEdge = false
+            c_isEdge = False
             c_face0 = p_face0
             c_face1 = p_face1
             c_face2 = p_face2
@@ -51,7 +51,7 @@ class Location:
         
 
         def Location(self,p_face0,p_face1):
-            c_isEdge = true
+            c_isEdge = True
             #       c_face2 = Face.NOTDEFINED
             c_face0 = p_face0
             c_face1 = p_face1
@@ -80,29 +80,29 @@ class Location:
         
 
         getFloor(self):
-            if this.equals(new Location(Face.TOP, Face.LEFT, Face.FRONT))) return 3
-            if this.equals(new Location(Face.TOP, Face.LEFT, Face.BACK))) return 3
-            if this.equals(new Location(Face.TOP, Face.RIGHT, Face.FRONT))) return 3
-            if this.equals(new Location(Face.TOP, Face.RIGHT, Face.BACK))) return 3
-            if this.equals(new Location(Face.BOTTOM, Face.LEFT, Face.FRONT))) return 1
-            if this.equals(new Location(Face.BOTTOM, Face.LEFT, Face.BACK))) return 1
-            if this.equals(new Location(Face.BOTTOM, Face.RIGHT, Face.FRONT))) return 1
-            if this.equals(new Location(Face.BOTTOM, Face.RIGHT, Face.BACK))) return 1
+            if this.equals(Location(Face.TOP, Face.LEFT, Face.FRONT))) return 3
+            if this.equals(Location(Face.TOP, Face.LEFT, Face.BACK))) return 3
+            if this.equals(Location(Face.TOP, Face.RIGHT, Face.FRONT))) return 3
+            if this.equals(Location(Face.TOP, Face.RIGHT, Face.BACK))) return 3
+            if this.equals(Location(Face.BOTTOM, Face.LEFT, Face.FRONT))) return 1
+            if this.equals(Location(Face.BOTTOM, Face.LEFT, Face.BACK))) return 1
+            if this.equals(Location(Face.BOTTOM, Face.RIGHT, Face.FRONT))) return 1
+            if this.equals(Location(Face.BOTTOM, Face.RIGHT, Face.BACK))) return 1
 
-            if this.equals(new Location(Face.TOP, Face.FRONT))) return 3
-            if this.equals(new Location(Face.TOP, Face.BACK))) return 3
-            if this.equals(new Location(Face.TOP, Face.LEFT))) return 3
-            if this.equals(new Location(Face.TOP, Face.RIGHT))) return 3
+            if this.equals(Location(Face.TOP, Face.FRONT))) return 3
+            if this.equals(Location(Face.TOP, Face.BACK))) return 3
+            if this.equals(Location(Face.TOP, Face.LEFT))) return 3
+            if this.equals(Location(Face.TOP, Face.RIGHT))) return 3
 
-            if this.equals(new Location(Face.FRONT, Face.LEFT))) return 2
-            if this.equals(new Location(Face.FRONT, Face.RIGHT))) return 2
-            if this.equals(new Location(Face.BACK, Face.LEFT))) return 2
-            if this.equals(new Location(Face.BACK, Face.RIGHT))) return 2
+            if this.equals(Location(Face.FRONT, Face.LEFT))) return 2
+            if this.equals(Location(Face.FRONT, Face.RIGHT))) return 2
+            if this.equals(Location(Face.BACK, Face.LEFT))) return 2
+            if this.equals(Location(Face.BACK, Face.RIGHT))) return 2
 
-            if this.equals(new Location(Face.BOTTOM, Face.LEFT))) return 1
-            if this.equals(new Location(Face.BOTTOM, Face.RIGHT))) return 1
-            if this.equals(new Location(Face.FRONT, Face.BOTTOM))) return 1
-            if this.equals(new Location(Face.BACK, Face.BOTTOM))) return 1
+            if this.equals(Location(Face.BOTTOM, Face.LEFT))) return 1
+            if this.equals(Location(Face.BOTTOM, Face.RIGHT))) return 1
+            if this.equals(Location(Face.FRONT, Face.BOTTOM))) return 1
+            if this.equals(Location(Face.BACK, Face.BOTTOM))) return 1
             return 0
         
 

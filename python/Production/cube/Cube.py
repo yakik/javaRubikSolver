@@ -2,14 +2,14 @@ class Cube:
 
 
 		@staticmethod
-		def getPermutationFromCube(Cube cube):
+		def getPermutationFromCube(cube):
 			return cube.getCopy()
 		
 
 		@staticmethod
-		def getValue(Cube l_permutation, p_highestFloor):
+		def getValue(l_permutation, p_highestFloor):
 			l_value = 0
-			Cube fixedCube = new Cube()
+			fixedCube = Cube()
 			l_value = 2 * (8 - l_permutation.countDifferenceFirstFloor(fixedCube))
 			if p_highestFloor > 1)
 				l_value += 2 * (4 - l_permutation.countDifferenceSecondFloor(fixedCube))
@@ -24,9 +24,9 @@ class Cube:
 			if countDifferenceFirstFloor(comparedCube) +
 					countDifferenceSecondFloor(comparedCube) +
 					countDifferenceThirdFloor(comparedCube) == 0)
-				return true
+				return True
 			else
-				return false
+				return False
 		
 
 		def setColor(self,face,locationInFace, color):
@@ -351,7 +351,7 @@ class Cube:
 		
 
 		def getCopy(self):
-			return new Cube(this)
+			return Cube(this)
 		
 
 

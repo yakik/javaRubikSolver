@@ -15,7 +15,7 @@ class DirectionTest(unittest.TestCase):
         def testDirectionEquals(self):
            myDirection = Direction.CW
             Assert.AreEqual(Direction.CW, myDirection)
-            Assert.AreEqual(true, myDirection == Direction.CW)
+            Assert.AreEqual(True, myDirection == Direction.CW)
         
         
         def DirectionOpposite(self):

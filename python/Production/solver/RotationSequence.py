@@ -1,6 +1,6 @@
 class RotationSequence:
 
-        List<Rotation> self.c_array = new List<Rotation>()
+        List<Rotation> self.c_array = List<Rotation>()
 
         def __init__(self):
             self.c_array.Clear()
@@ -30,33 +30,33 @@ class RotationSequence:
         
 
         def Boolean isRedundant(self, Rotation p_rotation):
-            Boolean l_returnValue = false
+            Boolean l_returnValue = False
 
            l_lastFace
            l_lastDirection
             if self.c_array.Count > 0):
                 l_lastFace = self.c_array[(self.c_array.Count - 1)].getFace()
                 l_lastDirection = self.c_array[self.c_array.Count - 1].getDirection()
-                # new rotation is opposite to previous
+                # rotation is opposite to previous
                 if self.c_array[self.c_array.Count - 1].getReverse().equals(p_rotation))
-                    l_returnValue = true
+                    l_returnValue = True
                 # previouswas opposite and previousgreater then current face
                 if (p_rotation.getFace() == FaceHandler.getOpposite(l_lastFace) and ((int)l_lastFace > (int)p_rotation.getFace())))
-                    l_returnValue = true
+                    l_returnValue = True
                 # two clockwise rotation of same face
                 if (p_rotation.getFace() == l_lastFace) and (l_lastDirection == Direction.CW) and
                         (p_rotation.getDirection() == Direction.CW))
-                    l_returnValue = true
+                    l_returnValue = True
                 #no three counter clockwise rotations
                 if self.c_array.Count > 1):
                     if (p_rotation.getFace() == l_lastFace) and (l_lastDirection == Direction.CCW) and
                             (p_rotation.getDirection() == Direction.CCW) and
                             (self.c_array[self.c_array.Count - 2].getFace() == l_lastFace) and (l_lastDirection == Direction.CCW) and
                             (self.c_array[self.c_array.Count - 2].getDirection() == Direction.CCW))
-                        l_returnValue = true
+                        l_returnValue = True
                 
              else
-                l_returnValue = false
+                l_returnValue = False
             return l_returnValue
 
         
@@ -71,17 +71,17 @@ class RotationSequence:
 
         
         def readFromFile(self, RubikFileReader p_reader):
-            Rotation l_rotation = new Rotation()
+            Rotation l_rotation = Rotation()
 
             self.c_array.Clear()
             while l_rotation.readFromFile(p_reader))
-                self.c_array.Add((new Rotation(l_rotation.getFace(), l_rotation.getDirection())))
+                self.c_array.Add((Rotation(l_rotation.getFace(), l_rotation.getDirection())))
             return !(self.c_array.Count == 0)
         
 
        
         def getSubRotationLinkedList(self):
-            return new RotationSequence(new List<Rotation>(self.c_array.GetRange(1, self.c_array.Count)))
+            return RotationSequence(List<Rotation>(self.c_array.GetRange(1, self.c_array.Count)))
         
 
        def size(self):
@@ -100,7 +100,7 @@ class RotationSequence:
         
 
         def getCopy(self):
-           l_rotationLinkedList = new RotationSequence()
+           l_rotationLinkedList = RotationSequence()
            
 
         
