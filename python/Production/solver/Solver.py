@@ -81,7 +81,7 @@ class Solver:
                               cubeToSolve,solutionManager,
                               previousSolution, targetFloorToSortInCube, depth):
             if minimumValueToReach < 2) minimumValueToReach = 2:
-            if rotationSequenceIndex = 0 rotationSequenceIndex < searchTree.getSize() rotationSequenceIndex++:
+            if rotationSequenceIndex = 0 rotationSequenceIndex < searchTree.getSize() rotationSequenceIndex+=1:
                rotationSequence = searchTree.getRotationSequence(rotationSequenceIndex)
                 if rotationSequence != null:
                    cubeAfterRotationSequence = getCubeAfterApplyingSequence(Cube(cubeToSolve), rotationSequence)
@@ -107,7 +107,7 @@ class Solver:
         
 
         def getCubeAfterApplyingSequence(self,cubeForExperimentation,rotationSequence):
-            if rotationIndex = 0 rotationIndex < rotationSequence.size() rotationIndex++:
+            if rotationIndex = 0 rotationIndex < rotationSequence.size() rotationIndex+=1:
                 cubeForExperimentation.rotateFace(rotationSequence.getRotation(rotationIndex).getFace(),
                         rotationSequence.getRotation(rotationIndex).getDirection())
            cubeAfterRotationSequence = Cube.getPermutationFromCube(cubeForExperimentation).getCopy()

@@ -249,16 +249,16 @@ class Cube:
 			counter = 0
 			if colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.LEFT) or
 					colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.RIGHT):
-				counter++
+				counter+=1
 			if colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.LEFT) or
 					colorInFaceNotEqual(cube, Face.BACK, LocationInFace.RIGHT):
-				counter++
+				counter+=1
 			if colorInFaceNotEqual(cube, Face.BACK, LocationInFace.LEFT) or
 					colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.RIGHT):
-				counter++
+				counter+=1
 			if colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.LEFT) or
 					colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.RIGHT):
-				counter++
+				counter+=1
 
 			return counter
 
@@ -269,34 +269,34 @@ class Cube:
 			counter = 0
 			if colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.BOTTOM) or
 					colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.TOP):
-				counter++
+				counter+=1
 			if colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.BOTTOM) or
 					colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.LEFT):
-				counter++
+				counter+=1
 			if colorInFaceNotEqual(cube, Face.BACK, LocationInFace.BOTTOM) or
 					colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.BOTTOM):
-				counter++
+				counter+=1
 			if colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.BOTTOM) or
 					colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.RIGHT):
-				counter++
+				counter+=1
 
 
 			if colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.BOTTOMLEFT) or
 					colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.TOPLEFT) or
 					colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.BOTTOMRIGHT):
-				counter++
+				counter+=1
 			if colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.BOTTOMRIGHT) or
 					colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.TOPRIGHT) or
 					colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.BOTTOMLEFT):
-				counter++
+				counter+=1
 			if colorInFaceNotEqual(cube, Face.BACK, LocationInFace.BOTTOMRIGHT) or
 					colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.BOTTOMLEFT) or
 					colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.BOTTOMLEFT):
-				counter++
+				counter+=1
 			if colorInFaceNotEqual(cube, Face.BACK, LocationInFace.BOTTOMLEFT) or
 					colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.BOTTOMRIGHT) or
 					colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.BOTTOMRIGHT):
-				counter++
+				counter+=1
 
 			return counter
 
@@ -306,34 +306,34 @@ class Cube:
 			counter = 0
 			if colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.TOP) or
 					colorInFaceNotEqual(cube, Face.TOP, LocationInFace.BOTTOM):
-				counter++
+				counter+=1
 			if colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.TOP) or
 					colorInFaceNotEqual(cube, Face.TOP, LocationInFace.LEFT):
-				counter++
+				counter+=1
 			if colorInFaceNotEqual(cube, Face.BACK, LocationInFace.TOP) or
 					colorInFaceNotEqual(cube, Face.TOP, LocationInFace.TOP):
-				counter++
+				counter+=1
 			if colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.TOP) or
 					colorInFaceNotEqual(cube, Face.TOP, LocationInFace.RIGHT):
-				counter++
+				counter+=1
 
 
 			if colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.TOPLEFT) or
 					colorInFaceNotEqual(cube, Face.TOP, LocationInFace.BOTTOMLEFT) or
 					colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.TOPRIGHT):
-				counter++
+				counter+=1
 			if colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.TOPRIGHT) or
 					colorInFaceNotEqual(cube, Face.TOP, LocationInFace.BOTTOMRIGHT) or
 					colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.TOPLEFT):
-				counter++
+				counter+=1
 			if colorInFaceNotEqual(cube, Face.BACK, LocationInFace.TOPRIGHT) or
 					colorInFaceNotEqual(cube, Face.TOP, LocationInFace.TOPLEFT) or
 					colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.TOPLEFT):
-				counter++
+				counter+=1
 			if colorInFaceNotEqual(cube, Face.BACK, LocationInFace.TOPLEFT) or
 					colorInFaceNotEqual(cube, Face.TOP, LocationInFace.TOPRIGHT) or
 					colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.TOPRIGHT):
-				counter++
+				counter+=1
 
 			return counter
 

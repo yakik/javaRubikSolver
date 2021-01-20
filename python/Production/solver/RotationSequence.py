@@ -1,13 +1,13 @@
 class RotationSequence:
 
-        List<Rotation> self.c_array = List<Rotation>()
+       
 
         def __init__(self):
-            self.c_array.Clear()
+            self.c_array = list()
         
 
 
-        def __init__(self, List<Rotation> p_List):
+        def __init__(self, p_List):
             self.c_array = p_List
 
         
@@ -15,18 +15,18 @@ class RotationSequence:
         def print(self):
          
 
-            for l_itr in self.c_array
+            for l_itr in self.c_array:
 
-                (l_itr as Rotation).print()
+                l_itr.print()
             Console.Write("\n")
         
 
-        def addRotation(self, Rotation p_rotation):
-            self.c_array.Add(p_rotation)
+        def addRotation(self, p_rotation):
+            self.c_array.append(p_rotation)
         
 
         def removeRotation(self):
-            self.c_array.RemoveAt(self.c_array.Count - 1)
+            self.c_array.RemoveAt(len(self.c_array) - 1)
         
 
         def Boolean isRedundant(self, Rotation p_rotation):
@@ -34,11 +34,11 @@ class RotationSequence:
 
            l_lastFace
            l_lastDirection
-            if self.c_array.Count > 0:
-                l_lastFace = self.c_array[(self.c_array.Count - 1)].getFace()
-                l_lastDirection = self.c_array[self.c_array.Count - 1].getDirection()
+            if len(self.c_array) > 0:
+                l_lastFace = self.c_array[(len(self.c_array) - 1)].getFace()
+                l_lastDirection = self.c_array[len(self.c_array) - 1].getDirection()
                 # rotation is opposite to previous
-                if self.c_array[self.c_array.Count - 1].getReverse().equals(p_rotation):
+                if self.c_array[len(self.c_array) - 1].getReverse().equals(p_rotation):
                     l_returnValue = True
                 # previouswas opposite and previousgreater then current face
                 if (p_rotation.getFace() == FaceHandler.getOpposite(l_lastFace) and ((int)l_lastFace > (int)p_rotation.getFace())):
@@ -48,11 +48,11 @@ class RotationSequence:
                         (p_rotation.getDirection() == Direction.CW):
                     l_returnValue = True
                 #no three counter clockwise rotations
-                if self.c_array.Count > 1:
+                if len(self.c_array) > 1:
                     if (p_rotation.getFace() == l_lastFace) and (l_lastDirection == Direction.CCW) and
                             (p_rotation.getDirection() == Direction.CCW) and
-                            (self.c_array[self.c_array.Count - 2].getFace() == l_lastFace) and (l_lastDirection == Direction.CCW) and
-                            (self.c_array[self.c_array.Count - 2].getDirection() == Direction.CCW):
+                            (self.c_array[len(self.c_array) - 2].getFace() == l_lastFace) and (l_lastDirection == Direction.CCW) and
+                            (self.c_array[len(self.c_array) - 2].getDirection() == Direction.CCW):
                         l_returnValue = True
                 
              else:
@@ -75,17 +75,17 @@ class RotationSequence:
 
             self.c_array.Clear()
             while l_rotation.readFromFile(p_reader):
-                self.c_array.Add((Rotation(l_rotation.getFace(), l_rotation.getDirection())))
-            return !(self.c_array.Count == 0)
+                self.c_array.append((Rotation(l_rotation.getFace(), l_rotation.getDirection())))
+            return !(len(self.c_array) == 0)
         
 
        
         def getSubRotationLinkedList(self):
-            return RotationSequence(List<Rotation>(self.c_array.GetRange(1, self.c_array.Count)))
+            return RotationSequence(List<Rotation>(self.c_array.GetRange(1, len(self.c_array))))
         
 
        def size(self):
-            return self.c_array.Count
+            return len(self.c_array)
         
 
         def  getFirstRotation(self):
@@ -96,7 +96,7 @@ class RotationSequence:
         
         def isNotEmpty(self):
 
-            return (self.c_array.Count > 0)
+            return (len(self.c_array) > 0)
         
 
         def getCopy(self):

@@ -3,12 +3,12 @@ class GoodRotationsBuilder :
 		@staticmethod
 		def findGoodRotationLinks(self,p_firstFloorFile
 				,p_secondFloorFile,p_thirdFloorFile, p_levels):
-			RubikFileWriter l_firstWriter = RubikFileWriter(p_firstFloorFile)
-			RubikFileWriter l_secondWriter = RubikFileWriter(p_secondFloorFile)
-			RubikFileWriter l_thirdWriter = RubikFileWriter(p_thirdFloorFile)
-			Cube l_rubik = Cube()
-			Cube l_initialPermutation = Cube(l_rubik)
-			RotationSequence l_rotationLinkedList = RotationSequence()
+			l_firstWriter = RubikFileWriter(p_firstFloorFile)
+			l_secondWriter = RubikFileWriter(p_secondFloorFile)
+			l_thirdWriter = RubikFileWriter(p_thirdFloorFile)
+			l_rubik = Cube()
+			l_initialPermutation = Cube(l_rubik)
+			l_rotationLinkedList = RotationSequence()
 			GoodRotationsBuilder.BuildFilesForRotation(l_firstWriter, l_secondWriter, l_thirdWriter
 					, l_rubik, l_initialPermutation, l_rotationLinkedList, p_levels, "")
 			l_firstWriter.close()
@@ -28,9 +28,9 @@ class GoodRotationsBuilder :
 				 Console.WriteLine(p_progressString)
 			i = 0
 			
-				foreach (Facein Enum.GetValues(typeof(Face)))
-				foreach (Direction direction in Enum.GetValues(typeof(Direction))):
-					i++
+				for face in Enum.GetValues(typeof(Face)):
+				for direction in Enum.GetValues(typeof(Direction)):
+					i+=1
 					String myProgressString = p_progressString + String.Format(".%d", i)
 					Rotation newRotation = Rotation(face, direction)
 					if p_rotationLinkedList.isRedundant(newRotation))

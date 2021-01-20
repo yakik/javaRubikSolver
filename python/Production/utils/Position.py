@@ -71,7 +71,7 @@ def getCopy(self)
         i = 0
 
         while g_faceOrder[(int)c_currentUp,i] != c_currentFront and i < 4:
-            i++
+            i+=1
         switch (p_viewpoint):
             case Face.FRONT:
                 return g_faceOrder[(int)c_currentUp,i]

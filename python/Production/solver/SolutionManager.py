@@ -1,21 +1,19 @@
-class SolutionManager
+class SolutionManager:
     
-
-        List<List<SolutionNode>> self.c_solutionList = List<List<SolutionNode>>()
 
 
         def __init__(self):
-            i
+            self.c_solutionList = list()
             for i in (0,41):
-                self.c_solutionList.Add(List<SolutionNode>())
+                self.c_solutionList.append(List<SolutionNode>())
         
 
         def addSolution(self,p_rotationLinkedList,p_permutation,p_prevSolution,
                          p_value, p_floor):
 
-            if /*(p_value>=32 and getBestValue()>=36) or*/ self.c_solutionList[p_value].Count < 40):
+            if  len(self.c_solutionList[p_value]) < 40:
             
-                self.c_solutionList[p_value].Add(SolutionNode(Solution(p_rotationLinkedList.getCopy(), p_permutation.getCopy(), p_prevSolution)))
+                self.c_solutionList[p_value].append(SolutionNode(Solution(p_rotationLinkedList.getCopy(), p_permutation.getCopy(), p_prevSolution)))
 
                 #         Console.Write("AddedValue=%d, Index=%d\n", p_value, p_value)
             
@@ -30,11 +28,11 @@ class SolutionManager
            l_bestSolution = null
             while i >= 0 and l_bestSolution == null)
             
-                if self.c_solutionList[i].Count > 0:
+                if len(self.c_solutionList[i]) > 0:
                     j = 0
-                    while j < self.c_solutionList[i].Count and l_bestSolution == null:
+                    while j < len(self.c_solutionList[i]) and l_bestSolution == null:
                     
-                        SolutionNode l_node = self.c_solutionList[i][j++]
+                        SolutionNode l_node = self.c_solutionList[i][j+=1]
                         if !l_node.isDeveloped():
                         
                             l_bestSolution = l_node.getSolution()
@@ -52,7 +50,7 @@ class SolutionManager
            l_returnValue = null
             while i >= 0 and l_returnValue == null:
             
-                if self.c_solutionList[i].Count > 0:
+                if len(self.c_solutionList[i]) > 0:
                     l_returnValue = self.c_solutionList[i][0].getSolution()
                 i--
             
@@ -64,7 +62,7 @@ class SolutionManager
             l_returnValue = 0
             while i >= 0 and l_returnValue == 0)
             
-                if self.c_solutionList[i].Count > 0:
+                if len(self.c_solutionList[i]) > 0:
                     l_returnValue = i
                 i--
             

@@ -31,10 +31,10 @@ def set_prefs(prefs):
     # The folders should be relative to project root and use '/' for
     # separating folders regardless of the platform rope is running on.
     # 'src/my_source_folder' for instance.
-    # prefs.add('source_folders', 'src')
+    # prefs.append('source_folders', 'src')
 
     # You can extend python path for looking up modules
-    # prefs.add('python_path', '~/python/')
+    # prefs.append('python_path', '~/python/')
 
     # Should rope save object information or not.
     prefs['save_objectdb'] = True
