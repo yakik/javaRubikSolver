@@ -5,10 +5,10 @@ using System
 using utils
 
 namespace CSharpRubikSolverUTests
-{
+
 
     [TestClass]
-    class SolverTest {
+    class SolverTest 
 
         //@Ignore
         [TestMethod]
@@ -86,8 +86,7 @@ namespace CSharpRubikSolverUTests
             //myRubik.print()
             Assert.IsTrue(myRubik.equals(new Cube()))
 
-        }
+        
 
 
-    }
-}
+    

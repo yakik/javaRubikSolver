@@ -3,10 +3,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting
 using utils
 
 namespace CSharpRubikSolverUTests
-{
+
 
 	[TestClass]
-	class CubeTest {
+	class CubeTest 
 		[TestMethod]
 	overallTest():
 			Cube myRubik = new Cube(), myRubik2 = new Cube()
@@ -14,7 +14,7 @@ namespace CSharpRubikSolverUTests
 			Assert.AreEqual(8, myRubik.countAllDifferences(myRubik2))
 			myRubik.rotateFace(Face.TOP, Direction.CW)
 			Assert.AreEqual(13, myRubik.countAllDifferences(myRubik2))
-		}
+		
 
 		[TestMethod]
 	compareFirstFloor():
@@ -27,7 +27,7 @@ namespace CSharpRubikSolverUTests
 			Assert.AreEqual(3, myRubik.countDifferenceFirstFloor(myRubik2))
 
 
-		}
+		
 		[TestMethod]
 		rotateFrontClockwise():
 			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
@@ -45,7 +45,7 @@ namespace CSharpRubikSolverUTests
 			Assert.AreEqual(Color.TOPCOLOR, myRubik.getColor(Face.TOP, LocationInFace.BOTTOMRIGHT))
 			Assert.AreEqual(Color.FRONTCOLOR, myRubik.getColor(Face.FRONT, LocationInFace.BOTTOMLEFT))
 
-		}
+		
 
 		[TestMethod]
 		rotateLeftClockwise():
@@ -64,7 +64,7 @@ namespace CSharpRubikSolverUTests
 			Assert.AreEqual(Color.TOPCOLOR, myRubik.getColor(Face.TOP, LocationInFace.TOPLEFT))
 			Assert.AreEqual(Color.LEFTCOLOR, myRubik.getColor(Face.LEFT, LocationInFace.BOTTOMLEFT))
 
-		}
+		
 
 		[TestMethod]
 		rotateRightClockwise():
@@ -83,7 +83,7 @@ namespace CSharpRubikSolverUTests
 			Assert.AreEqual(Color.TOPCOLOR, myRubik.getColor(Face.TOP, LocationInFace.TOPRIGHT))
 			Assert.AreEqual( Color.RIGHTCOLOR, myRubik.getColor(Face.RIGHT, LocationInFace.BOTTOMLEFT))
 
-		}
+		
 
 		[TestMethod]
 		rotateBackClockwise():
@@ -102,7 +102,7 @@ namespace CSharpRubikSolverUTests
 			Assert.AreEqual(Color.TOPCOLOR, myRubik.getColor(Face.TOP, LocationInFace.TOPLEFT))
 			Assert.AreEqual(Color.BACKCOLOR, myRubik.getColor(Face.BACK, LocationInFace.BOTTOMLEFT))
 
-		}
+		
 
 		[TestMethod]
 		rotateTopClockwise():
@@ -121,7 +121,7 @@ namespace CSharpRubikSolverUTests
 			Assert.AreEqual( Color.FRONTCOLOR, myRubik.getColor(Face.FRONT, LocationInFace.TOPLEFT))
 			Assert.AreEqual( Color.TOPCOLOR, myRubik.getColor(Face.TOP, LocationInFace.BOTTOMLEFT))
 
-		}
+		
 
 		[TestMethod]
 		rotateBottomClockwise():
@@ -140,7 +140,7 @@ namespace CSharpRubikSolverUTests
 			Assert.AreEqual( Color.FRONTCOLOR, myRubik.getColor(Face.FRONT, LocationInFace.BOTTOMLEFT))
 			Assert.AreEqual( Color.BOTTOMCOLOR, myRubik.getColor(Face.BOTTOM, LocationInFace.BOTTOMLEFT))
 
-		}
+		
 
 
 		[TestMethod]
@@ -160,7 +160,7 @@ namespace CSharpRubikSolverUTests
 			Assert.AreEqual( Color.TOPCOLOR, myRubik.getColor(Face.TOP, LocationInFace.BOTTOMRIGHT))
 			Assert.AreEqual( Color.FRONTCOLOR, myRubik.getColor(Face.FRONT, LocationInFace.BOTTOMLEFT))
 
-		}
+		
 
 		[TestMethod]
 		rotateLeftCounterClockwise():
@@ -179,7 +179,7 @@ namespace CSharpRubikSolverUTests
 			Assert.AreEqual( Color.TOPCOLOR, myRubik.getColor(Face.TOP, LocationInFace.TOPLEFT))
 			Assert.AreEqual( Color.LEFTCOLOR, myRubik.getColor(Face.LEFT, LocationInFace.BOTTOMLEFT))
 
-		}
+		
 
 		[TestMethod]
 		rotateRightCounterClockwise():
@@ -198,7 +198,7 @@ namespace CSharpRubikSolverUTests
 			Assert.AreEqual( Color.TOPCOLOR, myRubik.getColor(Face.TOP, LocationInFace.TOPRIGHT))
 			Assert.AreEqual( Color.RIGHTCOLOR, myRubik.getColor(Face.RIGHT, LocationInFace.BOTTOMLEFT))
 
-		}
+		
 
 		[TestMethod]
 		rotateBackCounterClockwise():
@@ -217,7 +217,7 @@ namespace CSharpRubikSolverUTests
 			Assert.AreEqual( Color.TOPCOLOR, myRubik.getColor(Face.TOP, LocationInFace.TOPLEFT))
 			Assert.AreEqual( Color.BACKCOLOR, myRubik.getColor(Face.BACK, LocationInFace.BOTTOMLEFT))
 
-		}
+		
 
 		[TestMethod]
 		rotateTopCounterClockwise():
@@ -236,7 +236,7 @@ namespace CSharpRubikSolverUTests
 			Assert.AreEqual( Color.FRONTCOLOR, myRubik.getColor(Face.FRONT, LocationInFace.TOPLEFT))
 			Assert.AreEqual( Color.TOPCOLOR, myRubik.getColor(Face.TOP, LocationInFace.BOTTOMLEFT))
 
-		}
+		
 
 		[TestMethod]
 		rotateBottomCounterClockwise():
@@ -255,7 +255,7 @@ namespace CSharpRubikSolverUTests
 			Assert.AreEqual( Color.FRONTCOLOR, myRubik.getColor(Face.FRONT, LocationInFace.BOTTOMLEFT))
 			Assert.AreEqual( Color.BOTTOMCOLOR, myRubik.getColor(Face.BOTTOM, LocationInFace.BOTTOMLEFT))
 
-		}
+		
 
 		[TestMethod]
 	simpleRotations():
@@ -271,7 +271,7 @@ namespace CSharpRubikSolverUTests
 				myRubik.rotateFace(Face.BACK, Direction.CW)
 				myRubik.rotateFace(Face.LEFT, Direction.CW)
 				myRubik.rotateFace(Face.FRONT, Direction.CW)
-			}
+			
 			if i = 0 i < 20 i++):
 				myRubik.rotateFace(Face.FRONT, Direction.CCW)
 				myRubik.rotateFace(Face.LEFT, Direction.CCW)
@@ -283,12 +283,12 @@ namespace CSharpRubikSolverUTests
 				myRubik.rotateFace(Face.LEFT, Direction.CCW)
 				myRubik.rotateFace(Face.RIGHT, Direction.CCW)
 				myRubik.rotateFace(Face.TOP, Direction.CCW)
-			}
+			
 			myRubik.rotateFace(Face.FRONT, Direction.CW)
 			myRubik.rotateFace(Face.FRONT, Direction.CCW)
 		Assert.IsTrue(myRubik.equals(new Cube()))
 
-		}
+		
 
-	}
-}
+	
+

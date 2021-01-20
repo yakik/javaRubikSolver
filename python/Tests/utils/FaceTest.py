@@ -8,12 +8,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting
 using utils
 
 namespace CSharpRubikSolverUTests
-{
+
 
 
     [TestClass]
     class FaceTest
-    {
+    
         [TestMethod]
         testFaceGetIntGetChar():
             Face myFace = Face.BOTTOM
@@ -34,14 +34,14 @@ namespace CSharpRubikSolverUTests
             myFace = Face.LEFT
             Assert.AreEqual(3, (int)myFace)
             Assert.AreEqual('L', FaceHandler.getCharValue(myFace))
-        }
+        
 
         [TestMethod]
         testFaceEquals():
             Face myFace = Face.BOTTOM
             Assert.AreEqual(Face.BOTTOM, myFace)
             Assert.AreEqual(true, myFace == Face.BOTTOM)
-        }
+        
 
         [TestMethod]
         testFaceGetOpposite():
@@ -57,7 +57,6 @@ namespace CSharpRubikSolverUTests
             Assert.AreEqual(Face.FRONT, FaceHandler.getOpposite(myFace))
             myFace = Face.LEFT
             Assert.AreEqual(Face.RIGHT, FaceHandler.getOpposite(myFace))
-        }
+        
 
-    }
-}
+    

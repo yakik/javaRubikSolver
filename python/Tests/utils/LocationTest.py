@@ -8,12 +8,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting
 using utils
 
 namespace CSharpRubikSolverUTests
-{
+
 
 
     [TestClass]
     class LocationTest
-    {
+    
 
         [TestMethod]
         isEdge():
@@ -21,7 +21,7 @@ namespace CSharpRubikSolverUTests
             Assert.AreEqual(false, myLocation.isEdge())
             myLocation = new Location(Face.BOTTOM, Face.LEFT)
             Assert.AreEqual(true, myLocation.isEdge())
-        }
+        
 
         [TestMethod]
         getFaces():
@@ -30,7 +30,7 @@ namespace CSharpRubikSolverUTests
             Assert.AreEqual(Face.BOTTOM, myLocation.getFace0())
             Assert.AreEqual(Face.LEFT, myLocation.getFace1())
             Assert.AreEqual(Face.FRONT, myLocation.getFace2())
-        }
+        
 
         [TestMethod]
         equals():
@@ -39,7 +39,7 @@ namespace CSharpRubikSolverUTests
             Location myThirdLocation = new Location(Face.RIGHT, Face.FRONT, Face.BOTTOM)
             Assert.AreEqual(true, mySecondLocation.equals(myLocation))
             Assert.AreEqual(false, mySecondLocation.equals(myThirdLocation))
-        }
+        
 
         [TestMethod]
         testGetFloor():
@@ -68,7 +68,7 @@ namespace CSharpRubikSolverUTests
             Assert.AreEqual(1, new Location(Face.BACK, Face.BOTTOM).getFloor(), "21")
 
 
-        }
+        
 
         [TestMethod]
         getString():
@@ -77,6 +77,5 @@ namespace CSharpRubikSolverUTests
             myLocation = new Location(Face.BOTTOM, Face.LEFT)
             Assert.AreEqual("D, L", myLocation.getString(),"second")
 
-        }
-    }
-}
+        
+    

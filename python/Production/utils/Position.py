@@ -5,34 +5,34 @@ using System.Text
 using System.Threading.Tasks
 
 namespace utils
-{
 
-    class Position {
 
-    Face[,] g_faceOrder = new Face[,]{
-            {Face.FRONT, Face.LEFT, Face.BACK, Face.RIGHT}, {Face.RIGHT, Face.BACK, Face.LEFT, Face.FRONT
-    }, {Face.TOP, Face.BACK, Face.BOTTOM, Face.FRONT
-    }, {Face.TOP, Face.FRONT, Face.BOTTOM, Face.BACK
-    }, {Face.TOP, Face.RIGHT, Face.BOTTOM, Face.LEFT
-    }, {Face.TOP, Face.LEFT, Face.BOTTOM, Face.RIGHT
-    }
-    }
+    class Position 
+
+    Face[,] g_faceOrder = new Face[,]
+            Face.FRONT, Face.LEFT, Face.BACK, Face.RIGHT, Face.RIGHT, Face.BACK, Face.LEFT, Face.FRONT
+    , Face.TOP, Face.BACK, Face.BOTTOM, Face.FRONT
+    , Face.TOP, Face.FRONT, Face.BOTTOM, Face.BACK
+    , Face.TOP, Face.RIGHT, Face.BOTTOM, Face.LEFT
+    , Face.TOP, Face.LEFT, Face.BOTTOM, Face.RIGHT
+    
+    
     Face c_currentUp
     Face c_currentFront
 
     Position(Face p_Up, Face p_Front):
         c_currentUp = p_Up
         c_currentFront = p_Front
-    }
+    
 
     Position():
         c_currentUp = Face.TOP
         c_currentFront = Face.FRONT
-    }
+    
 
     String getString():
-        return String.Format("{0}, {1}", FaceHandler.getCharValue(c_currentUp), FaceHandler.getCharValue(c_currentFront))
-    }
+        return String.Format("0, 1", FaceHandler.getCharValue(c_currentUp), FaceHandler.getCharValue(c_currentFront))
+    
 
     rotate(Rotation p_rotation):
         Face l_temp
@@ -48,11 +48,11 @@ namespace utils
                 l_temp = c_currentFront
                 c_currentFront = getFace(Face.BOTTOM)
                 c_currentUp = l_temp
-            } else:
+             else:
                 l_temp = getFace(Face.BACK)
                 c_currentFront = c_currentUp
                 c_currentUp = l_temp
-            }
+            
         else if l_face == Face.FRONT)
             if l_direction == Direction.CW)
                 c_currentUp = getFace(Face.LEFT)
@@ -61,11 +61,11 @@ namespace utils
         else
             rotate(new Rotation(FaceHandler.getOpposite(l_face), DirectionHandler.getOpposite(l_direction)))
 
-    }
+    
 
-Position getCopy(){
+Position getCopy()
         return new Position(c_currentUp,c_currentFront)
-}
+
     Face getFace(Face p_viewpoint):
         if p_viewpo== Face.TOP)
             return c_currentUp
@@ -73,7 +73,7 @@ Position getCopy(){
             return FaceHandler.getOpposite(c_currentUp)
         else
             return getHorizonalFacebyVirtual(p_viewpoint)
-    }
+    
 
 
     Face getHorizonalFacebyVirtual(Face p_viewpoint):
@@ -97,20 +97,19 @@ Position getCopy(){
             default:
                 return Face.TOP
 
-        }
-    }
+        
+    
 
     Boolean equals(Position p_position):
         return ((c_currentUp == p_position.c_currentUp) and
                 (c_currentFront == p_position.c_currentFront))
-    }
+    
 
 //	operator !=(
 //	Position p_position)
 //
-//	{
+//	
 //		return !(equals(p_position))
-//	}
+//	
 
-}
-}
+

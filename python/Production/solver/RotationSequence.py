@@ -9,21 +9,21 @@ using utils
 using cube
 
 namespace solver
-{
 
-    class RotationSequence {
+
+    class RotationSequence 
 
         List<Rotation> c_array = new List<Rotation>()
 
         RotationSequence():
             c_array.Clear()
-        }
+        
 
 
         RotationSequence(List<Rotation> p_List):
             c_array = p_List
 
-        }
+        
 
         print():
          
@@ -32,15 +32,15 @@ namespace solver
 
                 (l_itr as Rotation).print()
             Console.Write("\n")
-        }
+        
 
         addRotation(Rotation p_rotation):
             c_array.Add(p_rotation)
-        }
+        
 
         removeRotation():
             c_array.RemoveAt(c_array.Count - 1)
-        }
+        
 
         Boolean isRedundant(Rotation p_rotation):
             Boolean l_returnValue = false
@@ -67,12 +67,12 @@ namespace solver
                             (c_array[c_array.Count - 2].getFace() == l_lastFace) and (l_lastDirection == Direction.CCW) and
                             (c_array[c_array.Count - 2].getDirection() == Direction.CCW))
                         l_returnValue = true
-                }
-            } else
+                
+             else
                 l_returnValue = false
             return l_returnValue
 
-        }
+        
 
         writeToFile(RubikFileWriter p_writer):
             foreach (var l_itr in c_array)
@@ -82,7 +82,7 @@ namespace solver
             p_writer.write("\n")
 
 
-        }
+        
         bool readFromFile(RubikFileReader p_reader):
             Rotation l_rotation = new Rotation()
 
@@ -90,27 +90,27 @@ namespace solver
             while l_rotation.readFromFile(p_reader))
                 c_array.Add((new Rotation(l_rotation.getFace(), l_rotation.getDirection())))
             return !(c_array.Count == 0)
-        }
+        
 
        
         RotationSequence getSubRotationLinkedList():
             return new RotationSequence(new List<Rotation>(c_array.GetRange(1, c_array.Count)))
-        }
+        
 
        size():
             return c_array.Count
-        }
+        
 
         Rotation getFirstRotation():
             return c_array[0]
-        }
+        
         Rotation getRotation(p_index):
             return c_array[p_index]
-        }
+        
         Boolean isNotEmpty():
 
             return (c_array.Count > 0)
-        }
+        
 
         RotationSequence getCopy():
             RotationSequence l_rotationLinkedList = new RotationSequence()
@@ -122,7 +122,7 @@ namespace solver
                 l_rotationLinkedList.addRotation(l_itr as Rotation)
 
             return l_rotationLinkedList
-        }
+        
 
         applyToRubik(Cube p_rubik):
            
@@ -134,7 +134,7 @@ namespace solver
                 p_rubik.rotateFace(l_itr.getFace(), l_itr.getDirection())
 
 
-        }
-    }
-}
+        
+    
+
 

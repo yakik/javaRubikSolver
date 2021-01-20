@@ -3,11 +3,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting
 using utils
 
 namespace CSharpRubikSolverUTests
-{
+
 
     [TestClass]
     class PermutationTest
-    {
+    
 
         [TestMethod]
         getValue():
@@ -18,16 +18,15 @@ namespace CSharpRubikSolverUTests
             Assert.AreEqual( 14, Cube.getValue(myPermutation, 2), "second floor")
             Assert.AreEqual(24, Cube.getValue(myPermutation, 3), "third floor")
 
-        }
+        
         [TestMethod]
         getValueFull():
             Cube myRubik = new Cube()
             Cube myPermutation = new Cube(myRubik)
             Assert.AreEqual( 40, Cube.getValue(myPermutation, 3))
 
-        }
+        
 
 
 
-    }
-}
+    

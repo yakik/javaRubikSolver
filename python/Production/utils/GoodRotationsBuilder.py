@@ -8,9 +8,9 @@ using System.Text
 using System.Threading.Tasks
 
 namespace utils
-{
 
-	class GoodRotationsBuilder {
+
+	class GoodRotationsBuilder 
 
 		static findGoodRotationLinks(String p_firstFloorFile
 				, String p_secondFloorFile, String p_thirdFloorFile, p_levels):
@@ -26,7 +26,7 @@ namespace utils
 			l_secondWriter.close()
 			l_thirdWriter.close()
 
-		}
+		
 
 		static BuildFilesForRotation(RubikFileWriter p_firstFloorFile, RubikFileWriter p_secondFloorFile, RubikFileWriter p_thirdFloorFile
 												 , Cube p_rubik
@@ -56,8 +56,8 @@ namespace utils
 						   p_rubik, p_initialPermutation, p_rotationLinkedList, p_level - 1, myProgressString)
 					p_rotationLinkedList.removeRotation()
 					p_rubik.rotateFace(newRotation.getReverse().getFace(), newRotation.getReverse().getDirection())
-				}
-		}
+				
+		
 
-	}
-}
+	
+

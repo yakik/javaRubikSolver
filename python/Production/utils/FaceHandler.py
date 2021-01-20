@@ -1,10 +1,10 @@
 ﻿namespace utils
-{
-    class FaceHandler { 
+
+    class FaceHandler  
 
     static char getCharValue(Face face):
             switch (face)
-            {
+            
                 case Face.TOP:
                     return 'U'
                 case Face.BOTTOM:
@@ -19,13 +19,13 @@
                     return 'B'
                 default:
                     return 'U'
-            }
+            
 
-        }
+        
 
     static Face getFace(intValue):
             switch (intValue)
-            {
+            
                 case 0:
                     return Face.TOP
                 case 1:
@@ -40,13 +40,13 @@
                     return Face.BACK
                 default:
                     return Face.TOP
-            }
+            
           
-    }
+    
 
         static Face getFace(char charValue):
             switch (charValue)
-            {
+            
                 case 'U':
                     return Face.TOP
                 case 'D':
@@ -61,19 +61,19 @@
                     return Face.BACK
                 default:
                     return Face.TOP
-            }
+            
 
-        }
+        
 
      /*   getIntOfChar():              // Getter
         return charValue
-    }
+    
 
-    char getChar(){ return (char) charValue}
+    char getChar() return (char) charValue
      */
    /* getInt():              // Getter
         return intValue
-    }
+    
 */
     static Face getOpposite(Face face):
         switch (face):
@@ -93,8 +93,8 @@
 //                return NOTDEFINED
             default:
                 return Face.TOP
-        }
-    }
-}
-}
+        
+    
+
+
 

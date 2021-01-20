@@ -6,12 +6,12 @@ using System.Text
 using System.Threading.Tasks
 
 namespace solver
-{
 
-    class Solver {
+
+    class Solver 
 
         Solver():
-        }
+        
 
         Solution solve(Cube p_rubik, RotationTree p_firstTree, RotationTree p_secondTree, RotationTree p_thirdTree):
 
@@ -33,7 +33,7 @@ namespace solver
                 if l_solutionManager.getBestValue() > Cube.getValue(l_solutionToDev.getPermutation(), targetFloor) + 14):
                     Console.WriteLine("Couldn't Find a Solution")
                     return l_solutionManager.getBest()
-                }
+                
                 if targetFloor == 1)
                     findBetterSolution(l_solutionToDev, p_firstTree, l_solutionManager, targetFloor)
                 if targetFloor == 2)
@@ -43,35 +43,35 @@ namespace solver
 
                 l_floor = getTargetFloor(l_solutionManager.getBestValue())
 
-                Console.Write("Floor={0}, Best yet:{1}, bestUnDeveloped={2}\n", l_floor, l_solutionManager.getBestValue(), l_solutionManager.getBestUndeveloped() != null)
-            }
+                Console.Write("Floor=0, Best yet:1, bestUnDeveloped=2\n", l_floor, l_solutionManager.getBestValue(), l_solutionManager.getBestUndeveloped() != null)
+            
 
             return l_solutionManager.getBest()
-        }
+        
 
         getTargetFloor(Cube p_permutation):
             if Cube.getValue(p_permutation, 1) >= 16):
                 if Cube.getValue(p_permutation, 2) < 24):
                     return 2
-                } else:
+                 else:
                     return 3
-                }
-            } else:
+                
+             else:
                 return 1
-            }
-        }
+            
+        
 
         getTargetFloor(p_value):
             if p_value >= 16):
                 if p_value < 24):
                     return 2
-                } else:
+                 else:
                     return 3
-                }
-            } else:
+                
+             else:
                 return 1
-            }
-        }
+            
+        
 
 
 
@@ -85,7 +85,7 @@ namespace solver
             l_rubik = new Cube(l_permutation)
             searchTree(l_minimumValue - 4, p_tree, l_rubik, p_solutionManager,
                     p_solution, p_floor, 0)
-        }
+        
 
 
         searchTree(minimumValueToReach, RotationTree searchTree,
@@ -103,10 +103,10 @@ namespace solver
                         this.searchTree(minimumValueToReach, searchTree, cubeAfterRotationSequence, solutionManager,
                                 new Solution(rotationSequence, cubeAfterRotationSequence, previousSolution), targetFloorToSortInCube, 1)
 
-                    }
-                }
-            }
-        }
+                    
+                
+            
+        
 
         addSequenceToSolutionIfHigherValue(minimumValueToReach, SolutionManager solutionManager,
                 Solution previousSolution, targetFloorToSortInCube, RotationSequence rotationSequence,
@@ -114,8 +114,8 @@ namespace solver
             if Cube.getValue(cubeAfterRotationSequence, targetFloorToSortInCube) >= minimumValueToReach):
                 solutionManager.addSolution(rotationSequence, cubeAfterRotationSequence, previousSolution,
                         Cube.getValue(cubeAfterRotationSequence, targetFloorToSortInCube), targetFloorToSortInCube)
-            }
-        }
+            
+        
 
         Cube getCubeAfterApplyingSequence(Cube cubeForExperimentation, RotationSequence rotationSequence):
             if rotationIndex = 0 rotationIndex < rotationSequence.size() rotationIndex++)
@@ -123,9 +123,9 @@ namespace solver
                         rotationSequence.getRotation(rotationIndex).getDirection())
             Cube cubeAfterRotationSequence = Cube.getPermutationFromCube(cubeForExperimentation).getCopy()
             return cubeAfterRotationSequence
-        }
+        
 
 
 
-    }
-}
+    
+

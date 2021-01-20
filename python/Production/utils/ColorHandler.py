@@ -1,6 +1,6 @@
 ﻿namespace utils
-{
-    class ColorHandler{
+
+    class ColorHandler
  
 
     static Color getColor( intValue):     // Constructor
@@ -19,12 +19,12 @@
                 return Color.BOTTOMCOLOR
             default:
                 return Color.FRONTCOLOR
-        }
+        
 
-    }
+    
 
     static Color getColor(char charValue)
-    {    
+        
         switch (charValue):
             case 'R':
                 return Color.FRONTCOLOR
@@ -40,12 +40,12 @@
                 return Color.BOTTOMCOLOR
             default:
                 return Color.FRONTCOLOR
-        }
+        
 
-    }
-
-
+    
 
 
-}
-}
+
+
+
+

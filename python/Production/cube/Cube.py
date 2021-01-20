@@ -6,16 +6,16 @@ using System.Threading.Tasks
 using utils
 
 namespace cube
-{
 
-	class Cube {
+
+	class Cube 
 
 
 		static Cube getPermutationFromCube(Cube cube):
 
 
 			return cube.getCopy()
-		}
+		
 
 		static getValue(Cube l_permutation, p_highestFloor):
 			l_value = 0
@@ -27,7 +27,7 @@ namespace cube
 				l_value += 2 * (8 - l_permutation.countDifferenceThirdFloor(fixedCube))
 
 			return l_value
-		}
+		
 
 
 
@@ -41,15 +41,15 @@ namespace cube
 				return true
 			else
 				return false
-		}
+		
 
 		setColor(Face face, LocationInFace locationInFace, Color color):
 			colors[(int)face,(int)locationInFace] = color
-		}
+		
 
 		Color getColor(Face face, LocationInFace locationInFace):
 			return colors[(int)face,(int)locationInFace]
-		}
+		
 
 		Cube():
 
@@ -60,21 +60,21 @@ namespace cube
 				setColor(Face.LEFT, locationInFace, Color.LEFTCOLOR)
 				setColor(Face.TOP, locationInFace, Color.TOPCOLOR)
 				setColor(Face.BOTTOM, locationInFace, Color.BOTTOMCOLOR)
-			}
+			
 
-		}
+		
 
 		Cube(Cube source):
 			foreach (LocationInFace locationInFace in Enum.GetValues(typeof(LocationInFace)))
-			{
+			
 				setColor(Face.FRONT, locationInFace, source.getColor(Face.FRONT, locationInFace))
 				setColor(Face.BACK, locationInFace, source.getColor(Face.BACK, locationInFace))
 				setColor(Face.RIGHT, locationInFace, source.getColor(Face.RIGHT, locationInFace))
 				setColor(Face.LEFT, locationInFace, source.getColor(Face.LEFT, locationInFace))
 				setColor(Face.TOP, locationInFace, source.getColor(Face.TOP, locationInFace))
 				setColor(Face.BOTTOM, locationInFace, source.getColor(Face.BOTTOM, locationInFace))
-			}
-		}
+			
+		
 
 		rotateFace(Face face, Direction direction):
 			switch (face):
@@ -98,9 +98,9 @@ namespace cube
 					break
 				default:
 					break
-			}
+			
 
-		}
+		
 
 		rotateBottomFace(Direction direction):
 			if direction == Direction.CW):
@@ -112,11 +112,11 @@ namespace cube
 						LocationInFace.BOTTOMLEFT, Face.RIGHT, LocationInFace.BOTTOMLEFT)
 				rotateLeftToRight(Face.BACK, LocationInFace.BOTTOMRIGHT, Face.LEFT, LocationInFace.BOTTOMRIGHT, Face.FRONT,
 						LocationInFace.BOTTOMRIGHT, Face.RIGHT, LocationInFace.BOTTOMRIGHT)
-			} else:
+			 else:
 				if i = 0 i < 3 i++)
 					rotateBottomFace(Direction.CW)
-			}
-		}
+			
+		
 
 		rotateTopFace(Direction direction):
 			if direction == Direction.CW):
@@ -128,11 +128,11 @@ namespace cube
 						LocationInFace.TOPLEFT, Face.LEFT, LocationInFace.TOPLEFT)
 				rotateLeftToRight(Face.BACK, LocationInFace.TOPRIGHT, Face.RIGHT, LocationInFace.TOPRIGHT, Face.FRONT,
 						LocationInFace.TOPRIGHT, Face.LEFT, LocationInFace.TOPRIGHT)
-			} else:
+			 else:
 				if i = 0 i < 3 i++)
 					rotateTopFace(Direction.CW)
-			}
-		}
+			
+		
 
 		rotateBackFace(Direction direction):
 			if direction == Direction.CW):
@@ -144,11 +144,11 @@ namespace cube
 						LocationInFace.BOTTOMRIGHT, Face.RIGHT, LocationInFace.TOPRIGHT)
 				rotateLeftToRight(Face.TOP, LocationInFace.TOPRIGHT, Face.LEFT, LocationInFace.TOPLEFT, Face.BOTTOM,
 						LocationInFace.BOTTOMLEFT, Face.RIGHT, LocationInFace.BOTTOMRIGHT)
-			} else:
+			 else:
 				if i = 0 i < 3 i++)
 					rotateBackFace(Direction.CW)
-			}
-		}
+			
+		
 
 		rotateLeftFace(Direction direction):
 			if direction == Direction.CW):
@@ -166,11 +166,11 @@ namespace cube
 						Face.FRONT, LocationInFace.TOPLEFT,
 						Face.BOTTOM, LocationInFace.TOPLEFT,
 						Face.BACK, LocationInFace.BOTTOMRIGHT)
-			} else:
+			 else:
 				if i = 0 i < 3 i++)
 					rotateLeftFace(Direction.CW)
-			}
-		}
+			
+		
 
 		rotateRightFace(Direction direction):
 			if direction == Direction.CW):
@@ -188,11 +188,11 @@ namespace cube
 						Face.BACK, LocationInFace.BOTTOMLEFT,
 						Face.BOTTOM, LocationInFace.TOPRIGHT,
 						Face.FRONT, LocationInFace.TOPRIGHT)
-			} else:
+			 else:
 				if i = 0 i < 3 i++)
 					rotateRightFace(Direction.CW)
-			}
-		}
+			
+		
 
 		rotateFrontFace(Direction direction):
 			if direction == Direction.CW):
@@ -204,18 +204,18 @@ namespace cube
 						LocationInFace.TOPRIGHT, Face.LEFT, LocationInFace.BOTTOMRIGHT)
 				rotateLeftToRight(Face.TOP, LocationInFace.BOTTOMRIGHT, Face.RIGHT, LocationInFace.BOTTOMLEFT, Face.BOTTOM,
 						LocationInFace.TOPLEFT, Face.LEFT, LocationInFace.TOPRIGHT)
-			} else:
+			 else:
 				if i = 0 i < 3 i++)
 					rotateFrontFace(Direction.CW)
-			}
-		}
+			
+		
 
 		rotateLeftToRightFaceOnly(Face face):
 			rotateLeftToRight(face, LocationInFace.TOP, face, LocationInFace.RIGHT, face, LocationInFace.BOTTOM, face,
 					LocationInFace.LEFT)
 			rotateLeftToRight(face, LocationInFace.BOTTOMLEFT, face, LocationInFace.TOPLEFT, face, LocationInFace.TOPRIGHT,
 					face, LocationInFace.BOTTOMRIGHT)
-		}
+		
 
 		print():
 			printFace(Face.TOP)
@@ -225,7 +225,7 @@ namespace cube
 			printFace(Face.LEFT)
 			printFace(Face.RIGHT)
 
-		}
+		
 
 		printFace(Face face):
 			Console.Write("\n%S\n\n", FaceHandler.getCharValue(face))
@@ -235,7 +235,7 @@ namespace cube
 					getColor(face, LocationInFace.RIGHT))
 			Console.Write("%11s %11s %11s\n", getColor(face, LocationInFace.BOTTOMLEFT),
 					getColor(face, LocationInFace.BOTTOM), getColor(face, LocationInFace.BOTTOMRIGHT))
-		}
+		
 		//                TL T TR
 		//                L TOP R 
 		//                BL B BR
@@ -257,7 +257,7 @@ namespace cube
 			setColor(secondFace, secondLocationInFace, getColor(firstFace, firstLocationInFace))
 			setColor(firstFace, firstLocationInFace, temp)
 
-		}
+		
 
 		countDifferenceSecondFloor(Cube cube):
 			counter = 0
@@ -276,7 +276,7 @@ namespace cube
 
 			return counter
 
-		}
+		
 
 
 		countDifferenceFirstFloor(Cube cube):
@@ -314,7 +314,7 @@ namespace cube
 
 			return counter
 
-		}
+		
 
 		countDifferenceThirdFloor(Cube cube):
 			counter = 0
@@ -351,28 +351,28 @@ namespace cube
 
 			return counter
 
-		}
+		
 
 
 		Boolean colorInFaceNotEqual(Cube comparedCube, Face face, LocationInFace locationInFace):
 			return getColor(face, locationInFace) != comparedCube.getColor(face, LocationInFace.BOTTOM)
-		}
+		
 
 		countAllDifferences(Cube comparedCube):
 			return countDifferenceThirdFloor(comparedCube) +
 					countDifferenceFirstFloor(comparedCube) +
 					countDifferenceSecondFloor(comparedCube)
-		}
+		
 
 		Cube getCopy():
 			return new Cube(this)
-		}
+		
 
 
 
-	}
+	
 
-}
+
 
 
 

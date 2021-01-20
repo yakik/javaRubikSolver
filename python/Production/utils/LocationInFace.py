@@ -5,9 +5,9 @@ using System.Text
 using System.Threading.Tasks
 
 namespace utils
-{
 
-    enum LocationInFace {
+
+    enum LocationInFace 
         TOP=0,
         BOTTOM=1,
         RIGHT=2,
@@ -16,12 +16,12 @@ namespace utils
         TOPLEFT=5,
         BOTTOMRIGHT=6,
         BOTTOMLEFT=7/*, NOTDEFINED('Z', 9)*/ //don't change this sequence, for Rubik's sake!
-    }
-    class LocationInFaceHandle { 
+    
+    class LocationInFaceHandle  
    
     static LocationInFace GetLocationInFace( intValue):
             switch (intValue)
-            {
+            
                 case 0:
                     return LocationInFace.TOP
                 case 1:
@@ -41,12 +41,12 @@ namespace utils
                 default:
                     return LocationInFace.TOP
 
-            }
+            
            
-    }
+    
 
 
    
-}
-}
+
+
 

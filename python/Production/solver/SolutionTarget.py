@@ -5,12 +5,12 @@ using System.Text
 using System.Threading.Tasks
 
 namespace solver
-{
+
 
     enum SolutionTarget
-    {
+    
         Complete, FirstFloor, SecondFloor
-    }
+    
 
 
-}
+
