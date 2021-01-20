@@ -80,8 +80,8 @@
                 return Face.BACK
             case Face.BACK:
                 return Face.FRONT
-//            case NOTDEFINED:
-//                return NOTDEFINED
+#            case NOTDEFINED:
+#                return NOTDEFINED
             default:
                 return Face.TOP
         

@@ -1,14 +1,14 @@
 class Location:
     
         Boolean c_isEdge
-        Face c_face0
-        Face c_face1
-        Face c_face2
+       c_face0
+       c_face1
+       c_face2
 
         def Location(self):
         
 
-        def containsFace(self, Face p_face):
+        def containsFace(self,p_face):
             if p_face == c_face0 or p_face == c_face1 or (!c_isEdge and (p_face == c_face2)))
                 return true
             else
@@ -22,13 +22,13 @@ class Location:
                 return new Location(c_face0, c_face1, c_face2)
         
 
-        def Location(self, Face p_face0, Face p_face1, Face p_face2):
-            Face l_tmp
+        def Location(self,p_face0,p_face1,p_face2):
+           l_tmp
             c_isEdge = false
             c_face0 = p_face0
             c_face1 = p_face1
             c_face2 = p_face2
-            // bubble sort to keep order within faces		
+            # bubble sort to keep order within faces		
             if (int)c_face0 > (int)c_face1)
             
                 l_tmp = c_face1
@@ -50,9 +50,9 @@ class Location:
 
         
 
-        def Location(self, Face p_face0, Face p_face1):
+        def Location(self,p_face0,p_face1):
             c_isEdge = true
-            //       c_face2 = Face.NOTDEFINED
+            #       c_face2 = Face.NOTDEFINED
             c_face0 = p_face0
             c_face1 = p_face1
             if (int)p_face0 > (int)p_face1)
@@ -106,16 +106,16 @@ class Location:
             return 0
         
 
-        Face getFace2(self):
-            //        if isEdge())
-            //            return Face.NOTDEFINED
-            //        else
+       getFace2(self):
+            #        if isEdge())
+            #            return Face.NOTDEFINED
+            #        else
             return c_face2
         
 
-        //	getValue(self):
-        //		return (getFace0() * 1 + getFace1() * 6 + getFace2() * 36 + isEdge() * 216)
-        //	
+        #	getValue(self):
+        #		return (getFace0() * 1 + getFace1() * 6 + getFace2() * 36 + isEdge() * 216)
+        #	
 
         Boolean equals(Location p_location):
             return ((c_face0 == p_location.c_face0) and
@@ -125,7 +125,7 @@ class Location:
         
 
 
-        String getString(self):
+       getString(self):
             if c_isEdge)
                 return String.Format("0, 1", FaceHandler.getCharValue(c_face0), FaceHandler.getCharValue(c_face1))
             else

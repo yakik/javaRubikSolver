@@ -13,7 +13,7 @@ def set_prefs(prefs):
     # 'mod*.pyc': matches 'test/mod1.pyc' but not 'mod/1.pyc'
     # '.svn': matches 'pkg/.svn' and all of its children
     # 'build/*.o': matches 'build/lib.o' but not 'build/sub/lib.o'
-    # 'build//*.o': matches 'build/lib.o' and 'build/sub/lib.o'
+    # 'build#*.o': matches 'build/lib.o' and 'build/sub/lib.o'
     prefs['ignored_resources'] = ['*.pyc', '*~', '.ropeproject',
                                   '.hg', '.svn', '_svn', '.git', '.tox']
 

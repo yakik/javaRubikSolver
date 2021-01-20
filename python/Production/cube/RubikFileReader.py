@@ -1,7 +1,7 @@
 class RubikFileReader:
     
 
-        def __init__(self, String p_fileLocation):
+        def __init__(self,p_fileLocation):
             try
             
                 self.c_fileReader = new StreamReader(p_fileLocation)

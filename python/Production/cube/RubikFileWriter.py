@@ -2,20 +2,20 @@ class RubikFileWriter:
     
 
 
-        def __init__(self, String p_fileLocation):
+        def __init__(self,p_fileLocation):
             try
             
                 self.c_fileWriter = new StreamWriter(p_fileLocation)
-                //      c_fileIsOK = true
+                #      c_fileIsOK = true
             
             catch (IOException ex)
             
                 Console.WriteLine(ex.Message)
-                //        c_fileIsOK = false
+                #        c_fileIsOK = false
             
         
 
-        def write(self, String p_string):
+        def write(self,p_string):
             try
             
                 self.c_fileWriter.Write(p_string)

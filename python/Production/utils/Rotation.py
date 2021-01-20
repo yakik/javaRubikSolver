@@ -1,12 +1,12 @@
 class Rotation :
 
-        Face c_face
-        Direction c_direction
+       c_face
+       c_direction
         Rotation(self):
         
 
 
-        def Rotation(self, Face p_face, Direction p_direction):
+        def Rotation(self,p_face,p_direction):
             c_face = p_face
             c_direction = p_direction
         
@@ -24,17 +24,17 @@ class Rotation :
         
 
         def writeToFile(self, RubikFileWriter p_write):
-            String l_toWrite = String.Format(" (%d,%d)", (int)c_face, (int)c_direction)
+           l_toWrite = String.Format(" (%d,%d)", (int)c_face, (int)c_direction)
             p_write.write(l_toWrite)
         
 
         def readFromFile(self, RubikFileReader p_reader):
             l_int
             l_= p_reader.read()
-            //Console.Write("%d ",l_int)
+            #Console.Write("%d ",l_int)
             while (l_== ' ') or (l_== 13 /*'\r'*/)):
                 l_= p_reader.read()
-                // Console.Write("%d ",l_int)
+                # Console.Write("%d ",l_int)
             
 
             if (l_== /*'\n'*/10) or (l_== -1 /*EOF*/) or (l_!= '('))

@@ -32,22 +32,22 @@ class RotationSequence:
         def Boolean isRedundant(self, Rotation p_rotation):
             Boolean l_returnValue = false
 
-            Face l_lastFace
-            Direction l_lastDirection
+           l_lastFace
+           l_lastDirection
             if self.c_array.Count > 0):
                 l_lastFace = self.c_array[(self.c_array.Count - 1)].getFace()
                 l_lastDirection = self.c_array[self.c_array.Count - 1].getDirection()
-                // new rotation is opposite to previous
+                # new rotation is opposite to previous
                 if self.c_array[self.c_array.Count - 1].getReverse().equals(p_rotation))
                     l_returnValue = true
-                // previous face was opposite and previous face greater then current face
+                # previouswas opposite and previousgreater then current face
                 if (p_rotation.getFace() == FaceHandler.getOpposite(l_lastFace) and ((int)l_lastFace > (int)p_rotation.getFace())))
                     l_returnValue = true
-                // two clockwise rotation of same face
+                # two clockwise rotation of same face
                 if (p_rotation.getFace() == l_lastFace) and (l_lastDirection == Direction.CW) and
                         (p_rotation.getDirection() == Direction.CW))
                     l_returnValue = true
-                //no three counter clockwise rotations
+                #no three counter clockwise rotations
                 if self.c_array.Count > 1):
                     if (p_rotation.getFace() == l_lastFace) and (l_lastDirection == Direction.CCW) and
                             (p_rotation.getDirection() == Direction.CCW) and
@@ -100,7 +100,7 @@ class RotationSequence:
         
 
         def getCopy(self):
-            RotationSequence l_rotationLinkedList = new RotationSequence()
+           l_rotationLinkedList = new RotationSequence()
            
 
         
@@ -111,7 +111,7 @@ class RotationSequence:
             return l_rotationLinkedList
         
 
-        def applyToRubik(self, Cube p_rubik):
+        def applyToRubik(self,p_rubik):
            
 
               

@@ -1,11 +1,11 @@
 class CubeStatus:
 
 	@staticmethod
-	def changesOnlyInThirdFloor(Cube cube, Cube p_comparedPermutation):
+	def changesOnlyInThirdFloor(Cube cube,p_comparedPermutation):
 
 		l_counter = 0
 
-		//next line replaced previous code
+		#next line replaced previous code
 		l_counter = cube.countDifferenceThirdFloor(p_comparedPermutation)
 
 		if l_counter > 0) return true
@@ -27,7 +27,7 @@ class CubeStatus:
 
             @ staticmethod
             def isDifferentItemsOnlyInSecondFloorLessThanThree(Cube cube,
-                                                               Cube p_comparedPermutation)
+                                                              p_comparedPermutation)
 
             l_counter=0
 

@@ -1,5 +1,5 @@
 
-    enum LocationInFace 
+    enum
         TOP=0,
         BOTTOM=1,
         RIGHT=2,
@@ -7,12 +7,12 @@
         TOPRIGHT=4,
         TOPLEFT=5,
         BOTTOMRIGHT=6,
-        BOTTOMLEFT=7/*, NOTDEFINED('Z', 9)*/ //don't change this sequence, for Rubik's sake!
+        BOTTOMLEFT=7/*, NOTDEFINED('Z', 9)*/ #don't change this sequence, for Rubik's sake!
     
     class LocationInFaceHandle  
    
     @staticmethod
-    def LocationInFace GetLocationInFace( intValue):
+    defGetLocationInFace( intValue):
             switch (intValue)
             
                 case 0:

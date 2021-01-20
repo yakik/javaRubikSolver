@@ -24,7 +24,7 @@ class CubeTest(unittest.TestCase):
 		
 		
 		def rotateFrontClockwise(self):
-			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
+			#Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.FRONT, Direction.CW)
 			Assert.AreEqual(Color.LEFTCOLOR, myRubik.getColor(Face.TOP, LocationInFace.BOTTOM))
@@ -43,7 +43,7 @@ class CubeTest(unittest.TestCase):
 
 		
 		def rotateLeftClockwise(self):
-			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
+			#Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.LEFT, Direction.CW)
 			Assert.AreEqual(Color.BACKCOLOR, myRubik.getColor(Face.TOP, LocationInFace.LEFT))
@@ -62,7 +62,7 @@ class CubeTest(unittest.TestCase):
 
 		
 		def rotateRightClockwise(self):
-			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
+			#Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.RIGHT, Direction.CW)
 			Assert.AreEqual( Color.FRONTCOLOR, myRubik.getColor(Face.TOP, LocationInFace.RIGHT))
@@ -81,7 +81,7 @@ class CubeTest(unittest.TestCase):
 
 		
 		def rotateBackClockwise(self):
-			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
+			#Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.BACK, Direction.CW)
 			Assert.AreEqual( Color.RIGHTCOLOR, myRubik.getColor(Face.TOP, LocationInFace.TOP))
@@ -100,7 +100,7 @@ class CubeTest(unittest.TestCase):
 
 		
 		def rotateTopClockwise(self):
-			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
+			#Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.TOP, Direction.CW)
 			Assert.AreEqual( Color.RIGHTCOLOR, myRubik.getColor(Face.FRONT, LocationInFace.TOP))
@@ -119,7 +119,7 @@ class CubeTest(unittest.TestCase):
 
 		
 		def rotateBottomClockwise(self):
-			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
+			#Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.BOTTOM, Direction.CW)
 			Assert.AreEqual( Color.LEFTCOLOR, myRubik.getColor(Face.FRONT, LocationInFace.BOTTOM))
@@ -139,7 +139,7 @@ class CubeTest(unittest.TestCase):
 
 		
 		def rotateFrontCounterClockwise(self):
-			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
+			#Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.FRONT, Direction.CCW)
 			Assert.AreEqual( Color.RIGHTCOLOR, myRubik.getColor(Face.TOP, LocationInFace.BOTTOM))
@@ -158,7 +158,7 @@ class CubeTest(unittest.TestCase):
 
 		
 		def rotateLeftCounterClockwise(self):
-			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
+			#Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.LEFT, Direction.CCW)
 			Assert.AreEqual( Color.FRONTCOLOR, myRubik.getColor(Face.TOP, LocationInFace.LEFT))
@@ -177,7 +177,7 @@ class CubeTest(unittest.TestCase):
 
 		
 		def rotateRightCounterClockwise(self):
-			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
+			#Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.RIGHT, Direction.CCW)
 			Assert.AreEqual( Color.BACKCOLOR, myRubik.getColor(Face.TOP, LocationInFace.RIGHT))
@@ -196,7 +196,7 @@ class CubeTest(unittest.TestCase):
 
 		
 		def rotateBackCounterClockwise(self):
-			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
+			#Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.BACK, Direction.CCW)
 			Assert.AreEqual( Color.LEFTCOLOR, myRubik.getColor(Face.TOP, LocationInFace.TOP))
@@ -215,7 +215,7 @@ class CubeTest(unittest.TestCase):
 
 		
 		def rotateTopCounterClockwise(self):
-			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
+			#Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.TOP, Direction.CCW)
 			Assert.AreEqual( Color.LEFTCOLOR, myRubik.getColor(Face.FRONT, LocationInFace.TOP))
@@ -234,7 +234,7 @@ class CubeTest(unittest.TestCase):
 
 		
 		def rotateBottomCounterClockwise(self):
-			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
+			#Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.BOTTOM, Direction.CCW)
 			Assert.AreEqual( Color.RIGHTCOLOR, myRubik.getColor(Face.FRONT, LocationInFace.BOTTOM))

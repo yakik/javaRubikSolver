@@ -4,8 +4,8 @@ class RotationTree:
         def __init__(self):
         
 
-        def addRotationLinkedList(self, RotationSequence p_list):
-            //Console.Write("FFFFF")
+        def addRotationLinkedList(self,p_list):
+            #Console.Write("FFFFF")
             self.c_array.Add(p_list.getCopy())
         
 
@@ -19,8 +19,8 @@ class RotationTree:
 
         @staticmethod
         def getRotationTreeFromFile(RubikFileReader p_File):
-            RotationTree myTree = new RotationTree()
-            RotationSequence l_rotationLinkedList = new RotationSequence()
+           myTree = new RotationTree()
+           l_rotationLinkedList = new RotationSequence()
             while l_rotationLinkedList.readFromFile(p_File))
             
                 myTree.addRotationLinkedList(l_rotationLinkedList)

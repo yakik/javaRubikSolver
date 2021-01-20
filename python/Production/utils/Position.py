@@ -8,10 +8,10 @@ class Position :
     , Face.TOP, Face.LEFT, Face.BOTTOM, Face.RIGHT
     
     
-    Face c_currentUp
-    Face c_currentFront
+   c_currentUp
+   c_currentFront
 
-    def Position(self, Face p_Up, Face p_Front):
+    def Position(self,p_Up,p_Front):
         c_currentUp = p_Up
         c_currentFront = p_Front
     
@@ -26,9 +26,9 @@ class Position :
     
 
     def rotate(self, Rotation p_rotation):
-        Face l_temp
-        Face l_face = p_rotation.getFace()
-        Direction l_direction = p_rotation.getDirection()
+       l_temp
+       l_face = p_rotation.getFace()
+       l_direction = p_rotation.getDirection()
         if l_face == Face.TOP)
             if l_direction == Direction.CW)
                 c_currentFront = getFace(Face.RIGHT)
@@ -57,7 +57,7 @@ class Position :
 def getCopy(self)
         return new Position(c_currentUp,c_currentFront)
 
-    Face getFace(Face p_viewpoint):
+   getFace(Face p_viewpoint):
         if p_viewpo== Face.TOP)
             return c_currentUp
         else if p_viewpo== Face.BOTTOM)
@@ -67,7 +67,7 @@ def getCopy(self)
     
 
 
-    def getHorizonalFacebyVirtual(self, Face p_viewpoint):
+    def getHorizonalFacebyVirtual(self,p_viewpoint):
         i = 0
 
         while g_faceOrder[(int)c_currentUp,i] != c_currentFront and i < 4)

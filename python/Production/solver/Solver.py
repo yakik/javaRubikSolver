@@ -2,14 +2,14 @@ class Solver:
 
       
 
-        def solve(self, Cube p_rubik, RotationTree p_firstTree, RotationTree p_secondTree, RotationTree p_thirdTree):
+        def solve(self,p_rubik,p_firstTree,p_secondTree,p_thirdTree):
 
             l_numberOfCubicleInPlace
-            Cube l_permutation = new Cube(p_rubik)
-            SolutionManager l_solutionManager = new SolutionManager()
-            Solution l_solutionToDev
+           l_permutation = new Cube(p_rubik)
+           l_solutionManager = new SolutionManager()
+           l_solutionToDev
 
-            RotationSequence l_rotationLinkedList = new RotationSequence()
+           l_rotationLinkedList = new RotationSequence()
 
             l_floor = getTargetFloor(l_permutation)
             l_numberOfCubicleInPlace = Cube.getValue(l_permutation, l_floor)
@@ -38,7 +38,7 @@ class Solver:
             return l_solutionManager.getBest()
         
 
-        def getTargetFloor(self, Cube p_permutation):
+        def getTargetFloor(self,p_permutation):
             if Cube.getValue(p_permutation, 1) >= 16):
                 if Cube.getValue(p_permutation, 2) < 24):
                     return 2
@@ -65,10 +65,10 @@ class Solver:
 
 
 
-        def findBetterSolution(self, Solution p_solution, RotationTree p_tree, SolutionManager p_solutionManager,
+        def findBetterSolution(self,p_solution,p_tree,p_solutionManager,
                                         p_floor):
-            Cube l_rubik = new Cube()
-            Cube l_permutation = p_solution.getPermutation().getCopy()
+           l_rubik = new Cube()
+           l_permutation = p_solution.getPermutation().getCopy()
             l_minimumValue = Cube.getValue(l_permutation, p_floor)
 
             l_rubik = new Cube(l_permutation)
@@ -77,14 +77,14 @@ class Solver:
         
 
 
-        def searchTree(self, minimumValueToReach, RotationTree searchTree,
-                               Cube cubeToSolve, SolutionManager solutionManager,
-                               Solution previousSolution, targetFloorToSortInCube, depth):
+        def searchTree(self, minimumValueToReach,searchTree,
+                              cubeToSolve,solutionManager,
+                              previousSolution, targetFloorToSortInCube, depth):
             if minimumValueToReach < 2) minimumValueToReach = 2
             if rotationSequenceIndex = 0 rotationSequenceIndex < searchTree.getSize() rotationSequenceIndex++):
-                RotationSequence rotationSequence = searchTree.getRotationSequence(rotationSequenceIndex)
+               rotationSequence = searchTree.getRotationSequence(rotationSequenceIndex)
                 if rotationSequence != null):
-                    Cube cubeAfterRotationSequence = getCubeAfterApplyingSequence(new Cube(cubeToSolve), rotationSequence)
+                   cubeAfterRotationSequence = getCubeAfterApplyingSequence(new Cube(cubeToSolve), rotationSequence)
 
                     addSequenceToSolutionIfHigherValue(minimumValueToReach, solutionManager, previousSolution,
                             targetFloorToSortInCube, rotationSequence, cubeAfterRotationSequence)
@@ -97,20 +97,20 @@ class Solver:
             
         
 
-        def addSequenceToSolutionIfHigherValue(self, minimumValueToReach, SolutionManager solutionManager,
-                Solution previousSolution, targetFloorToSortInCube, RotationSequence rotationSequence,
-                Cube cubeAfterRotationSequence):
+        def addSequenceToSolutionIfHigherValue(self, minimumValueToReach,solutionManager,
+               previousSolution, targetFloorToSortInCube,rotationSequence,
+               cubeAfterRotationSequence):
             if Cube.getValue(cubeAfterRotationSequence, targetFloorToSortInCube) >= minimumValueToReach):
                 solutionManager.addSolution(rotationSequence, cubeAfterRotationSequence, previousSolution,
                         Cube.getValue(cubeAfterRotationSequence, targetFloorToSortInCube), targetFloorToSortInCube)
             
         
 
-        def getCubeAfterApplyingSequence(self, Cube cubeForExperimentation, RotationSequence rotationSequence):
+        def getCubeAfterApplyingSequence(self,cubeForExperimentation,rotationSequence):
             if rotationIndex = 0 rotationIndex < rotationSequence.size() rotationIndex++)
                 cubeForExperimentation.rotateFace(rotationSequence.getRotation(rotationIndex).getFace(),
                         rotationSequence.getRotation(rotationIndex).getDirection())
-            Cube cubeAfterRotationSequence = Cube.getPermutationFromCube(cubeForExperimentation).getCopy()
+           cubeAfterRotationSequence = Cube.getPermutationFromCube(cubeForExperimentation).getCopy()
             return cubeAfterRotationSequence
         
 

@@ -1,8 +1,8 @@
 class GoodRotationsBuilder :
 
 		@staticmethod
-		def findGoodRotationLinks(self, String p_firstFloorFile
-				, String p_secondFloorFile, String p_thirdFloorFile, p_levels):
+		def findGoodRotationLinks(self,p_firstFloorFile
+				,p_secondFloorFile,p_thirdFloorFile, p_levels):
 			RubikFileWriter l_firstWriter = new RubikFileWriter(p_firstFloorFile)
 			RubikFileWriter l_secondWriter = new RubikFileWriter(p_secondFloorFile)
 			RubikFileWriter l_thirdWriter = new RubikFileWriter(p_thirdFloorFile)
@@ -19,14 +19,14 @@ class GoodRotationsBuilder :
 
 		@staticmethod
 		def BuildFilesForRotation(self, RubikFileWriter p_firstFloorFile, RubikFileWriter p_secondFloorFile, RubikFileWriter p_thirdFloorFile
-												 , Cube p_rubik
-				, Cube p_initialPermutation, RotationSequence p_rotationLinkedList, p_level, String p_progressString):
+												 ,p_rubik
+				,p_initialPermutation,p_rotationLinkedList, p_level,p_progressString):
 
 			if p_level == 0) return
 			if p_level > 5) Console.WriteLine(p_progressString)
 			i = 0
 			
-				foreach (Face face in Enum.GetValues(typeof(Face)))
+				foreach (Facein Enum.GetValues(typeof(Face)))
 				foreach (Direction direction in Enum.GetValues(typeof(Direction))):
 					i++
 					String myProgressString = p_progressString + String.Format(".%d", i)

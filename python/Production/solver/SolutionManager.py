@@ -10,14 +10,14 @@ class SolutionManager
                 self.c_solutionList.Add(new List<SolutionNode>())
         
 
-        def addSolution(self, RotationSequence p_rotationLinkedList, Cube p_permutation, Solution p_prevSolution,
+        def addSolution(self,p_rotationLinkedList,p_permutation,p_prevSolution,
                          p_value, p_floor):
 
             if /*(p_value>=32 and getBestValue()>=36) or*/ self.c_solutionList[p_value].Count < 40)
             
                 self.c_solutionList[p_value].Add(new SolutionNode(new Solution(p_rotationLinkedList.getCopy(), p_permutation.getCopy(), p_prevSolution)))
 
-                //         Console.Write("Added Solution Value=%d, Index=%d\n", p_value, p_value)
+                #         Console.Write("AddedValue=%d, Index=%d\n", p_value, p_value)
             
 
 
@@ -27,7 +27,7 @@ class SolutionManager
 
         def getBestUndeveloped(self):
             i = 40
-            Solution l_bestSolution = null
+           l_bestSolution = null
             while i >= 0 and l_bestSolution == null)
             
                 if self.c_solutionList[i].Count > 0):
@@ -49,7 +49,7 @@ class SolutionManager
 
         def getBest(self):
             i = 40
-            Solution l_returnValue = null
+           l_returnValue = null
             while i >= 0 and l_returnValue == null)
             
                 if self.c_solutionList[i].Count > 0)
@@ -73,10 +73,10 @@ class SolutionManager
 
         class SolutionNode
         
-            Solution c_solution
+           c_solution
             Boolean c_isDeveloped
 
-            def SolutionNode(self, Solution p_solution)
+            def SolutionNode(self,p_solution)
             
                 c_isDeveloped = false
                 c_solution = p_solution

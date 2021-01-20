@@ -1,7 +1,7 @@
 ﻿class DirectionHandler:
 
         @staticmethod
-        def getString(this Direction dir):              // Getter
+        def getString(thisdir):              # Getter
             switch (dir)
             
                 case Direction.CW:

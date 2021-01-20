@@ -3,7 +3,7 @@ class FaceTest(unittest.TestCase):
     
         
         def testFaceGetIntGetChar(self):
-            Face myFace = Face.BOTTOM
+           myFace = Face.BOTTOM
             Assert.AreEqual(1,(int) myFace)
             Assert.AreEqual('D', FaceHandler.getCharValue(myFace))
             myFace = Face.FRONT
@@ -25,14 +25,14 @@ class FaceTest(unittest.TestCase):
 
         
         def testFaceEquals(self):
-            Face myFace = Face.BOTTOM
+           myFace = Face.BOTTOM
             Assert.AreEqual(Face.BOTTOM, myFace)
             Assert.AreEqual(true, myFace == Face.BOTTOM)
         
 
         
         def testFaceGetOpposite(self):
-            Face myFace = Face.BOTTOM
+           myFace = Face.BOTTOM
             Assert.AreEqual(Face.TOP, FaceHandler.getOpposite(myFace))
             myFace = Face.FRONT
             Assert.AreEqual(Face.BACK, FaceHandler.getOpposite(myFace))

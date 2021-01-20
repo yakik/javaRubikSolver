@@ -13,7 +13,7 @@ class LocationTest(unittest.TestCase):
         
         def getFaces(self):
             Location myLocation = new Location(Face.BOTTOM, Face.LEFT, Face.FRONT)
-            //taking into account facecs are sorted according to value
+            #taking into account facecs are sorted according to value
             Assert.AreEqual(Face.BOTTOM, myLocation.getFace0())
             Assert.AreEqual(Face.LEFT, myLocation.getFace1())
             Assert.AreEqual(Face.FRONT, myLocation.getFace2())
