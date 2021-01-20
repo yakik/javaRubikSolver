@@ -3,7 +3,8 @@ import unittest
 class CubeTest(unittest.TestCase):
 		
 	def overallTest(self):
-		myRubik = Cube(), myRubik2 = Cube()
+		myRubik = Cube()
+		myRubik2 = Cube()
 		myRubik.rotateFace(Face.FRONT, Direction.CW)
 		self.assertEqual(8, myRubik.countAllDifferences(myRubik2))
 		myRubik.rotateFace(Face.TOP, Direction.CW)
@@ -12,7 +13,8 @@ class CubeTest(unittest.TestCase):
 
 		
 	def compareFirstFloor(self):
-		myRubik = Cube(), myRubik2 = Cube()
+		myRubik = Cube()
+		myRubik2 = Cube()
 		myRubik.setColor(Face.FRONT, LocationInFace.BOTTOMLEFT, Color.BACKCOLOR)
 		myRubik.setColor(Face.BACK, LocationInFace.BOTTOM, Color.FRONTCOLOR)
 		myRubik.setColor(Face.FRONT, LocationInFace.TOPLEFT, Color.BACKCOLOR)
@@ -280,9 +282,4 @@ def simpleRotations(self):
 		
 		myRubik.rotateFace(Face.FRONT, Direction.CW)
 		myRubik.rotateFace(Face.FRONT, Direction.CCW)
-	Assert.IsTrue(myRubik.equals(Cube()))
-
-	
-
-
-
+		Assert.IsTrue(myRubik.equals(Cube()))
