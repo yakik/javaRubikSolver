@@ -30,7 +30,7 @@ using utils
 
 		Color[,] colors = new Color[6,8]
 	
-	 def equals(Cube comparedCube):
+	 def equals(self, Cube comparedCube):
 			if countDifferenceFirstFloor(comparedCube) +
 					countDifferenceSecondFloor(comparedCube) +
 					countDifferenceThirdFloor(comparedCube) == 0)
@@ -39,11 +39,11 @@ using utils
 				return false
 		
 
-		def setColor(Face face, LocationInFace locationInFace, Color color):
+		def setColor(self, Face face, LocationInFace locationInFace, Color color):
 			colors[(int)face,(int)locationInFace] = color
 		
 
-		def getColor(Face face, LocationInFace locationInFace):
+		def getColor(self, Face face, LocationInFace locationInFace):
 			return colors[(int)face,(int)locationInFace]
 		
 
@@ -60,7 +60,7 @@ using utils
 
 		
 
-		def Cube(Cube source):
+		def Cube(self, Cube source):
 			foreach (LocationInFace locationInFace in Enum.GetValues(typeof(LocationInFace)))
 			
 				setColor(Face.FRONT, locationInFace, source.getColor(Face.FRONT, locationInFace))
@@ -72,7 +72,7 @@ using utils
 			
 		
 
-		def rotateFace(Face face, Direction direction):
+		def rotateFace(self, Face face, Direction direction):
 			switch (face):
 				case Face.FRONT:
 					rotateFrontFace(direction)
@@ -98,7 +98,7 @@ using utils
 
 		
 
-		def rotateBottomFace(Direction direction):
+		def rotateBottomFace(self, Direction direction):
 			if direction == Direction.CW):
 				rotateLeftToRightFaceOnly(Face.BOTTOM)
 
@@ -114,7 +114,7 @@ using utils
 			
 		
 
-		def rotateTopFace(Direction direction):
+		def rotateTopFace(self, Direction direction):
 			if direction == Direction.CW):
 				rotateLeftToRightFaceOnly(Face.TOP)
 
@@ -130,7 +130,7 @@ using utils
 			
 		
 
-		def rotateBackFace(Direction direction):
+		def rotateBackFace(self, Direction direction):
 			if direction == Direction.CW):
 				rotateLeftToRightFaceOnly(Face.BACK)
 
@@ -146,7 +146,7 @@ using utils
 			
 		
 
-		def rotateLeftFace(Direction direction):
+		def rotateLeftFace(self, Direction direction):
 			if direction == Direction.CW):
 				rotateLeftToRightFaceOnly(Face.LEFT)
 
@@ -168,7 +168,7 @@ using utils
 			
 		
 
-		def rotateRightFace(Direction direction):
+		def rotateRightFace(self, Direction direction):
 			if direction == Direction.CW):
 				rotateLeftToRightFaceOnly(Face.RIGHT)
 
@@ -190,7 +190,7 @@ using utils
 			
 		
 
-		def rotateFrontFace(Direction direction):
+		def rotateFrontFace(self, Direction direction):
 			if direction == Direction.CW):
 				rotateLeftToRightFaceOnly(Face.FRONT)
 
@@ -206,7 +206,7 @@ using utils
 			
 		
 
-		def rotateLeftToRightFaceOnly(Face face):
+		def rotateLeftToRightFaceOnly(self, Face face):
 			rotateLeftToRight(face, LocationInFace.TOP, face, LocationInFace.RIGHT, face, LocationInFace.BOTTOM, face,
 					LocationInFace.LEFT)
 			rotateLeftToRight(face, LocationInFace.BOTTOMLEFT, face, LocationInFace.TOPLEFT, face, LocationInFace.TOPRIGHT,
@@ -223,7 +223,7 @@ using utils
 
 		
 
-		def printFace(Face face):
+		def printFace(self, Face face):
 			Console.Write("\n%S\n\n", FaceHandler.getCharValue(face))
 			Console.Write("%11s %11s %11s\n", getColor(face, LocationInFace.TOPLEFT),
 					getColor(face, LocationInFace.TOP), getColor(face, LocationInFace.TOPRIGHT))
@@ -244,7 +244,7 @@ using utils
 		//                LBOTTOMR 
 		//                BL B BR
 
-		def rotateLeftToRight(Face firstFace, LocationInFace firstLocationInFace, Face secondFace,
+		def rotateLeftToRight(self, Face firstFace, LocationInFace firstLocationInFace, Face secondFace,
 				LocationInFace secondLocationInFace, Face thirdFace, LocationInFace thirdLocationInFace, Face fourthFace,
 				LocationInFace fourthLocationInFace):
 			Color temp = getColor(fourthFace, fourthLocationInFace)
@@ -255,7 +255,7 @@ using utils
 
 		
 
-		def countDifferenceSecondFloor(Cube cube):
+		def countDifferenceSecondFloor(self, Cube cube):
 			counter = 0
 			if colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.LEFT) or
 					colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.RIGHT))
@@ -275,7 +275,7 @@ using utils
 		
 
 
-		def countDifferenceFirstFloor(Cube cube):
+		def countDifferenceFirstFloor(self, Cube cube):
 			counter = 0
 			if colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.BOTTOM) or
 					colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.TOP))
@@ -312,7 +312,7 @@ using utils
 
 		
 
-		def countDifferenceThirdFloor(Cube cube):
+		def countDifferenceThirdFloor(self, Cube cube):
 			counter = 0
 			if colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.TOP) or
 					colorInFaceNotEqual(cube, Face.TOP, LocationInFace.BOTTOM))
@@ -350,11 +350,11 @@ using utils
 		
 
 
-		def colorInFaceNotEqual(Cube comparedCube, Face face, LocationInFace locationInFace):
+		def colorInFaceNotEqual(self, Cube comparedCube, Face face, LocationInFace locationInFace):
 			return getColor(face, locationInFace) != comparedCube.getColor(face, LocationInFace.BOTTOM)
 		
 
-		def countAllDifferences(Cube comparedCube):
+		def countAllDifferences(self, Cube comparedCube):
 			return countDifferenceThirdFloor(comparedCube) +
 					countDifferenceFirstFloor(comparedCube) +
 					countDifferenceSecondFloor(comparedCube)

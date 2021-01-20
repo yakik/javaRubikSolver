@@ -9,7 +9,7 @@
       
         
 
-        def RubikFileReader(String p_fileLocation):
+        def RubikFileReader(self, String p_fileLocation):
             try
             
                 c_fileReader = new StreamReader(p_fileLocation)

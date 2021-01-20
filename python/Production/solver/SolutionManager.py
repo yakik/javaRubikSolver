@@ -16,7 +16,7 @@ using solver
                 c_solutionList.Add(new List<SolutionNode>())
         
 
-        def addSolution(RotationSequence p_rotationLinkedList, Cube p_permutation, Solution p_prevSolution,
+        def addSolution(self, RotationSequence p_rotationLinkedList, Cube p_permutation, Solution p_prevSolution,
                          p_value, p_floor):
 
             if /*(p_value>=32 and getBestValue()>=36) or*/ c_solutionList[p_value].Count < 40)
@@ -82,24 +82,24 @@ using solver
             Solution c_solution
             Boolean c_isDeveloped
 
-            def SolutionNode(Solution p_solution)
+            def SolutionNode(self, Solution p_solution)
             
                 c_isDeveloped = false
                 c_solution = p_solution
             
 
-            def getSolution()
+            def getSolution(self)
             
                 return c_solution
             
 
 
-            def isDeveloped()
+            def isDeveloped(self)
             
                 return c_isDeveloped
             
 
-            def setDeveloped()
+            def setDeveloped(self)
             
                 c_isDeveloped = true
             

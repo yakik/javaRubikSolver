@@ -14,7 +14,7 @@
     Face c_currentUp
     Face c_currentFront
 
-    def Position(Face p_Up, Face p_Front):
+    def Position(self, Face p_Up, Face p_Front):
         c_currentUp = p_Up
         c_currentFront = p_Front
     
@@ -28,7 +28,7 @@
         return String.Format("0, 1", FaceHandler.getCharValue(c_currentUp), FaceHandler.getCharValue(c_currentFront))
     
 
-    def rotate(Rotation p_rotation):
+    def rotate(self, Rotation p_rotation):
         Face l_temp
         Face l_face = p_rotation.getFace()
         Direction l_direction = p_rotation.getDirection()
@@ -57,7 +57,7 @@
 
     
 
-def getCopy()
+def getCopy(self)
         return new Position(c_currentUp,c_currentFront)
 
     Face getFace(Face p_viewpoint):
@@ -70,7 +70,7 @@ def getCopy()
     
 
 
-    def getHorizonalFacebyVirtual(Face p_viewpoint):
+    def getHorizonalFacebyVirtual(self, Face p_viewpoint):
         i = 0
 
         while g_faceOrder[(int)c_currentUp,i] != c_currentFront and i < 4)
@@ -94,7 +94,7 @@ def getCopy()
         
     
 
-    def equals(Position p_position):
+    def equals(self, Position p_position):
         return ((c_currentUp == p_position.c_currentUp) and
                 (c_currentFront == p_position.c_currentFront))
     

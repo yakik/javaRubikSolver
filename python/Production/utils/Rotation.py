@@ -9,14 +9,14 @@ using cube
         
 
 
-        def Rotation(Face p_face, Direction p_direction):
+        def Rotation(self, Face p_face, Direction p_direction):
             c_face = p_face
             c_direction = p_direction
         
 
 
 
-        def Rotation(p_value):
+        def Rotation(self, p_value):
             if p_value > 5):
                 c_direction = DirectionFactory.getDirectionByInt(1)
                 c_face = FaceHandler.getFace(p_value - 6)
@@ -26,12 +26,12 @@ using cube
             
         
 
-        def writeToFile(RubikFileWriter p_write):
+        def writeToFile(self, RubikFileWriter p_write):
             String l_toWrite = String.Format(" (%d,%d)", (int)c_face, (int)c_direction)
             p_write.write(l_toWrite)
         
 
-        def readFromFile(RubikFileReader p_reader):
+        def readFromFile(self, RubikFileReader p_reader):
             l_int
             l_= p_reader.read()
             //Console.Write("%d ",l_int)
@@ -73,15 +73,14 @@ using cube
             return new Rotation(c_face,DirectionHandler.getOpposite(c_direction))
         
 
-        def equals(
-                Rotation p_rotation)
+        def equals(self, Rotation p_rotation)
 
         
             return ((c_face == p_rotation.c_face) and
                     (c_direction == p_rotation.c_direction))
         
 
-    def equals(Object obj): 
+    def equals(self, Object obj): 
             if obj == null):
                 return false
             

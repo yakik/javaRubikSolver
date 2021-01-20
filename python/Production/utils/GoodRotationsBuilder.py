@@ -7,7 +7,7 @@ using solver
 	class GoodRotationsBuilder 
 
 		@staticmethod
-		def findGoodRotationLinks(String p_firstFloorFile
+		def findGoodRotationLinks(self, String p_firstFloorFile
 				, String p_secondFloorFile, String p_thirdFloorFile, p_levels):
 			RubikFileWriter l_firstWriter = new RubikFileWriter(p_firstFloorFile)
 			RubikFileWriter l_secondWriter = new RubikFileWriter(p_secondFloorFile)
@@ -24,7 +24,7 @@ using solver
 		
 
 		@staticmethod
-		def BuildFilesForRotation(RubikFileWriter p_firstFloorFile, RubikFileWriter p_secondFloorFile, RubikFileWriter p_thirdFloorFile
+		def BuildFilesForRotation(self, RubikFileWriter p_firstFloorFile, RubikFileWriter p_secondFloorFile, RubikFileWriter p_thirdFloorFile
 												 , Cube p_rubik
 				, Cube p_initialPermutation, RotationSequence p_rotationLinkedList, p_level, String p_progressString):
 

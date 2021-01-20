@@ -10,7 +10,7 @@ using cube
         def RotationTree(self):
         
 
-        def addRotationLinkedList(RotationSequence p_list):
+        def addRotationLinkedList(self, RotationSequence p_list):
             //Console.Write("FFFFF")
             c_array.Add(p_list.getCopy())
         
@@ -19,7 +19,7 @@ using cube
             return c_array.Count
         
 
-        def getRotationSequence(p_index):
+        def getRotationSequence(self, p_index):
             return c_array[p_index]
         
 

@@ -26,7 +26,7 @@ using cube
             return c_prevSolution
         
 
-        def equals(Solution p_solution)
+        def equals(self, Solution p_solution)
 
         
             return (c_permutation == (p_solution.getPermutation()))
@@ -39,7 +39,7 @@ using cube
             Console.Write("\n")
         
 
-        def applyToRubik(Cube p_rubik):
+        def applyToRubik(self, Cube p_rubik):
             if c_prevSolution != null)
                 c_prevSolution.applyToRubik(p_rubik)
             c_rotationLinkedList.applyToRubik(p_rubik)

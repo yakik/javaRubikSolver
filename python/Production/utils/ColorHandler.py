@@ -4,7 +4,7 @@
  
 
     @staticmethod
-    def getColor( intValue):     // Constructor
+    def getColor(self,  intValue):     // Constructor
        switch (intValue):
             case 0:
                 return Color.FRONTCOLOR
@@ -25,7 +25,7 @@
     
 
     @staticmethod
-    def getColor(char charValue)
+    def getColor(self, char charValue)
         
         switch (charValue):
             case 'R':

@@ -14,7 +14,7 @@ using cube
         
 
 
-        def RotationSequence(List<Rotation> p_List):
+        def RotationSequence(self, List<Rotation> p_List):
             c_array = p_List
 
         
@@ -28,7 +28,7 @@ using cube
             Console.Write("\n")
         
 
-        def addRotation(Rotation p_rotation):
+        def addRotation(self, Rotation p_rotation):
             c_array.Add(p_rotation)
         
 
@@ -36,7 +36,7 @@ using cube
             c_array.RemoveAt(c_array.Count - 1)
         
 
-        def Boolean isRedundant(Rotation p_rotation):
+        def Boolean isRedundant(self, Rotation p_rotation):
             Boolean l_returnValue = false
 
             Face l_lastFace
@@ -68,7 +68,7 @@ using cube
 
         
 
-       def writeToFile(RubikFileWriter p_writer):
+       def writeToFile(self, RubikFileWriter p_writer):
             foreach (var l_itr in c_array)
 
                 (l_itr as Rotation).writeToFile(p_writer)
@@ -77,7 +77,7 @@ using cube
 
 
         
-        def readFromFile(RubikFileReader p_reader):
+        def readFromFile(self, RubikFileReader p_reader):
             Rotation l_rotation = new Rotation()
 
             c_array.Clear()
@@ -118,7 +118,7 @@ using cube
             return l_rotationLinkedList
         
 
-        def applyToRubik(Cube p_rubik):
+        def applyToRubik(self, Cube p_rubik):
            
 
               
