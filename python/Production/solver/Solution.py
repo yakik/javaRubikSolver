@@ -1,6 +1,6 @@
 using cube
 
-    class Solution 
+    class Solution:
 
 
         Cube c_permutation
@@ -8,7 +8,7 @@ using cube
         Solution c_prevSolution
 
 
-        def Solution(RotationSequence p_rotationLinkedList, Cube p_permutation, Solution p_prevSolution):
+        def __init__(self, RotationSequence p_rotationLinkedList, Cube p_permutation, Solution p_prevSolution):
             c_rotationLinkedList = p_rotationLinkedList.getCopy()
             c_permutation = p_permutation.getCopy()
             c_prevSolution = p_prevSolution

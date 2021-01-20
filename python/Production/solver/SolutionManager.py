@@ -1,7 +1,7 @@
 using cube
 
 
-using solver
+using solver:
 
 
     class SolutionManager
@@ -10,7 +10,7 @@ using solver
         List<List<SolutionNode>> c_solutionList = new List<List<SolutionNode>>()
 
 
-        def SolutionManager(self):
+        def __init__(self):
             i
             if i = 0 i < 41 i++)
                 c_solutionList.Add(new List<SolutionNode>())

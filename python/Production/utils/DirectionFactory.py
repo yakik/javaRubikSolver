@@ -1,10 +1,10 @@
 
 
 
-    class DirectionFactory
+    class DirectionFactory:
     
         @staticmethod
-        defn getDirectionByInt(intValue):
+        def getDirectionByInt(intValue):
             switch (intValue)
             
                 case 0:

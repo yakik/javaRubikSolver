@@ -5,16 +5,16 @@ using cube
 
 
 
-    class RotationSequence 
+    class RotationSequence:
 
         List<Rotation> c_array = new List<Rotation>()
 
-        def RotationSequence(self):
+        def __init__(self):
             c_array.Clear()
         
 
 
-        def RotationSequence(self, List<Rotation> p_List):
+        def __init__(self, List<Rotation> p_List):
             c_array = p_List
 
         

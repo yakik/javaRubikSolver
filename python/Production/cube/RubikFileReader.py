@@ -1,6 +1,6 @@
 
 
-    class RubikFileReader
+    class RubikFileReader:
     
         Boolean c_fileIsOK
 
@@ -9,7 +9,7 @@
       
         
 
-        def RubikFileReader(self, String p_fileLocation):
+        def __init__(self, String p_fileLocation):
             try
             
                 c_fileReader = new StreamReader(p_fileLocation)

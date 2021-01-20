@@ -1,7 +1,7 @@
 
 
 
-    class Position 
+    class Position :
 
     Face[,] g_faceOrder = new Face[,]
             Face.FRONT, Face.LEFT, Face.BACK, Face.RIGHT, Face.RIGHT, Face.BACK, Face.LEFT, Face.FRONT

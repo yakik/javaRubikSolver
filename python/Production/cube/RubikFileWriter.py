@@ -1,14 +1,14 @@
 
 
 
-    class RubikFileWriter
+    class RubikFileWriter:
     
 
         StreamWriter c_fileWriter
         //bool c_fileIsOK
 
 
-        def RubikFileWriter(self, String p_fileLocation):
+        def __init__(self, String p_fileLocation):
             try
             
                 c_fileWriter = new StreamWriter(p_fileLocation)

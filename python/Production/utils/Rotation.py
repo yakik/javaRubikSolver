@@ -1,7 +1,7 @@
 using cube
 
 
-    class Rotation 
+    class Rotation :
 
         Face c_face
         Direction c_direction

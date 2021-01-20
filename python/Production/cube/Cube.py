@@ -4,7 +4,7 @@ using utils
 
 
 
-	class Cube 
+	class Cube: 
 
 
 		@staticmethod
@@ -47,7 +47,7 @@ using utils
 			return colors[(int)face,(int)locationInFace]
 		
 
-		def Cube(self):
+		def __init__(self):
 
 			foreach (LocationInFace locationInFace in Enum.GetValues(typeof(LocationInFace))):
 				setColor(Face.FRONT, locationInFace, Color.FRONTCOLOR)
@@ -60,7 +60,7 @@ using utils
 
 		
 
-		def Cube(self, Cube source):
+		def __init__(self, Cube source):
 			foreach (LocationInFace locationInFace in Enum.GetValues(typeof(LocationInFace)))
 			
 				setColor(Face.FRONT, locationInFace, source.getColor(Face.FRONT, locationInFace))

@@ -1,10 +1,9 @@
 using cube
 
 
-    class Solver 
+    class Solver:
 
-        Solver(self):
-        
+      
 
         def solve(self, Cube p_rubik, RotationTree p_firstTree, RotationTree p_secondTree, RotationTree p_thirdTree):
 
