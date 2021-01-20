@@ -1,14 +1,15 @@
+import unittest
 using cube
 
 using utils
 
 
-    [TestClass]
-    class PermutationTest
+    
+    class PermutationTest(unittest.TestCase):
     
 
-        [TestMethod]
-        def getValue():
+        
+        def getValue(self):
             Cube myRubik = new Cube()
             myRubik.rotateFace(Face.FRONT, Direction.CW)
             Cube myPermutation = new Cube(myRubik)
@@ -17,8 +18,8 @@ using utils
             Assert.AreEqual(24, Cube.getValue(myPermutation, 3), "third floor")
 
         
-        [TestMethod]
-        def getValueFull():
+        
+        def getValueFull(self):
             Cube myRubik = new Cube()
             Cube myPermutation = new Cube(myRubik)
             Assert.AreEqual( 40, Cube.getValue(myPermutation, 3))

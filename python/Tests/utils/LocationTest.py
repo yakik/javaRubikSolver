@@ -1,21 +1,21 @@
-
+import unittest
 using utils
 
 
-    [TestClass]
-    class LocationTest
+    
+    class LocationTest(unittest.TestCase):
     
 
-        [TestMethod]
-        def isEdge():
+        
+        def isEdge(self):
             Location myLocation = new Location(Face.BOTTOM, Face.LEFT, Face.FRONT)
             Assert.AreEqual(false, myLocation.isEdge())
             myLocation = new Location(Face.BOTTOM, Face.LEFT)
             Assert.AreEqual(true, myLocation.isEdge())
         
 
-        [TestMethod]
-        def getFaces():
+        
+        def getFaces(self):
             Location myLocation = new Location(Face.BOTTOM, Face.LEFT, Face.FRONT)
             //taking into account facecs are sorted according to value
             Assert.AreEqual(Face.BOTTOM, myLocation.getFace0())
@@ -23,8 +23,8 @@ using utils
             Assert.AreEqual(Face.FRONT, myLocation.getFace2())
         
 
-        [TestMethod]
-        def equals():
+        
+        def equals(self):
             Location myLocation = new Location(Face.BOTTOM, Face.LEFT, Face.FRONT)
             Location mySecondLocation = new Location(Face.LEFT, Face.FRONT, Face.BOTTOM)
             Location myThirdLocation = new Location(Face.RIGHT, Face.FRONT, Face.BOTTOM)
@@ -32,8 +32,8 @@ using utils
             Assert.AreEqual(false, mySecondLocation.equals(myThirdLocation))
         
 
-        [TestMethod]
-        def testGetFloor():
+        
+        def testGetFloor(self):
             Assert.AreEqual(3, new Location(Face.TOP, Face.LEFT, Face.FRONT).getFloor(), "1")
             Assert.AreEqual(3, new Location(Face.TOP, Face.LEFT, Face.BACK).getFloor(), "2")
             Assert.AreEqual(3, new Location(Face.TOP, Face.RIGHT, Face.FRONT).getFloor(), "3")
@@ -61,8 +61,8 @@ using utils
 
         
 
-        [TestMethod]
-        def getString():
+        
+        def getString(self):
             Location myLocation = new Location(Face.BOTTOM, Face.LEFT, Face.FRONT)
             Assert.AreEqual("D, L, F", myLocation.getString(),"first")
             myLocation = new Location(Face.BOTTOM, Face.LEFT)

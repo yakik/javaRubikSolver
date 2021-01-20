@@ -7,7 +7,7 @@ using cube
     class RotationTree
     
         List<RotationSequence> c_array = new List<RotationSequence>()
-        def RotationTree():
+        def RotationTree(self):
         
 
         def addRotationLinkedList(RotationSequence p_list):
@@ -15,7 +15,7 @@ using cube
             c_array.Add(p_list.getCopy())
         
 
-        def getSize():
+        def getSize(self):
             return c_array.Count
         
 

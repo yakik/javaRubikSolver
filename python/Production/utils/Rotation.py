@@ -5,7 +5,7 @@ using cube
 
         Face c_face
         Direction c_direction
-        Rotation():
+        Rotation(self):
         
 
 
@@ -53,23 +53,23 @@ using cube
         
 
 
-        def getValue():
+        def getValue(self):
             return ((int)c_face + (int)c_direction * 6)
         
 
-        def getFace():
+        def getFace(self):
             return c_face
         
 
-        def getDirection():
+        def getDirection(self):
             return c_direction
         
 
-        def print():
+        def print(self):
             Console.Write("(0,1)", FaceHandler.getCharValue(c_face),DirectionHandler.getString(c_direction))
         
 
-        def getReverse():
+        def getReverse(self):
             return new Rotation(c_face,DirectionHandler.getOpposite(c_direction))
         
 

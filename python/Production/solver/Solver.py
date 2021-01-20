@@ -3,7 +3,7 @@ using cube
 
     class Solver 
 
-        Solver():
+        Solver(self):
         
 
         def solve(Cube p_rubik, RotationTree p_firstTree, RotationTree p_secondTree, RotationTree p_thirdTree):

@@ -1,13 +1,14 @@
+import unittest
 using cube
 
 using utils
 
 
 
-	[TestClass]
-	class CubeTest 
-		[TestMethod]
-	def overallTest():
+	
+	class CubeTest(unittest.TestCase):
+		
+	def overallTest(self):
 			Cube myRubik = new Cube(), myRubik2 = new Cube()
 			myRubik.rotateFace(Face.FRONT, Direction.CW)
 			Assert.AreEqual(8, myRubik.countAllDifferences(myRubik2))
@@ -15,8 +16,8 @@ using utils
 			Assert.AreEqual(13, myRubik.countAllDifferences(myRubik2))
 		
 
-		[TestMethod]
-	def compareFirstFloor():
+		
+	def compareFirstFloor(self):
 			Cube myRubik = new Cube(), myRubik2 = new Cube()
 			myRubik.setColor(Face.FRONT, LocationInFace.BOTTOMLEFT, Color.BACKCOLOR)
 			myRubik.setColor(Face.BACK, LocationInFace.BOTTOM, Color.FRONTCOLOR)
@@ -27,8 +28,8 @@ using utils
 
 
 		
-		[TestMethod]
-		def rotateFrontClockwise():
+		
+		def rotateFrontClockwise(self):
 			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.FRONT, Direction.CW)
@@ -46,8 +47,8 @@ using utils
 
 		
 
-		[TestMethod]
-		def rotateLeftClockwise():
+		
+		def rotateLeftClockwise(self):
 			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.LEFT, Direction.CW)
@@ -65,8 +66,8 @@ using utils
 
 		
 
-		[TestMethod]
-		def rotateRightClockwise():
+		
+		def rotateRightClockwise(self):
 			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.RIGHT, Direction.CW)
@@ -84,8 +85,8 @@ using utils
 
 		
 
-		[TestMethod]
-		def rotateBackClockwise():
+		
+		def rotateBackClockwise(self):
 			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.BACK, Direction.CW)
@@ -103,8 +104,8 @@ using utils
 
 		
 
-		[TestMethod]
-		def rotateTopClockwise():
+		
+		def rotateTopClockwise(self):
 			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.TOP, Direction.CW)
@@ -122,8 +123,8 @@ using utils
 
 		
 
-		[TestMethod]
-		def rotateBottomClockwise():
+		
+		def rotateBottomClockwise(self):
 			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.BOTTOM, Direction.CW)
@@ -142,8 +143,8 @@ using utils
 		
 
 
-		[TestMethod]
-		def rotateFrontCounterClockwise():
+		
+		def rotateFrontCounterClockwise(self):
 			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.FRONT, Direction.CCW)
@@ -161,8 +162,8 @@ using utils
 
 		
 
-		[TestMethod]
-		def rotateLeftCounterClockwise():
+		
+		def rotateLeftCounterClockwise(self):
 			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.LEFT, Direction.CCW)
@@ -180,8 +181,8 @@ using utils
 
 		
 
-		[TestMethod]
-		def rotateRightCounterClockwise():
+		
+		def rotateRightCounterClockwise(self):
 			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.RIGHT, Direction.CCW)
@@ -199,8 +200,8 @@ using utils
 
 		
 
-		[TestMethod]
-		def rotateBackCounterClockwise():
+		
+		def rotateBackCounterClockwise(self):
 			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.BACK, Direction.CCW)
@@ -218,8 +219,8 @@ using utils
 
 		
 
-		[TestMethod]
-		def rotateTopCounterClockwise():
+		
+		def rotateTopCounterClockwise(self):
 			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.TOP, Direction.CCW)
@@ -237,8 +238,8 @@ using utils
 
 		
 
-		[TestMethod]
-		def rotateBottomCounterClockwise():
+		
+		def rotateBottomCounterClockwise(self):
 			//Colors for : Front, Back, Right, Left, Top and Bottom  faces
 			Cube myRubik = new Cube()
 			myRubik.rotateFace(Face.BOTTOM, Direction.CCW)
@@ -256,8 +257,8 @@ using utils
 
 		
 
-		[TestMethod]
-	def simpleRotations():
+		
+	def simpleRotations(self):
 			Cube myRubik = new Cube()
 			if i = 0 i < 20 i++):
 				myRubik.rotateFace(Face.TOP, Direction.CW)

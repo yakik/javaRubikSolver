@@ -8,7 +8,7 @@
         Face c_face1
         Face c_face2
 
-        def Location():
+        def Location(self):
         
 
         def containsFace(Face p_face):
@@ -18,7 +18,7 @@
                 return false
         
 
-        def getCopy():
+        def getCopy(self):
             if isEdge())
                 return new Location(c_face0, c_face1)
             else
@@ -70,19 +70,19 @@
             
         
 
-        def isEdge():
+        def isEdge(self):
             return c_isEdge
         
 
-        def getFace0():
+        def getFace0(self):
             return c_face0
         
 
-        def getFace1():
+        def getFace1(self):
             return c_face1
         
 
-        getFloor():
+        getFloor(self):
             if this.equals(new Location(Face.TOP, Face.LEFT, Face.FRONT))) return 3
             if this.equals(new Location(Face.TOP, Face.LEFT, Face.BACK))) return 3
             if this.equals(new Location(Face.TOP, Face.RIGHT, Face.FRONT))) return 3
@@ -109,14 +109,14 @@
             return 0
         
 
-        Face getFace2():
+        Face getFace2(self):
             //        if isEdge())
             //            return Face.NOTDEFINED
             //        else
             return c_face2
         
 
-        //	getValue():
+        //	getValue(self):
         //		return (getFace0() * 1 + getFace1() * 6 + getFace2() * 36 + isEdge() * 216)
         //	
 
@@ -128,7 +128,7 @@
         
 
 
-        String getString():
+        String getString(self):
             if c_isEdge)
                 return String.Format("0, 1", FaceHandler.getCharValue(c_face0), FaceHandler.getCharValue(c_face1))
             else

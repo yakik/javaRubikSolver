@@ -22,7 +22,7 @@
             
         
 
-        def read():
+        def read(self):
             if !c_fileIsOK)
                 return -1
             else
@@ -37,7 +37,7 @@
                 
         
 
-        def close():
+        def close(self):
             try
             
                 c_fileReader.Close()

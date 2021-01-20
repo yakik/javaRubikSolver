@@ -19,12 +19,12 @@
         c_currentFront = p_Front
     
 
-    def Position():
+    def Position(self):
         c_currentUp = Face.TOP
         c_currentFront = Face.FRONT
     
 
-    def getString():
+    def getString(self):
         return String.Format("0, 1", FaceHandler.getCharValue(c_currentUp), FaceHandler.getCharValue(c_currentFront))
     
 

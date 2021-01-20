@@ -1,14 +1,14 @@
-
+import unittest
 using utils
 
 
 
 
-    [TestClass]
-    class FaceTest
     
-        [TestMethod]
-        def testFaceGetIntGetChar():
+    class FaceTest(unittest.TestCase):
+    
+        
+        def testFaceGetIntGetChar(self):
             Face myFace = Face.BOTTOM
             Assert.AreEqual(1,(int) myFace)
             Assert.AreEqual('D', FaceHandler.getCharValue(myFace))
@@ -29,15 +29,15 @@ using utils
             Assert.AreEqual('L', FaceHandler.getCharValue(myFace))
         
 
-        [TestMethod]
-        def testFaceEquals():
+        
+        def testFaceEquals(self):
             Face myFace = Face.BOTTOM
             Assert.AreEqual(Face.BOTTOM, myFace)
             Assert.AreEqual(true, myFace == Face.BOTTOM)
         
 
-        [TestMethod]
-        def testFaceGetOpposite():
+        
+        def testFaceGetOpposite(self):
             Face myFace = Face.BOTTOM
             Assert.AreEqual(Face.TOP, FaceHandler.getOpposite(myFace))
             myFace = Face.FRONT

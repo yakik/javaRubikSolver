@@ -1,48 +1,48 @@
-
+import unittest
 using utils
 
 
 
-    [TestClass]
-    class PositionTest
+    
+    class PositionTest(unittest.TestCase):
     
 
-        [TestMethod]
-        def getString():
+        
+        def getString(self):
             Position myPosition = new Position(Face.TOP, Face.FRONT)
             Assert.AreEqual("U, F", myPosition.getString())
         
 
-        [TestMethod]
-        def rotateCW_U():
+        
+        def rotateCW_U(self):
             Position myPosition = new Position(Face.TOP, Face.FRONT)
             myPosition.rotate(new Rotation(Face.FRONT, Direction.CW))
             Assert.AreEqual(Face.LEFT, myPosition.getFace(Face.TOP))
         
 
-        [TestMethod]
-        def rotateCW_D():
+        
+        def rotateCW_D(self):
             Position myPosition = new Position(Face.TOP, Face.FRONT)
             myPosition.rotate(new Rotation(Face.FRONT, Direction.CW))
             Assert.AreEqual(Face.RIGHT, myPosition.getFace(Face.BOTTOM))
         
 
-        [TestMethod]
-        def rotateCCW():
+        
+        def rotateCCW(self):
             Position myPosition = new Position(Face.TOP, Face.FRONT)
             myPosition.rotate(new Rotation(Face.FRONT, Direction.CCW))
             Assert.AreEqual(Face.RIGHT, myPosition.getFace(Face.TOP))
         
 
-        [TestMethod]
-        def rotateCCW_D():
+        
+        def rotateCCW_D(self):
             Position myPosition = new Position(Face.TOP, Face.FRONT)
             myPosition.rotate(new Rotation(Face.FRONT, Direction.CCW))
             Assert.AreEqual(Face.LEFT, myPosition.getFace(Face.BOTTOM))
         
 
-        [TestMethod]
-        def moreRotationTests():
+        
+        def moreRotationTests(self):
             Position myPosition = new Position(Face.TOP, Face.FRONT)
             myPosition.rotate(new Rotation(Face.LEFT, Direction.CW))
             Assert.AreEqual(true, myPosition.equals(new Position(Face.BACK, Face.TOP)))
@@ -52,8 +52,8 @@ using utils
             Assert.AreEqual(true, myPosition.equals(new Position(Face.BACK, Face.TOP)))
         
 
-        [TestMethod]
-        def rotateCCW_DD():
+        
+        def rotateCCW_DD(self):
             Position myPosition = new Position(Face.TOP, Face.FRONT)
             myPosition.rotate(new Rotation(Face.BOTTOM, Direction.CCW))
             Assert.AreEqual(Face.BOTTOM, myPosition.getFace(Face.BOTTOM))

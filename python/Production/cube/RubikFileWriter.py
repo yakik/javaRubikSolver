@@ -30,7 +30,7 @@
 
         
 
-        def close():
+        def close(self):
             try
             
                 c_fileWriter.Close()

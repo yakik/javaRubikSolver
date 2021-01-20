@@ -1,14 +1,14 @@
-
+import unittest
 using utils
 
 
 
 
-    [TestClass]
-    class DirectionTest
     
-        [TestMethod]
-        def testDirectionGetIntGetChar():
+    class DirectionTest(unittest.TestCase):
+    
+        
+        def testDirectionGetIntGetChar(self):
             Direction myDirection = Direction.CW
             Assert.AreEqual(0, (int)myDirection)
             Assert.AreEqual("CW", myDirection.getString())
@@ -17,14 +17,14 @@ using utils
             Assert.AreEqual("CCW", myDirection.getString())
         
 
-        [TestMethod]
-        def testDirectionEquals():
+        
+        def testDirectionEquals(self):
             Direction myDirection = Direction.CW
             Assert.AreEqual(Direction.CW, myDirection)
             Assert.AreEqual(true, myDirection == Direction.CW)
         
-        [TestMethod]
-        def DirectionOpposite():
+        
+        def DirectionOpposite(self):
             Direction myDirection = Direction.CW
             Assert.AreEqual(Direction.CCW, DirectionHandler.getOpposite(myDirection))
             myDirection = Direction.CCW

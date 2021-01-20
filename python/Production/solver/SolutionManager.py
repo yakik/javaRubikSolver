@@ -10,7 +10,7 @@ using solver
         List<List<SolutionNode>> c_solutionList = new List<List<SolutionNode>>()
 
 
-        def SolutionManager():
+        def SolutionManager(self):
             i
             if i = 0 i < 41 i++)
                 c_solutionList.Add(new List<SolutionNode>())
@@ -31,7 +31,7 @@ using solver
         
 
 
-        def getBestUndeveloped():
+        def getBestUndeveloped(self):
             i = 40
             Solution l_bestSolution = null
             while i >= 0 and l_bestSolution == null)
@@ -53,7 +53,7 @@ using solver
             return l_bestSolution
         
 
-        def getBest():
+        def getBest(self):
             i = 40
             Solution l_returnValue = null
             while i >= 0 and l_returnValue == null)
@@ -65,7 +65,7 @@ using solver
             return l_returnValue
         
 
-        def getBestValue():
+        def getBestValue(self):
             i = 40
             l_returnValue = 0
             while i >= 0 and l_returnValue == 0)

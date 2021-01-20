@@ -14,15 +14,15 @@ using cube
             c_prevSolution = p_prevSolution
         
 
-        def getPermutation():
+        def getPermutation(self):
             return c_permutation
         
 
-        def getRotationLinkedList():
+        def getRotationLinkedList(self):
             return c_rotationLinkedList
         
 
-        def getPrevSolution():
+        def getPrevSolution(self):
             return c_prevSolution
         
 
@@ -32,7 +32,7 @@ using cube
             return (c_permutation == (p_solution.getPermutation()))
         
 
-        def print():
+        def print(self):
             if c_prevSolution != null)
                 c_prevSolution.print()
             c_rotationLinkedList.print()

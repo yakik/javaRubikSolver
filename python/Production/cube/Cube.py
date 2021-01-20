@@ -47,7 +47,7 @@ using utils
 			return colors[(int)face,(int)locationInFace]
 		
 
-		def Cube():
+		def Cube(self):
 
 			foreach (LocationInFace locationInFace in Enum.GetValues(typeof(LocationInFace))):
 				setColor(Face.FRONT, locationInFace, Color.FRONTCOLOR)
@@ -213,7 +213,7 @@ using utils
 					face, LocationInFace.BOTTOMRIGHT)
 		
 
-		print():
+		print(self):
 			printFace(Face.TOP)
 			printFace(Face.BOTTOM)
 			printFace(Face.FRONT)
@@ -360,7 +360,7 @@ using utils
 					countDifferenceSecondFloor(comparedCube)
 		
 
-		def getCopy():
+		def getCopy(self):
 			return new Cube(this)
 		
 

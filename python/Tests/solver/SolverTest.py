@@ -1,3 +1,4 @@
+import unittest
 using cube
 using solver
 
@@ -5,12 +6,12 @@ using utils
 
 
 
-    [TestClass]
-    class SolverTest 
+    
+    class SolverTest(unittest.TestCase):
 
         //@Ignore
-        [TestMethod]
-        def complexSolver():
+        
+        def complexSolver(self):
             //long beginningTime = System.nanoTime()
             Cube myRubik = new Cube()
             myRubik.rotateFace(Face.RIGHT, Direction.CW)

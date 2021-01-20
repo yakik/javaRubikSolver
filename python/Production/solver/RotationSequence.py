@@ -9,7 +9,7 @@ using cube
 
         List<Rotation> c_array = new List<Rotation>()
 
-        def RotationSequence():
+        def RotationSequence(self):
             c_array.Clear()
         
 
@@ -19,7 +19,7 @@ using cube
 
         
 
-        def print():
+        def print(self):
          
 
             foreach (var l_itr in c_array)
@@ -32,7 +32,7 @@ using cube
             c_array.Add(p_rotation)
         
 
-        def removeRotation():
+        def removeRotation(self):
             c_array.RemoveAt(c_array.Count - 1)
         
 
@@ -87,26 +87,26 @@ using cube
         
 
        
-        def getSubRotationLinkedList():
+        def getSubRotationLinkedList(self):
             return new RotationSequence(new List<Rotation>(c_array.GetRange(1, c_array.Count)))
         
 
-       def size():
+       def size(self):
             return c_array.Count
         
 
-        def  getFirstRotation():
+        def  getFirstRotation(self):
             return c_array[0]
         
         def  getRotation(p_index):
             return c_array[p_index]
         
-        def isNotEmpty():
+        def isNotEmpty(self):
 
             return (c_array.Count > 0)
         
 
-        def getCopy():
+        def getCopy(self):
             RotationSequence l_rotationLinkedList = new RotationSequence()
            
 
