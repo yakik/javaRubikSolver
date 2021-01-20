@@ -1,10 +1,8 @@
 using cube
-using Microsoft.VisualStudio.TestTools.UnitTesting
 using solver
-using System
+
 using utils
 
-namespace CSharpRubikSolverUTests
 
 
     [TestClass]
