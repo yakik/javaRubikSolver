@@ -13,7 +13,8 @@ s
     
     class LocationInFaceHandle  
    
-    static LocationInFace GetLocationInFace( intValue):
+    @staticmethod
+    def LocationInFace GetLocationInFace( intValue):
             switch (intValue)
             
                 case 0:

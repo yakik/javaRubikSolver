@@ -6,10 +6,10 @@
 
         StreamReader   c_fileReader
 
-        RubikFileReader():
+      
         
 
-        RubikFileReader(String p_fileLocation):
+        def RubikFileReader(String p_fileLocation):
             try
             
                 c_fileReader = new StreamReader(p_fileLocation)
@@ -22,7 +22,7 @@
             
         
 
-        read():
+        def read():
             if !c_fileIsOK)
                 return -1
             else
@@ -37,7 +37,7 @@
                 
         
 
-        close():
+        def close():
             try
             
                 c_fileReader.Close()

@@ -7,7 +7,8 @@ using utils
 	class CubeStatus
 	
 
-		static Boolean changesOnlyInThirdFloor(Cube cube, Cube p_comparedPermutation)
+		@staticmethod
+		def changesOnlyInThirdFloor(Cube cube, Cube p_comparedPermutation)
 		
 			l_counter = 0
 
@@ -20,7 +21,8 @@ using utils
 			else return false
 		
 
-		static Boolean isDifferentItemsInFirstFloorLessThanThree(Cube cube,
+		@staticmethod
+		def isDifferentItemsInFirstFloorLessThanThree(Cube cube,
 				Cube p_comparedPermutation)
 		
 			l_counter = 0
@@ -32,7 +34,8 @@ using utils
 			else return false
 		
 
-		static Boolean isDifferentItemsOnlyInSecondFloorLessThanThree(Cube cube,
+		@staticmethod
+		def isDifferentItemsOnlyInSecondFloorLessThanThree(Cube cube,
 				Cube p_comparedPermutation)
 		
 			l_counter = 0
@@ -45,19 +48,22 @@ using utils
 			else return false
 		
 
-		static Boolean isFirstFloor(Location p_location)
+		@staticmethod
+		def isFirstFloor(Location p_location)
 		
 			return (p_location.containsFace(Face.BOTTOM))
 
 		
 
-		static Boolean isThirdFloor(Location p_location)
+		@staticmethod
+		def isThirdFloor(Location p_location)
 		
 			return (p_location.containsFace(Face.TOP))
 
 		
 
-		static Boolean isSecondFloor(Location p_location)
+		@staticmethod
+		def isSecondFloor(Location p_location)
 		
 			return (!(isFirstFloor(p_location) or isThirdFloor(p_location)))
 

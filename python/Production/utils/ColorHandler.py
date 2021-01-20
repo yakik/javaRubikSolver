@@ -3,7 +3,8 @@
     class ColorHandler
  
 
-    static Color getColor( intValue):     // Constructor
+    @staticmethod
+    def getColor( intValue):     // Constructor
        switch (intValue):
             case 0:
                 return Color.FRONTCOLOR
@@ -23,7 +24,8 @@
 
     
 
-    static Color getColor(char charValue)
+    @staticmethod
+    def getColor(char charValue)
         
         switch (charValue):
             case 'R':

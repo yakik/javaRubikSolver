@@ -8,41 +8,41 @@ using utils
     
 
         [TestMethod]
-        getString():
+        def getString():
             Position myPosition = new Position(Face.TOP, Face.FRONT)
             Assert.AreEqual("U, F", myPosition.getString())
         
 
         [TestMethod]
-        rotateCW_U():
+        def rotateCW_U():
             Position myPosition = new Position(Face.TOP, Face.FRONT)
             myPosition.rotate(new Rotation(Face.FRONT, Direction.CW))
             Assert.AreEqual(Face.LEFT, myPosition.getFace(Face.TOP))
         
 
         [TestMethod]
-        rotateCW_D():
+        def rotateCW_D():
             Position myPosition = new Position(Face.TOP, Face.FRONT)
             myPosition.rotate(new Rotation(Face.FRONT, Direction.CW))
             Assert.AreEqual(Face.RIGHT, myPosition.getFace(Face.BOTTOM))
         
 
         [TestMethod]
-        rotateCCW():
+        def rotateCCW():
             Position myPosition = new Position(Face.TOP, Face.FRONT)
             myPosition.rotate(new Rotation(Face.FRONT, Direction.CCW))
             Assert.AreEqual(Face.RIGHT, myPosition.getFace(Face.TOP))
         
 
         [TestMethod]
-        rotateCCW_D():
+        def rotateCCW_D():
             Position myPosition = new Position(Face.TOP, Face.FRONT)
             myPosition.rotate(new Rotation(Face.FRONT, Direction.CCW))
             Assert.AreEqual(Face.LEFT, myPosition.getFace(Face.BOTTOM))
         
 
         [TestMethod]
-        moreRotationTests():
+        def moreRotationTests():
             Position myPosition = new Position(Face.TOP, Face.FRONT)
             myPosition.rotate(new Rotation(Face.LEFT, Direction.CW))
             Assert.AreEqual(true, myPosition.equals(new Position(Face.BACK, Face.TOP)))
@@ -53,24 +53,9 @@ using utils
         
 
         [TestMethod]
-        rotateCCW_DD():
+        def rotateCCW_DD():
             Position myPosition = new Position(Face.TOP, Face.FRONT)
             myPosition.rotate(new Rotation(Face.BOTTOM, Direction.CCW))
             Assert.AreEqual(Face.BOTTOM, myPosition.getFace(Face.BOTTOM))
         
-        [TestMethod]
-        getFace():
-        
-
-        [TestMethod]
-        getHorizonalFacebyVirtual():
-        
-
-        [TestMethod]
-        equals():
-        
-
-        [TestMethod]
-        rotate1():
-        
-    
+     

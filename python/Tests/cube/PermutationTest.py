@@ -8,7 +8,7 @@ using utils
     
 
         [TestMethod]
-        getValue():
+        def getValue():
             Cube myRubik = new Cube()
             myRubik.rotateFace(Face.FRONT, Direction.CW)
             Cube myPermutation = new Cube(myRubik)
@@ -18,7 +18,7 @@ using utils
 
         
         [TestMethod]
-        getValueFull():
+        def getValueFull():
             Cube myRubik = new Cube()
             Cube myPermutation = new Cube(myRubik)
             Assert.AreEqual( 40, Cube.getValue(myPermutation, 3))

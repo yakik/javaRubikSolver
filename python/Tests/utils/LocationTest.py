@@ -7,7 +7,7 @@ using utils
     
 
         [TestMethod]
-        isEdge():
+        def isEdge():
             Location myLocation = new Location(Face.BOTTOM, Face.LEFT, Face.FRONT)
             Assert.AreEqual(false, myLocation.isEdge())
             myLocation = new Location(Face.BOTTOM, Face.LEFT)
@@ -15,7 +15,7 @@ using utils
         
 
         [TestMethod]
-        getFaces():
+        def getFaces():
             Location myLocation = new Location(Face.BOTTOM, Face.LEFT, Face.FRONT)
             //taking into account facecs are sorted according to value
             Assert.AreEqual(Face.BOTTOM, myLocation.getFace0())
@@ -24,7 +24,7 @@ using utils
         
 
         [TestMethod]
-        equals():
+        def equals():
             Location myLocation = new Location(Face.BOTTOM, Face.LEFT, Face.FRONT)
             Location mySecondLocation = new Location(Face.LEFT, Face.FRONT, Face.BOTTOM)
             Location myThirdLocation = new Location(Face.RIGHT, Face.FRONT, Face.BOTTOM)
@@ -33,7 +33,7 @@ using utils
         
 
         [TestMethod]
-        testGetFloor():
+        def testGetFloor():
             Assert.AreEqual(3, new Location(Face.TOP, Face.LEFT, Face.FRONT).getFloor(), "1")
             Assert.AreEqual(3, new Location(Face.TOP, Face.LEFT, Face.BACK).getFloor(), "2")
             Assert.AreEqual(3, new Location(Face.TOP, Face.RIGHT, Face.FRONT).getFloor(), "3")
@@ -62,7 +62,7 @@ using utils
         
 
         [TestMethod]
-        getString():
+        def getString():
             Location myLocation = new Location(Face.BOTTOM, Face.LEFT, Face.FRONT)
             Assert.AreEqual("D, L, F", myLocation.getString(),"first")
             myLocation = new Location(Face.BOTTOM, Face.LEFT)

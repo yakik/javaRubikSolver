@@ -8,7 +8,7 @@
         //bool c_fileIsOK
 
 
-        RubikFileWriter(String p_fileLocation):
+        def RubikFileWriter(String p_fileLocation):
             try
             
                 c_fileWriter = new StreamWriter(p_fileLocation)
@@ -21,7 +21,7 @@
             
         
 
-        write(String p_string):
+        def write(String p_string):
             try
             
                 c_fileWriter.Write(p_string)
@@ -30,7 +30,7 @@
 
         
 
-        close():
+        def close():
             try
             
                 c_fileWriter.Close()

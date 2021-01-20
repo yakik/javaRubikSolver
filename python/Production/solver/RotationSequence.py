@@ -9,17 +9,17 @@ using cube
 
         List<Rotation> c_array = new List<Rotation>()
 
-        RotationSequence():
+        def RotationSequence():
             c_array.Clear()
         
 
 
-        RotationSequence(List<Rotation> p_List):
+        def RotationSequence(List<Rotation> p_List):
             c_array = p_List
 
         
 
-        print():
+        def print():
          
 
             foreach (var l_itr in c_array)
@@ -28,15 +28,15 @@ using cube
             Console.Write("\n")
         
 
-        addRotation(Rotation p_rotation):
+        def addRotation(Rotation p_rotation):
             c_array.Add(p_rotation)
         
 
-        removeRotation():
+        def removeRotation():
             c_array.RemoveAt(c_array.Count - 1)
         
 
-        Boolean isRedundant(Rotation p_rotation):
+        def Boolean isRedundant(Rotation p_rotation):
             Boolean l_returnValue = false
 
             Face l_lastFace
@@ -68,7 +68,7 @@ using cube
 
         
 
-        writeToFile(RubikFileWriter p_writer):
+       def writeToFile(RubikFileWriter p_writer):
             foreach (var l_itr in c_array)
 
                 (l_itr as Rotation).writeToFile(p_writer)
@@ -77,7 +77,7 @@ using cube
 
 
         
-        bool readFromFile(RubikFileReader p_reader):
+        def readFromFile(RubikFileReader p_reader):
             Rotation l_rotation = new Rotation()
 
             c_array.Clear()
@@ -87,26 +87,26 @@ using cube
         
 
        
-        RotationSequence getSubRotationLinkedList():
+        def getSubRotationLinkedList():
             return new RotationSequence(new List<Rotation>(c_array.GetRange(1, c_array.Count)))
         
 
-       size():
+       def size():
             return c_array.Count
         
 
-        Rotation getFirstRotation():
+        def  getFirstRotation():
             return c_array[0]
         
-        Rotation getRotation(p_index):
+        def  getRotation(p_index):
             return c_array[p_index]
         
-        Boolean isNotEmpty():
+        def isNotEmpty():
 
             return (c_array.Count > 0)
         
 
-        RotationSequence getCopy():
+        def getCopy():
             RotationSequence l_rotationLinkedList = new RotationSequence()
            
 
@@ -118,7 +118,7 @@ using cube
             return l_rotationLinkedList
         
 
-        applyToRubik(Cube p_rubik):
+        def applyToRubik(Cube p_rubik):
            
 
               

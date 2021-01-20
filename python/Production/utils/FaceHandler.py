@@ -2,7 +2,8 @@
 
     class FaceHandler  
 
-    static char getCharValue(Face face):
+    @staticmethod
+    def getCharValue(Face face):
             switch (face)
             
                 case Face.TOP:
@@ -23,7 +24,8 @@
 
         
 
-    static Face getFace(intValue):
+    @staticmethod
+    def getFace(intValue):
             switch (intValue)
             
                 case 0:
@@ -44,7 +46,8 @@
           
     
 
-        static Face getFace(char charValue):
+        @staticmethod
+        def getFace(char charValue):
             switch (charValue)
             
                 case 'U':
@@ -63,19 +66,9 @@
                     return Face.TOP
             
 
-        
 
-     /*   getIntOfChar():              // Getter
-        return charValue
-    
-
-    char getChar() return (char) charValue
-     */
-   /* getInt():              // Getter
-        return intValue
-    
-*/
-    static Face getOpposite(Face face):
+    @staticmethod
+    def getOpposite(Face face):
         switch (face):
             case Face.LEFT:
                     return Face.RIGHT

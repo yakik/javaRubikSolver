@@ -6,7 +6,7 @@ using cube
         Solver():
         
 
-        Solution solve(Cube p_rubik, RotationTree p_firstTree, RotationTree p_secondTree, RotationTree p_thirdTree):
+        def solve(Cube p_rubik, RotationTree p_firstTree, RotationTree p_secondTree, RotationTree p_thirdTree):
 
             l_numberOfCubicleInPlace
             Cube l_permutation = new Cube(p_rubik)
@@ -42,7 +42,7 @@ using cube
             return l_solutionManager.getBest()
         
 
-        getTargetFloor(Cube p_permutation):
+        def getTargetFloor(Cube p_permutation):
             if Cube.getValue(p_permutation, 1) >= 16):
                 if Cube.getValue(p_permutation, 2) < 24):
                     return 2
@@ -54,7 +54,7 @@ using cube
             
         
 
-        getTargetFloor(p_value):
+        def getTargetFloor(p_value):
             if p_value >= 16):
                 if p_value < 24):
                     return 2
@@ -69,7 +69,7 @@ using cube
 
 
 
-        findBetterSolution(Solution p_solution, RotationTree p_tree, SolutionManager p_solutionManager,
+        def findBetterSolution(Solution p_solution, RotationTree p_tree, SolutionManager p_solutionManager,
                                         p_floor):
             Cube l_rubik = new Cube()
             Cube l_permutation = p_solution.getPermutation().getCopy()
@@ -81,7 +81,7 @@ using cube
         
 
 
-        searchTree(minimumValueToReach, RotationTree searchTree,
+        def searchTree(minimumValueToReach, RotationTree searchTree,
                                Cube cubeToSolve, SolutionManager solutionManager,
                                Solution previousSolution, targetFloorToSortInCube, depth):
             if minimumValueToReach < 2) minimumValueToReach = 2
@@ -101,7 +101,7 @@ using cube
             
         
 
-        addSequenceToSolutionIfHigherValue(minimumValueToReach, SolutionManager solutionManager,
+        def addSequenceToSolutionIfHigherValue(minimumValueToReach, SolutionManager solutionManager,
                 Solution previousSolution, targetFloorToSortInCube, RotationSequence rotationSequence,
                 Cube cubeAfterRotationSequence):
             if Cube.getValue(cubeAfterRotationSequence, targetFloorToSortInCube) >= minimumValueToReach):
@@ -110,7 +110,7 @@ using cube
             
         
 
-        Cube getCubeAfterApplyingSequence(Cube cubeForExperimentation, RotationSequence rotationSequence):
+        def getCubeAfterApplyingSequence(Cube cubeForExperimentation, RotationSequence rotationSequence):
             if rotationIndex = 0 rotationIndex < rotationSequence.size() rotationIndex++)
                 cubeForExperimentation.rotateFace(rotationSequence.getRotation(rotationIndex).getFace(),
                         rotationSequence.getRotation(rotationIndex).getDirection())

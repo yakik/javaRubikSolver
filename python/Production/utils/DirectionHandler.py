@@ -4,7 +4,8 @@ namespace utils
 
     static class DirectionHandler
 
-        static String getString(this Direction dir):              // Getter
+        @staticmethod
+        def getString(this Direction dir):              // Getter
             switch (dir)
             
                 case Direction.CW:
@@ -17,14 +18,16 @@ namespace utils
 
         
 
-        static Direction getDirection(intValue):
+        @staticmethod
+        def getDirection(intValue):
             if intValue == 0)
                 return Direction.CW
             else
                 return Direction.CCW
         
 
-        static Direction getDirection(String intValue):
+        @staticmethod
+        def getDirection(String intValue):
             if intValue == "0")
                 return Direction.CW
             else
@@ -32,7 +35,8 @@ namespace utils
         
      
 
-    static Direction getOpposite(Direction direction):
+    @staticmethod
+    def getOpposite(Direction direction):
         if direction == Direction.CW)
             return Direction.CCW
         else

@@ -8,7 +8,7 @@ using utils
     class DirectionTest
     
         [TestMethod]
-        testDirectionGetIntGetChar():
+        def testDirectionGetIntGetChar():
             Direction myDirection = Direction.CW
             Assert.AreEqual(0, (int)myDirection)
             Assert.AreEqual("CW", myDirection.getString())
@@ -18,13 +18,13 @@ using utils
         
 
         [TestMethod]
-        testDirectionEquals():
+        def testDirectionEquals():
             Direction myDirection = Direction.CW
             Assert.AreEqual(Direction.CW, myDirection)
             Assert.AreEqual(true, myDirection == Direction.CW)
         
         [TestMethod]
-        DirectionOpposite():
+        def DirectionOpposite():
             Direction myDirection = Direction.CW
             Assert.AreEqual(Direction.CCW, DirectionHandler.getOpposite(myDirection))
             myDirection = Direction.CCW

@@ -8,7 +8,7 @@ using utils
     class FaceTest
     
         [TestMethod]
-        testFaceGetIntGetChar():
+        def testFaceGetIntGetChar():
             Face myFace = Face.BOTTOM
             Assert.AreEqual(1,(int) myFace)
             Assert.AreEqual('D', FaceHandler.getCharValue(myFace))
@@ -30,14 +30,14 @@ using utils
         
 
         [TestMethod]
-        testFaceEquals():
+        def testFaceEquals():
             Face myFace = Face.BOTTOM
             Assert.AreEqual(Face.BOTTOM, myFace)
             Assert.AreEqual(true, myFace == Face.BOTTOM)
         
 
         [TestMethod]
-        testFaceGetOpposite():
+        def testFaceGetOpposite():
             Face myFace = Face.BOTTOM
             Assert.AreEqual(Face.TOP, FaceHandler.getOpposite(myFace))
             myFace = Face.FRONT

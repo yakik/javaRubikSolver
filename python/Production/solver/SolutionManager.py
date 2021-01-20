@@ -10,13 +10,13 @@ using solver
         List<List<SolutionNode>> c_solutionList = new List<List<SolutionNode>>()
 
 
-        SolutionManager():
+        def SolutionManager():
             i
             if i = 0 i < 41 i++)
                 c_solutionList.Add(new List<SolutionNode>())
         
 
-        addSolution(RotationSequence p_rotationLinkedList, Cube p_permutation, Solution p_prevSolution,
+        def addSolution(RotationSequence p_rotationLinkedList, Cube p_permutation, Solution p_prevSolution,
                          p_value, p_floor):
 
             if /*(p_value>=32 and getBestValue()>=36) or*/ c_solutionList[p_value].Count < 40)
@@ -31,7 +31,7 @@ using solver
         
 
 
-        Solution getBestUndeveloped():
+        def getBestUndeveloped():
             i = 40
             Solution l_bestSolution = null
             while i >= 0 and l_bestSolution == null)
@@ -53,7 +53,7 @@ using solver
             return l_bestSolution
         
 
-        Solution getBest():
+        def getBest():
             i = 40
             Solution l_returnValue = null
             while i >= 0 and l_returnValue == null)
@@ -65,7 +65,7 @@ using solver
             return l_returnValue
         
 
-        getBestValue():
+        def getBestValue():
             i = 40
             l_returnValue = 0
             while i >= 0 and l_returnValue == 0)
@@ -82,24 +82,24 @@ using solver
             Solution c_solution
             Boolean c_isDeveloped
 
-            SolutionNode(Solution p_solution)
+            def SolutionNode(Solution p_solution)
             
                 c_isDeveloped = false
                 c_solution = p_solution
             
 
-            Solution getSolution()
+            def getSolution()
             
                 return c_solution
             
 
 
-            Boolean isDeveloped()
+            def isDeveloped()
             
                 return c_isDeveloped
             
 
-            setDeveloped()
+            def setDeveloped()
             
                 c_isDeveloped = true
             

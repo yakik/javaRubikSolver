@@ -8,24 +8,24 @@
         Face c_face1
         Face c_face2
 
-        Location():
+        def Location():
         
 
-        Boolean containsFace(Face p_face):
+        def containsFace(Face p_face):
             if p_face == c_face0 or p_face == c_face1 or (!c_isEdge and (p_face == c_face2)))
                 return true
             else
                 return false
         
 
-        Location getCopy():
+        def getCopy():
             if isEdge())
                 return new Location(c_face0, c_face1)
             else
                 return new Location(c_face0, c_face1, c_face2)
         
 
-        Location(Face p_face0, Face p_face1, Face p_face2):
+        def Location(Face p_face0, Face p_face1, Face p_face2):
             Face l_tmp
             c_isEdge = false
             c_face0 = p_face0
@@ -53,7 +53,7 @@
 
         
 
-        Location(Face p_face0, Face p_face1):
+        def Location(Face p_face0, Face p_face1):
             c_isEdge = true
             //       c_face2 = Face.NOTDEFINED
             c_face0 = p_face0
@@ -70,15 +70,15 @@
             
         
 
-        Boolean isEdge():
+        def isEdge():
             return c_isEdge
         
 
-        Face getFace0():
+        def getFace0():
             return c_face0
         
 
-        Face getFace1():
+        def getFace1():
             return c_face1
         
 
