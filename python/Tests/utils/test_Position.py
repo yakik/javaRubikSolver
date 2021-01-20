@@ -1,7 +1,7 @@
+from production.utils.position import Position
+
 import unittest
 class PositionTest(unittest.TestCase):
-    
-
         
         def getString(self):
             myPosition = Position(Face.TOP, Face.FRONT)
