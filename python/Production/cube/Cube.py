@@ -11,9 +11,9 @@ class Cube:
 			l_value = 0
 			fixedCube = Cube()
 			l_value = 2 * (8 - l_permutation.countDifferenceFirstFloor(fixedCube))
-			if p_highestFloor > 1)
+			if p_highestFloor > 1:
 				l_value += 2 * (4 - l_permutation.countDifferenceSecondFloor(fixedCube))
-			if p_highestFloor > 2)
+			if p_highestFloor > 2:
 				l_value += 2 * (8 - l_permutation.countDifferenceThirdFloor(fixedCube))
 
 			return l_value
@@ -23,7 +23,7 @@ class Cube:
 	 def equals(self,comparedCube):
 			if countDifferenceFirstFloor(comparedCube) +
 					countDifferenceSecondFloor(comparedCube) +
-					countDifferenceThirdFloor(comparedCube) == 0)
+					countDifferenceThirdFloor(comparedCube) == 0:
 				return True
 			else
 				return False
@@ -89,7 +89,7 @@ class Cube:
 		
 
 		def rotateBottomFace(self,direction):
-			if direction == Direction.CW):
+			if direction == Direction.CW:
 				rotateLeftToRightFaceOnly(Face.BOTTOM)
 
 				rotateLeftToRight(Face.BACK, LocationInFace.BOTTOM, Face.LEFT, LocationInFace.BOTTOM, Face.FRONT,
@@ -99,13 +99,13 @@ class Cube:
 				rotateLeftToRight(Face.BACK, LocationInFace.BOTTOMRIGHT, Face.LEFT, LocationInFace.BOTTOMRIGHT, Face.FRONT,
 						LocationInFace.BOTTOMRIGHT, Face.RIGHT, LocationInFace.BOTTOMRIGHT)
 			 else:
-				for i =0 i < 3 i++)
+				for i =0 i < 3 i++:
 					rotateBottomFace(Direction.CW)
 			
 		
 
 		def rotateTopFace(self,direction):
-			if direction == Direction.CW):
+			if direction == Direction.CW:
 				rotateLeftToRightFaceOnly(Face.TOP)
 
 				rotateLeftToRight(Face.BACK, LocationInFace.TOP, Face.RIGHT, LocationInFace.TOP, Face.FRONT,
@@ -115,13 +115,13 @@ class Cube:
 				rotateLeftToRight(Face.BACK, LocationInFace.TOPRIGHT, Face.RIGHT, LocationInFace.TOPRIGHT, Face.FRONT,
 						LocationInFace.TOPRIGHT, Face.LEFT, LocationInFace.TOPRIGHT)
 			 else:
-				for i =0 i < 3 i++)
+				for i =0 i < 3 i++:
 					rotateTopFace(Direction.CW)
 			
 		
 
 		def rotateBackFace(self,direction):
-			if direction == Direction.CW):
+			if direction == Direction.CW:
 				rotateLeftToRightFaceOnly(Face.BACK)
 
 				rotateLeftToRight(Face.TOP, LocationInFace.TOP, Face.LEFT, LocationInFace.LEFT, Face.BOTTOM,
@@ -131,13 +131,13 @@ class Cube:
 				rotateLeftToRight(Face.TOP, LocationInFace.TOPRIGHT, Face.LEFT, LocationInFace.TOPLEFT, Face.BOTTOM,
 						LocationInFace.BOTTOMLEFT, Face.RIGHT, LocationInFace.BOTTOMRIGHT)
 			 else:
-				for i =0 i < 3 i++)
+				for i =0 i < 3 i++:
 					rotateBackFace(Direction.CW)
 			
 		
 
 		def rotateLeftFace(self,direction):
-			if direction == Direction.CW):
+			if direction == Direction.CW:
 				rotateLeftToRightFaceOnly(Face.LEFT)
 
 				rotateLeftToRight(Face.TOP, LocationInFace.LEFT,
@@ -159,7 +159,7 @@ class Cube:
 		
 
 		def rotateRightFace(self,direction):
-			if direction == Direction.CW):
+			if direction == Direction.CW:
 				rotateLeftToRightFaceOnly(Face.RIGHT)
 
 				rotateLeftToRight(Face.TOP, LocationInFace.RIGHT,
@@ -175,13 +175,13 @@ class Cube:
 						Face.BOTTOM, LocationInFace.TOPRIGHT,
 						Face.FRONT, LocationInFace.TOPRIGHT)
 			 else:
-				for i =0 i < 3 i++)
+				for i =0 i < 3 i++:
 					rotateRightFace(Direction.CW)
 			
 		
 
 		def rotateFrontFace(self,direction):
-			if direction == Direction.CW):
+			if direction == Direction.CW:
 				rotateLeftToRightFaceOnly(Face.FRONT)
 
 				rotateLeftToRight(Face.TOP, LocationInFace.BOTTOM, Face.RIGHT, LocationInFace.LEFT, Face.BOTTOM,
@@ -191,7 +191,7 @@ class Cube:
 				rotateLeftToRight(Face.TOP, LocationInFace.BOTTOMRIGHT, Face.RIGHT, LocationInFace.BOTTOMLEFT, Face.BOTTOM,
 						LocationInFace.TOPLEFT, Face.LEFT, LocationInFace.TOPRIGHT)
 			 else:
-				for i =0 i < 3 i++)
+				for i =0 i < 3 i++:
 					rotateFrontFace(Direction.CW)
 			
 		
@@ -248,16 +248,16 @@ class Cube:
 		def countDifferenceSecondFloor(self,cube):
 			counter = 0
 			if colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.LEFT) or
-					colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.RIGHT))
+					colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.RIGHT):
 				counter++
 			if colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.LEFT) or
-					colorInFaceNotEqual(cube, Face.BACK, LocationInFace.RIGHT))
+					colorInFaceNotEqual(cube, Face.BACK, LocationInFace.RIGHT):
 				counter++
 			if colorInFaceNotEqual(cube, Face.BACK, LocationInFace.LEFT) or
-					colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.RIGHT))
+					colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.RIGHT):
 				counter++
 			if colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.LEFT) or
-					colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.RIGHT))
+					colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.RIGHT):
 				counter++
 
 			return counter
@@ -268,34 +268,34 @@ class Cube:
 		def countDifferenceFirstFloor(self,cube):
 			counter = 0
 			if colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.BOTTOM) or
-					colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.TOP))
+					colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.TOP):
 				counter++
 			if colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.BOTTOM) or
-					colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.LEFT))
+					colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.LEFT):
 				counter++
 			if colorInFaceNotEqual(cube, Face.BACK, LocationInFace.BOTTOM) or
-					colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.BOTTOM))
+					colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.BOTTOM):
 				counter++
 			if colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.BOTTOM) or
-					colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.RIGHT))
+					colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.RIGHT):
 				counter++
 
 
 			if colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.BOTTOMLEFT) or
 					colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.TOPLEFT) or
-					colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.BOTTOMRIGHT))
+					colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.BOTTOMRIGHT):
 				counter++
 			if colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.BOTTOMRIGHT) or
 					colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.TOPRIGHT) or
-					colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.BOTTOMLEFT))
+					colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.BOTTOMLEFT):
 				counter++
 			if colorInFaceNotEqual(cube, Face.BACK, LocationInFace.BOTTOMRIGHT) or
 					colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.BOTTOMLEFT) or
-					colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.BOTTOMLEFT))
+					colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.BOTTOMLEFT):
 				counter++
 			if colorInFaceNotEqual(cube, Face.BACK, LocationInFace.BOTTOMLEFT) or
 					colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.BOTTOMRIGHT) or
-					colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.BOTTOMRIGHT))
+					colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.BOTTOMRIGHT):
 				counter++
 
 			return counter
@@ -305,34 +305,34 @@ class Cube:
 		def countDifferenceThirdFloor(self,cube):
 			counter = 0
 			if colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.TOP) or
-					colorInFaceNotEqual(cube, Face.TOP, LocationInFace.BOTTOM))
+					colorInFaceNotEqual(cube, Face.TOP, LocationInFace.BOTTOM):
 				counter++
 			if colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.TOP) or
-					colorInFaceNotEqual(cube, Face.TOP, LocationInFace.LEFT))
+					colorInFaceNotEqual(cube, Face.TOP, LocationInFace.LEFT):
 				counter++
 			if colorInFaceNotEqual(cube, Face.BACK, LocationInFace.TOP) or
-					colorInFaceNotEqual(cube, Face.TOP, LocationInFace.TOP))
+					colorInFaceNotEqual(cube, Face.TOP, LocationInFace.TOP):
 				counter++
 			if colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.TOP) or
-					colorInFaceNotEqual(cube, Face.TOP, LocationInFace.RIGHT))
+					colorInFaceNotEqual(cube, Face.TOP, LocationInFace.RIGHT):
 				counter++
 
 
 			if colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.TOPLEFT) or
 					colorInFaceNotEqual(cube, Face.TOP, LocationInFace.BOTTOMLEFT) or
-					colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.TOPRIGHT))
+					colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.TOPRIGHT):
 				counter++
 			if colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.TOPRIGHT) or
 					colorInFaceNotEqual(cube, Face.TOP, LocationInFace.BOTTOMRIGHT) or
-					colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.TOPLEFT))
+					colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.TOPLEFT):
 				counter++
 			if colorInFaceNotEqual(cube, Face.BACK, LocationInFace.TOPRIGHT) or
 					colorInFaceNotEqual(cube, Face.TOP, LocationInFace.TOPLEFT) or
-					colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.TOPLEFT))
+					colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.TOPLEFT):
 				counter++
 			if colorInFaceNotEqual(cube, Face.BACK, LocationInFace.TOPLEFT) or
 					colorInFaceNotEqual(cube, Face.TOP, LocationInFace.TOPRIGHT) or
-					colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.TOPRIGHT))
+					colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.TOPRIGHT):
 				counter++
 
 			return counter

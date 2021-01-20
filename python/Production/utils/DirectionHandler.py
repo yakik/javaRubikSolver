@@ -2,7 +2,7 @@
 
         @staticmethod
         def getString(thisdir):              # Getter
-            switch (dir)
+            switch (dir):
             
                 case Direction.CW:
                     return "CW"
@@ -16,26 +16,26 @@
 
         @staticmethod
         def getDirection(intValue):
-            if intValue == 0)
+            if intValue == 0:
                 return Direction.CW
-            else
+            else:
                 return Direction.CCW
         
 
         @staticmethod
         def getDirection(String intValue):
-            if intValue == "0")
+            if intValue == "0":
                 return Direction.CW
-            else
+            else:
                 return Direction.CCW
         
      
 
     @staticmethod
     def getOpposite(Direction direction):
-        if direction == Direction.CW)
+        if direction == Direction.CW:
             return Direction.CCW
-        else
+        else:
             return Direction.CW
     
 

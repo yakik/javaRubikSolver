@@ -27,14 +27,14 @@ class Solution:
         
 
         def print(self):
-            if self.c_prevSolution != null)
+            if self.c_prevSolution != null:
                 self.c_prevSolution.print()
             self.c_rotationLinkedList.print()
             Console.Write("\n")
         
 
         def applyToRubik(self,p_rubik):
-            if self.c_prevSolution != null)
+            if self.c_prevSolution != null:
                 self.c_prevSolution.applyToRubik(p_rubik)
             self.c_rotationLinkedList.applyToRubik(p_rubik)
 

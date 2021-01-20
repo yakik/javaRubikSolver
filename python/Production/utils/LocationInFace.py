@@ -1,19 +1,20 @@
+from enum import Enum
 
-    enum
-        TOP=0,
-        BOTTOM=1,
-        RIGHT=2,
-        LEFT=3,
-        TOPRIGHT=4,
-        TOPLEFT=5,
-        BOTTOMRIGHT=6,
-        BOTTOMLEFT=7/*, NOTDEFINED('Z', 9)*/ #don't change this sequence, for Rubik's sake!
+class LocationInFace(Enum):
+        TOP=0
+        BOTTOM=1
+        RIGHT=2
+        LEFT=3
+        TOPRIGHT=4
+        TOPLEFT=5
+        BOTTOMRIGHT=6
+        BOTTOMLEFT=7#, NOTDEFINED('Z', 9)*/ #don't change this sequence, for Rubik's sake!
     
     class LocationInFaceHandle  
    
     @staticmethod
     defGetLocationInFace( intValue):
-            switch (intValue)
+            switch (intValue):
             
                 case 0:
                     return LocationInFace.TOP

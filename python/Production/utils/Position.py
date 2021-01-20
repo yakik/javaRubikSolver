@@ -29,13 +29,13 @@ class Position :
        l_temp
        l_face = p_rotation.getFace()
        l_direction = p_rotation.getDirection()
-        if l_face == Face.TOP)
-            if l_direction == Direction.CW)
+        if l_face == Face.TOP:
+            if l_direction == Direction.CW:
                 c_currentFront = getFace(Face.RIGHT)
-            else
+            else:
                 c_currentFront = getFace(Face.LEFT)
-        else if l_face == Face.RIGHT)
-            if l_direction == Direction.CW):
+        else if l_face == Face.RIGHT):
+            if l_direction == Direction.CW:
                 l_temp = c_currentFront
                 c_currentFront = getFace(Face.BOTTOM)
                 c_currentUp = l_temp
@@ -44,12 +44,12 @@ class Position :
                 c_currentFront = c_currentUp
                 c_currentUp = l_temp
             
-        else if l_face == Face.FRONT)
-            if l_direction == Direction.CW)
+        else if l_face == Face.FRONT):
+            if l_direction == Direction.CW):
                 c_currentUp = getFace(Face.LEFT)
-            else
+            else:
                 c_currentUp = getFace(Face.RIGHT)
-        else
+        else:
             rotate(Rotation(FaceHandler.getOpposite(l_face), DirectionHandler.getOpposite(l_direction)))
 
     
@@ -58,11 +58,11 @@ def getCopy(self)
         return Position(c_currentUp,c_currentFront)
 
    getFace(Face p_viewpoint):
-        if p_viewpo== Face.TOP)
+        if p_viewpo== Face.TOP):
             return c_currentUp
-        else if p_viewpo== Face.BOTTOM)
+        else if p_viewpo== Face.BOTTOM):
             return FaceHandler.getOpposite(c_currentUp)
-        else
+        else:
             return getHorizonalFacebyVirtual(p_viewpoint)
     
 
@@ -70,7 +70,7 @@ def getCopy(self)
     def getHorizonalFacebyVirtual(self,p_viewpoint):
         i = 0
 
-        while g_faceOrder[(int)c_currentUp,i] != c_currentFront and i < 4)
+        while g_faceOrder[(int)c_currentUp,i] != c_currentFront and i < 4:
             i++
         switch (p_viewpoint):
             case Face.FRONT:

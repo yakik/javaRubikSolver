@@ -22,8 +22,10 @@ class GoodRotationsBuilder :
 												 ,p_rubik
 				,p_initialPermutation,p_rotationLinkedList, p_level,p_progressString):
 
-			if p_level == 0) return
-			if p_level > 5) Console.WriteLine(p_progressString)
+			if p_level == 0:
+				 return
+			if p_level > 5:
+				 Console.WriteLine(p_progressString)
 			i = 0
 			
 				foreach (Facein Enum.GetValues(typeof(Face)))

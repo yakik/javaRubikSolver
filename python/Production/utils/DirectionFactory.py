@@ -2,7 +2,7 @@ class DirectionFactory:
     
         @staticmethod
         def getDirectionByInt(intValue):
-            switch (intValue)
+            switch (intValue):
             
                 case 0:
                     return Direction.CW

@@ -1,8 +1,8 @@
 ﻿class FaceHandler: 
 
     @staticmethod
-    def getCharValue(Face face):
-            switch (face)
+    def getCharValue(face):
+            switch (face):
             
                 case Face.TOP:
                     return 'U'
@@ -24,7 +24,7 @@
 
     @staticmethod
     def getFace(intValue):
-            switch (intValue)
+            switch (intValue):
             
                 case 0:
                     return Face.TOP
@@ -46,7 +46,7 @@
 
         @staticmethod
         def getFace(char charValue):
-            switch (charValue)
+            switch (charValue):
             
                 case 'U':
                     return Face.TOP

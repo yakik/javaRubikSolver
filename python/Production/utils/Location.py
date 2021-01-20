@@ -1,82 +1,79 @@
 class Location:
     
-        Boolean c_isEdge
-       c_face0
-       c_face1
-       c_face2
+ 
 
         def Location(self):
         
 
         def containsFace(self,p_face):
-            if p_face == c_face0 or p_face == c_face1 or (!c_isEdge and (p_face == c_face2)))
+            if p_face == self.c_face0 or p_face == self.c_face1 or (!self.c_isEdge and (p_face == self.c_face2)):
                 return True
-            else
+            else:
                 return False
         
 
         def getCopy(self):
-            if isEdge())
-                return Location(c_face0, c_face1)
-            else
-                return Location(c_face0, c_face1, c_face2)
+            if isEdge():
+                return Location(self.c_face0, self.c_face1)
+            else:
+                return Location(self.c_face0, self.c_face1, self.c_face2)
         
 
         def Location(self,p_face0,p_face1,p_face2):
            l_tmp
-            c_isEdge = False
-            c_face0 = p_face0
-            c_face1 = p_face1
-            c_face2 = p_face2
+            self.c_isEdge = False
+            self.c_face0 = p_face0
+            self.c_face1 = p_face1
+            self.c_face2 = p_face2
             # bubble sort to keep order within faces		
-            if (int)c_face0 > (int)c_face1)
+            if (int)self.c_face0 > (int)self.c_face1:
             
-                l_tmp = c_face1
-                c_face1 = c_face0
-                c_face0 = l_tmp
+                l_tmp = self.c_face1
+                self.c_face1 = self.c_face0
+                self.c_face0 = l_tmp
             
-            if (int)c_face1 > (int)c_face2)
+            if (int)self.c_face1 > (int)self.c_face2:
             
-                l_tmp = c_face2
-                c_face2 = c_face1
-                c_face1 = l_tmp
+                l_tmp = self.c_face2
+                self.c_face2 = self.c_face1
+                self.c_face1 = l_tmp
             
-            if (int)c_face0 > (int)c_face1)
+            if (int)self.c_face0 > (int)self.c_face1:
             
-                l_tmp = c_face1
-                c_face1 = c_face0
-                c_face0 = l_tmp
+                l_tmp = self.c_face1
+                self.c_face1 = self.c_face0
+                self.c_face0 = l_tmp
             
 
         
 
         def Location(self,p_face0,p_face1):
-            c_isEdge = True
-            #       c_face2 = Face.NOTDEFINED
-            c_face0 = p_face0
-            c_face1 = p_face1
-            if (int)p_face0 > (int)p_face1)
+            self.c_isEdge = True
+            #       self.c_face2 = Face.NOTDEFINED
+            self.c_face0 = p_face0
+            self.c_face1 = p_face1
+            if (int)p_face0 > (int)p_face1:
             
-                c_face1 = p_face0
-                c_face0 = p_face1
+                self.c_face1 = p_face0
+                self.c_face0 = p_face1
             
-            else
+            else:
             
-                c_face0 = p_face0
-                c_face1 = p_face1
+                self.c_face0 = p_face0
+                self.c_face1 = p_face1
             
         
 
         def isEdge(self):
-            return c_isEdge
+            return self.c_isEdge
         
 
         def getFace0(self):
-            return c_face0
+            return self.c_face0
         
 
         def getFace1(self):
-            return c_face1
+            return self.c_face1
         
 
         getFloor(self):
@@ -110,27 +107,27 @@ class Location:
             #        if isEdge())
             #            return Face.NOTDEFINED
             #        else
-            return c_face2
+            return self.c_face2
         
 
         #	getValue(self):
         #		return (getFace0() * 1 + getFace1() * 6 + getFace2() * 36 + isEdge() * 216)
         #	
 
-        Boolean equals(Location p_location):
-            return ((c_face0 == p_location.c_face0) and
-                    (c_face1 == p_location.c_face1) and
-                    (c_face2 == p_location.c_face2) and
-                    (c_isEdge == p_location.c_isEdge))
+        Boolean equals(p_location):
+            return ((self.c_face0 == p_location.self.c_face0) and
+                    (self.c_face1 == p_location.self.c_face1) and
+                    (self.c_face2 == p_location.self.c_face2) and
+                    (self.c_isEdge == p_location.self.c_isEdge))
         
 
 
        getString(self):
-            if c_isEdge)
-                return String.Format("0, 1", FaceHandler.getCharValue(c_face0), FaceHandler.getCharValue(c_face1))
+            if self.c_isEdge:
+                return String.Format("0, 1", FaceHandler.getCharValue(self.c_face0), FaceHandler.getCharValue(self.c_face1))
             else
             
-                return String.Format("0, 1, 2", FaceHandler.getCharValue(c_face0), FaceHandler.getCharValue(c_face1), FaceHandler.getCharValue(c_face2))
+                return String.Format("0, 1, 2", FaceHandler.getCharValue(self.c_face0), FaceHandler.getCharValue(self.c_face1), FaceHandler.getCharValue(self.c_face2))
             
         
 

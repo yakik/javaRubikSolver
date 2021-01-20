@@ -4,25 +4,25 @@ class DirectionTest(unittest.TestCase):
         
         def testDirectionGetIntGetChar(self):
            myDirection = Direction.CW
-            Assert.AreEqual(0, (int)myDirection)
-            Assert.AreEqual("CW", myDirection.getString())
+            self.assertEqual(0, (int)myDirection)
+            self.assertEqual("CW", myDirection.getString())
             myDirection = Direction.CCW
-            Assert.AreEqual(1,(int) myDirection)
-            Assert.AreEqual("CCW", myDirection.getString())
+            self.assertEqual(1,(int) myDirection)
+            self.assertEqual("CCW", myDirection.getString())
         
 
         
         def testDirectionEquals(self):
            myDirection = Direction.CW
-            Assert.AreEqual(Direction.CW, myDirection)
-            Assert.AreEqual(True, myDirection == Direction.CW)
+            self.assertEqual(Direction.CW, myDirection)
+            self.assertEqual(True, myDirection == Direction.CW)
         
         
         def DirectionOpposite(self):
            myDirection = Direction.CW
-            Assert.AreEqual(Direction.CCW, DirectionHandler.getOpposite(myDirection))
+            self.assertEqual(Direction.CCW, DirectionHandler.getOpposite(myDirection))
             myDirection = Direction.CCW
-            Assert.AreEqual(Direction.CW, DirectionHandler.getOpposite(myDirection))
+            self.assertEqual(Direction.CW, DirectionHandler.getOpposite(myDirection))
         
 
     

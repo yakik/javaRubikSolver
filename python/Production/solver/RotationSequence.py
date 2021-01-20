@@ -34,28 +34,28 @@ class RotationSequence:
 
            l_lastFace
            l_lastDirection
-            if self.c_array.Count > 0):
+            if self.c_array.Count > 0:
                 l_lastFace = self.c_array[(self.c_array.Count - 1)].getFace()
                 l_lastDirection = self.c_array[self.c_array.Count - 1].getDirection()
                 # rotation is opposite to previous
-                if self.c_array[self.c_array.Count - 1].getReverse().equals(p_rotation))
+                if self.c_array[self.c_array.Count - 1].getReverse().equals(p_rotation):
                     l_returnValue = True
                 # previouswas opposite and previousgreater then current face
-                if (p_rotation.getFace() == FaceHandler.getOpposite(l_lastFace) and ((int)l_lastFace > (int)p_rotation.getFace())))
+                if (p_rotation.getFace() == FaceHandler.getOpposite(l_lastFace) and ((int)l_lastFace > (int)p_rotation.getFace())):
                     l_returnValue = True
                 # two clockwise rotation of same face
                 if (p_rotation.getFace() == l_lastFace) and (l_lastDirection == Direction.CW) and
-                        (p_rotation.getDirection() == Direction.CW))
+                        (p_rotation.getDirection() == Direction.CW):
                     l_returnValue = True
                 #no three counter clockwise rotations
-                if self.c_array.Count > 1):
+                if self.c_array.Count > 1:
                     if (p_rotation.getFace() == l_lastFace) and (l_lastDirection == Direction.CCW) and
                             (p_rotation.getDirection() == Direction.CCW) and
                             (self.c_array[self.c_array.Count - 2].getFace() == l_lastFace) and (l_lastDirection == Direction.CCW) and
-                            (self.c_array[self.c_array.Count - 2].getDirection() == Direction.CCW))
+                            (self.c_array[self.c_array.Count - 2].getDirection() == Direction.CCW):
                         l_returnValue = True
                 
-             else
+             else:
                 l_returnValue = False
             return l_returnValue
 
@@ -74,7 +74,7 @@ class RotationSequence:
             Rotation l_rotation = Rotation()
 
             self.c_array.Clear()
-            while l_rotation.readFromFile(p_reader))
+            while l_rotation.readFromFile(p_reader):
                 self.c_array.Add((Rotation(l_rotation.getFace(), l_rotation.getDirection())))
             return !(self.c_array.Count == 0)
         
