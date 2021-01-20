@@ -1,6 +1,4 @@
-﻿
-
-    class ColorHandler:
+﻿class ColorHandler:
  
 
     @staticmethod

@@ -1,11 +1,5 @@
 import unittest
-using utils
-
-
-
-
-    
-    class DirectionTest(unittest.TestCase):
+class DirectionTest(unittest.TestCase):
     
         
         def testDirectionGetIntGetChar(self):

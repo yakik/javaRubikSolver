@@ -1,11 +1,4 @@
-
-using utils
-using cube
-
-
-
-
-    class RotationSequence:
+class RotationSequence:
 
         List<Rotation> c_array = new List<Rotation>()
 

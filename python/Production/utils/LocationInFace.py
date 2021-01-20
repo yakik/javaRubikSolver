@@ -1,5 +1,3 @@
-s
-
 
     enum LocationInFace 
         TOP=0,

@@ -1,10 +1,4 @@
-using cube
-
-
-
-
-
-    class RotationTree:
+class RotationTree:
     
         List<RotationSequence> c_array = new List<RotationSequence>()
         def __init__(self):

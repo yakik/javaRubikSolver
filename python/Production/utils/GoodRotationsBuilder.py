@@ -1,10 +1,4 @@
-using cube
-using solver
-
-
-
-
-	class GoodRotationsBuilder :
+class GoodRotationsBuilder :
 
 		@staticmethod
 		def findGoodRotationLinks(self, String p_firstFloorFile

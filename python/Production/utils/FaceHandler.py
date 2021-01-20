@@ -1,6 +1,4 @@
-﻿
-
-    class FaceHandler: 
+﻿class FaceHandler: 
 
     @staticmethod
     def getCharValue(Face face):

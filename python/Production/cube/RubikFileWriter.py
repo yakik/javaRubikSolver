@@ -1,7 +1,4 @@
-
-
-
-    class RubikFileWriter:
+class RubikFileWriter:
     
 
         StreamWriter c_fileWriter

@@ -1,7 +1,4 @@
-using cube
-
-
-    class Solver:
+class Solver:
 
       
 

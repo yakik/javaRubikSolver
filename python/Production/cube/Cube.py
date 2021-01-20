@@ -1,10 +1,4 @@
-
-using utils
-
-
-
-
-	class Cube: 
+class Cube: 
 
 
 		@staticmethod

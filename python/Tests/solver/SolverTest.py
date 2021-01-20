@@ -1,13 +1,5 @@
 import unittest
-using cube
-using solver
-
-using utils
-
-
-
-    
-    class SolverTest(unittest.TestCase):
+class SolverTest(unittest.TestCase):
 
         //@Ignore
         

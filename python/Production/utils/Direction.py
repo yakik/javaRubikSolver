@@ -1,8 +1,7 @@
+from enum import Enum
 
-
-
-    enum Direction 
-        CW = 0,
+class  Direction(Enum): 
+        CW = 0
         CCW = 1
       
 

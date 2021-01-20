@@ -1,8 +1,4 @@
-﻿
-
-
-
-    class DirectionHandler:
+﻿class DirectionHandler:
 
         @staticmethod
         def getString(this Direction dir):              // Getter

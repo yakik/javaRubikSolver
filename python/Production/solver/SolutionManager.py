@@ -1,10 +1,4 @@
-using cube
-
-
-using solver:
-
-
-    class SolutionManager
+class SolutionManager
     
 
         List<List<SolutionNode>> c_solutionList = new List<List<SolutionNode>>()

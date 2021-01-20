@@ -1,11 +1,5 @@
 import unittest
-using utils
-
-
-
-
-    
-    class FaceTest(unittest.TestCase):
+class FaceTest(unittest.TestCase):
     
         
         def testFaceGetIntGetChar(self):

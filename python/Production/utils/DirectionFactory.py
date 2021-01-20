@@ -1,7 +1,4 @@
-
-
-
-    class DirectionFactory:
+class DirectionFactory:
     
         @staticmethod
         def getDirectionByInt(intValue):

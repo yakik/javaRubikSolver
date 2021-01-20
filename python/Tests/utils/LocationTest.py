@@ -1,9 +1,5 @@
 import unittest
-using utils
-
-
-    
-    class LocationTest(unittest.TestCase):
+class LocationTest(unittest.TestCase):
     
 
         

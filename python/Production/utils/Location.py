@@ -1,7 +1,4 @@
-
-
-
-    class Location:
+class Location:
     
         Boolean c_isEdge
         Face c_face0

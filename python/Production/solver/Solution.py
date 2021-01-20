@@ -1,6 +1,4 @@
-using cube
-
-    class Solution:
+class Solution:
 
 
         Cube c_permutation

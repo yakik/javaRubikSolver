@@ -1,12 +1,6 @@
 import unittest
-using cube
 
-using utils
-
-
-
-	
-	class CubeTest(unittest.TestCase):
+class CubeTest(unittest.TestCase):
 		
 	def overallTest(self):
 			Cube myRubik = new Cube(), myRubik2 = new Cube()

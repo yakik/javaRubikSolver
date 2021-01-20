@@ -1,6 +1,4 @@
-
-
-    class RubikFileReader:
+class RubikFileReader:
     
         Boolean c_fileIsOK
 
