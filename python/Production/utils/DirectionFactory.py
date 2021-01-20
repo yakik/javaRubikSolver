@@ -3,7 +3,8 @@
 
     class DirectionFactory
     
-        static Direction getDirectionByInt(intValue):
+        @staticmethod
+        defn getDirectionByInt(intValue):
             switch (intValue)
             
                 case 0:

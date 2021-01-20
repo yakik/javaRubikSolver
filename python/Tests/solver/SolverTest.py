@@ -10,7 +10,7 @@ using utils
 
         //@Ignore
         [TestMethod]
-        complexSolver():
+        def complexSolver():
             //long beginningTime = System.nanoTime()
             Cube myRubik = new Cube()
             myRubik.rotateFace(Face.RIGHT, Direction.CW)
