@@ -39,7 +39,7 @@ class Cube:
 
 		def __init__(self):
 
-			foreach (LocationInFacein Enum.GetValues(typeof(LocationInFace))):
+			for locationInFace in Enum.GetValues(typeof(LocationInFace)):
 				setColor(Face.FRONT, locationInFace, Color.FRONTCOLOR)
 				setColor(Face.BACK, locationInFace, Color.BACKCOLOR)
 				setColor(Face.RIGHT, locationInFace, Color.RIGHTCOLOR)
@@ -51,7 +51,7 @@ class Cube:
 		
 
 		def __init__(self,source):
-			foreach (LocationInFacein Enum.GetValues(typeof(LocationInFace)))
+			for locationInFace in Enum.GetValues(typeof(LocationInFace))
 			
 				setColor(Face.FRONT, locationInFace, source.getColor(Face.FRONT, locationInFace))
 				setColor(Face.BACK, locationInFace, source.getColor(Face.BACK, locationInFace))
@@ -99,7 +99,7 @@ class Cube:
 				rotateLeftToRight(Face.BACK, LocationInFace.BOTTOMRIGHT, Face.LEFT, LocationInFace.BOTTOMRIGHT, Face.FRONT,
 						LocationInFace.BOTTOMRIGHT, Face.RIGHT, LocationInFace.BOTTOMRIGHT)
 			 else:
-				for i =0 i < 3 i++:
+				for i in range(0,3):
 					rotateBottomFace(Direction.CW)
 			
 		
@@ -115,7 +115,7 @@ class Cube:
 				rotateLeftToRight(Face.BACK, LocationInFace.TOPRIGHT, Face.RIGHT, LocationInFace.TOPRIGHT, Face.FRONT,
 						LocationInFace.TOPRIGHT, Face.LEFT, LocationInFace.TOPRIGHT)
 			 else:
-				for i =0 i < 3 i++:
+				for i in range(0,3):
 					rotateTopFace(Direction.CW)
 			
 		
@@ -131,7 +131,7 @@ class Cube:
 				rotateLeftToRight(Face.TOP, LocationInFace.TOPRIGHT, Face.LEFT, LocationInFace.TOPLEFT, Face.BOTTOM,
 						LocationInFace.BOTTOMLEFT, Face.RIGHT, LocationInFace.BOTTOMRIGHT)
 			 else:
-				for i =0 i < 3 i++:
+				for i in range(0,3):
 					rotateBackFace(Direction.CW)
 			
 		
@@ -153,7 +153,7 @@ class Cube:
 						Face.BOTTOM, LocationInFace.TOPLEFT,
 						Face.BACK, LocationInFace.BOTTOMRIGHT)
 			 else:
-				for i =0 i < 3 i++)
+				for i in range(0,3):
 					rotateLeftFace(Direction.CW)
 			
 		
@@ -175,7 +175,7 @@ class Cube:
 						Face.BOTTOM, LocationInFace.TOPRIGHT,
 						Face.FRONT, LocationInFace.TOPRIGHT)
 			 else:
-				for i =0 i < 3 i++:
+				for i in range(0,3):
 					rotateRightFace(Direction.CW)
 			
 		
@@ -191,7 +191,7 @@ class Cube:
 				rotateLeftToRight(Face.TOP, LocationInFace.BOTTOMRIGHT, Face.RIGHT, LocationInFace.BOTTOMLEFT, Face.BOTTOM,
 						LocationInFace.TOPLEFT, Face.LEFT, LocationInFace.TOPRIGHT)
 			 else:
-				for i =0 i < 3 i++:
+				for i in range(0,3):
 					rotateFrontFace(Direction.CW)
 			
 		

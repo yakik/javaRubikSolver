@@ -6,7 +6,7 @@ class SolutionManager
 
         def __init__(self):
             i
-            for i =0 i < 41 i++
+            for i in (0,41):
                 self.c_solutionList.Add(List<SolutionNode>())
         
 

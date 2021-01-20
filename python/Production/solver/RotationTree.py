@@ -18,7 +18,7 @@ class RotationTree:
         
 
         @staticmethod
-        def getRotationTreeFromFile(RubikFileReader p_File):
+        def getRotationTreeFromFile(p_File):
            myTree = RotationTree()
            l_rotationLinkedList = RotationSequence()
             while l_rotationLinkedList.readFromFile(p_File):

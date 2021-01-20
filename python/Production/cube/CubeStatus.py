@@ -8,7 +8,7 @@ class CubeStatus:
 		#next line replaced previous code
 		l_counter = cube.countDifferenceThirdFloor(p_comparedPermutation)
 
-		if l_counter > 0):
+		if l_counter > 0:
 			 return True
 				else:
 					 return False
@@ -23,7 +23,7 @@ class CubeStatus:
         p_comparedPermutation)
 
 
-            if l_counter < 3):
+            if l_counter < 3:
 				 return True
             else:
 				 return False
@@ -39,7 +39,7 @@ class CubeStatus:
 
 
 
-            if l_counter < 3):
+            if l_counter < 3:
 				 return True
             else:
 				 return False

@@ -15,7 +15,7 @@ class RotationSequence:
         def print(self):
          
 
-            foreach (var l_itr in self.c_array)
+            for l_itr in self.c_array
 
                 (l_itr as Rotation).print()
             Console.Write("\n")
@@ -62,7 +62,7 @@ class RotationSequence:
         
 
        def writeToFile(self, RubikFileWriter p_writer):
-            foreach (var l_itr in self.c_array)
+            for l_itr in self.c_array:
 
                 (l_itr as Rotation).writeToFile(p_writer)
 
@@ -104,7 +104,7 @@ class RotationSequence:
            
 
         
-            foreach (var l_itr in self.c_array)
+            for l_itr in self.c_array:
 
                 l_rotationLinkedList.addRotation(l_itr as Rotation)
 
@@ -116,7 +116,7 @@ class RotationSequence:
 
               
             
-            foreach (var l_itr in self.c_array)
+            for l_itr in self.c_array:
 
                 p_rubik.rotateFace(l_itr.getFace(), l_itr.getDirection())
 

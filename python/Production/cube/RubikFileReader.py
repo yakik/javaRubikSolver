@@ -15,7 +15,7 @@ class RubikFileReader:
         
 
         def read(self):
-            if !self.c_fileIsOK:
+            if not self.c_fileIsOK:
                 return -1
             else
                 try
