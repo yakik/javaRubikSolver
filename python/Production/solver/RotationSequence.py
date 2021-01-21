@@ -4,6 +4,7 @@ from production.utils.location import Location
 from production.utils.rotation import Rotation
 from production.utils.locationInFace import LocationInFace
 from production.utils.direction import Direction
+from production.utils.faceHandler import FaceHandler
 
 class RotationSequence:
 
@@ -14,9 +15,7 @@ class RotationSequence:
                 self.c_array = p_List
 
         def print(self):
-
             for l_itr in self.c_array:
-
                 l_itr.print()
             print("\n")
 
@@ -28,7 +27,6 @@ class RotationSequence:
 
         def isRedundant(self, p_rotation):
             l_returnValue = False
-
             if len(self.c_array) > 0:
                 l_lastFace = self.c_array[(len(self.c_array) - 1)].getFace()
                 l_lastDirection = self.c_array[len(self.c_array) - 1].getDirection()
@@ -36,7 +34,7 @@ class RotationSequence:
                 if self.c_array[len(self.c_array) - 1].getReverse().equals(p_rotation):
                     l_returnValue = True
                 # previouswas opposite and previousgreater then current face
-                if (p_rotation.getFace() == FaceHandler.getOpposite(l_lastFace) and (tFace > p_rot.getFace())):
+                if (p_rotation.getFace() == FaceHandler.getOpposite(l_lastFace) and (l_lastFace > p_rotation.getFace())):
                     l_returnValue = True
                 # two clockwise rotation of same face
                 if ((p_rotation.getFace() == l_lastFace) and (l_lastDirection == Direction.CW) and
@@ -49,70 +47,43 @@ class RotationSequence:
                             (self.c_array[len(self.c_array) - 2].getFace() == l_lastFace) and (l_lastDirection == Direction.CCW) and
                             (self.c_array[len(self.c_array) - 2].getDirection() == Direction.CCW)):
                         l_returnValue = True
-                
                 else:
                     l_returnValue = False
             return l_returnValue
 
-        
-
         def writeToFile(self, p_writer):
             for l_itr in self.c_array:
-
                 l_itr.writeToFile(p_writer)
-
             p_writer.write("\n")
-
-
         
         def readFromFile(self, p_reader):
             l_rotation = Rotation()
-
             self.c_array.Clear()
             while l_rotation.readFromFile(p_reader):
                 self.c_array.append((Rotation(l_rotation.getFace(), l_rotation.getDirection())))
             return (len(self.c_array) != 0)
-        
-
        
         def getSubRotationLinkedList(self):
-            return RotationSequence(List<Rotation>(self.c_array.GetRange(1, len(self.c_array))))
-        
+            return RotationSequence(self.c_array[1, len(self.c_array)])
 
         def size(self):
             return len(self.c_array)
-        
 
         def  getFirstRotation(self):
             return self.c_array[0]
         
-        def  getRotation(p_index):
+        def getRotation(self,p_index):
             return self.c_array[p_index]
         
         def isNotEmpty(self):
-
             return (len(self.c_array) > 0)
-        
 
         def getCopy(self):
             l_rotationLinkedList = RotationSequence()
             for l_itr in self.c_array:
                 l_rotationLinkedList.addRotation(l_itr)
-
             return l_rotationLinkedList
-        
 
         def applyToRubik(self,p_rubik):
-           
-
-              
-            
             for l_itr in self.c_array:
-
                 p_rubik.rotateFace(l_itr.getFace(), l_itr.getDirection())
-
-
-        
-    
-
-

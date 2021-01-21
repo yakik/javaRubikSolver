@@ -1,7 +1,6 @@
 class RubikFileReader:
 
         def __init__(self, p_fileLocation):
-
             self.c_fileReader = open(p_fileLocation,"r")
             self.c_fileIsOK = True
 
@@ -14,5 +13,3 @@ class RubikFileReader:
 
         def close(self):
             self.c_fileReader.close()
-
-            catch (IOException ex): Console.WriteLine(ex)

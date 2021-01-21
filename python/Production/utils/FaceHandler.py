@@ -10,9 +10,6 @@ class FaceHandler:
                 Face.FRONT: 'F',
                 Face.BACK: 'B'}
         return switcher.get(face)
-            
-
-        
 
     @staticmethod
     def getFaceInt(intValue):
@@ -23,7 +20,6 @@ class FaceHandler:
                  4: Face.FRONT,
                  5: Face.BACK}
         return switcher.get(intValue)
-    
 
     @staticmethod
     def getFaceChar(charValue):
@@ -35,7 +31,6 @@ class FaceHandler:
             'B': Face.BACK}
         return switcher.get(charValue)
 
-
     @staticmethod
     def getOpposite( face):
         switcher = {Face.LEFT: Face.RIGHT,
@@ -46,8 +41,3 @@ class FaceHandler:
             Face.BACK: Face.FRONT,
             Face.NOTDEFINED: Face.NOTDEFINED}
         return switcher.get(face)
-        
-    
-
-
-

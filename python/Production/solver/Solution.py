@@ -19,12 +19,12 @@ class Solution:
             return (self.c_permutation == (p_solution.getPermutation()))
 
         def print(self):
-            if self.c_prevSolution != null:
+            if self.c_prevSolution != None:
                 self.c_prevSolution.print()
             self.c_rotationLinkedList.print()
             Console.Write("\n")
 
         def applyToRubik(self, p_rubik):
-            if self.c_prevSolution != null:
+            if self.c_prevSolution != None:
                 self.c_prevSolution.applyToRubik(p_rubik)
             self.c_rotationLinkedList.applyToRubik(p_rubik)

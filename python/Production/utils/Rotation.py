@@ -1,8 +1,11 @@
+from production.utils.face import Face
+from production.utils.direction import Direction
 from production.utils.faceHandler import FaceHandler
+from production.utils.directionHandler import DirectionHandler
 class Rotation :
 
 
-        def __init__(self,p_face,p_direction):
+        def __init__(self,p_face=None,p_direction=None):
             self.c_face = p_face
             self.c_direction = p_direction
         
@@ -25,10 +28,10 @@ class Rotation :
         
 
         def readFromFile(self, p_reader):
-            l_int
+            l_int=0
             l_= p_reader.read()
             #Console.Write("%d ",l_int)
-            while (l_== ' ') or (l_== 13):
+            while (l_int== ' ') or (l_int== 13):
                 l_= p_reader.read()
                 # Console.Write("%d ",l_int)
             
@@ -36,9 +39,9 @@ class Rotation :
             if ((l_== 10) or (l_== -1 ) or (l_!= '(')):
                 return False
             else:
-                self.c_face = FaceHandler.getFace(GetNumericValue((char)(p_reader.read())))
+                self.c_face = FaceHandler.getFaceInt(p_reader.read())
                 p_reader.read()
-                self.c_direction = DirectionHandler.getDirection(GetNumericValue((char)(p_reader.read())))
+                self.c_direction = DirectionHandler.getDirectionInt(p_reader.read())
                 p_reader.read()
                 return True
             
@@ -46,7 +49,7 @@ class Rotation :
 
 
         def getValue(self):
-            return (c_face + self.ection * 6)
+            return (self.c_face + self.c_direction * 6)
         
 
         def getFace(self):
@@ -58,7 +61,7 @@ class Rotation :
         
 
         def print(self):
-            Console.Write("(0,1)", FaceHandler.getCharValue(self.c_face),DirectionHandler.getString(self.c_direction))
+            print("("+ FaceHandler.getCharValue(self.c_face)+","+DirectionHandler.getString(self.c_direction)+"\n")
         
 
         def getReverse(self):
@@ -70,14 +73,7 @@ class Rotation :
                     (self.c_direction == p_rotation.self.c_direction))
         
 
-        def equals(self, other): 
-            if self.getFace() != other.getFace():
-                return False
-            
-            if self.getDirection() != other.getDirection():
-                return False
-            
-            return True
+       
         
     
 

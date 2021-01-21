@@ -21,11 +21,7 @@ class Cube:
 			l_value += 2 * (4 - l_permutation.countDifferenceSecondFloor(fixedCube))
 		if p_highestFloor > 2:
 			l_value += 2 * (8 - l_permutation.countDifferenceThirdFloor(fixedCube))
-
 		return l_value
-
-
-
 
 	def equals(self,comparedCube):
 		if (self.countDifferenceFirstFloor(comparedCube) + 
@@ -34,17 +30,14 @@ class Cube:
 			return True
 		else:
 			return False
-		
 
 	def setColor(self,face,locationInFace, color):
 		self.colors[locationInFace] = color
-	
 
 	def getColor(self,face,locationInFace):
 		return self.colors[locationInFace]
-	
 
-	def __init__(self,source):
+	def __init__(self,source=None):
 		self.colors = list()
 		if source==None:
 			for locationInFace in LocationInFace:
@@ -63,8 +56,6 @@ class Cube:
 				self.setColor(Face.LEFT, locationInFace, source.getColor(Face.LEFT, locationInFace))
 				self.setColor(Face.TOP, locationInFace, source.getColor(Face.TOP, locationInFace))
 				self.setColor(Face.BOTTOM, locationInFace, source.getColor(Face.BOTTOM, locationInFace))
-		
-	
 
 	def rotateFace(self,face,direction):
 		switcher={Face.FRONT:self.rotateFrontFace,
@@ -73,11 +64,7 @@ class Cube:
 				Face.BACK:self.rotateBackFace,
 				Face.TOP:self.rotateTopFace,
 				Face.BOTTOM:self.rotateBottomFace(direction)}
-				
 		switcher.get(face)(direction)
-		
-
-	
 
 	def rotateBottomFace(self,direction):
 		if direction == Direction.CW:
@@ -92,13 +79,10 @@ class Cube:
 		else:
 			for _ in range(0,3):
 				self.rotateBottomFace(Direction.CW)
-		
-	
 
 	def rotateTopFace(self,direction):
 		if direction == Direction.CW:
 			self.rotateLeftToRightFaceOnly(Face.TOP)
-
 			self.rotateLeftToRight(Face.BACK, LocationInFace.TOP, Face.RIGHT, LocationInFace.TOP, Face.FRONT,
 					LocationInFace.TOP, Face.LEFT, LocationInFace.TOP)
 			self.rotateLeftToRight(Face.BACK, LocationInFace.TOPLEFT, Face.RIGHT, LocationInFace.TOPLEFT, Face.FRONT,
@@ -108,13 +92,10 @@ class Cube:
 		else:
 			for _ in range(0,3):
 				self.rotateTopFace(Direction.CW)
-		
-	
 
 	def rotateBackFace(self,direction):
 		if direction == Direction.CW:
 			self.rotateLeftToRightFaceOnly(Face.BACK)
-
 			self.rotateLeftToRight(Face.TOP, LocationInFace.TOP, Face.LEFT, LocationInFace.LEFT, Face.BOTTOM,
 					LocationInFace.BOTTOM, Face.RIGHT, LocationInFace.RIGHT)
 			self.rotateLeftToRight(Face.TOP, LocationInFace.TOPLEFT, Face.LEFT, LocationInFace.BOTTOMLEFT, Face.BOTTOM,
@@ -124,13 +105,10 @@ class Cube:
 		else:
 			for _ in range(0,3):
 				self.rotateBackFace(Direction.CW)
-		
-	
 
 	def rotateLeftFace(self,direction):
 		if direction == Direction.CW:
 			self.rotateLeftToRightFaceOnly(Face.LEFT)
-
 			self.rotateLeftToRight(Face.TOP, LocationInFace.LEFT,
 					Face.FRONT, LocationInFace.LEFT,
 					Face.BOTTOM, LocationInFace.LEFT,
@@ -146,8 +124,6 @@ class Cube:
 		else:
 			for _ in range(0,3):
 				self.rotateLeftFace(Direction.CW)
-		
-	
 
 	def rotateRightFace(self,direction):
 		if direction == Direction.CW:
@@ -168,13 +144,10 @@ class Cube:
 		else:
 			for _ in range(0,3):
 				self.rotateRightFace(Direction.CW)
-		
-	
 
 	def rotateFrontFace(self,direction):
 		if direction == Direction.CW:
 			self.rotateLeftToRightFaceOnly(Face.FRONT)
-
 			self.rotateLeftToRight(Face.TOP, LocationInFace.BOTTOM, Face.RIGHT, LocationInFace.LEFT, Face.BOTTOM,
 					LocationInFace.TOP, Face.LEFT, LocationInFace.RIGHT)
 			self.rotateLeftToRight(Face.TOP, LocationInFace.BOTTOMLEFT, Face.RIGHT, LocationInFace.TOPLEFT, Face.BOTTOM,
@@ -184,15 +157,12 @@ class Cube:
 		else:
 			for _ in range(0,3):
 				self.rotateFrontFace(Direction.CW)
-		
-	
 
 	def rotateLeftToRightFaceOnly(self,face):
 		self.rotateLeftToRight(face, LocationInFace.TOP, face, LocationInFace.RIGHT, face, LocationInFace.BOTTOM, face,
 				LocationInFace.LEFT)
 		self.rotateLeftToRight(face, LocationInFace.BOTTOMLEFT, face, LocationInFace.TOPLEFT, face, LocationInFace.TOPRIGHT,
 				face, LocationInFace.BOTTOMRIGHT)
-	
 
 	def print(self):
 		self.printFace(Face.TOP)
@@ -202,13 +172,11 @@ class Cube:
 		self.printFace(Face.LEFT)
 		self.printFace(Face.RIGHT)
 
-	
-
 	def printFace(self,face):
 		print ("\n"+ FaceHandler.getCharValue(face)+"\n\n")
 		print(self.getColor(face, LocationInFace.TOPLEFT)+" "+
 				self.getColor(face, LocationInFace.TOP)+" "+ self.getColor(face, LocationInFace.TOPRIGHT)+"\n")
-		print("self.getColor(face, LocationInFace.LEFT)+" "+
+		print(self.getColor(face, LocationInFace.LEFT)+" "+
 				self.getColor(face, LocationInFace.RIGHT)+"\n")
 		print(self.getColor(face, LocationInFace.BOTTOMLEFT)+" "+
 				self.getColor(face, LocationInFace.BOTTOM)+" "+ self.getColor(face, LocationInFace.BOTTOMRIGHT)+"\n")
@@ -228,13 +196,11 @@ class Cube:
 	def rotateLeftToRight(self,firstFace,firstLocationInFace,secondFace,
 			 secondLocationInFace,thirdFace,thirdLocationInFace,fourthFace,
 			 fourthLocationInFace):
-		temp = getColor(fourthFace, fourthLocationInFace)
-		setColor(fourthFace, fourthLocationInFace, getColor(thirdFace, thirdLocationInFace))
-		setColor(thirdFace, thirdLocationInFace, getColor(secondFace, secondLocationInFace))
-		setColor(secondFace, secondLocationInFace, getColor(firstFace, firstLocationInFace))
-		setColor(firstFace, firstLocationInFace, temp)
-
-	
+		temp = self.getColor(fourthFace, fourthLocationInFace)
+		self.setColor(fourthFace, fourthLocationInFace, getColor(thirdFace, thirdLocationInFace))
+		self.setColor(thirdFace, thirdLocationInFace, getColor(secondFace, secondLocationInFace))
+		self.setColor(secondFace, secondLocationInFace, getColor(firstFace, firstLocationInFace))
+		self.setColor(firstFace, firstLocationInFace, temp)
 
 	def countDifferenceSecondFloor(self,cube):
 		counter = 0
@@ -250,11 +216,7 @@ class Cube:
 		if (self.colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.LEFT) or
 				self.colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.RIGHT)):
 			counter+=1
-
 		return counter
-
-	
-
 
 	def countDifferenceFirstFloor(self,cube):
 		counter = 0
@@ -270,8 +232,6 @@ class Cube:
 		if (self.colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.BOTTOM) or
 				self.colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.RIGHT)):
 			counter+=1
-
-
 		if (self.colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.BOTTOMLEFT) or
 				self.colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.TOPLEFT) or
 				self.colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.BOTTOMRIGHT)):
@@ -288,10 +248,7 @@ class Cube:
 				self.colorInFaceNotEqual(cube, Face.BOTTOM, LocationInFace.BOTTOMRIGHT) or
 				self.colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.BOTTOMRIGHT)):
 			counter+=1
-
 		return counter
-
-	
 
 	def countDifferenceThirdFloor(self,cube):
 		counter = 0
@@ -307,8 +264,6 @@ class Cube:
 		if (self.colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.TOP) or
 				self.colorInFaceNotEqual(cube, Face.TOP, LocationInFace.RIGHT)):
 			counter+=1
-
-
 		if (self.colorInFaceNotEqual(cube, Face.FRONT, LocationInFace.TOPLEFT) or
 				self.colorInFaceNotEqual(cube, Face.TOP, LocationInFace.BOTTOMLEFT) or
 				self.colorInFaceNotEqual(cube, Face.LEFT, LocationInFace.TOPRIGHT)):
@@ -325,24 +280,19 @@ class Cube:
 				self.colorInFaceNotEqual(cube, Face.TOP, LocationInFace.TOPRIGHT) or
 				self.colorInFaceNotEqual(cube, Face.RIGHT, LocationInFace.TOPRIGHT)):
 			counter+=1
-
 		return counter
 
-	
-
-
 	def colorInFaceNotEqual(self,comparedCube,face,locationInFace):
-		return getColor(face, locationInFace) != comparedCube.getColor(face, LocationInFace.BOTTOM)
-	
+		return self.getColor(face, locationInFace) != comparedCube.getColor(face, LocationInFace.BOTTOM)
 
 	def countAllDifferences(self,comparedCube):
-		return (countDifferenceThirdFloor(comparedCube) +
+		return (self.countDifferenceThirdFloor(comparedCube) +
 				self.countDifferenceFirstFloor(comparedCube) +
-				countDifferenceSecondFloor(comparedCube))
+				self.countDifferenceSecondFloor(comparedCube))
 	
 
 	def getCopy(self):
-		return Cube(this)
+		return Cube(self)
 	
 
 

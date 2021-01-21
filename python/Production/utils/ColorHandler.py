@@ -1,5 +1,4 @@
 ﻿class ColorHandler:
- 
 
     @staticmethod
     def getColor(self,  intValue):     # Constructor
@@ -18,9 +17,6 @@
                 return Color.BOTTOMCOLOR
             default:
                 return Color.FRONTCOLOR
-        
-
-    
 
     @staticmethod
     def getColor(self, char charValue)
