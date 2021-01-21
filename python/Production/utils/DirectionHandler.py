@@ -7,9 +7,6 @@ class DirectionHandler:
             return "CW"
         else:
                 return "CCW"
-            
-
-    
 
     @staticmethod
     def getDirectionInt(intValue):
@@ -17,7 +14,6 @@ class DirectionHandler:
             return Direction.CW
         else:
             return Direction.CCW
-    
 
     @staticmethod
     def getDirectionString(intValue):
@@ -25,8 +21,6 @@ class DirectionHandler:
             return Direction.CW
         else:
             return Direction.CCW
-    
-    
 
     @staticmethod
     def getOpposite(direction):

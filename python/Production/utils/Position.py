@@ -55,8 +55,6 @@ class Position :
                 else:
                     self.rotate(Rotation(FaceHandler.getOpposite(l_face), DirectionHandler.getOpposite(l_direction)))
 
-    
-
     def getCopy(self):
             return Position(self.c_currentUp,self.c_currentFront)
 
@@ -68,8 +66,6 @@ class Position :
                 return FaceHandler.getOpposite(self.c_currentUp)
             else:
                 return self.getHorizonalFacebyVirtual(p_viewpoint)
-    
-
 
     def getHorizonalFacebyVirtual(self,p_viewpoint):
         i = 0
@@ -85,9 +81,6 @@ class Position :
                     return self.g_face_Order[self.c_currentUp][(i + 2) % 4]
                 else:
                     return self.g_face_Order[self.c_currentUp][(i + 3) % 4]
-
-        
-    
 
     def equals(self, p_position):
         return ((self.c_currentUp == p_position.self.c_currentUp) and

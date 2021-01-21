@@ -1,6 +1,5 @@
-
 from production.solver.solution import Solution
-from production.solver.solution import SolutionNode
+from production.solver.solutionNode import SolutionNode
 
 class SolutionManager:
 
