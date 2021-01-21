@@ -32,7 +32,7 @@ class Cube:
 			return False
 
 	def setColor(self,face,locationInFace, color):
-		self.colors[locationInFace] = color
+		self.colors[locationInFace.value] = color
 
 	def getColor(self,face,locationInFace):
 		return self.colors[locationInFace]
