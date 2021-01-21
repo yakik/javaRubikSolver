@@ -1,4 +1,7 @@
 import unittest
+from production.cube.cube import Cube
+from production.utils.face import Face
+from production.utils.direction import Direction
 
 
 class PermutationTest(unittest.TestCase):
@@ -11,7 +14,6 @@ class PermutationTest(unittest.TestCase):
         self.assertEqual(14, Cube.getValue(
             myPermutation, 2), "second floor")
         self.assertEqual(24, Cube.getValue(myPermutation, 3), "third floor")
-
 
     def test_getValueFull(self):
         myRubik = Cube()

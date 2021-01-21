@@ -1,6 +1,9 @@
 from production.cube.cube import Cube
 from production.solver.solver import Solver
 from production.utils.face import Face
+from production.utils.direction import Direction
+from production.cube.rubikFileReader import RubikFileReader
+from production.solver.rotationTree import RotationTree
 import unittest
 class SolverTest(unittest.TestCase):
 
@@ -78,7 +81,7 @@ class SolverTest(unittest.TestCase):
             #Console.WriteLine("Elapsed Time=%d seconds", ((endTime - beginningTime) / 1000000000))
             #27-12-2017: started 11:39 PM, Failed
             #myRubik.print()
-            Assert.IsTrue(myRubik.equals(Cube()))
+            self.assertTrue(myRubik.equals(Cube()))
 
         
 

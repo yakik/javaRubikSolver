@@ -11,35 +11,25 @@ class PositionTest(unittest.TestCase):
             myPosition = Position(Face.TOP, Face.FRONT)
             self.assertEqual("U, F", myPosition.getString())
         
-
-        
         def test_rotateCW_U(self):
             myPosition = Position(Face.TOP, Face.FRONT)
             myPosition.rotate(Rotation(Face.FRONT, Direction.CW))
             self.assertEqual(Face.LEFT, myPosition.getFace(Face.TOP))
-        
-
         
         def test_rotateCW_D(self):
             myPosition = Position(Face.TOP, Face.FRONT)
             myPosition.rotate(Rotation(Face.FRONT, Direction.CW))
             self.assertEqual(Face.RIGHT, myPosition.getFace(Face.BOTTOM))
         
-
-        
         def test_rotateCCW(self):
             myPosition = Position(Face.TOP, Face.FRONT)
             myPosition.rotate(Rotation(Face.FRONT, Direction.CCW))
             self.assertEqual(Face.RIGHT, myPosition.getFace(Face.TOP))
         
-
-        
         def test_rotateCCW_D(self):
             myPosition = Position(Face.TOP, Face.FRONT)
             myPosition.rotate(Rotation(Face.FRONT, Direction.CCW))
             self.assertEqual(Face.LEFT, myPosition.getFace(Face.BOTTOM))
-        
-
         
         def test_moreRotationTests(self):
             myPosition = Position(Face.TOP, Face.FRONT)
@@ -50,11 +40,7 @@ class PositionTest(unittest.TestCase):
             myPosition.rotate(Rotation(Face.BOTTOM, Direction.CCW))
             self.assertEqual(True, myPosition.equals(Position(Face.BACK, Face.TOP)))
         
-
-        
         def test_rotateCCW_DD(self):
             myPosition = Position(Face.TOP, Face.FRONT)
             myPosition.rotate(Rotation(Face.BOTTOM, Direction.CCW))
             self.assertEqual(Face.BOTTOM, myPosition.getFace(Face.BOTTOM))
-        
-     

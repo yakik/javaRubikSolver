@@ -1,7 +1,8 @@
-﻿class ColorHandler:
+﻿from production.utils.color import Color
+class ColorHandler:
 
     @staticmethod
-    def getColor(intValue):     # Constructor
+    def getColorInt(intValue):     # Constructor
         switcher={0: Color.FRONTCOLOR,
             1: Color.BACKCOLOR,
             2: Color.RIGHTCOLOR,
@@ -11,7 +12,7 @@
         return switcher.get(intValue)
 
     @staticmethod
-    def getColor(charValue)
+    def getColorChar(charValue):
         switcher={'R': Color.FRONTCOLOR,
             'B': Color.BACKCOLOR,
             'Y': Color.RIGHTCOLOR,

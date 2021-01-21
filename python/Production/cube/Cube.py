@@ -197,9 +197,9 @@ class Cube:
 			 secondLocationInFace,thirdFace,thirdLocationInFace,fourthFace,
 			 fourthLocationInFace):
 		temp = self.getColor(fourthFace, fourthLocationInFace)
-		self.setColor(fourthFace, fourthLocationInFace, getColor(thirdFace, thirdLocationInFace))
-		self.setColor(thirdFace, thirdLocationInFace, getColor(secondFace, secondLocationInFace))
-		self.setColor(secondFace, secondLocationInFace, getColor(firstFace, firstLocationInFace))
+		self.setColor(fourthFace, fourthLocationInFace, self.getColor(thirdFace, thirdLocationInFace))
+		self.setColor(thirdFace, thirdLocationInFace, self.getColor(secondFace, secondLocationInFace))
+		self.setColor(secondFace, secondLocationInFace, self.getColor(firstFace, firstLocationInFace))
 		self.setColor(firstFace, firstLocationInFace, temp)
 
 	def countDifferenceSecondFloor(self,cube):

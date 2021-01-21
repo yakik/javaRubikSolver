@@ -27,8 +27,8 @@ class LocationTest(unittest.TestCase):
         myLocation= Location(Face.BOTTOM, Face.LEFT, Face.FRONT)
         mySecond= Location(Face.LEFT, Face.FRONT, Face.BOTTOM)
         myThird= Location(Face.RIGHT, Face.FRONT, Face.BOTTOM)
-        self.assertEqual(True, mySecondLocation.equals(myLocation))
-        self.assertEqual(False, mySecondLocation.equals(myThirdLocation))
+        self.assertEqual(True, mySecond.equals(myLocation))
+        self.assertEqual(False, mySecond.equals(myThird))
     
 
     
