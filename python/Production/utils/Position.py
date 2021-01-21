@@ -22,6 +22,11 @@ class Position :
             self.c_currentUp = Face.TOP
             self.c_currentFront = Face.FRONT
     
+    def getUp(self):
+        return self.c_currentUp
+
+    def getFront(self):
+        return self.c_currentFront
 
     def getString(self):
         return FaceHandler.getCharValue(self.c_currentUp)+", "+ FaceHandler.getCharValue(self.c_currentFront)
@@ -83,6 +88,6 @@ class Position :
                     return self.g_face_Order[self.c_currentUp][(i + 3) % 4]
 
     def equals(self, p_position):
-        return ((self.c_currentUp == p_position.self.c_currentUp) and
-                (self.c_currentFront == p_position.self.c_currentFront))
+        return ((self.c_currentUp == p_position.getUp()) and
+                (self.c_currentFront == p_position.getFront()))
     
