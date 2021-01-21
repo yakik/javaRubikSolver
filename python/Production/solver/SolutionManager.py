@@ -5,7 +5,7 @@ class SolutionManager:
 
         def __init__(self):
             self.c_solutionList = list()
-            for _ in (0, 41):
+            for _ in range(0, 41):
                 self.c_solutionList.append(list())
 
         def addSolution(self, p_rotationLinkedList, p_permutation, p_prevSolution,
@@ -18,6 +18,7 @@ class SolutionManager:
             i = 40
             l_bestSolution = None
             while (i >= 0 and l_bestSolution == None):
+
                 if len(self.c_solutionList[i]) > 0:
                     j = 0
                     while (j < len(self.c_solutionList[i]) and l_bestSolution == None):

@@ -21,8 +21,8 @@ class Solver:
             l_solutionToDev = l_solutionManager.getBestUndeveloped()
             while (l_solutionToDev != None and l_solutionManager.getBestValue() < 40):
                 targetFloor = self.getTargetFloorPerm(l_solutionToDev.getPermutation())
-                print("Searching "+ Cube.getValue(l_solutionToDev.getPermutation(), targetFloor)+"\n")
-                if l_solutionManager.getBestValue() > Cube.getValue(l_solutionToDev.getPermutation(), targetFloor) + 14:
+                print("Searching "+ str(Cube.getValue(l_solutionToDev.getPermutation(),targetFloor))+"\n")
+                if l_solutionManager.getBestValue() > (Cube.getValue(l_solutionToDev.getPermutation(), targetFloor) + 14):
                     print("Couldn't Find a Solution\n")
                     return l_solutionManager.getBest()
                 
@@ -35,7 +35,7 @@ class Solver:
 
                 l_floor = self.getTargetFloorValue(l_solutionManager.getBestValue())
 
-                print("Floor="+l_floor+" Best yet:"+l_solutionManager.getBestValue()+", bestUnDeveloped="+l_solutionManager.getBestUndeveloped() != None+"\n")
+                print("Floor="+str(l_floor)+" Best yet:"+str(l_solutionManager.getBestValue())+", bestUnDeveloped="+str(l_solutionManager.getBestUndeveloped() != None)+"\n")
                 l_solutionToDev = l_solutionManager.getBestUndeveloped()
             return l_solutionManager.getBest()
 

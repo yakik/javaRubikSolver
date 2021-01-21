@@ -22,19 +22,19 @@ class Rotation :
 
         def readFromFile(self, p_reader):
             l_int=0
-            l_= p_reader.read()
+            l_int= p_reader.read()
             #Console.Write("%d ",l_int)
             while (l_int== ' ') or (l_int== 13):
-                l_= p_reader.read()
+                l_int= p_reader.read()
                 # Console.Write("%d ",l_int)
             
 
-            if ((l_== 10) or (l_== -1 ) or (l_!= '(')):
+            if ((l_int== 10) or (l_int== -1 ) or (l_int!= '(')):
                 return False
             else:
-                self.c_face = FaceHandler.getFaceInt(p_reader.read())
+                self.c_face = FaceHandler.getFaceInt(int(p_reader.read()))
                 p_reader.read()
-                self.c_direction = DirectionHandler.getDirectionInt(p_reader.read())
+                self.c_direction = DirectionHandler.getDirectionInt(int(p_reader.read()))
                 p_reader.read()
                 return True
 

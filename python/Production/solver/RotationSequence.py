@@ -58,7 +58,7 @@ class RotationSequence:
         
         def readFromFile(self, p_reader):
             l_rotation = Rotation()
-            self.c_array.Clear()
+            self.c_array.clear()
             while l_rotation.readFromFile(p_reader):
                 self.c_array.append((Rotation(l_rotation.getFace(), l_rotation.getDirection())))
             return (len(self.c_array) != 0)

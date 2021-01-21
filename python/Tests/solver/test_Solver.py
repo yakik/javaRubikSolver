@@ -64,14 +64,17 @@ class SolverTest(unittest.TestCase):
             mySolver = Solver()
 
 
-            readFirstFloor = RubikFileReader("..\\..\\..\\Resources\\FirstFloor.txt")
-            readSecondFloor = RubikFileReader("..\\..\\..\\Resources\\SecondFloor.txt")
-            readThirdFloor = RubikFileReader("..\\..\\..\\Resources\\ThirdFloor.txt")
+            readFirstFloor = RubikFileReader("c:\\Users\\yk700h\\dev\\rubikCubeSolver\\python\\Resources\\FirstFloor.txt")
+            readSecondFloor = RubikFileReader("c:\\Users\\yk700h\\dev\\rubikCubeSolver\\python\\Resources\\SecondFloor.txt")
+            readThirdFloor = RubikFileReader("c:\\Users\\yk700h\\dev\\rubikCubeSolver\\python\\Resources\\ThirdFloor.txt")
 
         
             firstFloorTree = RotationTree.getRotationTreeFromFile(readFirstFloor)
+            readFirstFloor.close()
             secondFloorTree = RotationTree.getRotationTreeFromFile(readSecondFloor)
+            readSecondFloor.close()
             thirdFloorTree = RotationTree.getRotationTreeFromFile(readThirdFloor)
+            readThirdFloor.close()
             #System.out.format("****************")
             mySolution = mySolver.solve(myRubik, firstFloorTree, secondFloorTree, thirdFloorTree)
             #System.out.format("****************")
