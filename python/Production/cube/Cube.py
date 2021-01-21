@@ -35,30 +35,40 @@ class Cube:
 	
 	
 	def setColor(self,face,locationInFace, color):
-		self.colors.update({self.getColorKey(face,LocationInFace):color})
+		self.colors.update({self.getColorKey(face,locationInFace):color})
 
 	def getColor(self,face,locationInFace):
-		return self.colors[self.getColorKey(face,LocationInFace)]
+		return self.colors[self.getColorKey(face,locationInFace)]
 
 	def getColorKey(self,face,locationInFace):
 		return str(FaceHandler.getCharValue(face))+"-"+str(LocationInFaceHandler.GetLocationInFaceInt(locationInFace))
+
+	@staticmethod
+	def getColorForFaceForSortedCube(face):
+		switcher = {Face.TOP: Color.TOPCOLOR,
+					Face.BOTTOM: Color.BOTTOMCOLOR,
+					Face.RIGHT: Color.RIGHTCOLOR,
+					Face.LEFT: Color.LEFTCOLOR,
+					Face.FRONT: Color.FRONTCOLOR,
+					Face.BACK: Color.BACKCOLOR}
+		return switcher.get(face)
 
 	def __init__(self,source=None):
 		self.colors = dict()
 		for face in list(Face):
 			for locationInFace in list(LocationInFace):
-				self.colors[self.getColorKey(face,locationInFace)]=None
+				self.colors[self.getColorKey(face,locationInFace)]=Cube.getColorForFaceForSortedCube(face)
 
-		if source==None:
-			for locationInFace in list(LocationInFace):
-				self.setColor(Face.FRONT, locationInFace, Color.FRONTCOLOR)
-				self.setColor(Face.BACK, locationInFace, Color.BACKCOLOR)
-				self.setColor(Face.RIGHT, locationInFace, Color.RIGHTCOLOR)
-				self.setColor(Face.LEFT, locationInFace, Color.LEFTCOLOR)
-				self.setColor(Face.TOP, locationInFace, Color.TOPCOLOR)
-				self.setColor(Face.BOTTOM, locationInFace, Color.BOTTOMCOLOR)
+		if source!=None:
+			#for locationInFace in list(LocationInFace):
+			#	self.setColor(Face.FRONT, locationInFace, Color.FRONTCOLOR)
+			#	self.setColor(Face.BACK, locationInFace, Color.BACKCOLOR)
+			#	self.setColor(Face.RIGHT, locationInFace, Color.RIGHTCOLOR)
+			#	self.setColor(Face.LEFT, locationInFace, Color.LEFTCOLOR)
+			#	self.setColor(Face.TOP, locationInFace, Color.TOPCOLOR)
+			#	self.setColor(Face.BOTTOM, locationInFace, Color.BOTTOMCOLOR)
 
-		else:
+		#else:
 			for locationInFace in list(LocationInFace):
 				self.setColor(Face.FRONT, locationInFace, source.getColor(Face.FRONT, locationInFace))
 				self.setColor(Face.BACK, locationInFace, source.getColor(Face.BACK, locationInFace))
