@@ -1,6 +1,6 @@
-from enum import Enum
+from enum import IntEnum
 
-class LocationInFace(Enum):
+class LocationInFace(IntEnum):
         TOP=0
         BOTTOM=1
         RIGHT=2
@@ -10,7 +10,7 @@ class LocationInFace(Enum):
         BOTTOMRIGHT=6
         BOTTOMLEFT=7#, NOTDEFINED('Z', 9)*/ #don't change this sequence, for Rubik's sake!
     
-class LocationInFaceHandle:
+class LocationInFaceHandler:
    
     @staticmethod
     def GetLocationInFace( intValue):
@@ -23,6 +23,8 @@ class LocationInFaceHandle:
                 6:LocationInFace.BOTTOMRIGHT,
                 7:LocationInFace.BOTTOMLEFT}
         return switcher.get(intValue)
+
+       
 
             
            
