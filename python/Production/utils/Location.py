@@ -49,7 +49,7 @@ class Location:
 
     def location2(self,p_face0,p_face1):
         self.c_isEdge = True
-        self.c_face2 = Face.NOTDEFINED
+        self.c_face2 = None
         self.c_face0 = p_face0
         self.c_face1 = p_face1
         if p_face0 > p_face1:
@@ -125,7 +125,7 @@ class Location:
 
     def getFace2(self):
         if self.isEdge():
-            return Face.NOTDEFINED
+            return None
         else:
             return self.c_face2
     

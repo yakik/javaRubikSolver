@@ -54,8 +54,8 @@ class Rotation :
             return Rotation(self.c_face,DirectionHandler.getOpposite(self.c_direction))
 
         def equals(self, p_rotation):
-            return ((self.c_face == p_rotation.self.c_face) and
-                    (self.c_direction == p_rotation.self.c_direction))
+            return ((self.c_face == p_rotation.getFace()) and
+                    (self.c_direction == p_rotation.getDirection()))
         
 
        

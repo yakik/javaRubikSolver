@@ -47,8 +47,8 @@ class RotationSequence:
                             (self.c_array[len(self.c_array) - 2].getFace() == l_lastFace) and (l_lastDirection == Direction.CCW) and
                             (self.c_array[len(self.c_array) - 2].getDirection() == Direction.CCW)):
                         l_returnValue = True
-                else:
-                    l_returnValue = False
+            else:
+                l_returnValue = False
             return l_returnValue
 
         def writeToFile(self, p_writer):

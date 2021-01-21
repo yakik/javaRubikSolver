@@ -22,6 +22,16 @@ class FaceHandler:
         return switcher.get(intValue)
 
     @staticmethod
+    def getIntFaceValue(intValue):
+        switcher = {Face.TOP:0,
+                    Face.BOTTOM:1,
+                    Face.RIGHT:2,
+                    Face.LEFT:3,
+                    Face.FRONT:4,
+                    Face.BACK:5}
+        return switcher.get(intValue)
+
+    @staticmethod
     def getFaceChar(charValue):
         switcher = {'U': Face.TOP,
             'D': Face.BOTTOM,
@@ -38,6 +48,5 @@ class FaceHandler:
             Face.TOP: Face.BOTTOM,
             Face.BOTTOM: Face.TOP,
             Face.FRONT: Face.BACK,
-            Face.BACK: Face.FRONT,
-            Face.NOTDEFINED: Face.NOTDEFINED}
+            Face.BACK: Face.FRONT}
         return switcher.get(face)

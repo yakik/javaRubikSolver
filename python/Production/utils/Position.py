@@ -74,18 +74,18 @@ class Position :
 
     def getHorizonalFacebyVirtual(self,p_viewpoint):
         i = 0
-        while (self.g_face_Order[self.c_currentUp][i] != self.c_currentFront and i < 4):
+        while (self.g_face_Order[FaceHandler.getIntFaceValue(self.c_currentUp)][i] != self.c_currentFront and i < 4):
             i+=1
         if p_viewpoint==Face.FRONT:
-            return self.g_face_Order[self.c_currentUp][i]
+            return self.g_face_Order[FaceHandler.getIntFaceValue(self.c_currentUp)][i]
         else:
             if p_viewpoint==Face.LEFT:
-                return self.g_face_Order[self.c_currentUp][(i + 1) % 4]
+                return self.g_face_Order[FaceHandler.getIntFaceValue(self.c_currentUp)][(i + 1) % 4]
             else:
                 if p_viewpoint==Face.BACK:
-                    return self.g_face_Order[self.c_currentUp][(i + 2) % 4]
+                    return self.g_face_Order[FaceHandler.getIntFaceValue(self.c_currentUp)][(i + 2) % 4]
                 else:
-                    return self.g_face_Order[self.c_currentUp][(i + 3) % 4]
+                    return self.g_face_Order[FaceHandler.getIntFaceValue(self.c_currentUp)][(i + 3) % 4]
 
     def equals(self, p_position):
         return ((self.c_currentUp == p_position.getUp()) and

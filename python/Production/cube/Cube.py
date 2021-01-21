@@ -17,7 +17,7 @@ class Cube:
 	def getValue(l_permutation, p_highestFloor):
 		l_value = 0
 		fixedCube = Cube()
-		l_value = 2 * (8 - l_permutation.self.countDifferenceFirstFloor(fixedCube))
+		l_value = 2 * (8 - l_permutation.countDifferenceFirstFloor(fixedCube))
 		if p_highestFloor > 1:
 			l_value += 2 * (4 - l_permutation.countDifferenceSecondFloor(fixedCube))
 		if p_highestFloor > 2:
@@ -84,7 +84,6 @@ class Cube:
 				Face.BACK:self.rotateBackFace,
 				Face.TOP:self.rotateTopFace,
 				Face.BOTTOM:self.rotateBottomFace}
-		print(switcher.get(face))
 		switcher.get(face)(direction)
 
 	def rotateBottomFace(self,direction):
