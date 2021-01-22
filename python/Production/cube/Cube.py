@@ -35,40 +35,44 @@ class Cube:
 	
 	
 	def setColor(self,face,locationInFace, color):
-		self.colors.update({self.getColorKey(face,locationInFace):color})
+		self.colors[face.value][locationInFace.value]=color
 
 	def getColor(self,face,locationInFace):
-		return self.colors[self.getColorKey(face,locationInFace)]
+		return self.colors[face.value][locationInFace.value]
 
-	def getColorKey(self,face,locationInFace):
-		return str(FaceHandler.getCharValue(face))+"-"+str(LocationInFaceHandler.GetLocationInFaceInt(locationInFace))
 
 	@staticmethod
 	def getColorForFaceForSortedCube(face):
-		switcher = {Face.TOP: Color.TOPCOLOR,
-					Face.BOTTOM: Color.BOTTOMCOLOR,
-					Face.RIGHT: Color.RIGHTCOLOR,
-					Face.LEFT: Color.LEFTCOLOR,
-					Face.FRONT: Color.FRONTCOLOR,
-					Face.BACK: Color.BACKCOLOR}
-		return switcher.get(face)
+		if face==Face.TOP:
+			return Color.TOPCOLOR
+		if face==Face.BOTTOM:
+			return Color.BOTTOMCOLOR
+		if face==Face.RIGHT:
+			return Color.RIGHTCOLOR
+		if face==Face.LEFT:
+			return Color.LEFTCOLOR
+		if face==Face.FRONT:
+			return Color.FRONTCOLOR
+		if face==Face.BACK:
+			return Color.BACKCOLOR
+
 
 	def __init__(self,source=None):
-		self.colors = dict()
-		for face in list(Face):
-			for locationInFace in list(LocationInFace):
-				self.colors[self.getColorKey(face,locationInFace)]=Cube.getColorForFaceForSortedCube(face)
+		self.colors = [[Color.TOPCOLOR,Color.TOPCOLOR,Color.TOPCOLOR,Color.TOPCOLOR,Color.TOPCOLOR,Color.TOPCOLOR,Color.TOPCOLOR,Color.TOPCOLOR],
+						[Color.BOTTOMCOLOR,Color.BOTTOMCOLOR,Color.BOTTOMCOLOR,Color.BOTTOMCOLOR,Color.BOTTOMCOLOR,Color.BOTTOMCOLOR,Color.BOTTOMCOLOR,Color.BOTTOMCOLOR],
+						[Color.RIGHTCOLOR,Color.RIGHTCOLOR,Color.RIGHTCOLOR,Color.RIGHTCOLOR,Color.RIGHTCOLOR,Color.RIGHTCOLOR,Color.RIGHTCOLOR,Color.RIGHTCOLOR],
+						[Color.LEFTCOLOR,Color.LEFTCOLOR,Color.LEFTCOLOR,Color.LEFTCOLOR,Color.LEFTCOLOR,Color.LEFTCOLOR,Color.LEFTCOLOR,Color.LEFTCOLOR],
+						[Color.FRONTCOLOR,Color.FRONTCOLOR,Color.FRONTCOLOR,Color.FRONTCOLOR,Color.FRONTCOLOR,Color.FRONTCOLOR,Color.FRONTCOLOR,Color.FRONTCOLOR],
+						[Color.BACKCOLOR,Color.BACKCOLOR,Color.BACKCOLOR,Color.BACKCOLOR,Color.BACKCOLOR,Color.BACKCOLOR,Color.BACKCOLOR,Color.BACKCOLOR]]
+
+
+
+		#	[[0 for x in range(8)] for y in range(6)]
+		#for face in list(Face):
+		#	for locationInFace in list(LocationInFace):
+		#		self.colors[face.value][locationInFace.value]=Cube.getColorForFaceForSortedCube(face)
 
 		if source!=None:
-			#for locationInFace in list(LocationInFace):
-			#	self.setColor(Face.FRONT, locationInFace, Color.FRONTCOLOR)
-			#	self.setColor(Face.BACK, locationInFace, Color.BACKCOLOR)
-			#	self.setColor(Face.RIGHT, locationInFace, Color.RIGHTCOLOR)
-			#	self.setColor(Face.LEFT, locationInFace, Color.LEFTCOLOR)
-			#	self.setColor(Face.TOP, locationInFace, Color.TOPCOLOR)
-			#	self.setColor(Face.BOTTOM, locationInFace, Color.BOTTOMCOLOR)
-
-		#else:
 			for locationInFace in list(LocationInFace):
 				self.setColor(Face.FRONT, locationInFace, source.getColor(Face.FRONT, locationInFace))
 				self.setColor(Face.BACK, locationInFace, source.getColor(Face.BACK, locationInFace))
@@ -78,13 +82,32 @@ class Cube:
 				self.setColor(Face.BOTTOM, locationInFace, source.getColor(Face.BOTTOM, locationInFace))
 
 	def rotateFace(self,face,direction):
-		switcher={Face.FRONT:self.rotateFrontFace,
-				Face.RIGHT:self.rotateRightFace,
-				Face.LEFT:self.rotateLeftFace,
-				Face.BACK:self.rotateBackFace,
-				Face.TOP:self.rotateTopFace,
-				Face.BOTTOM:self.rotateBottomFace}
-		switcher.get(face)(direction)
+		if face==Face.FRONT:
+			self.rotateFrontFace(direction)
+			return
+		if face == Face.RIGHT:
+			self.rotateRightFace(direction)
+			return
+		if face == Face.LEFT:
+			self.rotateLeftFace(direction)
+			return
+		if face == Face.BACK:
+			self.rotateBackFace(direction)
+			return
+		if face == Face.TOP:
+			self.rotateTopFace(direction)
+			return
+		if face == Face.BOTTOM:
+			self.rotateBottomFace(direction)
+			return
+
+		#switcher={Face.FRONT:self.rotateFrontFace,
+		#		Face.RIGHT:self.rotateRightFace,
+		#		Face.LEFT:self.rotateLeftFace,
+		#		Face.BACK:self.rotateBackFace,
+		#		Face.TOP:self.rotateTopFace,
+		#		Face.BOTTOM:self.rotateBottomFace}
+		#switcher.get(face)(direction)
 
 	def rotateBottomFace(self,direction):
 		if direction == Direction.CW:

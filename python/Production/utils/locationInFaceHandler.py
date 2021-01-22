@@ -15,15 +15,15 @@ class LocationInFaceHandler:
                 7:LocationInFace.BOTTOMLEFT}
         return switcher.get(intValue)
 
-    @staticmethod
-    def GetLocationInFaceInt(locationInFace):
-        switcher={LocationInFace.TOP:0,
-               LocationInFace.BOTTOM:1,
-                LocationInFace.RIGHT:2,
-                LocationInFace.LEFT:3,
-                LocationInFace.TOPRIGHT:4,
-                LocationInFace.TOPLEFT:5,
-                LocationInFace.BOTTOMRIGHT:6,
-                LocationInFace.BOTTOMLEFT:7}
-        return switcher.get(locationInFace)
+    #@staticmethod
+    #def GetLocationInFaceInt(locationInFace):
+    #    switcher={LocationInFace.TOP:0,
+    #           LocationInFace.BOTTOM:1,
+    #            LocationInFace.RIGHT:2,
+    #            LocationInFace.LEFT:3,
+    #            LocationInFace.TOPRIGHT:4,
+    #            LocationInFace.TOPLEFT:5,
+    #            LocationInFace.BOTTOMRIGHT:6,
+    #            LocationInFace.BOTTOMLEFT:7}
+    #    return switcher.get(locationInFace)
 
