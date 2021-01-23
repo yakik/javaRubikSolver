@@ -17,14 +17,14 @@ class Solver:
             l_rotationLinkedList = Rotation_sequence()
             l_floor = self.getTargetFloorPerm(l_permutation)
             l_numberOfCubicleInPlace = Cube.get_value(l_permutation, l_floor)
-            l_solutionManager.addSolution(l_rotationLinkedList, l_permutation, None, l_numberOfCubicleInPlace, l_floor)
-            l_solutionToDev = l_solutionManager.getBestUndeveloped()
-            while (l_solutionToDev != None and l_solutionManager.getBestValue() < 40):
+            l_solutionManager.add_solution(l_rotationLinkedList, l_permutation, None, l_numberOfCubicleInPlace, l_floor)
+            l_solutionToDev = l_solutionManager.get_best_undeveloped()
+            while (l_solutionToDev != None and l_solutionManager.get_best_value() < 40):
                 targetFloor = self.getTargetFloorPerm(l_solutionToDev.getPermutation())
                 print("Searching " + str(Cube.get_value(l_solutionToDev.getPermutation(), targetFloor)) + "\n")
-                if l_solutionManager.getBestValue() > (Cube.get_value(l_solutionToDev.getPermutation(), targetFloor) + 14):
+                if l_solutionManager.get_best_value() > (Cube.get_value(l_solutionToDev.getPermutation(), targetFloor) + 14):
                     print("Couldn't Find a Solution\n")
-                    return l_solutionManager.getBest()
+                    return l_solutionManager.get_best()
                 
                 if targetFloor == 1:
                     self.findBetterSolution(l_solutionToDev, p_firstTree, l_solutionManager, targetFloor)
@@ -33,11 +33,11 @@ class Solver:
                 if targetFloor == 3:
                     self.findBetterSolution(l_solutionToDev, p_thirdTree, l_solutionManager, targetFloor)
 
-                l_floor = self.getTargetFloorValue(l_solutionManager.getBestValue())
+                l_floor = self.getTargetFloorValue(l_solutionManager.get_best_value())
 
-                print("Floor="+str(l_floor)+" Best yet:"+str(l_solutionManager.getBestValue())+", bestUnDeveloped="+str(l_solutionManager.getBestUndeveloped() != None)+"\n")
-                l_solutionToDev = l_solutionManager.getBestUndeveloped()
-            return l_solutionManager.getBest()
+                print("Floor="+str(l_floor)+" Best yet:"+str(l_solutionManager.get_best_value())+", best_undeveloped="+str(l_solutionManager.get_best_undeveloped() != None)+"\n")
+                l_solutionToDev = l_solutionManager.get_best_undeveloped()
+            return l_solutionManager.get_best()
 
         def getTargetFloorPerm(self,p_permutation):
             if Cube.get_value(p_permutation, 1) >= 16:
@@ -83,7 +83,7 @@ class Solver:
                previousSolution, targetFloorToSortInCube,rotationSequence,
                cubeAfterRotationSequence):
             if Cube.get_value(cubeAfterRotationSequence, targetFloorToSortInCube) >= minimumValueToReach:
-                solutionManager.addSolution(rotationSequence, cubeAfterRotationSequence, previousSolution,
+                solutionManager.add_solution(rotationSequence, cubeAfterRotationSequence, previousSolution,
                                             Cube.get_value(cubeAfterRotationSequence, targetFloorToSortInCube), targetFloorToSortInCube)
 
         def getCubeAfterApplyingSequence(self,cubeForExperimentation,rotationSequence):

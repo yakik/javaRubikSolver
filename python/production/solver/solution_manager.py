@@ -8,13 +8,13 @@ class Solution_manager:
             for _ in range(0, 41):
                 self.c_solutionList.append(list())
 
-        def addSolution(self, p_rotationLinkedList, p_permutation, p_prevSolution,
+        def add_solution(self, p_rotationLinkedList, p_permutation, p_prevSolution,
                          p_value, p_floor):
             if len(self.c_solutionList[p_value]) < 40:
                 self.c_solutionList[p_value].append(Solution_node(Solution(
                     p_rotationLinkedList.get_copy(), p_permutation.get_copy(), p_prevSolution)))
 
-        def getBestUndeveloped(self):
+        def get_best_undeveloped(self):
             i = 40
             l_bestSolution = None
             while (i >= 0 and l_bestSolution == None):
@@ -30,7 +30,7 @@ class Solution_manager:
                 i-=1
             return l_bestSolution
 
-        def getBest(self):
+        def get_best(self):
             i = 40
             l_returnValue = None
             while (i >= 0 and l_returnValue == None):
@@ -40,7 +40,7 @@ class Solution_manager:
             return l_returnValue
         
 
-        def getBestValue(self):
+        def get_best_value(self):
             i = 40
             l_returnValue = 0
             while (i >= 0 and l_returnValue == 0):
