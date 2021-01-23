@@ -63,7 +63,7 @@ class Rotation_sequence:
                 self.c_array.append((Rotation(l_rotation.getFace(), l_rotation.getDirection())))
             return (len(self.c_array) != 0)
        
-        def getSubRotationLinkedList(self):
+        def get_sub_rotation_linked_list(self):
             return Rotation_sequence(self.c_array[1, len(self.c_array)])
 
         def size(self):

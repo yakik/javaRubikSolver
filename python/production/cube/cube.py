@@ -1,3 +1,5 @@
+
+  
 from production.utils.color import Color
 from production.utils.face import Face
 from production.utils.location import Location
@@ -11,7 +13,7 @@ class Cube:
 
 	@staticmethod
 	def get_permutation_from_cube(cube):
-		return cube.getCopy()
+		return cube.get_copy()
 
 	@staticmethod
 	def get_value(l_permutation, p_highestFloor):
@@ -318,15 +320,8 @@ class Cube:
 				self.count_difference_second_floor(comparedCube))
 	
 
-	def getCopy(self):
+	def get_copy(self):
 		return Cube(self)
 	
-
-
-
-	
-
-
-
 
 
