@@ -5,15 +5,15 @@ from production.utils.face import Face
 from production.utils.direction import Direction
 
 class RotationLinkedListTest(unittest.TestCase):
-   def test_isRedundantCW(self):
+   def test_is_redundantCW(self):
       myList = Rotation_sequence()
-      myList.addRotation(Rotation(Face.FRONT, Direction.CW))
-      self.assertEqual(True, myList.isRedundant(Rotation(Face.FRONT, Direction.CW)))
+      myList.add_rotation(Rotation(Face.FRONT, Direction.CW))
+      self.assertEqual(True, myList.is_redundant(Rotation(Face.FRONT, Direction.CW)))
 
-   def test_isRedundantCCW(self):
+   def test_is_redundantCCW(self):
       myList = Rotation_sequence()
-      myList.addRotation(Rotation(Face.FRONT, Direction.CCW))
-      myList.addRotation(Rotation(Face.FRONT, Direction.CCW))
-      self.assertEqual(True, myList.isRedundant(Rotation(Face.FRONT, Direction.CCW)))
+      myList.add_rotation(Rotation(Face.FRONT, Direction.CCW))
+      myList.add_rotation(Rotation(Face.FRONT, Direction.CCW))
+      self.assertEqual(True, myList.is_redundant(Rotation(Face.FRONT, Direction.CCW)))
 
 

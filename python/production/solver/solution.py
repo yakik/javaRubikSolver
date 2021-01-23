@@ -1,14 +1,14 @@
 class Solution:
 
     def __init__(self, p_rotationLinkedList, p_permutation, p_prevSolution):
-        self.c_rotationLinkedList = p_rotationLinkedList.getCopy()
-        self.c_permutation = p_permutation.getCopy()
+        self.c_rotationLinkedList = p_rotationLinkedList.get_copy()
+        self.c_permutation = p_permutation.get_copy()
         self.c_prevSolution = p_prevSolution
 
     def getPermutation(self):
         return self.c_permutation
 
-    def getRotationLinkedList(self):
+    def get_rotationLinkedList(self):
         return self.c_rotationLinkedList
 
     def getPrevSolution(self):
@@ -24,7 +24,7 @@ class Solution:
         self.c_rotationLinkedList.print()
         print("\n")
 
-    def applyToRubik(self, p_rubik):
+    def apply_to_rubik(self, p_rubik):
         if self.c_prevSolution != None:
-            self.c_prevSolution.applyToRubik(p_rubik)
-        self.c_rotationLinkedList.applyToRubik(p_rubik)
+            self.c_prevSolution.apply_to_rubik(p_rubik)
+        self.c_rotationLinkedList.apply_to_rubik(p_rubik)

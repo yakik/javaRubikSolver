@@ -15,7 +15,7 @@ class Rotation :
        #         self.c_direction = Direction_factory.getDirectionByInt(0)
        #         self.c_face = Face_handler.getFace(p_value)
 
-        def writeToFile(self, p_write):
+        def write_to_file(self, p_write):
             l_toWrite = "("+ self.c_face + "," + self.c_direction+")"
             p_write.write(l_toWrite)
         

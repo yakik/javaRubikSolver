@@ -12,7 +12,7 @@ class Solution_manager:
                          p_value, p_floor):
             if len(self.c_solutionList[p_value]) < 40:
                 self.c_solutionList[p_value].append(Solution_node(Solution(
-                    p_rotationLinkedList.getCopy(), p_permutation.getCopy(), p_prevSolution)))
+                    p_rotationLinkedList.get_copy(), p_permutation.get_copy(), p_prevSolution)))
 
         def getBestUndeveloped(self):
             i = 40

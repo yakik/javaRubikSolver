@@ -10,7 +10,7 @@ class Location:
             return False
     
 
-    def getCopy(self):
+    def get_copy(self):
         if self.isEdge():
             return Location(self.c_face0, self.c_face1)
         else:

@@ -37,20 +37,20 @@ class Good_rotations_builder:
 					i+=1
 					myProgressString = p_progressString + i
 					newRotation = Rotation(face, direction)
-					if p_rotationLinkedList.isRedundant(newRotation):
+					if p_rotationLinkedList.is_redundant(newRotation):
 						continue
-					p_rotationLinkedList.addRotation(newRotation)
+					p_rotationLinkedList.add_rotation(newRotation)
 					p_rubik.rotate_face(newRotation.getFace(), newRotation.getDirection())
 					if CubeStatus.isDifferentItemsInFirstFloorLessThanThree(p_rubik, p_initialPermutation):
-						p_rotationLinkedList.writeToFile(p_firstFloorFile)
+						p_rotationLinkedList.write_to_file(p_firstFloorFile)
 					if CubeStatus.isDifferentItemsOnlyInSecondFloorLessThanThree(p_rubik, p_initialPermutation):
-						p_rotationLinkedList.writeToFile((p_secondFloorFile))
+						p_rotationLinkedList.write_to_file((p_secondFloorFile))
 					if CubeStatus.changesOnlyInThirdFloor(p_rubik, p_initialPermutation):
-						p_rotationLinkedList.writeToFile(p_thirdFloorFile)
+						p_rotationLinkedList.write_to_file(p_thirdFloorFile)
 
 					Good_rotations_builder.BuildFilesForRotation(p_firstFloorFile, p_secondFloorFile, p_thirdFloorFile,
 																 p_rubik, p_initialPermutation, p_rotationLinkedList, p_level - 1, myProgressString)
-					p_rotationLinkedList.removeRotation()
+					p_rotationLinkedList.remove_rotation()
 					p_rubik.rotate_face(newRotation.getReverse().getFace(), newRotation.getReverse().getDirection())
 				
 	

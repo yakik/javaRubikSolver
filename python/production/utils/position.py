@@ -60,7 +60,7 @@ class Position :
                 else:
                     self.rotate(Rotation(Face_handler.getOpposite(l_face), Direction_handler.getOpposite(l_direction)))
 
-    def getCopy(self):
+    def get_copy(self):
             return Position(self.c_currentUp,self.c_currentFront)
 
     def getFace(self,p_viewpoint):
