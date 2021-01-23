@@ -69,11 +69,11 @@ class SolverTest(unittest.TestCase):
             readThirdFloor = Rubik_file_reader("c:\\Users\\yk700h\\dev\\rubikCubeSolver\\python\\Resources\\ThirdFloor.txt")
 
         
-            firstFloorTree = Rotation_tree.get_rotationTreeFromFile(readFirstFloor)
+            firstFloorTree = Rotation_tree.get_rotation_tree_from_file(readFirstFloor)
             readFirstFloor.close()
-            secondFloorTree = Rotation_tree.get_rotationTreeFromFile(readSecondFloor)
+            secondFloorTree = Rotation_tree.get_rotation_tree_from_file(readSecondFloor)
             readSecondFloor.close()
-            thirdFloorTree = Rotation_tree.get_rotationTreeFromFile(readThirdFloor)
+            thirdFloorTree = Rotation_tree.get_rotation_tree_from_file(readThirdFloor)
             readThirdFloor.close()
             #System.out.format("****************")
             mySolution = mySolver.solve(myRubik, firstFloorTree, secondFloorTree, thirdFloorTree)

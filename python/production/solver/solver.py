@@ -69,7 +69,7 @@ class Solver:
                               previousSolution, targetFloorToSortInCube, depth):
             if minimumValueToReach < 2:
                 minimumValueToReach = 2
-            for rotationSequenceIndex in range(0,searchTree.getSize()):
+            for rotationSequenceIndex in range(0,searchTree.get_size()):
                 rotationSequence = searchTree.get_rotationSequence(rotationSequenceIndex)
                 if rotationSequence != None:
                     cubeAfterRotationSequence = self.getCubeAfterApplyingSequence(Cube(cubeToSolve), rotationSequence)

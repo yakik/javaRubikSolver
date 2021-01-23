@@ -20,7 +20,7 @@ class Rotation :
             p_write.write(l_toWrite)
         
 
-        def readFromFile(self, p_reader):
+        def read_from_file(self, p_reader):
             l_int=0
             l_int= p_reader.read()
             #Console.Write("%d ",l_int)

@@ -56,10 +56,10 @@ class Rotation_sequence:
                 l_itr.write_to_file(p_writer)
             p_writer.write("\n")
         
-        def readFromFile(self, p_reader):
+        def read_from_file(self, p_reader):
             l_rotation = Rotation()
             self.c_array.clear()
-            while l_rotation.readFromFile(p_reader):
+            while l_rotation.read_from_file(p_reader):
                 self.c_array.append((Rotation(l_rotation.getFace(), l_rotation.getDirection())))
             return (len(self.c_array) != 0)
        
