@@ -86,4 +86,4 @@ class Rotation_sequence:
 
         def applyToRubik(self,p_rubik):
             for l_itr in self.c_array:
-                p_rubik.rotateFace(l_itr.getFace(), l_itr.getDirection())
+                p_rubik.rotate_face(l_itr.getFace(), l_itr.getDirection())

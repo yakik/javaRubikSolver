@@ -16,13 +16,13 @@ class Solver:
             l_solutionManager = Solution_manager()
             l_rotationLinkedList = Rotation_sequence()
             l_floor = self.getTargetFloorPerm(l_permutation)
-            l_numberOfCubicleInPlace = Cube.getValue(l_permutation, l_floor)
+            l_numberOfCubicleInPlace = Cube.get_value(l_permutation, l_floor)
             l_solutionManager.addSolution(l_rotationLinkedList, l_permutation, None, l_numberOfCubicleInPlace, l_floor)
             l_solutionToDev = l_solutionManager.getBestUndeveloped()
             while (l_solutionToDev != None and l_solutionManager.getBestValue() < 40):
                 targetFloor = self.getTargetFloorPerm(l_solutionToDev.getPermutation())
-                print("Searching "+ str(Cube.getValue(l_solutionToDev.getPermutation(),targetFloor))+"\n")
-                if l_solutionManager.getBestValue() > (Cube.getValue(l_solutionToDev.getPermutation(), targetFloor) + 14):
+                print("Searching " + str(Cube.get_value(l_solutionToDev.getPermutation(), targetFloor)) + "\n")
+                if l_solutionManager.getBestValue() > (Cube.get_value(l_solutionToDev.getPermutation(), targetFloor) + 14):
                     print("Couldn't Find a Solution\n")
                     return l_solutionManager.getBest()
                 
@@ -40,8 +40,8 @@ class Solver:
             return l_solutionManager.getBest()
 
         def getTargetFloorPerm(self,p_permutation):
-            if Cube.getValue(p_permutation, 1) >= 16:
-                if Cube.getValue(p_permutation, 2) < 24:
+            if Cube.get_value(p_permutation, 1) >= 16:
+                if Cube.get_value(p_permutation, 2) < 24:
                     return 2
                 else:
                     return 3
@@ -60,7 +60,7 @@ class Solver:
         def findBetterSolution(self,p_solution,p_tree,p_solutionManager, p_floor):
             l_rubik = Cube()
             l_permutation = p_solution.getPermutation().getCopy()
-            l_minimumValue = Cube.getValue(l_permutation, p_floor)
+            l_minimumValue = Cube.get_value(l_permutation, p_floor)
             l_rubik = Cube(l_permutation)
             self.searchTree(l_minimumValue - 4, p_tree, l_rubik, p_solutionManager, p_solution, p_floor, 0)
 
@@ -82,13 +82,13 @@ class Solver:
         def addSequenceToSolutionIfHigherValue(self, minimumValueToReach,solutionManager,
                previousSolution, targetFloorToSortInCube,rotationSequence,
                cubeAfterRotationSequence):
-            if Cube.getValue(cubeAfterRotationSequence, targetFloorToSortInCube) >= minimumValueToReach:
+            if Cube.get_value(cubeAfterRotationSequence, targetFloorToSortInCube) >= minimumValueToReach:
                 solutionManager.addSolution(rotationSequence, cubeAfterRotationSequence, previousSolution,
-                        Cube.getValue(cubeAfterRotationSequence, targetFloorToSortInCube), targetFloorToSortInCube)
+                                            Cube.get_value(cubeAfterRotationSequence, targetFloorToSortInCube), targetFloorToSortInCube)
 
         def getCubeAfterApplyingSequence(self,cubeForExperimentation,rotationSequence):
             for rotationIndex in range(0, rotationSequence.size()):
-                cubeForExperimentation.rotateFace(rotationSequence.getRotation(rotationIndex).getFace(),
-                        rotationSequence.getRotation(rotationIndex).getDirection())
-            cubeAfterRotationSequence = Cube.getPermutationFromCube(cubeForExperimentation).getCopy()
+                cubeForExperimentation.rotate_face(rotationSequence.getRotation(rotationIndex).getFace(),
+                                                   rotationSequence.getRotation(rotationIndex).getDirection())
+            cubeAfterRotationSequence = Cube.get_permutation_from_cube(cubeForExperimentation).getCopy()
             return cubeAfterRotationSequence
