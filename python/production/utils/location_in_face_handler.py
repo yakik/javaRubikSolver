@@ -1,4 +1,4 @@
-from production.utils.locationInFace import LocationInFace    
+from production.utils.location_in_face import LocationInFace
 
 
 class LocationInFaceHandler:

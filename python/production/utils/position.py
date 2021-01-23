@@ -1,8 +1,8 @@
 from production.utils.face import Face
 from production.utils.rotation import Rotation
 from production.utils.direction import Direction
-from production.utils.directionHandler import DirectionHandler
-from production.utils.faceHandler import FaceHandler
+from production.utils.direction_handler import DirectionHandler
+from production.utils.face_handler import FaceHandler
 
 class Position :
 

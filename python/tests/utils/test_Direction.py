@@ -1,6 +1,6 @@
 import unittest
 from production.utils.direction import Direction
-from production.utils.directionHandler import DirectionHandler
+from production.utils.direction_handler import DirectionHandler
 class DirectionTest(unittest.TestCase):
    
    def test_DirectionGetIntGetChar(self):

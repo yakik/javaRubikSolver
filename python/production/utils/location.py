@@ -1,5 +1,5 @@
 from production.utils.face import Face
-from production.utils.faceHandler import FaceHandler
+from production.utils.face_handler import FaceHandler
 
 class Location:
 

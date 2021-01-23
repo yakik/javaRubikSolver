@@ -2,7 +2,7 @@ from production.utils.color import Color
 from production.utils.face import Face
 from production.utils.location import Location
 from production.utils.rotation import Rotation
-from production.utils.locationInFace import LocationInFace
+from production.utils.location_in_face import LocationInFace
 from production.utils.direction import Direction
 from production.cube.cube import Cube
 from production.solver.solutionManager import SolutionManager

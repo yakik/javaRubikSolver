@@ -1,7 +1,7 @@
 from production.utils.face import Face
 from production.utils.direction import Direction
-from production.utils.faceHandler import FaceHandler
-from production.utils.directionHandler import DirectionHandler
+from production.utils.face_handler import FaceHandler
+from production.utils.direction_handler import DirectionHandler
 class Rotation :
         def __init__(self,p_face=None,p_direction=None):
             self.c_face = p_face

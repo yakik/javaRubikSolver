@@ -2,7 +2,7 @@ from production.cube.cube import Cube
 from production.solver.solver import Solver
 from production.utils.face import Face
 from production.utils.direction import Direction
-from production.utils.locationInFace import LocationInFace
+from production.utils.location_in_face import LocationInFace
 from production.utils.color import Color
 
 import unittest
