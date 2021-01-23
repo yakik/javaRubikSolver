@@ -5,18 +5,18 @@ class Solution:
         self.c_permutation = p_permutation.get_copy()
         self.c_prevSolution = p_prevSolution
 
-    def getPermutation(self):
+    def get_permutation(self):
         return self.c_permutation
 
-    def get_rotationLinkedList(self):
+    def get_rotation_linked_list(self):
         return self.c_rotationLinkedList
 
-    def getPrevSolution(self):
+    def get_prev_solution(self):
         return self.c_prevSolution
 
     def equals(self, p_solution):
 
-        return (self.c_permutation == (p_solution.getPermutation()))
+        return (self.c_permutation == (p_solution.get_permutation()))
 
     def print(self):
         if self.c_prevSolution != None:
