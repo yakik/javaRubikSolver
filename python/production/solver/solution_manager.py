@@ -24,9 +24,9 @@ class Solution_manager:
                     while (j < len(self.c_solutionList[i]) and l_bestSolution == None):
                         l_node = self.c_solutionList[i][j]
                         j+=1
-                        if not l_node.isDeveloped():
-                            l_bestSolution = l_node.getSolution()
-                            l_node.setDeveloped()
+                        if not l_node.is_developed():
+                            l_bestSolution = l_node.get_solution()
+                            l_node.set_developed()
                 i-=1
             return l_bestSolution
 
@@ -35,7 +35,7 @@ class Solution_manager:
             l_returnValue = None
             while (i >= 0 and l_returnValue == None):
                 if len(self.c_solutionList[i]) > 0:
-                    l_returnValue = self.c_solutionList[i][0].getSolution()
+                    l_returnValue = self.c_solutionList[i][0].get_solution()
                 i-=1
             return l_returnValue
         

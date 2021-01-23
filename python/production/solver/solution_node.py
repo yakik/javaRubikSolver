@@ -1,14 +1,14 @@
 class Solution_node:
             
     def __init__(self,p_solution):
-        self.c_isDeveloped = False
+        self.c_is_developed = False
         self.c_solution = p_solution
 
-    def getSolution(self):
+    def get_solution(self):
         return self.c_solution
 
-    def isDeveloped(self):
-        return self.c_isDeveloped
+    def is_developed(self):
+        return self.c_is_developed
 
-    def setDeveloped(self):
-        self.c_isDeveloped = True
+    def set_developed(self):
+        self.c_is_developed = True
