@@ -1,5 +1,5 @@
 ﻿from production.utils.direction import Direction
-class DirectionHandler:
+class Direction_handler:
 
     @staticmethod
     def getString(thisdir):              # Getter

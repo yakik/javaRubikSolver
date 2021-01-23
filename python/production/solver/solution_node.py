@@ -1,4 +1,4 @@
-class SolutionNode:
+class Solution_node:
             
     def __init__(self,p_solution):
         self.c_isDeveloped = False

@@ -1,6 +1,6 @@
-from production.solver.rotationSequence import RotationSequence
+from production.solver.rotation_sequence import Rotation_sequence
 
-class RotationTree:
+class Rotation_tree:
     def __init__(self):
         self.c_array = list()
 
@@ -16,8 +16,8 @@ class RotationTree:
 
     @staticmethod
     def getRotationTreeFromFile(p_File):
-        myTree = RotationTree()
-        l_rotationLinkedList = RotationSequence()
+        myTree = Rotation_tree()
+        l_rotationLinkedList = Rotation_sequence()
         while l_rotationLinkedList.readFromFile(p_File):
             myTree.addRotationLinkedList(l_rotationLinkedList)
         return myTree

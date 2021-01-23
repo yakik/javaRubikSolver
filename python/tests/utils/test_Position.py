@@ -2,7 +2,7 @@ from production.utils.position import Position
 from production.utils.face import Face
 from production.utils.rotation import Rotation
 from production.utils.direction import Direction
-from production.utils.face_handler import FaceHandler
+from production.utils.face_handler import Face_handler
 
 import unittest
 class PositionTest(unittest.TestCase):

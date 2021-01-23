@@ -1,5 +1,5 @@
 from production.utils.direction import Direction
-class DirectionFactory:
+class Direction_factory:
     
         @staticmethod
         def getDirectionByInt(intValue):

@@ -2,23 +2,23 @@ from production.utils.face import Face
 from production.utils.direction import Direction
 from production.utils.rotation import Rotation
 from production.cube.cubeStatus import CubeStatus
-from production.cube.rubikFileWriter import RubikFileWriter
-from production.solver.rotationSequence import RotationSequence
+from production.cube.rubik_file_writer import Rubik_file_writer
+from production.solver.rotation_sequence import Rotation_sequence
 from production.cube.cube import Cube
 
-class GoodRotationsBuilder:
+class Good_rotations_builder:
 
 		@staticmethod
 		def findGoodRotationLinks(self,p_firstFloorFile
 				,p_secondFloorFile,p_thirdFloorFile, p_levels):
-			l_firstWriter = RubikFileWriter(p_firstFloorFile)
-			l_secondWriter = RubikFileWriter(p_secondFloorFile)
-			l_thirdWriter = RubikFileWriter(p_thirdFloorFile)
+			l_firstWriter = Rubik_file_writer(p_firstFloorFile)
+			l_secondWriter = Rubik_file_writer(p_secondFloorFile)
+			l_thirdWriter = Rubik_file_writer(p_thirdFloorFile)
 			l_rubik = Cube()
 			l_initialPermutation = Cube(l_rubik)
-			l_rotationLinkedList = RotationSequence()
-			GoodRotationsBuilder.BuildFilesForRotation(l_firstWriter, l_secondWriter, l_thirdWriter
-					, l_rubik, l_initialPermutation, l_rotationLinkedList, p_levels, "")
+			l_rotationLinkedList = Rotation_sequence()
+			Good_rotations_builder.BuildFilesForRotation(l_firstWriter, l_secondWriter, l_thirdWriter
+														 , l_rubik, l_initialPermutation, l_rotationLinkedList, p_levels, "")
 			l_firstWriter.close()
 			l_secondWriter.close()
 			l_thirdWriter.close()
@@ -48,8 +48,8 @@ class GoodRotationsBuilder:
 					if CubeStatus.changesOnlyInThirdFloor(p_rubik, p_initialPermutation):
 						p_rotationLinkedList.writeToFile(p_thirdFloorFile)
 
-					GoodRotationsBuilder.BuildFilesForRotation(p_firstFloorFile, p_secondFloorFile, p_thirdFloorFile,
-							p_rubik, p_initialPermutation, p_rotationLinkedList, p_level - 1, myProgressString)
+					Good_rotations_builder.BuildFilesForRotation(p_firstFloorFile, p_secondFloorFile, p_thirdFloorFile,
+																 p_rubik, p_initialPermutation, p_rotationLinkedList, p_level - 1, myProgressString)
 					p_rotationLinkedList.removeRotation()
 					p_rubik.rotateFace(newRotation.getReverse().getFace(), newRotation.getReverse().getDirection())
 				

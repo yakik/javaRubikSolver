@@ -1,6 +1,6 @@
 from production.utils.face import Face
 
-class CubeStatus:
+class Cube_status:
 
 	@staticmethod
 	def changesOnlyInThirdFloor(cube, p_comparedPermutation):
@@ -40,4 +40,4 @@ class CubeStatus:
 
 	@staticmethod
 	def isSecondFloor(p_location):
-		return (not(CubeStatus.isFirstFloor(p_location) or CubeStatus.isThirdFloor(p_location)))
+		return (not(Cube_status.isFirstFloor(p_location) or Cube_status.isThirdFloor(p_location)))

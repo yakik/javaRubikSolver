@@ -1,5 +1,5 @@
 ﻿from .face import Face
-class FaceHandler: 
+class Face_handler:
 
     @staticmethod
     def getCharValue(face):

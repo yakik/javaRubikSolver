@@ -1,4 +1,4 @@
-class RubikFileWriter:
+class Rubik_file_writer:
         def __init__(self,p_fileLocation):
                 self.c_fileWriter = open(p_fileLocation,"a")
 

@@ -1,4 +1,4 @@
-class RubikFileReader:
+class Rubik_file_reader:
 
         def __init__(self, p_fileLocation):
             self.c_fileReader = open(p_fileLocation,"r")

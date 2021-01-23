@@ -2,8 +2,8 @@ from production.cube.cube import Cube
 from production.solver.solver import Solver
 from production.utils.face import Face
 from production.utils.direction import Direction
-from production.cube.rubikFileReader import RubikFileReader
-from production.solver.rotationTree import RotationTree
+from production.cube.rubik_file_reader import Rubik_file_reader
+from production.solver.rotation_tree import Rotation_tree
 import unittest
 class SolverTest(unittest.TestCase):
 
@@ -64,16 +64,16 @@ class SolverTest(unittest.TestCase):
             mySolver = Solver()
 
 
-            readFirstFloor = RubikFileReader("c:\\Users\\yk700h\\dev\\rubikCubeSolver\\python\\Resources\\FirstFloor.txt")
-            readSecondFloor = RubikFileReader("c:\\Users\\yk700h\\dev\\rubikCubeSolver\\python\\Resources\\SecondFloor.txt")
-            readThirdFloor = RubikFileReader("c:\\Users\\yk700h\\dev\\rubikCubeSolver\\python\\Resources\\ThirdFloor.txt")
+            readFirstFloor = Rubik_file_reader("c:\\Users\\yk700h\\dev\\rubikCubeSolver\\python\\Resources\\FirstFloor.txt")
+            readSecondFloor = Rubik_file_reader("c:\\Users\\yk700h\\dev\\rubikCubeSolver\\python\\Resources\\SecondFloor.txt")
+            readThirdFloor = Rubik_file_reader("c:\\Users\\yk700h\\dev\\rubikCubeSolver\\python\\Resources\\ThirdFloor.txt")
 
         
-            firstFloorTree = RotationTree.getRotationTreeFromFile(readFirstFloor)
+            firstFloorTree = Rotation_tree.getRotationTreeFromFile(readFirstFloor)
             readFirstFloor.close()
-            secondFloorTree = RotationTree.getRotationTreeFromFile(readSecondFloor)
+            secondFloorTree = Rotation_tree.getRotationTreeFromFile(readSecondFloor)
             readSecondFloor.close()
-            thirdFloorTree = RotationTree.getRotationTreeFromFile(readThirdFloor)
+            thirdFloorTree = Rotation_tree.getRotationTreeFromFile(readThirdFloor)
             readThirdFloor.close()
             #System.out.format("****************")
             mySolution = mySolver.solve(myRubik, firstFloorTree, secondFloorTree, thirdFloorTree)

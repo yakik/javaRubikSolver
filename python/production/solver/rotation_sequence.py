@@ -2,11 +2,11 @@ from production.utils.color import Color
 from production.utils.face import Face
 from production.utils.location import Location
 from production.utils.rotation import Rotation
-from production.utils.location_in_face import LocationInFace
+from production.utils.location_in_face import Location_in_face
 from production.utils.direction import Direction
-from production.utils.face_handler import FaceHandler
+from production.utils.face_handler import Face_handler
 
-class RotationSequence:
+class Rotation_sequence:
 
         def __init__(self, p_List=None):
             if p_List==None:
@@ -34,7 +34,7 @@ class RotationSequence:
                 if self.c_array[len(self.c_array) - 1].getReverse().equals(p_rotation):
                     l_returnValue = True
                 # previouswas opposite and previousgreater then current face
-                if (p_rotation.getFace() == FaceHandler.getOpposite(l_lastFace) and (l_lastFace > p_rotation.getFace())):
+                if (p_rotation.getFace() == Face_handler.getOpposite(l_lastFace) and (l_lastFace > p_rotation.getFace())):
                     l_returnValue = True
                 # two clockwise rotation of same face
                 if ((p_rotation.getFace() == l_lastFace) and (l_lastDirection == Direction.CW) and
@@ -64,7 +64,7 @@ class RotationSequence:
             return (len(self.c_array) != 0)
        
         def getSubRotationLinkedList(self):
-            return RotationSequence(self.c_array[1, len(self.c_array)])
+            return Rotation_sequence(self.c_array[1, len(self.c_array)])
 
         def size(self):
             return len(self.c_array)
@@ -79,7 +79,7 @@ class RotationSequence:
             return (len(self.c_array) > 0)
 
         def getCopy(self):
-            l_rotationLinkedList = RotationSequence()
+            l_rotationLinkedList = Rotation_sequence()
             for l_itr in self.c_array:
                 l_rotationLinkedList.addRotation(l_itr)
             return l_rotationLinkedList

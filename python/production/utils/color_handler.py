@@ -1,5 +1,5 @@
 ﻿from production.utils.color import Color
-class ColorHandler:
+class Color_handler:
 
     @staticmethod
     def getColorInt(intValue):     # Constructor

@@ -1,5 +1,5 @@
 from production.utils.face import Face
-from production.utils.face_handler import FaceHandler
+from production.utils.face_handler import Face_handler
 
 class Location:
 
@@ -146,10 +146,10 @@ class Location:
 
     def getString(self):
         if self.c_isEdge:
-            return FaceHandler.getCharValue(self.c_face0)+", "+ FaceHandler.getCharValue(self.c_face1)
+            return Face_handler.getCharValue(self.c_face0) + ", " + Face_handler.getCharValue(self.c_face1)
         else:
         
-            return FaceHandler.getCharValue(self.c_face0)+", "+FaceHandler.getCharValue(self.c_face1)+", "+ FaceHandler.getCharValue(self.c_face2)
+            return Face_handler.getCharValue(self.c_face0) + ", " + Face_handler.getCharValue(self.c_face1) + ", " + Face_handler.getCharValue(self.c_face2)
         
     
 

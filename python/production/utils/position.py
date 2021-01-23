@@ -1,8 +1,8 @@
 from production.utils.face import Face
 from production.utils.rotation import Rotation
 from production.utils.direction import Direction
-from production.utils.direction_handler import DirectionHandler
-from production.utils.face_handler import FaceHandler
+from production.utils.direction_handler import Direction_handler
+from production.utils.face_handler import Face_handler
 
 class Position :
 
@@ -29,7 +29,7 @@ class Position :
         return self.c_currentFront
 
     def getString(self):
-        return FaceHandler.getCharValue(self.c_currentUp)+", "+ FaceHandler.getCharValue(self.c_currentFront)
+        return Face_handler.getCharValue(self.c_currentUp) + ", " + Face_handler.getCharValue(self.c_currentFront)
     
 
     def rotate(self, p_rotation):
@@ -58,7 +58,7 @@ class Position :
                     else:
                         self.c_currentUp = self.getFace(Face.RIGHT)
                 else:
-                    self.rotate(Rotation(FaceHandler.getOpposite(l_face), DirectionHandler.getOpposite(l_direction)))
+                    self.rotate(Rotation(Face_handler.getOpposite(l_face), Direction_handler.getOpposite(l_direction)))
 
     def getCopy(self):
             return Position(self.c_currentUp,self.c_currentFront)
@@ -68,24 +68,24 @@ class Position :
             return self.c_currentUp
         else:
             if p_viewpoint== Face.BOTTOM:
-                return FaceHandler.getOpposite(self.c_currentUp)
+                return Face_handler.getOpposite(self.c_currentUp)
             else:
                 return self.getHorizonalFacebyVirtual(p_viewpoint)
 
     def getHorizonalFacebyVirtual(self,p_viewpoint):
         i = 0
-        while (self.g_face_Order[FaceHandler.getIntFaceValue(self.c_currentUp)][i] != self.c_currentFront and i < 4):
+        while (self.g_face_Order[Face_handler.getIntFaceValue(self.c_currentUp)][i] != self.c_currentFront and i < 4):
             i+=1
         if p_viewpoint==Face.FRONT:
-            return self.g_face_Order[FaceHandler.getIntFaceValue(self.c_currentUp)][i]
+            return self.g_face_Order[Face_handler.getIntFaceValue(self.c_currentUp)][i]
         else:
             if p_viewpoint==Face.LEFT:
-                return self.g_face_Order[FaceHandler.getIntFaceValue(self.c_currentUp)][(i + 1) % 4]
+                return self.g_face_Order[Face_handler.getIntFaceValue(self.c_currentUp)][(i + 1) % 4]
             else:
                 if p_viewpoint==Face.BACK:
-                    return self.g_face_Order[FaceHandler.getIntFaceValue(self.c_currentUp)][(i + 2) % 4]
+                    return self.g_face_Order[Face_handler.getIntFaceValue(self.c_currentUp)][(i + 2) % 4]
                 else:
-                    return self.g_face_Order[FaceHandler.getIntFaceValue(self.c_currentUp)][(i + 3) % 4]
+                    return self.g_face_Order[Face_handler.getIntFaceValue(self.c_currentUp)][(i + 3) % 4]
 
     def equals(self, p_position):
         return ((self.c_currentUp == p_position.getUp()) and

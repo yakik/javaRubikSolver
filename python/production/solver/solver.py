@@ -2,19 +2,19 @@ from production.utils.color import Color
 from production.utils.face import Face
 from production.utils.location import Location
 from production.utils.rotation import Rotation
-from production.utils.location_in_face import LocationInFace
+from production.utils.location_in_face import Location_in_face
 from production.utils.direction import Direction
 from production.cube.cube import Cube
-from production.solver.solutionManager import SolutionManager
+from production.solver.solution_manager import Solution_manager
 from production.solver.solution import Solution
-from production.solver.rotationSequence import RotationSequence
+from production.solver.rotation_sequence import Rotation_sequence
 
 class Solver:
 
         def solve(self, p_rubik, p_firstTree, p_secondTree, p_thirdTree):
             l_permutation = Cube(p_rubik)
-            l_solutionManager = SolutionManager()
-            l_rotationLinkedList = RotationSequence()
+            l_solutionManager = Solution_manager()
+            l_rotationLinkedList = Rotation_sequence()
             l_floor = self.getTargetFloorPerm(l_permutation)
             l_numberOfCubicleInPlace = Cube.getValue(l_permutation, l_floor)
             l_solutionManager.addSolution(l_rotationLinkedList, l_permutation, None, l_numberOfCubicleInPlace, l_floor)
