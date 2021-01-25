@@ -1,2 +1,11 @@
 Run UT:
 python -m unittest discover
+
+Run specific test case:
+python -m unittest tests.solver.test_Solver.SolverTest.test_complexSolver
+
+
+coverage:
+pip install coverage
+coverage run -m unittest discover
+coverage html
