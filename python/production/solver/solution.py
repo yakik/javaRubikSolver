@@ -22,7 +22,6 @@ class Solution:
         if self.c_prevSolution != None:
             self.c_prevSolution.print()
         self.c_rotationLinkedList.print()
-        print("\n")
 
     def apply_to_rubik(self, p_rubik):
         if self.c_prevSolution != None:

@@ -69,7 +69,7 @@ class Rotation_sequence:
         def size(self):
             return len(self.c_array)
 
-        def  get_first_rotation(self):
+        def get_first_rotation(self):
             return self.c_array[0]
         
         def get_rotation(self,p_index):

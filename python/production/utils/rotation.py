@@ -48,7 +48,7 @@ class Rotation :
             return self.c_direction
 
         def print(self):
-            print("(" + Face_handler.getCharValue(self.c_face) + "," + Direction_handler.getString(self.c_direction) + "\n")
+            print("(" + Face_handler.getCharValue(self.c_face) + "," + Direction_handler.getString(self.c_direction)+")", end =" ")
 
         def getReverse(self):
             return Rotation(self.c_face, Direction_handler.getOpposite(self.c_direction))

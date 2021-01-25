@@ -19,7 +19,7 @@ class Solver:
             l_numberOfCubicleInPlace = Cube.get_value(l_permutation, l_floor)
             l_solutionManager.add_solution(l_rotationLinkedList, l_permutation, None, l_numberOfCubicleInPlace, l_floor)
             l_solutionToDev = l_solutionManager.get_best_undeveloped()
-            while (l_solutionToDev != None and l_solutionManager.get_best_value() < 40):
+            while (self.continue_search(l_solutionToDev,l_solutionManager)):
                 targetFloor = self.get_target_floor_perm(l_solutionToDev.get_permutation())
                 print("Searching " + str(Cube.get_value(l_solutionToDev.get_permutation(), targetFloor)) + "\n")
                 if l_solutionManager.get_best_value() > (Cube.get_value(l_solutionToDev.get_permutation(), targetFloor) + 14):
@@ -38,6 +38,9 @@ class Solver:
                 print("Floor="+str(l_floor)+" Best yet:"+str(l_solutionManager.get_best_value())+", best_undeveloped="+str(l_solutionManager.get_best_undeveloped() != None)+"\n")
                 l_solutionToDev = l_solutionManager.get_best_undeveloped()
             return l_solutionManager.get_best()
+
+        def continue_search(self,l_solutionToDev,l_solutionManager):
+            return l_solutionToDev != None and l_solutionManager.get_best_value() < 40
 
         def get_target_floor_perm(self,p_permutation):
             if Cube.get_value(p_permutation, 1) >= 16:
