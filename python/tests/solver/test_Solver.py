@@ -7,10 +7,8 @@ from production.solver.rotation_tree import Rotation_tree
 import unittest
 class SolverTest(unittest.TestCase):
 
-        #@Ignore
-        
+        @unittest.skip("too long")
         def test_complexSolver(self):
-            #long beginningTime = System.nanoTime()
             myRubik = Cube()
             myRubik.rotate_face(Face.RIGHT, Direction.CW)
             myRubik.rotate_face(Face.BACK, Direction.CW)
