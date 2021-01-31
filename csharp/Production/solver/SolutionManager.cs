@@ -1,11 +1,7 @@
 using cube;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-using solver;
 
 namespace solver
 {
@@ -30,7 +26,6 @@ namespace solver
             {
                 c_solutionList[p_value].Add(new SolutionNode(new Solution(p_rotationLinkedList.getCopy(), p_permutation.getCopy(), p_prevSolution)));
 
-                //         Console.Write("Added Solution Value=%d, Index=%d\n", p_value, p_value);
             }
 
 

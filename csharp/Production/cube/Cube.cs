@@ -1,8 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using utils;
 
 namespace cube
@@ -10,6 +6,34 @@ namespace cube
 
 	public class Cube {
 
+
+        public Cube()
+        {
+
+            foreach (LocationInFace locationInFace in Enum.GetValues(typeof(LocationInFace)))
+            {
+                setColor(Face.FRONT, locationInFace, Color.FRONTCOLOR);
+                setColor(Face.BACK, locationInFace, Color.BACKCOLOR);
+                setColor(Face.RIGHT, locationInFace, Color.RIGHTCOLOR);
+                setColor(Face.LEFT, locationInFace, Color.LEFTCOLOR);
+                setColor(Face.TOP, locationInFace, Color.TOPCOLOR);
+                setColor(Face.BOTTOM, locationInFace, Color.BOTTOMCOLOR);
+            }
+
+        }
+
+        public Cube(Cube source)
+        {
+            foreach (LocationInFace locationInFace in Enum.GetValues(typeof(LocationInFace)))
+            {
+                setColor(Face.FRONT, locationInFace, source.getColor(Face.FRONT, locationInFace));
+                setColor(Face.BACK, locationInFace, source.getColor(Face.BACK, locationInFace));
+                setColor(Face.RIGHT, locationInFace, source.getColor(Face.RIGHT, locationInFace));
+                setColor(Face.LEFT, locationInFace, source.getColor(Face.LEFT, locationInFace));
+                setColor(Face.TOP, locationInFace, source.getColor(Face.TOP, locationInFace));
+                setColor(Face.BOTTOM, locationInFace, source.getColor(Face.BOTTOM, locationInFace));
+            }
+        }
 
 		public static Cube getPermutationFromCube(Cube cube) {
 
@@ -51,30 +75,7 @@ namespace cube
 			return colors[(int)face,(int)locationInFace];
 		}
 
-		public Cube() {
 
-			foreach (LocationInFace locationInFace in Enum.GetValues(typeof(LocationInFace))) {
-				setColor(Face.FRONT, locationInFace, Color.FRONTCOLOR);
-				setColor(Face.BACK, locationInFace, Color.BACKCOLOR);
-				setColor(Face.RIGHT, locationInFace, Color.RIGHTCOLOR);
-				setColor(Face.LEFT, locationInFace, Color.LEFTCOLOR);
-				setColor(Face.TOP, locationInFace, Color.TOPCOLOR);
-				setColor(Face.BOTTOM, locationInFace, Color.BOTTOMCOLOR);
-			}
-
-		}
-
-		public Cube(Cube source) {
-			foreach (LocationInFace locationInFace in Enum.GetValues(typeof(LocationInFace)))
-			{
-				setColor(Face.FRONT, locationInFace, source.getColor(Face.FRONT, locationInFace));
-				setColor(Face.BACK, locationInFace, source.getColor(Face.BACK, locationInFace));
-				setColor(Face.RIGHT, locationInFace, source.getColor(Face.RIGHT, locationInFace));
-				setColor(Face.LEFT, locationInFace, source.getColor(Face.LEFT, locationInFace));
-				setColor(Face.TOP, locationInFace, source.getColor(Face.TOP, locationInFace));
-				setColor(Face.BOTTOM, locationInFace, source.getColor(Face.BOTTOM, locationInFace));
-			}
-		}
 
 		public void rotateFace(Face face, Direction direction) {
 			switch (face) {
@@ -228,12 +229,12 @@ namespace cube
 		}
 
 		private void printFace(Face face) {
-			Console.Write("\n%S\n\n", FaceHandler.getCharValue(face));
-			Console.Write("%11s %11s %11s\n", getColor(face, LocationInFace.TOPLEFT),
+			Console.Write("\n{0}\n\n", FaceHandler.getCharValue(face));
+			Console.Write("{0} {1} {2}\n", getColor(face, LocationInFace.TOPLEFT),
 					getColor(face, LocationInFace.TOP), getColor(face, LocationInFace.TOPRIGHT));
-			Console.Write("%11s             %11s\n", getColor(face, LocationInFace.LEFT),
+			Console.Write("{0}             {1}\n", getColor(face, LocationInFace.LEFT),
 					getColor(face, LocationInFace.RIGHT));
-			Console.Write("%11s %11s %11s\n", getColor(face, LocationInFace.BOTTOMLEFT),
+			Console.Write("{0} {1} {2}\n", getColor(face, LocationInFace.BOTTOMLEFT),
 					getColor(face, LocationInFace.BOTTOM), getColor(face, LocationInFace.BOTTOMRIGHT));
 		}
 		//                TL T TR

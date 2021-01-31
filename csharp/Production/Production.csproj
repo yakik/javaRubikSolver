@@ -53,7 +53,6 @@
     <Compile Include="solver\RotationTree.cs" />
     <Compile Include="solver\Solution.cs" />
     <Compile Include="solver\SolutionManager.cs" />
-    <Compile Include="solver\SolutionTarget.cs" />
     <Compile Include="solver\Solver.cs" />
     <Compile Include="utils\Color.cs" />
     <Compile Include="utils\ColorHandler.cs" />

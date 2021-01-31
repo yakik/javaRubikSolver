@@ -1,9 +1,6 @@
 using cube;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace solver
 {
@@ -29,7 +26,7 @@ namespace solver
             while ((l_solutionToDev = l_solutionManager.getBestUndeveloped()) != null &&
                     l_solutionManager.getBestValue() < 40) {
                 int targetFloor = getTargetFloor(l_solutionToDev.getPermutation());
-                Console.Write("Searching %d", Cube.getValue(l_solutionToDev.getPermutation(), targetFloor));
+                Console.Write("Searching {0}...", Cube.getValue(l_solutionToDev.getPermutation(), targetFloor));
                 if (l_solutionManager.getBestValue() > Cube.getValue(l_solutionToDev.getPermutation(), targetFloor) + 14)
                 {
                     Console.WriteLine("Couldn't Find a Solution");
@@ -44,7 +41,7 @@ namespace solver
 
                 l_floor = getTargetFloor(l_solutionManager.getBestValue());
 
-                Console.Write("Floor={0}, Best yet:{1}, bestUnDeveloped={2}\n", l_floor, l_solutionManager.getBestValue(), l_solutionManager.getBestUndeveloped() != null);
+                Console.Write("Floor={0}, Best yet:{1}\n", l_floor, l_solutionManager.getBestValue());
             }
 
             return l_solutionManager.getBest();
