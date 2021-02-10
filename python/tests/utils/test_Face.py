@@ -1,5 +1,4 @@
 import unittest
-from production.utils.face import Face
 from production.utils.face_handler import Face_handler
 class FaceTest(unittest.TestCase):
     

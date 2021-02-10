@@ -1,7 +1,5 @@
 import unittest
 from production.cube.cube import Cube
-from production.utils.face import Face
-
 
 class PermutationTest(unittest.TestCase):
 

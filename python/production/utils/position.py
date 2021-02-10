@@ -1,4 +1,3 @@
-from production.utils.face import Face
 from production.utils.rotation import Rotation
 from production.utils.direction_handler import Direction_handler
 from production.utils.face_handler import Face_handler

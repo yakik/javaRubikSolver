@@ -1,7 +1,6 @@
 import unittest
 from production.solver.rotation_sequence import Rotation_sequence
 from production.utils.rotation import Rotation
-from production.utils.face import Face
 
 class RotationLinkedListTest(unittest.TestCase):
    def test_is_redundantCW(self):

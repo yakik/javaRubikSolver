@@ -1,6 +1,5 @@
 import unittest
 from production.utils.location import Location
-from production.utils.face import Face
 
 class LocationTest(unittest.TestCase):
     

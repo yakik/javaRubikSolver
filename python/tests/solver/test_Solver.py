@@ -1,6 +1,5 @@
 from production.cube.cube import Cube
 from production.solver.solver import Solver
-from production.utils.face import Face
 from production.cube.rubik_file_reader import Rubik_file_reader
 from production.solver.rotation_tree import Rotation_tree
 import unittest

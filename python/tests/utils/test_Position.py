@@ -1,5 +1,4 @@
 from production.utils.position import Position
-from production.utils.face import Face
 from production.utils.rotation import Rotation
 
 
