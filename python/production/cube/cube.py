@@ -3,7 +3,6 @@
 
 from production.utils.face import Face
 from production.utils.location_in_face import Location_in_face
-from production.utils.direction import Direction
 from production.utils.face_handler import Face_handler
 
 class Cube:
@@ -93,7 +92,7 @@ class Cube:
 		#switcher.get(face)(direction)
 
 	def rotate_bottom_face(self, direction):
-		if direction == Direction.CW:
+		if direction == "CW":
 			self.rotate_left_to_right_face_only(Face.BOTTOM)
 
 			self.rotate_left_to_right(Face.BACK, Location_in_face.BOTTOM, Face.LEFT, Location_in_face.BOTTOM, Face.FRONT,
@@ -104,10 +103,10 @@ class Cube:
 									  Location_in_face.BOTTOMRIGHT, Face.RIGHT, Location_in_face.BOTTOMRIGHT)
 		else:
 			for _ in range(0,3):
-				self.rotate_bottom_face(Direction.CW)
+				self.rotate_bottom_face("CW")
 
 	def rotate_top_Face(self, direction):
-		if direction == Direction.CW:
+		if direction == "CW":
 			self.rotate_left_to_right_face_only(Face.TOP)
 			self.rotate_left_to_right(Face.BACK, Location_in_face.TOP, Face.RIGHT, Location_in_face.TOP, Face.FRONT,
 									  Location_in_face.TOP, Face.LEFT, Location_in_face.TOP)
@@ -117,10 +116,10 @@ class Cube:
 									  Location_in_face.TOPRIGHT, Face.LEFT, Location_in_face.TOPRIGHT)
 		else:
 			for _ in range(0,3):
-				self.rotate_top_Face(Direction.CW)
+				self.rotate_top_Face("CW")
 
 	def rotate_back_face(self, direction):
-		if direction == Direction.CW:
+		if direction == "CW":
 			self.rotate_left_to_right_face_only(Face.BACK)
 			self.rotate_left_to_right(Face.TOP, Location_in_face.TOP, Face.LEFT, Location_in_face.LEFT, Face.BOTTOM,
 									  Location_in_face.BOTTOM, Face.RIGHT, Location_in_face.RIGHT)
@@ -130,10 +129,10 @@ class Cube:
 									  Location_in_face.BOTTOMLEFT, Face.RIGHT, Location_in_face.BOTTOMRIGHT)
 		else:
 			for _ in range(0,3):
-				self.rotate_back_face(Direction.CW)
+				self.rotate_back_face("CW")
 
 	def rotate_left_face(self, direction):
-		if direction == Direction.CW:
+		if direction == "CW":
 			self.rotate_left_to_right_face_only(Face.LEFT)
 			self.rotate_left_to_right(Face.TOP, Location_in_face.LEFT,
 									  Face.FRONT, Location_in_face.LEFT,
@@ -149,10 +148,10 @@ class Cube:
 									  Face.BACK, Location_in_face.BOTTOMRIGHT)
 		else:
 			for _ in range(0,3):
-				self.rotate_left_face(Direction.CW)
+				self.rotate_left_face("CW")
 
 	def rotate_right_face(self, direction):
-		if direction == Direction.CW:
+		if direction == "CW":
 			self.rotate_left_to_right_face_only(Face.RIGHT)
 
 			self.rotate_left_to_right(Face.TOP, Location_in_face.RIGHT,
@@ -169,10 +168,10 @@ class Cube:
 									  Face.FRONT, Location_in_face.TOPRIGHT)
 		else:
 			for _ in range(0,3):
-				self.rotate_right_face(Direction.CW)
+				self.rotate_right_face("CW")
 
 	def rotate_front_face(self, direction):
-		if direction == Direction.CW:
+		if direction == "CW":
 			self.rotate_left_to_right_face_only(Face.FRONT)
 			self.rotate_left_to_right(Face.TOP, Location_in_face.BOTTOM, Face.RIGHT, Location_in_face.LEFT, Face.BOTTOM,
 									  Location_in_face.TOP, Face.LEFT, Location_in_face.RIGHT)
@@ -182,7 +181,7 @@ class Cube:
 									  Location_in_face.TOPLEFT, Face.LEFT, Location_in_face.TOPRIGHT)
 		else:
 			for _ in range(0,3):
-				self.rotate_front_face(Direction.CW)
+				self.rotate_front_face("CW")
 
 	def rotate_left_to_right_face_only(self, face):
 		self.rotate_left_to_right(face, Location_in_face.TOP, face, Location_in_face.RIGHT, face, Location_in_face.BOTTOM, face,

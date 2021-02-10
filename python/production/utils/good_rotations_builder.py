@@ -1,5 +1,4 @@
 from production.utils.face import Face
-from production.utils.direction import Direction
 from production.utils.rotation import Rotation
 from production.cube.cubeStatus import CubeStatus
 from production.cube.rubik_file_writer import Rubik_file_writer

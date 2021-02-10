@@ -1,6 +1,5 @@
 
 from production.utils.rotation import Rotation
-from production.utils.direction import Direction
 from production.utils.face_handler import Face_handler
 
 class Rotation_sequence:
@@ -34,15 +33,15 @@ class Rotation_sequence:
                 if (p_rotation.getFace() == Face_handler.getOpposite(l_lastFace) and (l_lastFace > p_rotation.getFace())):
                     l_returnValue = True
                 # two clockwise rotation of same face
-                if ((p_rotation.getFace() == l_lastFace) and (l_lastDirection == Direction.CW) and
-                        p_rotation.getDirection() == Direction.CW):
+                if ((p_rotation.getFace() == l_lastFace) and (l_lastDirection == "CW") and
+                        p_rotation.getDirection() == "CW"):
                     l_returnValue = True
                 #no three counter clockwise rotations
                 if len(self.c_array) > 1:
-                    if ((p_rotation.getFace() == l_lastFace) and (l_lastDirection == Direction.CCW) and
-                            (p_rotation.getDirection() == Direction.CCW) and
-                            (self.c_array[len(self.c_array) - 2].getFace() == l_lastFace) and (l_lastDirection == Direction.CCW) and
-                            (self.c_array[len(self.c_array) - 2].getDirection() == Direction.CCW)):
+                    if ((p_rotation.getFace() == l_lastFace) and (l_lastDirection == "CCW") and
+                            (p_rotation.getDirection() == "CCW") and
+                            (self.c_array[len(self.c_array) - 2].getFace() == l_lastFace) and (l_lastDirection == "CCW") and
+                            (self.c_array[len(self.c_array) - 2].getDirection() == "CCW")):
                         l_returnValue = True
             else:
                 l_returnValue = False

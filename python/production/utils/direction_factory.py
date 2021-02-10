@@ -1,9 +1,8 @@
-from production.utils.direction import Direction
 class Direction_factory:
     
         @staticmethod
         def getDirectionByInt(intValue):
             if intValue==0:
-                return Direction.CW
+                return "CW"
             else:
-                return Direction.CCW
+                return "CCW"

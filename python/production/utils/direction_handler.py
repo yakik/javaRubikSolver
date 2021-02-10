@@ -1,9 +1,8 @@
-﻿from production.utils.direction import Direction
-class Direction_handler:
+﻿class Direction_handler:
 
     @staticmethod
     def getString(thisdir):              # Getter
-        if thisdir == Direction.CW:
+        if thisdir == "CW":
             return "CW"
         else:
                 return "CCW"
@@ -11,23 +10,23 @@ class Direction_handler:
     @staticmethod
     def getDirectionInt(intValue):
         if intValue == 0:
-            return Direction.CW
+            return "CW"
         else:
-            return Direction.CCW
+            return "CCW"
 
     @staticmethod
     def getDirectionString(intValue):
         if intValue == "0":
-            return Direction.CW
+            return "CW"
         else:
-            return Direction.CCW
+            return "CCW"
 
     @staticmethod
     def getOpposite(direction):
-        if direction == Direction.CW:
-            return Direction.CCW
+        if direction == "CW":
+            return "CCW"
         else:
-            return Direction.CW
+            return "CW"
 
 
 

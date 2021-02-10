@@ -1,6 +1,5 @@
 from production.utils.face import Face
 from production.utils.rotation import Rotation
-from production.utils.direction import Direction
 from production.utils.direction_handler import Direction_handler
 from production.utils.face_handler import Face_handler
 
@@ -36,13 +35,13 @@ class Position :
         l_face = p_rotation.getFace()
         l_direction = p_rotation.getDirection()
         if l_face == Face.TOP:
-            if l_direction == Direction.CW:
+            if l_direction == "CW":
                 self.c_currentFront = self.getFace(Face.RIGHT)
             else:
                 self.c_currentFront = self.getFace(Face.LEFT)
         else:
             if l_face == Face.RIGHT:
-                if l_direction == Direction.CW:
+                if l_direction == "CW":
                     l_temp = self.c_currentFront
                     self.c_currentFront = self.getFace(Face.BOTTOM)
                     self.c_currentUp = l_temp
@@ -53,7 +52,7 @@ class Position :
             
             else:
                 if l_face == Face.FRONT:
-                    if l_direction == Direction.CW:
+                    if l_direction == "CW":
                         self.c_currentUp = self.getFace(Face.LEFT)
                     else:
                         self.c_currentUp = self.getFace(Face.RIGHT)
