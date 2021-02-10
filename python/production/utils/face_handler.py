@@ -35,13 +35,18 @@
 
     @staticmethod
     def getIntFaceValue(intValue):
-        switcher = {"TOP":0,
-                    "BOTTOM":1,
-                    "RIGHT":2,
-                    "LEFT":3,
-                    "FRONT":4,
-                    "BACK":5}
-        return switcher.get(intValue)
+        if intValue=="TOP":
+            return 0
+        if intValue=="BOTTOM":
+            return 1
+        if intValue=="RIGHT":
+            return 2
+        if intValue=="LEFT":
+            return 3
+        if intValue=="FRONT":
+            return 4
+        if intValue=="BACK":
+            return 5
 
     @staticmethod
     def getFaceChar(charValue):

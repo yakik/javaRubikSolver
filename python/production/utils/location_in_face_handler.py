@@ -14,13 +14,21 @@ class Location_in_face_handler:
 
     @staticmethod
     def GetLocationInFaceInt(locationInFace):
-        switcher={"LIF_TOP":0,
-               "LIF_BOTTOM":1,
-                "LIF_RIGHT":2,
-                "LIF_LEFT":3,
-                "LIF_TOPRIGHT":4,
-                "LIF_TOPLEFT":5,
-                "LIF_BOTTOMRIGHT":6,
-                "LIF_BOTTOMLEFT":7}
-        return switcher.get(locationInFace)
+        if locationInFace=="LIF_TOP":
+            return 0
+        if locationInFace=="LIF_BOTTOM":
+            return 1
+        if locationInFace=="LIF_RIGHT":
+            return 2
+        if locationInFace=="LIF_LEFT":
+            return 3
+        if locationInFace=="LIF_TOPRIGHT":
+            return 4
+        if locationInFace=="LIF_TOPLEFT":
+            return 5
+        if locationInFace=="LIF_BOTTOMRIGHT":
+            return 6
+        if locationInFace=="LIF_BOTTOMLEFT":
+            return 7
+
 
