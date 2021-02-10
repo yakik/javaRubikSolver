@@ -1,8 +1,5 @@
-from production.utils.color import Color
-from production.utils.face import Face
-from production.utils.location import Location
+
 from production.utils.rotation import Rotation
-from production.utils.location_in_face import Location_in_face
 from production.utils.direction import Direction
 from production.utils.face_handler import Face_handler
 

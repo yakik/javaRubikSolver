@@ -1,11 +1,8 @@
 
   
-from production.utils.color import Color
+
 from production.utils.face import Face
-from production.utils.location import Location
-from production.utils.rotation import Rotation
 from production.utils.location_in_face import Location_in_face
-from production.utils.location_in_face_handler import Location_in_face_handler
 from production.utils.direction import Direction
 from production.utils.face_handler import Face_handler
 
@@ -44,12 +41,12 @@ class Cube:
 
 
 	def __init__(self,source=None):
-		self.colors = [[Color.TOPCOLOR,Color.TOPCOLOR,Color.TOPCOLOR,Color.TOPCOLOR,Color.TOPCOLOR,Color.TOPCOLOR,Color.TOPCOLOR,Color.TOPCOLOR],
-						[Color.BOTTOMCOLOR,Color.BOTTOMCOLOR,Color.BOTTOMCOLOR,Color.BOTTOMCOLOR,Color.BOTTOMCOLOR,Color.BOTTOMCOLOR,Color.BOTTOMCOLOR,Color.BOTTOMCOLOR],
-						[Color.RIGHTCOLOR,Color.RIGHTCOLOR,Color.RIGHTCOLOR,Color.RIGHTCOLOR,Color.RIGHTCOLOR,Color.RIGHTCOLOR,Color.RIGHTCOLOR,Color.RIGHTCOLOR],
-						[Color.LEFTCOLOR,Color.LEFTCOLOR,Color.LEFTCOLOR,Color.LEFTCOLOR,Color.LEFTCOLOR,Color.LEFTCOLOR,Color.LEFTCOLOR,Color.LEFTCOLOR],
-						[Color.FRONTCOLOR,Color.FRONTCOLOR,Color.FRONTCOLOR,Color.FRONTCOLOR,Color.FRONTCOLOR,Color.FRONTCOLOR,Color.FRONTCOLOR,Color.FRONTCOLOR],
-						[Color.BACKCOLOR,Color.BACKCOLOR,Color.BACKCOLOR,Color.BACKCOLOR,Color.BACKCOLOR,Color.BACKCOLOR,Color.BACKCOLOR,Color.BACKCOLOR]]
+		self.colors = [["TOPCOLOR","TOPCOLOR","TOPCOLOR","TOPCOLOR","TOPCOLOR","TOPCOLOR","TOPCOLOR","TOPCOLOR"],
+						["BOTTOMCOLOR","BOTTOMCOLOR","BOTTOMCOLOR","BOTTOMCOLOR","BOTTOMCOLOR","BOTTOMCOLOR","BOTTOMCOLOR","BOTTOMCOLOR"],
+						["RIGHTCOLOR","RIGHTCOLOR","RIGHTCOLOR","RIGHTCOLOR","RIGHTCOLOR","RIGHTCOLOR","RIGHTCOLOR","RIGHTCOLOR"],
+						["LEFTCOLOR","LEFTCOLOR","LEFTCOLOR","LEFTCOLOR","LEFTCOLOR","LEFTCOLOR","LEFTCOLOR","LEFTCOLOR"],
+						["FRONTCOLOR","FRONTCOLOR","FRONTCOLOR","FRONTCOLOR","FRONTCOLOR","FRONTCOLOR","FRONTCOLOR","FRONTCOLOR"],
+						["BACKCOLOR","BACKCOLOR","BACKCOLOR","BACKCOLOR","BACKCOLOR","BACKCOLOR","BACKCOLOR","BACKCOLOR"]]
 
 
 
