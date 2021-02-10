@@ -77,48 +77,48 @@ class Location:
     
 
     def getFloor(self):
-        if self.equals(Location(Face.TOP, Face.LEFT, Face.FRONT)):
+        if self.equals(Location("TOP", "LEFT", "FRONT")):
             return 3
-        if self.equals(Location(Face.TOP, Face.LEFT, Face.BACK)):
+        if self.equals(Location("TOP", "LEFT", "BACK")):
             return 3
-        if self.equals(Location(Face.TOP, Face.RIGHT, Face.FRONT)):
+        if self.equals(Location("TOP", "RIGHT", "FRONT")):
             return 3
-        if self.equals(Location(Face.TOP, Face.RIGHT, Face.BACK)):
+        if self.equals(Location("TOP", "RIGHT", "BACK")):
             return 3
-        if self.equals(Location(Face.BOTTOM, Face.LEFT, Face.FRONT)):
+        if self.equals(Location("BOTTOM", "LEFT", "FRONT")):
             return 1
-        if self.equals(Location(Face.BOTTOM, Face.LEFT, Face.BACK)):
+        if self.equals(Location("BOTTOM", "LEFT", "BACK")):
             return 1
-        if self.equals(Location(Face.BOTTOM, Face.RIGHT, Face.FRONT)):
+        if self.equals(Location("BOTTOM", "RIGHT", "FRONT")):
             return 1
-        if self.equals(Location(Face.BOTTOM, Face.RIGHT, Face.BACK)):
+        if self.equals(Location("BOTTOM", "RIGHT", "BACK")):
             return 1
 
-        if self.equals(Location(Face.TOP, Face.FRONT)):
+        if self.equals(Location("TOP", "FRONT")):
             return 3
-        if self.equals(Location(Face.TOP, Face.BACK)):
+        if self.equals(Location("TOP", "BACK")):
             return 3
-        if self.equals(Location(Face.TOP, Face.LEFT)):
+        if self.equals(Location("TOP", "LEFT")):
             return 3
-        if self.equals(Location(Face.TOP, Face.RIGHT)):
+        if self.equals(Location("TOP", "RIGHT")):
             return 3
 
-        if self.equals(Location(Face.FRONT, Face.LEFT)):
+        if self.equals(Location("FRONT", "LEFT")):
             return 2
-        if self.equals(Location(Face.FRONT, Face.RIGHT)):
+        if self.equals(Location("FRONT", "RIGHT")):
             return 2
-        if self.equals(Location(Face.BACK, Face.LEFT)):
+        if self.equals(Location("BACK", "LEFT")):
             return 2
-        if self.equals(Location(Face.BACK, Face.RIGHT)):
+        if self.equals(Location("BACK", "RIGHT")):
             return 2
 
-        if self.equals(Location(Face.BOTTOM, Face.LEFT)):
+        if self.equals(Location("BOTTOM", "LEFT")):
             return 1
-        if self.equals(Location(Face.BOTTOM, Face.RIGHT)):
+        if self.equals(Location("BOTTOM", "RIGHT")):
             return 1
-        if self.equals(Location(Face.FRONT, Face.BOTTOM)):
+        if self.equals(Location("FRONT", "BOTTOM")):
             return 1
-        if self.equals(Location(Face.BACK, Face.BOTTOM)):
+        if self.equals(Location("BACK", "BOTTOM")):
             return 1
         return 0
     

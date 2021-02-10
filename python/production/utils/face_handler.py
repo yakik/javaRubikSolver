@@ -3,63 +3,63 @@ class Face_handler:
 
     @staticmethod
     def getCharValue(face):
-        if face==Face.TOP:
+        if face=="TOP":
             return 'U'
-        if face==Face.BOTTOM:
+        if face=="BOTTOM":
             return 'D'
-        if face==Face.RIGHT:
+        if face=="RIGHT":
             return 'R'
-        if face==Face.LEFT:
+        if face=="LEFT":
             return 'L'
-        if face==Face.FRONT:
+        if face=="FRONT":
             return 'F'
-        if face==Face.BACK:
+        if face=="BACK":
             return 'B'
 
-       # switcher={Face.TOP: 'U',
-       #         Face.BOTTOM: 'D',
-       #         Face.RIGHT: 'R',
-       #         Face.LEFT: 'L',
-       #         Face.FRONT: 'F',
-       #         Face.BACK: 'B'}
+       # switcher={"TOP": 'U',
+       #         "BOTTOM": 'D',
+       #         "RIGHT": 'R',
+       #         "LEFT": 'L',
+       #         "FRONT": 'F',
+       #         "BACK": 'B'}
        # return switcher.get(face)
 
     @staticmethod
     def getFaceInt(intValue):
-        switcher={0: Face.TOP,
-                 1: Face.BOTTOM,
-                 2: Face.RIGHT,
-                 3: Face.LEFT,
-                 4: Face.FRONT,
-                 5: Face.BACK}
+        switcher={0: "TOP",
+                 1: "BOTTOM",
+                 2: "RIGHT",
+                 3: "LEFT",
+                 4: "FRONT",
+                 5: "BACK"}
         return switcher.get(intValue)
 
     @staticmethod
     def getIntFaceValue(intValue):
-        switcher = {Face.TOP:0,
-                    Face.BOTTOM:1,
-                    Face.RIGHT:2,
-                    Face.LEFT:3,
-                    Face.FRONT:4,
-                    Face.BACK:5}
+        switcher = {"TOP":0,
+                    "BOTTOM":1,
+                    "RIGHT":2,
+                    "LEFT":3,
+                    "FRONT":4,
+                    "BACK":5}
         return switcher.get(intValue)
 
     @staticmethod
     def getFaceChar(charValue):
-        switcher = {'U': Face.TOP,
-            'D': Face.BOTTOM,
-            'R': Face.RIGHT,
-            'L': Face.LEFT,
-            'F': Face.FRONT,
-            'B': Face.BACK}
+        switcher = {'U': "TOP",
+            'D': "BOTTOM",
+            'R': "RIGHT",
+            'L': "LEFT",
+            'F': "FRONT",
+            'B': "BACK"}
         return switcher.get(charValue)
 
     @staticmethod
     def getOpposite( face):
-        switcher = {Face.LEFT: Face.RIGHT,
-                    Face.RIGHT: Face.LEFT,
-            Face.TOP: Face.BOTTOM,
-            Face.BOTTOM: Face.TOP,
-            Face.FRONT: Face.BACK,
-            Face.BACK: Face.FRONT}
+        switcher = {"LEFT": "RIGHT",
+                    "RIGHT": "LEFT",
+            "TOP": "BOTTOM",
+            "BOTTOM": "TOP",
+            "FRONT": "BACK",
+            "BACK": "FRONT"}
         return switcher.get(face)

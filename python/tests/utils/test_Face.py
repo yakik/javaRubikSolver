@@ -5,47 +5,42 @@ class FaceTest(unittest.TestCase):
     
         
    def test_FaceGetIntGetChar(self):
-      myFace = Face.BOTTOM
-      self.assertEqual(1,myFace)
+      myFace = "BOTTOM"
+
       self.assertEqual('D', Face_handler.getCharValue(myFace))
-      myFace = Face.FRONT
-      self.assertEqual(4, myFace)
+      myFace = "FRONT"
       self.assertEqual('F', Face_handler.getCharValue(myFace))
-      myFace = Face.RIGHT
-      self.assertEqual(2, myFace)
+      myFace = "RIGHT"
       self.assertEqual('R', Face_handler.getCharValue(myFace))
-      myFace = Face.TOP
-      self.assertEqual(0, myFace)
+      myFace = "TOP"
       self.assertEqual('U', Face_handler.getCharValue(myFace))
-      myFace = Face.BACK
-      self.assertEqual(5, myFace)
+      myFace = "BACK"
       self.assertEqual('B', Face_handler.getCharValue(myFace))
-      myFace = Face.LEFT
-      self.assertEqual(3, myFace)
+      myFace = "LEFT"
       self.assertEqual('L', Face_handler.getCharValue(myFace))
         
 
         
    def test_FaceEquals(self):
-      myFace = Face.BOTTOM
-      self.assertEqual(Face.BOTTOM, myFace)
-      self.assertEqual(True, myFace == Face.BOTTOM)
+      myFace = "BOTTOM"
+      self.assertEqual("BOTTOM", myFace)
+      self.assertEqual(True, myFace == "BOTTOM")
         
 
         
    def test_FaceGetOpposite(self):
-      myFace = Face.BOTTOM
-      self.assertEqual(Face.TOP, Face_handler.getOpposite(myFace))
-      myFace = Face.FRONT
-      self.assertEqual(Face.BACK, Face_handler.getOpposite(myFace))
-      myFace = Face.RIGHT
-      self.assertEqual(Face.LEFT, Face_handler.getOpposite(myFace))
-      myFace = Face.TOP
-      self.assertEqual(Face.BOTTOM, Face_handler.getOpposite(myFace))
-      myFace = Face.BACK
-      self.assertEqual(Face.FRONT, Face_handler.getOpposite(myFace))
-      myFace = Face.LEFT
-      self.assertEqual(Face.RIGHT, Face_handler.getOpposite(myFace))
+      myFace = "BOTTOM"
+      self.assertEqual("TOP", Face_handler.getOpposite(myFace))
+      myFace = "FRONT"
+      self.assertEqual("BACK", Face_handler.getOpposite(myFace))
+      myFace = "RIGHT"
+      self.assertEqual("LEFT", Face_handler.getOpposite(myFace))
+      myFace = "TOP"
+      self.assertEqual("BOTTOM", Face_handler.getOpposite(myFace))
+      myFace = "BACK"
+      self.assertEqual("FRONT", Face_handler.getOpposite(myFace))
+      myFace = "LEFT"
+      self.assertEqual("RIGHT", Face_handler.getOpposite(myFace))
    
 
     

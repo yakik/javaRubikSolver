@@ -6,13 +6,13 @@ from production.utils.face import Face
 class RotationLinkedListTest(unittest.TestCase):
    def test_is_redundantCW(self):
       myList = Rotation_sequence()
-      myList.add_rotation(Rotation(Face.FRONT, "CW"))
-      self.assertEqual(True, myList.is_redundant(Rotation(Face.FRONT, "CW")))
+      myList.add_rotation(Rotation("FRONT", "CW"))
+      self.assertEqual(True, myList.is_redundant(Rotation("FRONT", "CW")))
 
    def test_is_redundantCCW(self):
       myList = Rotation_sequence()
-      myList.add_rotation(Rotation(Face.FRONT, "CCW"))
-      myList.add_rotation(Rotation(Face.FRONT, "CCW"))
-      self.assertEqual(True, myList.is_redundant(Rotation(Face.FRONT, "CCW")))
+      myList.add_rotation(Rotation("FRONT", "CCW"))
+      myList.add_rotation(Rotation("FRONT", "CCW"))
+      self.assertEqual(True, myList.is_redundant(Rotation("FRONT", "CCW")))
 
 
