@@ -1,5 +1,6 @@
 from production.utils.location_in_face_handler import Location_in_face_handler
 from production.utils.face_handler import Face_handler
+import copy
 #import numpy as np
 
 class Cube:
@@ -37,29 +38,16 @@ class Cube:
 
 
 	def __init__(self,source=None):
-		self.colors = [["TOPCOLOR","TOPCOLOR","TOPCOLOR","TOPCOLOR","TOPCOLOR","TOPCOLOR","TOPCOLOR","TOPCOLOR"],
-						["BOTTOMCOLOR","BOTTOMCOLOR","BOTTOMCOLOR","BOTTOMCOLOR","BOTTOMCOLOR","BOTTOMCOLOR","BOTTOMCOLOR","BOTTOMCOLOR"],
-						["RIGHTCOLOR","RIGHTCOLOR","RIGHTCOLOR","RIGHTCOLOR","RIGHTCOLOR","RIGHTCOLOR","RIGHTCOLOR","RIGHTCOLOR"],
-						["LEFTCOLOR","LEFTCOLOR","LEFTCOLOR","LEFTCOLOR","LEFTCOLOR","LEFTCOLOR","LEFTCOLOR","LEFTCOLOR"],
-						["FRONTCOLOR","FRONTCOLOR","FRONTCOLOR","FRONTCOLOR","FRONTCOLOR","FRONTCOLOR","FRONTCOLOR","FRONTCOLOR"],
-						["BACKCOLOR","BACKCOLOR","BACKCOLOR","BACKCOLOR","BACKCOLOR","BACKCOLOR","BACKCOLOR","BACKCOLOR"]]
+		if source == None:
+			self.colors = [["TOPCOLOR","TOPCOLOR","TOPCOLOR","TOPCOLOR","TOPCOLOR","TOPCOLOR","TOPCOLOR","TOPCOLOR"],
+							["BOTTOMCOLOR","BOTTOMCOLOR","BOTTOMCOLOR","BOTTOMCOLOR","BOTTOMCOLOR","BOTTOMCOLOR","BOTTOMCOLOR","BOTTOMCOLOR"],
+							["RIGHTCOLOR","RIGHTCOLOR","RIGHTCOLOR","RIGHTCOLOR","RIGHTCOLOR","RIGHTCOLOR","RIGHTCOLOR","RIGHTCOLOR"],
+							["LEFTCOLOR","LEFTCOLOR","LEFTCOLOR","LEFTCOLOR","LEFTCOLOR","LEFTCOLOR","LEFTCOLOR","LEFTCOLOR"],
+							["FRONTCOLOR","FRONTCOLOR","FRONTCOLOR","FRONTCOLOR","FRONTCOLOR","FRONTCOLOR","FRONTCOLOR","FRONTCOLOR"],
+							["BACKCOLOR","BACKCOLOR","BACKCOLOR","BACKCOLOR","BACKCOLOR","BACKCOLOR","BACKCOLOR","BACKCOLOR"]]
+		else:
+			self.colors = copy.deepcopy(source.colors)
 
-
-
-		#	[[0 for x in range(8)] for y in range(6)]
-		#for face in list(Face):
-		#	for locationInFace in list(Location_in_face):
-		#		self.colors[face.value][locationInFace.value]=Cube.getColorForFaceForSortedCube(face)
-
-		if source!=None:
-			Location_in_face = ["LIF_TOP","LIF_BOTTOM","LIF_RIGHT","LIF_LEFT","LIF_TOPRIGHT","LIF_TOPLEFT","LIF_BOTTOMRIGHT","LIF_BOTTOMLEFT"]
-			for locationInFace in list(Location_in_face):
-				self.set_color("FRONT", locationInFace, source.get_color("FRONT", locationInFace))
-				self.set_color("BACK", locationInFace, source.get_color("BACK", locationInFace))
-				self.set_color("RIGHT", locationInFace, source.get_color("RIGHT", locationInFace))
-				self.set_color("LEFT", locationInFace, source.get_color("LEFT", locationInFace))
-				self.set_color("TOP", locationInFace, source.get_color("TOP", locationInFace))
-				self.set_color("BOTTOM", locationInFace, source.get_color("BOTTOM", locationInFace))
 
 	def rotate_face(self, face, direction):
 		if face=="FRONT":
