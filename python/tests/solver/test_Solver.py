@@ -5,7 +5,7 @@ from production.solver.rotation_tree import Rotation_tree
 import unittest
 class SolverTest(unittest.TestCase):
 
-        @unittest.skip("too long")
+        #@unittest.skip("too long")
         def test_complexSolver(self):
             myRubik = Cube()
             myRubik.rotate_face("RIGHT", "CW")
